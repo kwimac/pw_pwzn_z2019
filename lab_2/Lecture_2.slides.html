@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 
-<title>Lecture_1_part_1 slides</title>
+<title>Lecture_2 slides</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13202,204 +13202,57 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Python-w-zastosowaniach-naukowych">Python w zastosowaniach naukowych<a class="anchor-link" href="#Python-w-zastosowaniach-naukowych">&#182;</a></h1><h2 id="Wyk&#322;ad-1-cz.-1">Wyk&#322;ad 1 cz. 1<a class="anchor-link" href="#Wyk&#322;ad-1-cz.-1">&#182;</a></h2><h3 id="mgr-in&#380;.-Maciej-Kwiatkowski">mgr in&#380;. Maciej Kwiatkowski<a class="anchor-link" href="#mgr-in&#380;.-Maciej-Kwiatkowski">&#182;</a></h3>
+<h1 id="Python-w-zastosowaniach-naukowych">Python w zastosowaniach naukowych<a class="anchor-link" href="#Python-w-zastosowaniach-naukowych">&#182;</a></h1><h2 id="Wyk&#322;ad-2">Wyk&#322;ad 2<a class="anchor-link" href="#Wyk&#322;ad-2">&#182;</a></h2><h3 id="mgr-in&#380;.-Maciej-Kwiatkowski">mgr in&#380;. Maciej Kwiatkowski<a class="anchor-link" href="#mgr-in&#380;.-Maciej-Kwiatkowski">&#182;</a></h3>
 </div>
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Podstawowa-sk&#322;adnia">Podstawowa sk&#322;adnia<a class="anchor-link" href="#Podstawowa-sk&#322;adnia">&#182;</a></h1>
+<h1 id="Mutowalne-kolekcje">Mutowalne kolekcje<a class="anchor-link" href="#Mutowalne-kolekcje">&#182;</a></h1>
 </div>
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Python to język <strong>interpretowany</strong> (w domyślnej instalacji). </li>
-<li>Oznacza to, że kod może zostać uruchomiony na dowolnym systemie operacyjnym, na którym zainstalowany jest interpreter, na podstawie kodu źródłowego.</li>
-<li>Rozszerzeniem charakterystycznym dla kodu napisanego w języku Python jest <code>.py.</code></li>
-</ul>
-
+<h1 id="Podstawowe-typy-danych-cd.">Podstawowe typy danych cd.<a class="anchor-link" href="#Podstawowe-typy-danych-cd.">&#182;</a></h1>
 </div>
 </div>
 </div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Program uruchamia się za pomocą komendy: 
-<code>python &lt;nazwa pliku&gt;</code></li>
-<li>Sama komenda <code>python</code> uruchamia interaktywną konsolę.</li>
-</ul>
-
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>%%bash
-python
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Interaktywna konsola, to sposób uruchomienia interpretera z możliwością pisania kodu w dynamiczny sposób (komenda - wykonanie - komenda…)</p>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Po uruchomieniu interaktywnej konsoli prompt zmienia się na <code>&gt;&gt;&gt;</code>.</li>
-<li>Wielolinijkowe komendy będą poprzedzone <code>…</code> (wszystkie linijki poza pierwszą).</li>
-</ul>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Sesja ma jedną przestrzeń nazw na uruchomienie, tzn. do zmiennej zdefiniowanej w jednej linijce mogę odwołać się w następnej linijce.</li>
-<li>Konsolę zamykamy kombinacją klawiszy <code>ctrl+d</code> (Unix), <code>ctrl+z</code> (Windows) lub wpisaniem komendy <code>quit()</code>.</li>
-<li>Dokumentacja: <a href="https://docs.python.org/3/tutorial/interpreter.html">https://docs.python.org/3/tutorial/interpreter.html</a></li>
-</ul>
-
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Formatowanie kodu w Pythonie odbywa się za pomcą wcięć (<em>indentacji</em>).<br/>
-Oznacza to, że pojedyncza komenda może być zakończona znakiem końca linii:</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello once more&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Hello world
-Hello once more
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">)</span>
-<span class="k">if</span> <span class="kc">False</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello once more&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Hello world
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Podstawowe-typy-danych:">Podstawowe typy danych:<a class="anchor-link" href="#Podstawowe-typy-danych:">&#182;</a></h1>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><code>None</code> – nic, brak</li>
-</ul>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Typy liczbowe (<code>Numbers</code>):</p>
-<ul>
-<li><code>True</code>/<code>False</code> - <code>bool</code> - prawda/fałsz</li>
-<li><code>123</code> - <code>int</code> - liczby całkowite</li>
-<li><code>54.45</code> - <code>float</code> - liczby zmiennoprzecinkowe</li>
-<li><code>1+2.3j</code> - <code>complex</code> - liczby zespolone</li>
-</ul>
-
-</div>
-</div>
-</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Sekwencje (<code>Sequences</code>):</p>
 <ul>
-<li>Nieedytowalne (<code>Immutable</code>):<ul>
-<li><code>"Ala #23"</code> - <code>str</code> - łańcuchy znaków</li>
-<li><code>b"0xab"</code> - <code>bytes</code>  - ciągi bajtowe</li>
-<li><code>(1,2)</code> - <code>tuple</code> - krotki</li>
+<li>Edytowalne (<code>Mutable</code>)<ul>
+<li><code>[1, None, [1, 2]]</code> - <code>list</code> - lista</li>
+<li><code>bytearray(b'\x01\x02\x03\x04')</code> - <code>bytearray</code>  - tablica bajtów</li>
 </ul>
 </li>
-<li>Edytowalne (<code>Mutable</code>) - omówimy później</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Zbiory (<code>Set types</code>):</p>
+<ul>
+<li><code>{1, 2}</code> - <code>set</code> - zbiór</li>
+<li><code>frozenset({1,2})</code> - <code>frozenset</code> - zbiór stały (nieedytowalny)</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Mapowania (<code>Mappings</code>):</p>
+<ul>
+<li><code>{'key': 'val', 1: 'val'}</code> - <code>dict</code> - słownik, mapa</li>
 </ul>
 
 </div>
@@ -13408,39 +13261,28 @@ Hello once more
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Python jest językiem <strong>typowanym dynamicznie</strong>. Oznacza to, że zmienną można zdefiniować bez określenia jej typu - zostanie on nadany przez interpreter:<br/>
-<code>&lt;nazwa_zmiennej&gt; = &lt;wartosc&gt;</code></p>
-
+<h1 id="Listy">Listy<a class="anchor-link" href="#Listy">&#182;</a></h1>
 </div>
 </div>
 </div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>W celu sprawdzenia typu zmiennej używamy funkcji <code>type</code>:</p>
+<p><strong>Kolekcja</strong> (zbiór wielu elementów) będąca <strong>sekwencją</strong> (wspierająca indeksowanie) różniąca się od krotki możliwością edycji:</p>
 
 </div>
 </div>
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">var</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;var: </span><span class="si">{var}</span><span class="s1">, ({id(var)})&#39;</span><span class="p">)</span>
+<span class="n">var_1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
+<span class="n">var</span> <span class="o">+=</span> <span class="n">var_1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;var: </span><span class="si">{var}</span><span class="s1">, ({id(var)})&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13457,7 +13299,8 @@ Hello once more
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class &#39;int&#39;&gt;
+<pre>var: [1, 2, 3], (139880178493552)
+var: [1, 2, 3, &#39;a&#39;, None], (139880178493552)
 </pre>
 </div>
 </div>
@@ -13469,21 +13312,23 @@ Hello once more
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Zmienna jest tylko <strong>referencją</strong> do wartości. <br/>
-Oznacza to, że do tej samej nazwy możemy przypisać inną wartość, zmieniając typ zmiennej:</p>
+<p>Powyżej lista została wydłużona za pomocą przeładowania operatora dodawania.<br/>
+W celu rozszerzania list wykorzystywane są metody:</p>
+<ul>
+<li><code>append</code> - dodawanie na koniec listy pojedynczego elementu,</li>
+</ul>
 
 </div>
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;a&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;raw&#39;</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13500,8 +13345,9 @@ Oznacza to, że do tej samej nazwy możemy przypisać inną wartość, zmieniaj�
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class &#39;str&#39;&gt;
-&lt;class &#39;int&#39;&gt;
+<pre>[1, 2, 3, &#39;a&#39;, None]
+None
+[1, 2, 3, &#39;a&#39;, None, (2, &#39;raw&#39;)]
 </pre>
 </div>
 </div>
@@ -13513,8 +13359,222 @@ Oznacza to, że do tej samej nazwy możemy przypisać inną wartość, zmieniaj�
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>W celu zrzutowania wartości zmiennej używamy składni: <br/>
-<code>&lt;nazwa_typu&gt;(&lt;zmienna&gt;)</code></p>
+<ul>
+<li><code>extend</code> - połączenie list,</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">var</span><span class="o">.</span><span class="n">extend</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;raw&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1, 2, 3, &#39;a&#39;, None, (2, &#39;raw&#39;), 2, &#39;raw&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>insert</code> - wstawienie <strong>na</strong> dany indeks (przesuwając następne indeksy),</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">var</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;raw&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1, 2, &#39;raw&#39;, 3, &#39;a&#39;, None, (2, &#39;raw&#39;), 2, &#39;raw&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Do usuwania elementów służą metody:</p>
+<ul>
+<li><code>pop</code> - usuń element z listy (ostatni, jeżeli nie podamy argumentu),</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;var = </span><span class="si">{var}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Popped element: {var.pop()}&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;var = </span><span class="si">{var}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">var</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;var = </span><span class="si">{var}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>var = [1, 2, &#39;raw&#39;, 3, &#39;a&#39;, None, (2, &#39;raw&#39;), 2, &#39;raw&#39;]
+Popped element: raw
+var = [1, 2, &#39;raw&#39;, 3, &#39;a&#39;, None, (2, &#39;raw&#39;), 2]
+var = [1, &#39;raw&#39;, 3, &#39;a&#39;, None, (2, &#39;raw&#39;), 2]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>remove</code> - usuń podaną wartość z listy (pierwsze wystąpienie) lub podnieś bład, gdy wartość nie ma w liście</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">var</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;var = </span><span class="si">{var}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">var</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>var = [&#39;raw&#39;, 3, &#39;a&#39;, None, (2, &#39;raw&#39;), 2]
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-6-79d95ae4f82f&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> var<span class="ansi-blue-fg">.</span>remove<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#39;var = {var}&#39;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg"> </span>var<span class="ansi-blue-fg">.</span>remove<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">ValueError</span>: list.remove(x): x not in list</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>W przeciwieństwie do krotki możemy mieć pustą listę.</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">var</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Długość listy (liczbę elementów) sprawdzamy za pomocą metody <code>len</code>.</p>
 
 </div>
 </div>
@@ -13524,7 +13584,7 @@ Oznacza to, że do tej samej nazwy możemy przypisać inną wartość, zmieniaj�
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13543,7 +13603,7 @@ Oznacza to, że do tej samej nazwy możemy przypisać inną wartość, zmieniaj�
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;1&#39;</pre>
+<pre>0</pre>
 </div>
 
 </div>
@@ -13555,39 +13615,60 @@ Oznacza to, że do tej samej nazwy możemy przypisać inną wartość, zmieniaj�
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>W celu wykomentowania kodu używamy znaku <code>#</code></p>
-
+<h1 id="Slicing-(wzorce-na-indeksie)">Slicing (wzorce na indeksie)<a class="anchor-link" href="#Slicing-(wzorce-na-indeksie)">&#182;</a></h1>
 </div>
 </div>
 </div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Operując na sekwencji możliwe jest wybranie nie tylko jednego elementu, ale i grupy, podając wzorzec indeksów.<br>
+Wzorzec podaje się w nawiasie kwadratowym, separując kolejne argumenty dwukropkiem. Podając wzorzec możemy podać dwa lub trzy argumenty.<br>
+Podobnie jak w funkcji <code>range</code> wzorzec przyjmuje wartości domyślne: <code>0</code> dla pierwszego argumentu, <code>len(&lt;zmienna&gt;)</code> dla drugiego, <code>1</code> dla kroku.</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Komentarz do linijki</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">var</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;var: </span><span class="si">{var}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">var</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>  <span class="c1"># Wycinek 5 pierwszych elementów listy</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">var</span><span class="p">[</span><span class="mi">5</span><span class="p">:])</span>  <span class="c1"># Wycinek od 5. elementu listy do końca</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Komentowanie działa tylko do końca linijki.</strong><br/></p>
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>var: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+[0, 1, 2, 3, 4]
+[5, 6, 7, 8]
+</pre>
+</div>
+</div>
 
 </div>
 </div>
+
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Nie ma komentarzy wielolinijkowych. Można to jednak zrealizować na dwa sposoby:</p>
-<ul>
-<li>Rozpocząć każdą linijkę kodu <code>#</code> - ciężkie do osiągnięcia ręcznie, dlatego polecam używać IDE/wtyczki, któr pozwala na automatyczne komentowanie w ten sposób (w PyCharmie skrót klawiszowy <code>ctrl + /</code>)</li>
-</ul>
+<p>Wzorce wspierają indeksowanie ujemne (od wartości <code>-1</code> - ostatniego elementu listy).</p>
 
 </div>
 </div>
@@ -13597,9 +13678,8 @@ Oznacza to, że do tej samej nazwy możemy przypisać inną wartość, zmieniaj�
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># if False:</span>
-<span class="c1">#     print(&#39;Hello once more&#39;)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">var</span><span class="p">[:</span><span class="o">-</span><span class="mi">5</span><span class="p">])</span>  <span class="c1"># Wycinek bez 5 ostatnich elementów listy</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">var</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:])</span>  <span class="c1"># Wycinek 5 ostatnich elementów listy</span>
 </pre></div>
 
     </div>
@@ -13616,7 +13696,8 @@ Oznacza to, że do tej samej nazwy możemy przypisać inną wartość, zmieniaj�
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Hello world
+<pre>[0, 1, 2, 3]
+[4, 5, 6, 7, 8]
 </pre>
 </div>
 </div>
@@ -13628,9 +13709,7 @@ Oznacza to, że do tej samej nazwy możemy przypisać inną wartość, zmieniaj�
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Zamienić blok kodu w wielolinijkowy string - metoda nieestetyczna, dozwolona tylko przy debugowaniu “na szybko”.</li>
-</ul>
+<p>Krok we wzorcach może być: dodatni, ujemny (odwraca kolejność), a nawet być jedyną podaną wartością.</p>
 
 </div>
 </div>
@@ -13640,11 +13719,10 @@ Oznacza to, że do tej samej nazwy możemy przypisać inną wartość, zmieniaj�
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">if False:</span>
-<span class="sd">    print(&#39;Hello once more&#39;)</span>
-<span class="sd">&#39;&#39;&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">var</span><span class="p">[:</span><span class="mi">5</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># Wycinek 5 pierwszych elementów, co drugi element</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">var</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>  <span class="c1"># Wycinek z co 3 elementem, od 1. indeksu do 6. wyłacznie</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">var</span><span class="p">[</span><span class="mi">5</span><span class="p">::</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># Wycinek 5 pierwszych elementów w odwróconej kolejności, co drugi element</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">var</span><span class="p">[::</span><span class="mi">4</span><span class="p">])</span>  <span class="c1"># Wycinek co 4 elementu</span>
 </pre></div>
 
     </div>
@@ -13661,7 +13739,10 @@ Oznacza to, że do tej samej nazwy możemy przypisać inną wartość, zmieniaj�
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Hello world
+<pre>[0, 2, 4]
+[1, 4]
+[5, 3, 1]
+[0, 4, 8]
 </pre>
 </div>
 </div>
@@ -13669,36 +13750,26 @@ Oznacza to, że do tej samej nazwy możemy przypisać inną wartość, zmieniaj�
 </div>
 </div>
 
-</div></div></section></section><section><section>
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Operatory:">Operatory:<a class="anchor-link" href="#Operatory:">&#182;</a></h1>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Przypisania: <br/>
-<code>=</code></li>
-<li>Matematyczne: <br/>
-<code>+, -, *, /, //, %, **</code></li>
-</ul>
+<p>Wzorcem indeksów można też nadpisać fragment listy.<br>
+Nadpisywany fragment jest usuwany i zastępowany nowym, na podstawie podanego obiektu iterowalnego (<code>Iterable</code>).<br>
+<strong>Uwaga</strong>: Można w ten sposób zmienić długość listy.</p>
 
 </div>
 </div>
-</div></div><div class="fragment">
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2 / 3 =&#39;</span><span class="p">,</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2 // 3 =&#39;</span><span class="p">,</span> <span class="mi">2</span> <span class="o">//</span> <span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2 % 3 =&#39;</span><span class="p">,</span> <span class="mi">2</span> <span class="o">%</span> <span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2 ** 3 =&#39;</span><span class="p">,</span> <span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">var</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;var: </span><span class="si">{var}</span><span class="s1">, length: {len(var)} id: {id(var)}&#39;</span><span class="p">)</span>
+<span class="n">var</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;a&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;var: </span><span class="si">{var}</span><span class="s1">, length: {len(var)} id: {id(var)}&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13715,58 +13786,8 @@ Oznacza to, że do tej samej nazwy możemy przypisać inną wartość, zmieniaj�
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>2 / 3 = 0.6666666666666666
-2 // 3 = 0
-2 % 3 = 2
-2 ** 3 = 8
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Logiczne: <br/>
-<code>not, ==, !=, &lt;, &gt;, &lt;=, &gt;=, is, and, or, in</code></li>
-</ul>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;not True =&#39;</span><span class="p">,</span> <span class="ow">not</span> <span class="kc">True</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;True and True =&#39;</span><span class="p">,</span> <span class="kc">True</span> <span class="ow">and</span> <span class="kc">True</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;True or False =&#39;</span><span class="p">,</span> <span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&#39;a&#39; in &#39;abc&#39; =&quot;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span> <span class="ow">in</span> <span class="s1">&#39;abc&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>not True = False
-True and True = True
-True or False = True
-&#39;a&#39; in &#39;abc&#39; = True
+<pre>var: [0, 1, 2, 3, 4, 5, 6, 7, 8], length: 9 id: 139880177271024
+var: [0, 1, &#39;a&#39;, 5, 6, 7, 8], length: 7 id: 139880177271024
 </pre>
 </div>
 </div>
@@ -13778,22 +13799,47 @@ True or False = True
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Bitowe: <br/>
-<code>~, &amp;, |, ^</code></li>
-</ul>
+<p>W przypadku wyjścia poza zakres elementy dodawane są na początku/końcu listy.</p>
 
 </div>
 </div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">var</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">12</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;bc&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;var: </span><span class="si">{var}</span><span class="s1">, length: {len(var)} id: {id(var)}&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>var: [0, 1, &#39;a&#39;, 5, 6, 7, 8, &#39;b&#39;, &#39;c&#39;], length: 9 id: 139880177271024
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Różnica pomiędzy <code>==</code> i <code>is</code> polega na równości wartości (<code>==</code>) a równością między obiektami (<code>is</code>) tzn. zapisie w obszarze pamięci. </li>
-<li>W celu sprawdzenia, gdzie w pamięci znajduje się zmienna służy funkcja: <br/>
-<code>id(&lt;zmienna&gt;)</code></li>
-</ul>
+<p><strong>Uwaga:</strong> Przypisany wzorzec indeksów tworzy nowy obiekt z wybranych elementów (także przy obiektach mutowalnych)!</p>
 
 </div>
 </div>
@@ -13803,13 +13849,9 @@ True or False = True
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;abc&#39;</span>
-<span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;a&#39;</span>
-<span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;bc&#39;</span>
-<span class="n">d</span> <span class="o">=</span> <span class="n">b</span><span class="o">+</span><span class="n">c</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">d</span><span class="p">,</span> <span class="n">a</span> <span class="ow">is</span> <span class="n">d</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;var: </span><span class="si">{var}</span><span class="s1">, id: {id(var)}&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;element: </span><span class="si">{var[1]}</span><span class="s1">, id: {id(var[1])}&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;slice: </span><span class="si">{var[1:2]}</span><span class="s1">, id: {id(var[1:2])}&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13826,9 +13868,9 @@ True or False = True
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>abc 139776662119856
-abc 139776427356464
-True False
+<pre>var: [0, 1, &#39;a&#39;, 5, 6, 7, 8, &#39;b&#39;, &#39;c&#39;], id: 139880177271024
+element: 1, id: 93942940186272
+slice: [1], id: 139880178495152
 </pre>
 </div>
 </div>
@@ -13840,9 +13882,7 @@ True False
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Róznica pomiędzy <code>and</code> i <code>&amp;</code>:</li>
-</ul>
+<p>Oznacza to, że możemy dostać pusty wycinek źle zadając warunki, ale także wychodząc poza zakres.</p>
 
 </div>
 </div>
@@ -13852,10 +13892,9 @@ True False
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;0 and 1 =&#39;</span><span class="p">,</span> <span class="mi">0</span> <span class="ow">and</span> <span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;13 and 11 =&#39;</span><span class="p">,</span> <span class="mi">13</span> <span class="ow">and</span> <span class="mi">11</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1 &amp; 0 =&#39;</span><span class="p">,</span> <span class="mi">1</span> <span class="o">&amp;</span> <span class="mi">0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;13 &amp; 11 =&#39;</span><span class="p">,</span> <span class="mi">13</span> <span class="o">&amp;</span> <span class="mi">11</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">var</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># Zakres wzrorca nie odpowiada kolejności</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">var</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span>  <span class="c1"># Zakres wzrorca nie odpowiada kolejności</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">var</span><span class="p">[</span><span class="mi">11</span><span class="p">:])</span>  <span class="c1"># Wzorzec poza rozmiarem sekwencji</span>
 </pre></div>
 
     </div>
@@ -13872,10 +13911,9 @@ True False
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0 and 1 = 0
-13 and 11 = 11
-1 &amp; 0 = 0
-13 &amp; 11 = 9
+<pre>[]
+[]
+[]
 </pre>
 </div>
 </div>
@@ -13887,33 +13925,17 @@ True False
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Kolejność wykonywania można sprawdzić tutaj:
-<a href="htps://docs.python.org/3/reference/expressions.html#operator-precedence">htps://docs.python.org/3/reference/expressions.html#operator-precedence</a></li>
-</ul>
+<p><strong>Uwaga 2</strong>: Nie można podać listy indeksów jawnie.</p>
 
 </div>
 </div>
-</div></section><section>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wynik</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">!=</span> <span class="mi">4</span> <span class="ow">and</span> <span class="s1">&#39;a&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s1">&#39;Andrzej&#39;</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">wynik</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">var</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -13929,9 +13951,14 @@ True False
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>True
-</pre>
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-16-30e6035cb305&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>var<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">,</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">,</span><span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">]</span>
+
+<span class="ansi-red-fg">TypeError</span>: list indices must be integers or slices, not tuple</pre>
 </div>
 </div>
 
@@ -13942,65 +13969,16 @@ True False
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Komunikacja-w-trakcie-wykonania-programu">Komunikacja w trakcie wykonania programu<a class="anchor-link" href="#Komunikacja-w-trakcie-wykonania-programu">&#182;</a></h1>
+<h1 id="Zbiory">Zbiory<a class="anchor-link" href="#Zbiory">&#182;</a></h1>
 </div>
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Do wypisania ciągu znaków służy funkcja <code>print</code>:</p>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>%%bash
-<span class="nb">echo</span> <span class="s1">&#39;print(&quot;Hello world&quot;)&#39;</span> &gt; ex_2.py
-<span class="nb">echo</span> <span class="s1">&#39;&quot;Elo werld&quot;&#39;</span> &gt;&gt; ex_2.py
-python ex_2.py
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Hello world
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Do pobrania danych służy funkcja <code>input</code>:<br/>
-<code>nazwisko = input("Podaj nazwisko: ")</code></p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Pobrana wartość będzie typu <code>str</code>. Jeżeli chcemy korzystać z wartości liczbowej konieczne będzie rzutowanie:</p>
+<p><code>set</code> jest kolekcją (nie sekwencją) wartości <strong>bez powtórzeń</strong>. <br>
+Oznacza to, że dodanie występującej w zbiorze wartości nie zmieni stanu (liczby elementów) zbioru. <br>
+Zrzutowanie kolekcji z powtórzeniami na zbiór spowoduje utratę informacji o kolejności i liczbie wystąpień elementu.</p>
 
 </div>
 </div>
@@ -14010,8 +13988,8 @@ python ex_2.py
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">val</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
-<span class="mi">1</span> <span class="o">+</span> <span class="n">val</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">var</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># Pusty zbiór</span>
+<span class="nb">print</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">})</span>  <span class="c1"># Usunięte są powtórzone wartości</span>
 </pre></div>
 
     </div>
@@ -14028,25 +14006,8 @@ python ex_2.py
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>2
+<pre>{1, 2, 3, 4}
 </pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-19-bc74a7868ff7&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> val <span class="ansi-blue-fg">=</span> input<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span><span class="ansi-cyan-fg">1</span> <span class="ansi-blue-fg">+</span> val
-
-<span class="ansi-red-fg">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;</pre>
 </div>
 </div>
 
@@ -14056,11 +14017,13 @@ python ex_2.py
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">val</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
-<span class="mi">1</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">var</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;var: </span><span class="si">{var}</span><span class="s1">, length: {len(var)}&#39;</span><span class="p">)</span>
+<span class="n">s_var</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>  <span class="c1"># Rzutowanie stratne</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;var: </span><span class="si">{s_var}</span><span class="s1">, length: {len(s_var)}&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14077,82 +14040,37 @@ python ex_2.py
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>2
+<pre>var: [1, 2, 3, 1, 3, 3, 3, 3], length: 8
+var: {1, 2, 3}, length: 3
 </pre>
 </div>
 </div>
 
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[21]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>3</pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
-</div></div></section></section><section><section>
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Instrukcje-warunkowe-i-p&#281;tle-cz.-1">Instrukcje warunkowe i p&#281;tle cz. 1<a class="anchor-link" href="#Instrukcje-warunkowe-i-p&#281;tle-cz.-1">&#182;</a></h1>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Blok-kodu">Blok kodu<a class="anchor-link" href="#Blok-kodu">&#182;</a></h1><ul>
-<li>Instrukcje poprzedzone takim samym wcięciem z białych znaków (tabulacji lub spacji) zawierają się w jednym bloku (dotyczą jednego zbioru operacji np. w pętli).</li>
-<li><strong>Ważne jest aby wcięcie było zawsze konsekwentnie stosowane (rodzaj/liczba znaków)</strong>.</li>
-<li>PEP 8 (<a href="https://www.python.org/dev/peps/pep-0008/">https://www.python.org/dev/peps/pep-0008/</a>) sugeruje używanie <br/>
-<strong>4 spacji</strong> jako pojedynczego wcięcia.</li>
+<p>Zbiory mają zaimplementowane operacje na zbiorach takie jak:</p>
+<ul>
+<li>zawieranie elementów: <code>in</code>, <code>not in</code>, </li>
+<li>zawieranie zbiorów: <code>isdisjoint</code>, <code>&lt;=</code> (<code>issubset</code>), <code>&lt;</code>, <code>&gt;=</code> (<code>issuperset</code>), <code>&gt;</code>,</li>
 </ul>
 
 </div>
 </div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>PEP stands for Python Enhancement Proposal. A PEP is a design document providing information to the Python community, or describing a new feature for Python or its processes or environment. The PEP should provide a concise technical specification of the feature and a rationale for the feature.</p>
-</blockquote>
-<p>PEP 1, <a href="https://www.python.org/dev/peps/pep-0001/#id34">https://www.python.org/dev/peps/pep-0001/#id34</a></p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">script</span> bash
-echo &#39;if True:
-	print(&quot;Hello world&quot;)
-        print(&quot;Again hello world&quot;)
-&#39; &gt; ex_3.py
-</pre></div>
-
-    </div>
-</div>
-</div>
-
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>%%bash 
-python ex_3.py
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">set_a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;3 in set_a: {3 in set_a}&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span> <span class="o">&lt;=</span> <span class="n">set_a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">set_a</span> <span class="o">&lt;</span> <span class="n">set_a</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14168,11 +14086,174 @@ python ex_3.py
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>  File &#34;ex_3.py&#34;, line 3
-    print(&#34;Again hello world&#34;)
-                             ^
-TabError: inconsistent use of tabs and spaces in indentation
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>3 in set_a: False
+True
+False
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>tworzenie zbiorów: <code>|</code> (<code>union</code>), <code>&amp;</code> (<code>intersection</code>), <code>-</code> (<code>difference</code>), <code>^</code> (<code>symetric_difference</code>),</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">set_b</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Suma zbiorów: {set_a | set_b}&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Część wyłączna: {set_a.symmetric_difference(set_b)}&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Suma zbiorów: {1, 2, 3, &#39;c&#39;, &#39;b&#39;, &#39;a&#39;}
+Część wyłączna: {3, &#39;a&#39;, &#39;c&#39;, &#39;b&#39;}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Uwaga</strong>: W celu poprawienia czytelności kodu przeładowane operatory wymagają, aby wszystkie argumenty działania miały typ <code>set</code>/<code>frozenset</code>. W przypadku korzystania z metod, nie ma potrzeby rzutowania kolekcji.</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">set_a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">set_a</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;c&#39;, &#39;b&#39;, &#39;a&#39;}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>set</code> od <code>frozenset</code> różni się możliwością edycji. <br>
+<code>set</code> ma w związku z tym metody edycji obiektu:</p>
+<ul>
+<li>aktualizacji zbioru np. <code>&amp;=</code>, (<code>intersection_update</code>)</li>
+<li>zmiany liczby elementów np. <code>remove</code> i <code>discard</code></li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">set_a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">set_a</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="s1">&#39;dach&#39;</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{1, 2, &#39;h&#39;, &#39;c&#39;, &#39;b&#39;, &#39;d&#39;, &#39;a&#39;}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">set_a</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="n">set_a</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>  <span class="c1"># Nie podnosi błędu, jeżeli element nie występuje</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">set_a</span><span class="p">)</span>
+<span class="n">set_a</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">set_a</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>  <span class="c1"># Ta metoda już tak</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{1, 2, &#39;c&#39;, &#39;b&#39;}
 </pre>
 </div>
 </div>
@@ -14185,41 +14266,85 @@ TabError: inconsistent use of tabs and spaces in indentation
 <div class="output_subarea output_text output_error">
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">CalledProcessError</span>                        Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-25-32ab782abc06&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>get_ipython<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>run_cell_magic<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;bash&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;python ex_3.py\n&#39;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-red-fg">KeyError</span>                                  Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-25-1b759da0335c&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> print<span class="ansi-blue-fg">(</span>set_a<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span> set_a<span class="ansi-blue-fg">.</span>remove<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;b&#39;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">----&gt; 5</span><span class="ansi-red-fg"> </span>set_a<span class="ansi-blue-fg">.</span>remove<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;b&#39;</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># Ta metoda już tak</span>
 
-<span class="ansi-green-fg">~/.virtualenvs/pw_labs/lib/python3.7/site-packages/IPython/core/interactiveshell.py</span> in <span class="ansi-cyan-fg">run_cell_magic</span><span class="ansi-blue-fg">(self, magic_name, line, cell)</span>
-<span class="ansi-green-intense-fg ansi-bold">   2357</span>             <span class="ansi-green-fg">with</span> self<span class="ansi-blue-fg">.</span>builtin_trap<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">   2358</span>                 args <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">(</span>magic_arg_s<span class="ansi-blue-fg">,</span> cell<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">-&gt; 2359</span><span class="ansi-red-fg">                 </span>result <span class="ansi-blue-fg">=</span> fn<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   2360</span>             <span class="ansi-green-fg">return</span> result
-<span class="ansi-green-intense-fg ansi-bold">   2361</span> 
+<span class="ansi-red-fg">KeyError</span>: &#39;b&#39;</pre>
+</div>
+</div>
 
-<span class="ansi-green-fg">~/.virtualenvs/pw_labs/lib/python3.7/site-packages/IPython/core/magics/script.py</span> in <span class="ansi-cyan-fg">named_script_magic</span><span class="ansi-blue-fg">(line, cell)</span>
-<span class="ansi-green-intense-fg ansi-bold">    140</span>             <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    141</span>                 line <span class="ansi-blue-fg">=</span> script
-<span class="ansi-green-fg">--&gt; 142</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>shebang<span class="ansi-blue-fg">(</span>line<span class="ansi-blue-fg">,</span> cell<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    143</span> 
-<span class="ansi-green-intense-fg ansi-bold">    144</span>         <span class="ansi-red-fg"># write a basic docstring:</span>
+</div>
+</div>
 
-<span class="ansi-green-fg">&lt;/home/tutor/.virtualenvs/pw_labs/lib/python3.7/site-packages/decorator.py:decorator-gen-110&gt;</span> in <span class="ansi-cyan-fg">shebang</span><span class="ansi-blue-fg">(self, line, cell)</span>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Obiekty edytowalne (<em>mutable</em>) mają swój stan (dla typów podstawowych jest to zbiór elementów i ew. ich kolejność).<br>
+W związku z tym dodawanie elementów zminenia stan obiektu, a nie tworzy nowy obiekt (jak w przypadku typów nieedytowalnych, np. <code>str</code>).</p>
 
-<span class="ansi-green-fg">~/.virtualenvs/pw_labs/lib/python3.7/site-packages/IPython/core/magic.py</span> in <span class="ansi-cyan-fg">&lt;lambda&gt;</span><span class="ansi-blue-fg">(f, *a, **k)</span>
-<span class="ansi-green-intense-fg ansi-bold">    185</span>     <span class="ansi-red-fg"># but it&#39;s overkill for just that one bit of state.</span>
-<span class="ansi-green-intense-fg ansi-bold">    186</span>     <span class="ansi-green-fg">def</span> magic_deco<span class="ansi-blue-fg">(</span>arg<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 187</span><span class="ansi-red-fg">         </span>call <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">lambda</span> f<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">*</span>a<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>k<span class="ansi-blue-fg">:</span> f<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>a<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>k<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    188</span> 
-<span class="ansi-green-intense-fg ansi-bold">    189</span>         <span class="ansi-green-fg">if</span> callable<span class="ansi-blue-fg">(</span>arg<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Zbiór przechowuje tylko wartości unikatowe. Unikatowość obiektu wyznaczana jest na podstawie funckji haszującej (funkcji 1-1 w zakresie jej używania).<br>
+W związku z tym <strong>nie jest możliwe dodawanie obiektów edytowalnych do zbioru</strong>, gdyż takie obiekty nie mogą być wejściem funkcji haszującej (bo trzeba by wiązać obiekt z jego stanem (jak w obiektach nieedytowalnych) albo ich zmieniajacy się w czasie stan mógł przekłamać wartość funkcji haszującej).</p>
 
-<span class="ansi-green-fg">~/.virtualenvs/pw_labs/lib/python3.7/site-packages/IPython/core/magics/script.py</span> in <span class="ansi-cyan-fg">shebang</span><span class="ansi-blue-fg">(self, line, cell)</span>
-<span class="ansi-green-intense-fg ansi-bold">    243</span>             sys<span class="ansi-blue-fg">.</span>stderr<span class="ansi-blue-fg">.</span>flush<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    244</span>         <span class="ansi-green-fg">if</span> args<span class="ansi-blue-fg">.</span>raise_error <span class="ansi-green-fg">and</span> p<span class="ansi-blue-fg">.</span>returncode<span class="ansi-blue-fg">!=</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 245</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">raise</span> CalledProcessError<span class="ansi-blue-fg">(</span>p<span class="ansi-blue-fg">.</span>returncode<span class="ansi-blue-fg">,</span> cell<span class="ansi-blue-fg">,</span> output<span class="ansi-blue-fg">=</span>out<span class="ansi-blue-fg">,</span> stderr<span class="ansi-blue-fg">=</span>err<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    246</span> 
-<span class="ansi-green-intense-fg ansi-bold">    247</span>     <span class="ansi-green-fg">def</span> _run_script<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> p<span class="ansi-blue-fg">,</span> cell<span class="ansi-blue-fg">,</span> to_close<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="S&#322;owniki">S&#322;owniki<a class="anchor-link" href="#S&#322;owniki">&#182;</a></h1>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Słownik (<em>dict</em>, <em>hash map</em>) to rozszerzenie funkcjonalności zbioru przez możliwość sparowania unikatowej wartości z jakąś inną.<br>
+Innymi słowy słownik to zbiór par klucz-wartość, w której klucze są unikatowe, wartości natomiast już nie muszą.</p>
 
-<span class="ansi-red-fg">CalledProcessError</span>: Command &#39;b&#39;python ex_3.py\n&#39;&#39; returned non-zero exit status 1.</pre>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pair</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">var_dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>  <span class="c1"># Klucz i wartość są nieedytowaln3</span>
+    <span class="mi">1</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>  <span class="c1"># Wartość może być &quot;pusta&quot;</span>
+    <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>  <span class="c1"># Wartości nie muszą być unikatowe</span>
+    <span class="n">pair</span><span class="p">:</span> <span class="n">pair</span><span class="p">,</span> <span class="c1"># W definicji można używać zmiennych</span>
+<span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">var_dict</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;a&#39;: 1, 1: None, &#39;b&#39;: 1, (1, 2): (1, 2)}
+</pre>
 </div>
 </div>
 
@@ -14229,28 +14354,14 @@ TabError: inconsistent use of tabs and spaces in indentation
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">script</span> bash
-echo &#39;if True:
-    print(&quot;Hello world&quot;)
-    print(&quot;Again hello world&quot;)
-&#39; &gt; ex_4.py
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 <div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>%%bash 
-python ex_4.py
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;var_dict[&quot;a&quot;]: </span><span class="si">{var_dict[&quot;a&quot;]}</span><span class="s1">&#39;</span><span class="p">)</span>  <span class="c1"># Pobieranie wartości ze słownika</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;c in var_dict: {&quot;c&quot; in var_dict}&#39;</span><span class="p">)</span>
+<span class="n">var_dict</span><span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;lala&quot;</span>  <span class="c1"># Zapisywanie do słownika nowej wartości</span>
+<span class="n">var_dict</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">5.</span><span class="o">+</span><span class="mi">1</span><span class="n">j</span>  <span class="c1"># Zapis może również nadpisać wartość</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;var_dict: </span><span class="si">{var_dict}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14267,8 +14378,9 @@ python ex_4.py
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Hello world
-Again hello world
+<pre>var_dict[&#34;a&#34;]: 1
+c in var_dict: False
+var_dict: {&#39;a&#39;: (5+1j), 1: None, &#39;b&#39;: 1, (1, 2): (1, 2), &#39;c&#39;: &#39;lala&#39;}
 </pre>
 </div>
 </div>
@@ -14276,26 +14388,12 @@ Again hello world
 </div>
 </div>
 
-</div></div></section></section><section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Truthy-i-Falsy"><em>Truthy</em> i <em>Falsy</em><a class="anchor-link" href="#Truthy-i-Falsy">&#182;</a></h1><p>Każdy obiekt może zostać sprawdzony na swoja wartość logiczną (<code>if</code>, <code>while</code>, operacje logiczne).<br/>
-Domyślnie każdy obiekt ma wartość <code>True</code> dopóki nie ma metody <code>__bool__()</code> zwracającej <code>False</code> albo <code>__len__()</code> zwracającej 0.<br/>
-Typy wbudowane rzutowalne na <code>False</code>:</p>
-<ul>
-<li>stałe <code>None</code> i <code>False</code></li>
-<li>zero typów numerycznych: <code>0, 0.0, 0j, Decimal(0), Fraction(0, 1)</code></li>
-<li>puste sekwencje i kolekcje: <code>'', (), [], {}, set(), range(0)</code></li>
-</ul>
+<p>Słownik jest iterowalny, jednak domyślnie iterujemy po kluczach.</p>
 
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Instrukcja-warunkowa-if">Instrukcja warunkowa <code>if</code><a class="anchor-link" href="#Instrukcja-warunkowa-if">&#182;</a></h1>
 </div>
 </div>
 </div><div class="fragment">
@@ -14304,11 +14402,8 @@ Typy wbudowane rzutowalne na <code>False</code>:</p>
 <div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">val</span> <span class="o">=</span> <span class="mi">9</span>
-<span class="k">if</span> <span class="n">val</span> <span class="o">%</span> <span class="mi">2</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nieparzysta&#39;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Parzysta&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">var_dict</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14325,7 +14420,11 @@ Typy wbudowane rzutowalne na <code>False</code>:</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Nieparzysta
+<pre>a
+1
+b
+(1, 2)
+c
 </pre>
 </div>
 </div>
@@ -14337,7 +14436,7 @@ Typy wbudowane rzutowalne na <code>False</code>:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Wersja jednolinijkowa:</p>
+<p>W celu pozyskania zbioru wartości musimy skorzystać z odpowiedniej metody: <code>&lt;dict&gt;.values()</code>. Dla kluczy istnieje analogiczna metoda <code>&lt;dict&gt;.keys()</code>, dla par klucz-wartość (zwracanych jako krotka) <code>&lt;dict&gt;.keys()</code>.</p>
 
 </div>
 </div>
@@ -14347,8 +14446,8 @@ Typy wbudowane rzutowalne na <code>False</code>:</p>
 <div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">is_even</span> <span class="o">=</span> <span class="s1">&#39;Nieparzysta&#39;</span> <span class="k">if</span> <span class="n">val</span> <span class="o">%</span> <span class="mi">2</span> <span class="k">else</span> <span class="s1">&#39;Parzysta&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">is_even</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">var_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14365,54 +14464,11 @@ Typy wbudowane rzutowalne na <code>False</code>:</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Nieparzysta
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>W Pythonie nie ma konstrukcji <code>switch</code>, realizuje się ją za pomocą <code>if</code>-<code>elif</code>:</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">option</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="k">if</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Alternatywa 1&#39;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Alternatywa 2&#39;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Alternatywa 3&#39;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Czwartej alternatywy nie ma&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Czwartej alternatywy nie ma
+<pre>a (5+1j)
+1 None
+b 1
+(1, 2) (1, 2)
+c lala
 </pre>
 </div>
 </div>
@@ -14424,27 +14480,26 @@ Typy wbudowane rzutowalne na <code>False</code>:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="P&#281;tla-while">P&#281;tla <code>while</code><a class="anchor-link" href="#P&#281;tla-while">&#182;</a></h1>
+<h1 id="Wyra&#380;enia-kolekcji-(comprehension)">Wyra&#380;enia kolekcji (<em>comprehension</em>)<a class="anchor-link" href="#Wyra&#380;enia-kolekcji-(comprehension)">&#182;</a></h1>
 </div>
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Pętla <code>while</code> wykonuje się tak długo jak długo spełniony jest warunek podany w pętli. Oznacza to, że może nie wykonać się wcale, może wykonać się wiele* razy.</p>
+<p>Możliwe jest szybkie (jednowyrażeniowe) definiwanie kolekcji (listy lub słownika) na podstawie innej iterabli (jednej lub więcej).<br>
+Zapis taki poza zwięzłym zapisem jest także wydajny czasowo (liczba operacji potrzebnych do stworzenia kolekcji jest "magicznie" redukowana.</p>
 
 </div>
 </div>
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ii</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="k">while</span> <span class="n">ii</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span>
-    <span class="n">ii</span> <span class="o">+=</span> <span class="mi">1</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">ii</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">squares</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14461,8 +14516,7 @@ Typy wbudowane rzutowalne na <code>False</code>:</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1
-2
+<pre>[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 </pre>
 </div>
 </div>
@@ -14471,26 +14525,64 @@ Typy wbudowane rzutowalne na <code>False</code>:</p>
 </div>
 
 </div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>* <em>Nieskończenie</em> wiele</p>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">({</span>
+    <span class="n">key</span><span class="p">:</span> <span class="n">val</span> 
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> 
+    <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="kc">None</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="o">!=</span> <span class="s1">&#39;a&#39;</span>
+<span class="p">})</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;b&#39;: 3, &#39;c&#39;: None}
+</pre>
+</div>
+</div>
 
 </div>
 </div>
-</div></div></section><section>
+
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>W celu sterowania przebiegiem pętli możemy wykorzystywać wyrażenia <code>continue</code> i <code>break</code></p>
-
+<h1 id="Funkcje">Funkcje<a class="anchor-link" href="#Funkcje">&#182;</a></h1>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Funkcje">Funkcje<a class="anchor-link" href="#Funkcje">&#182;</a></h1>
 </div>
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>continue</code> przerywa działa nie pętli i przenosi do ponownego sprawdzenia warunku.</p>
+<p>Definicja funkcji składa się z:</p>
+<ul>
+<li>nagłówka - <code>def &lt;nazwa funkcji&gt; (&lt;parametry&gt;):</code></li>
+<li>ciała - blok kodu</li>
+</ul>
 
 </div>
 </div>
@@ -14500,36 +14592,11 @@ Typy wbudowane rzutowalne na <code>False</code>:</p>
 <div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ii</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="k">while</span> <span class="n">ii</span><span class="p">:</span>
-    <span class="n">ii</span> <span class="o">-=</span> <span class="mi">1</span>
-    <span class="k">if</span> <span class="n">ii</span><span class="o">%</span><span class="k">2</span>:
-        <span class="k">continue</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;end&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fun_1</span><span class="p">():</span>
+    <span class="k">pass</span>  <span class="c1"># Wyrażenie imitujące blok kodu</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>2
-0
-end
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -14537,7 +14604,7 @@ end
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>break</code> przerywa działanie pętli.</p>
+<p>Defninicja funkcji jest obiektem dostępnym w przestrzeni nazw (zmienną) pod nazwą funkcji.</p>
 
 </div>
 </div>
@@ -14547,13 +14614,8 @@ end
 <div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ii</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="k">while</span> <span class="n">ii</span><span class="p">:</span>
-    <span class="n">ii</span> <span class="o">-=</span> <span class="mi">1</span>
-    <span class="k">if</span> <span class="n">ii</span><span class="o">%</span><span class="k">2</span>:
-        <span class="k">break</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;end&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">fun_1</span><span class="p">)</span>  <span class="c1"># Instancja funckji</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fun_1</span><span class="p">())</span>  <span class="c1"># Wywołanie funkcji</span>
 </pre></div>
 
     </div>
@@ -14570,8 +14632,8 @@ end
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>2
-end
+<pre>&lt;function fun_1 at 0x7f386446ab90&gt;
+None
 </pre>
 </div>
 </div>
@@ -14579,34 +14641,11 @@ end
 </div>
 </div>
 
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Typy-danych-cz.-2">Typy danych cz. 2<a class="anchor-link" href="#Typy-danych-cz.-2">&#182;</a></h1>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Ci&#261;g-znak&#243;w-(string)">Ci&#261;g znak&#243;w (<code>string</code>)<a class="anchor-link" href="#Ci&#261;g-znak&#243;w-(string)">&#182;</a></h1>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>W Pythonie istnieją tylko ciągi znaków, nie ma oddzielnego typu dla pojedynczego znaku.</p>
-
-</div>
-</div>
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>W celu zapisania stringu możemy użyć cudzysłowu <code>"</code> lub apostrofu <code>'</code>.<br/>
-Domyślnie ciąg znaków obsługuje <em>escapowanie</em> np. <code>\t</code> - tabulacja, <code>\n\</code> nowa linia itd.:</p>
+<p>Ponieważ jest zwykłą zmienną możemy nadać jej alias.</p>
 
 </div>
 </div>
@@ -14616,7 +14655,10 @@ Domyślnie ciąg znaków obsługuje <em>escapowanie</em> np. <code>\t</code> - t
 <div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A</span><span class="se">\n</span><span class="s1">b</span><span class="se">\t</span><span class="s1">c&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">foo</span> <span class="o">=</span> <span class="n">fun_1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">foo</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">foo</span><span class="p">())</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">foo</span> <span class="ow">is</span> <span class="n">fun_1</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14633,8 +14675,9 @@ Domyślnie ciąg znaków obsługuje <em>escapowanie</em> np. <code>\t</code> - t
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>A
-b	c
+<pre>&lt;function fun_1 at 0x7f386446ab90&gt;
+None
+True
 </pre>
 </div>
 </div>
@@ -14646,58 +14689,51 @@ b	c
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Jeżeli chcemy użyć cudzysłowu w <code>stringu</code> otwartym cudzysłowem również możemy go <em>wescape'ować</em> lub używać znaków otwarcia ciągu naprzemiennie:</p>
-
+<h1 id="Warto&#347;&#263;-zwracana">Warto&#347;&#263; zwracana<a class="anchor-link" href="#Warto&#347;&#263;-zwracana">&#182;</a></h1>
 </div>
 </div>
 </div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Wywołanie funkcji możemy zawsze przypisać do zmiennej. <br>
+W przypadku, gdy funkcja nie ma zdefiniowanej zwracanej wartości zwracany jest <code>None</code>.</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Wartość zwracana przez funckję definiowana jest przez wyrażenie <code>return</code>.<br>
+Wszystkie linijki w bloku kodu po <code>return</code> są nieosiągalne, ale wyrażeń <code>return</code> w funkcji może być wiele (w różnych blokach kodu).</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;McDonald</span><span class="se">\&#39;</span><span class="s1">s&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;McDonald&#39;s&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fun_2</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="k">return</span> <span class="n">string</span> <span class="o">*</span> <span class="n">num</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>McDonald&#39;s
-McDonald&#39;s
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>W celu wyłączenia <em>escape'owania</em> znaków możeymy użyć opcji <code>raw string</code>. Uzyskujemy to poprzez poprzedzenie ciągu znakowego literą <code>r</code>:</p>
-
-</div>
-</div>
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;McDonald</span><span class="se">\&#39;</span><span class="s1">s&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">fun_2</span><span class="p">(</span><span class="s1">&#39;aa&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fun_2</span><span class="p">(</span><span class="s1">&#39;aa&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -14714,7 +14750,8 @@ McDonald&#39;s
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>McDonald\&#39;s
+<pre>aaaa
+None
 </pre>
 </div>
 </div>
@@ -14726,7 +14763,7 @@ McDonald&#39;s
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Wielolinijkowy ciąg znakowy uzyskuje się poprzez potrojenie znaku otwierającego:</p>
+<p>Po wyrażeniu <code>return</code> możemy podać jedną lub wiele zwracanych wartości (wówczas opakowywane są w krotkę).</p>
 
 </div>
 </div>
@@ -14736,70 +14773,22 @@ McDonald&#39;s
 <div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">multiline_string</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">The good,</span>
-<span class="s2">    the bad,</span>
-<span class="s2"> and the ugly.</span>
-<span class="s2">&quot;&quot;&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">multiline_string</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fun_3</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">string</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">string</span> <span class="o">*</span> <span class="n">num</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>
-The good,
-    the bad,
- and the ugly.
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>^ Zachowane jest formatowanie za pomocą białych znaków (w tym dodatkowe linie na początku i końcu ciągu).</p>
-
-</div>
-</div>
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Następujące po sobie stringi są "sklejane" w jeden. <br/>
-W celu przełamania długiej linii możemy otoczyć ciąg nawiasami i pisać fragmenty ciągu jeden pod drugim.</p>
-
-</div>
-</div>
-</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;aa&quot;</span> <span class="s2">&quot;bb&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a: &#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span>
-    <span class="s2">&quot;bardzo&quot;</span>
-    <span class="s2">&quot;długa&quot;</span>
-    <span class="s2">&quot;linia&quot;</span>
-<span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">fun_2</span><span class="p">(</span><span class="s1">&#39;aa&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fun_2</span><span class="p">(</span><span class="s1">&#39;aa&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -14816,8 +14805,8 @@ W celu przełamania długiej linii możemy otoczyć ciąg nawiasami i pisać fra
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>a:  aabb
-bardzodługalinia
+<pre>aaaa
+None
 </pre>
 </div>
 </div>
@@ -14829,14 +14818,27 @@ bardzodługalinia
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Operacje-na-ci&#261;gach-znak&#243;w">Operacje na ci&#261;gach znak&#243;w<a class="anchor-link" href="#Operacje-na-ci&#261;gach-znak&#243;w">&#182;</a></h2>
+<h1 id="Parametry">Parametry<a class="anchor-link" href="#Parametry">&#182;</a></h1>
 </div>
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Niektóre operacje arytmetyczne:</p>
+<p>Funckcja może przyjmować od żadnego do nieskończenie wielu* parametrów.<br>
+Wszystkie podane parametry dostępne są w przestrzeni funkcji.</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Parametry podaje się w kolejności:</p>
+<ul>
+<li>parametry pozycyjne - te argumenty muszą być podane przy wywołaniu funkcji,</li>
+<li>parametry słownikowe - te argumenty są opcjonalne, gdyz mają zdefiniowaną wartość domyślną.</li>
+</ul>
 
 </div>
 </div>
@@ -14846,330 +14848,42 @@ bardzodługalinia
 <div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span> <span class="o">+</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;la &quot;</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span> <span class="o">-</span> <span class="s2">&quot;o&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fun_4</span><span class="p">(</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span>  <span class="c1"># Parametry pozycyjne </span>
+    <span class="n">key_1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">key_2</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>  <span class="c1"># Parametry słownikowe </span>
+<span class="p">):</span>
+    <span class="k">pass</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>foobar
-la la la la 
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-41-7245dffc9352&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;foo&#34;</span> <span class="ansi-blue-fg">+</span> <span class="ansi-blue-fg">&#34;bar&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;la &#34;</span> <span class="ansi-blue-fg">*</span> <span class="ansi-cyan-fg">4</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;foo&#34;</span> <span class="ansi-blue-fg">-</span> <span class="ansi-blue-fg">&#34;o&#34;</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">TypeError</span>: unsupported operand type(s) for -: &#39;str&#39; and &#39;str&#39;</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Indeksowanie, ale bez modyfikacji (<code>str</code> jest typem niezmiennym):</p>
-
-</div>
-</div>
-</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="s2">&quot;abc&quot;</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;z&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fun_4</span><span class="p">(</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span>  <span class="c1"># Parametry pozycyjne</span>
+    <span class="n">key_1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">key_2</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>  <span class="c1"># Parametry słownikowe</span>
+<span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;a: </span><span class="si">{a}</span><span class="s1">, b: </span><span class="si">{b}</span><span class="s1">, c: </span><span class="si">{c}</span><span class="s1">&#39;</span><span class="p">)</span>  
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;key_1: </span><span class="si">{key_1}</span><span class="s1">, key_2: </span><span class="si">{key_2}</span><span class="s1">&#39;</span><span class="p">)</span>  
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>b
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-42-c318359ffd88&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;abc&#34;</span><span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span><span class="ansi-blue-fg">&#34;abc&#34;</span><span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">&#39;z&#39;</span>
-
-<span class="ansi-red-fg">TypeError</span>: &#39;str&#39; object does not support item assignment</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Formatowanie:</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">val</span> <span class="o">=</span> <span class="s2">&quot;jedynka&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nr </span><span class="si">%d</span><span class="s2"> to </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">val</span><span class="p">))</span>  <span class="c1"># C-style</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nr </span><span class="si">{}</span><span class="s2"> to </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">val</span><span class="p">))</span>  <span class="c1"># metoda obiektu str</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Nr </span><span class="si">{num}</span><span class="s2"> to </span><span class="si">{val}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># f-string, dostępny dopiero od wersji 3.6</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Krotki-(tuple)">Krotki (tuple)<a class="anchor-link" href="#Krotki-(tuple)">&#182;</a></h1>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Krotka to <em>kolekcja</em> (zbiór więcej niż jednej wartości), pozwalająca na dostęp do wartości za pomocą ineksów (więc <em>sekwencja</em>).</p>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;2&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Podobnie jak ciąg znaków jest nieedytowalna.</p>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Definicja krotki nie wymaga nawiasów, dlatego warto uważać na swobodne przecinki!</p>
-
-</div>
-</div>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> 
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;a: {type(a)}, b: {type(b)}&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>a: &lt;class &#39;tuple&#39;&gt;, b: &lt;class &#39;tuple&#39;&gt;
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Cecha ta jest wykorzystywana do definiowania wielu wartości jednocześnie.</p>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;aaa&#39;</span><span class="p">,</span> <span class="kc">None</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;a=</span><span class="si">{a}</span><span class="s1">, b=</span><span class="si">{b}</span><span class="s1">, c=</span><span class="si">{c}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>a=1, b=aaa, c=None
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="P&#281;tle-cz.-2">P&#281;tle cz. 2<a class="anchor-link" href="#P&#281;tle-cz.-2">&#182;</a></h1>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Iterowanie-za-pomoc&#261;-p&#281;tli-for">Iterowanie za pomoc&#261; p&#281;tli <code>for</code><a class="anchor-link" href="#Iterowanie-za-pomoc&#261;-p&#281;tli-for">&#182;</a></h1>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Pętla <code>for</code> domyślnie działa w trybie <code>for-each</code>. <br/>
-Oznacza to, że w każdym kroku pętli operujemy na jednym elemencie pętli.</p>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>1
-2
-3
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fun_4</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -15189,57 +14903,10 @@ Oznacza to, że w każdym kroku pętli operujemy na jednym elemencie pętli.</p>
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-46-32181db53ce8&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">for</span> ii <span class="ansi-green-fg">in</span> <span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span>     print<span class="ansi-blue-fg">(</span>ii<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">&lt;ipython-input-43-e4805601c8f8&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>fun_4<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
 
-<span class="ansi-red-fg">TypeError</span>: &#39;int&#39; object is not iterable</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>W pętli <code>for</code> można używać wyrażeń <code>continue</code> (przechodzi do następnego elementu kolekcji) oraz <code>break</code> (przerywa działanie pętli). <br/>
-Dodatkowo w definicji pętli można wykorzystać wyrażenie <code>else</code>. Blok kodu poprzedzony tą instrukcją wykona się tylko wtedy, gdy pętla nie zostanie przerwana.</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">elem</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">continue</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tadam!&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>3
-Tadam!
-</pre>
+<span class="ansi-red-fg">TypeError</span>: fun_4() missing 3 required positional arguments: &#39;a&#39;, &#39;b&#39;, and &#39;c&#39;</pre>
 </div>
 </div>
 
@@ -15249,15 +14916,13 @@ Tadam!
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">elem</span> <span class="o">%</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="k">break</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tadam!&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fun_4</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">fun_4</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">fun_4</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">key_1</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">fun_4</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">key_2</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -15274,364 +14939,14 @@ Tadam!
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>2
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>W przypadku użycia pętli na pustej kolekcji ciało pętli nie wykona się, ale blok <code>else</code> już tak.</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tadam!&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Tadam!
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Range">Range<a class="anchor-link" href="#Range">&#182;</a></h1>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Obiekt <code>range</code> pozwala na stworzenie zakresu liczb całkowitych (dzięki czemu nie trzeba wypisywać ich ręcznie).</p>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>0
-1
-2
-3
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><code>range</code> przyjmuje do trzech argumentów: początek (od jakiej wartości), koniec (mniejsze/większe niż) i krok .</li>
-<li>Wszystkie 3 argumenty muszą być liczbami całkowitymi.</li>
-<li>W przypadku podania tylko jednego argumentu podajemy tylko koniec.</li>
-<li>W przypadku 2 argumentów: początek i koniec.</li>
-</ul>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">):</span> <span class="nb">print</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>1
-2
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span> <span class="nb">print</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>3
-2
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Możliwe jest podanie pustego zakresu - wówczas obiekt jest pusty.</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span> <span class="nb">print</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Przy iterowaniu przydatne są jeszcze dwie inne funkcje: <code>enumerate</code> i <code>zip</code>.</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><code>enumerate</code> opakowuje każdy element w krotkę <code>(&lt;indeks&gt;, &lt;element&gt;)</code>. <br/>
-Możliwe jest zadanie początku indeksu.</p>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">var</span> <span class="o">=</span> <span class="s1">&#39;abcd&#39;</span>
-<span class="k">for</span> <span class="n">ii</span><span class="p">,</span> <span class="n">elem</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">var</span><span class="p">):</span> <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{ii}</span><span class="s1">: </span><span class="si">{elem}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>0: a
-1: b
-2: c
-3: d
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[55]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">ii</span><span class="p">,</span> <span class="n">elem</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">):</span> <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{ii}</span><span class="s1">: </span><span class="si">{elem}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>-5: a
--4: b
--3: c
--2: d
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><code>zip</code> skleja ze sobą podane kolekcje w kolekcje krotek o elementach o tych samych indeksach.<br/>
-Skleja się tak długo, jak długo z każdej kolekcji można wziać element.</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">var_1</span> <span class="o">=</span> <span class="s1">&#39;abcd&#39;</span>
-<span class="n">var_2</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">elem_1</span><span class="p">,</span> <span class="n">elem_2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">var_1</span><span class="p">,</span> <span class="n">var_2</span><span class="p">):</span> <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{elem_1}</span><span class="s1">: </span><span class="si">{elem_2}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>a: 10
-b: 8
-c: 6
-d: 4
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[57]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">var_1</span> <span class="o">=</span> <span class="s1">&#39;abcd&#39;</span>
-<span class="n">var_2</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">var_1</span><span class="p">,</span> <span class="n">var_2</span><span class="p">):</span> <span class="nb">print</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>(&#39;a&#39;, 10)
-(&#39;b&#39;, 8)
-(&#39;c&#39;, 6)
-(&#39;d&#39;, 4)
+<pre>a: 1, b: 2, c: 3
+key_1: None, key_2: 0
+a: 1, b: 2, c: 3
+key_1: 4, key_2: 5
+a: 5, b: 4, c: 3
+key_1: 2, key_2: 0
+a: 1, b: 2, c: 3
+key_1: None, key_2: 6
 </pre>
 </div>
 </div>
