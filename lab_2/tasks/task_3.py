@@ -1,15 +1,17 @@
 def unique(values):
-    """
-    Funkcja zwraca listę unikatowych wartości.
-    Utrudnienie: Funkcja zwraca unikatowe wartości w kolejności wystąpienia.
+    list = []
+    for i in values:
+        a = values.count(i)
+        if a == 1:
+            list.append(i)
+        else:
+            if i in list:
+                None
+            else:
+                list.append(i)
+        i += 1
 
-    :param values: List of values to check.
-    :type values: list
-    :return: Unique values in order of appear.
-    :rtype: list
-    """
-    pass
+    print(list)
+    return(list)
 
-
-if __name__ == "__main__":
-    assert [1, 5, 3, 6, 7, 2, 4] == unique([1, 5, 3, 5, 6, 7, 2, 1, 4, 1, 5])
+assert [1, 5, 3, 6, 7, 2, 4] == unique([1, 5, 3, 5, 6, 7, 2, 1, 4, 1, 5])
