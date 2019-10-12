@@ -1,8 +1,19 @@
 def count_letters(msg):
 
-    print(set(msg))
+    list_of_chars=list(set(msg))
+    list_of_chars.sort()
+    list_of_counts = []
+    for i in list_of_chars:
+        list_of_counts.append(msg.count(i))
+    maximum = max(list_of_counts)
+    index_max = list_of_counts.index(maximum)
 
-    print(dict(msg),0)
+    krotka = (list_of_chars[index_max],list_of_counts[index_max])
+
+    return (krotka)
+
+
+
 
 
 

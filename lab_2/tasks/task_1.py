@@ -1,4 +1,20 @@
 def counting_sort(values, _max, _min=0):
+
+    counts = [0]*_max
+    sorted_list = []
+
+    for i in values:
+        counts[i] = counts[i]+1
+    for index, elem in enumerate(counts):
+        for j in range(0, elem):
+            sorted_list.append(index)
+
+
+
+    return(sorted_list)
+
+
+
     """
     Function returns sorted list.
 

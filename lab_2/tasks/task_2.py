@@ -10,7 +10,6 @@ def stack_operation(stack_commands):
             stack.pop()
         elif (i[0] == "show_max"):
             maxima.append(max(stack))
-        print(stack)
     return(stack)
 
 
