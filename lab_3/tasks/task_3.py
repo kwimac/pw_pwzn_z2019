@@ -69,26 +69,27 @@ def parse_dates(date_str, date_format=''):
     pass
 
 
-dates = """
-Sun 10 May 2015 13:54:36 -0700
-Sun 10 May 2015 13:54:36 -0000
-Sat 02 May 2015 19:54:36 +0530
-Fri 01 May 2015 13:54:36 -0000
-"""
+if __name__ == '__main__':
+    dates = """
+    Sun 10 May 2015 13:54:36 -0700
+    Sun 10 May 2015 13:54:36 -0000
+    Sat 02 May 2015 19:54:36 +0530
+    Fri 01 May 2015 13:54:36 -0000
+    """
 
-assert sort_dates(dates) == [
-    datetime.datetime(2015, 5, 10, 20, 54, 36, tzinfo=datetime.timezone.utc),
-    datetime.datetime(2015, 5, 10, 13, 54, 36, tzinfo=datetime.timezone.utc),
-    datetime.datetime(2015, 5, 2, 14, 24, 36, tzinfo=datetime.timezone.utc),
-    datetime.datetime(2015, 5, 1, 13, 54, 36, tzinfo=datetime.timezone.utc),
-]
+    assert sort_dates(dates) == [
+        datetime.datetime(2015, 5, 10, 20, 54, 36, tzinfo=datetime.timezone.utc),
+        datetime.datetime(2015, 5, 10, 13, 54, 36, tzinfo=datetime.timezone.utc),
+        datetime.datetime(2015, 5, 2, 14, 24, 36, tzinfo=datetime.timezone.utc),
+        datetime.datetime(2015, 5, 1, 13, 54, 36, tzinfo=datetime.timezone.utc),
+    ]
 
-assert parse_dates(dates) == """2015-05-10
-\t20:54:36
-\t13:54:36
-----
-2015-05-02
-\t14:24:36
-----
-2015-05-01
-\t13:54:36"""
+    assert parse_dates(dates) == """2015-05-10
+    \t20:54:36
+    \t13:54:36
+    ----
+    2015-05-02
+    \t14:24:36
+    ----
+    2015-05-01
+    \t13:54:36"""
