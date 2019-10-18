@@ -1,5 +1,7 @@
 def parse_input(input):
     """
+    W dzisiejszych zadaniach nalezy uzywac tylko modulow wbudowanych.
+
     Splits multiline string into list of lists with integers.
 
     Napisz funkcję przymującą wielolinijkowy ciąg znaków.
@@ -11,6 +13,8 @@ def parse_input(input):
     :type input: str
     :return: list of parsed list of integers
     :rtype: list
+
+    wskazówka: skorzystac z modulu string
     """
     pass
 

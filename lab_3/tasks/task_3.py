@@ -13,7 +13,10 @@ Na 1pkt. Uzupełnij funkcję sort_dates, która przyjmuje dwa parametry:
 Zwraca listę posortowanych obiektów typu datetime w strefie czasowej UTC.
 
 Funkcje group_dates oraz format_day mają pomoc w grupowaniu kodu.
-UWAGA: Proszę ograniczyć użycie pętli do minimum.
+UWAGA: Proszę ograniczyć użycie pętli do minimum. (max 4)
+
+wskazowka: funkcje strptime, timedelta,
+
 """
 import datetime
 
