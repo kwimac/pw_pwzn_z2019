@@ -16,7 +16,22 @@ def parse_input(input):
 
     wskazówka: skorzystac z modulu string
     """
-    pass
+    temp = input.splitlines(False) # zwraca nam jako elementy listy wiersze w stringu
+
+
+    temp1 = list(filter(lambda x: x!="", temp))# wywala puste wiersze
+    print(temp1)
+    print(temp1[1].split())
+
+    temp2 = list(map(lambda x: x.split(),list(temp1))) # dla kazdego elementu listy wykonywane jest podzielenie jego wartosci na liste w miejscu spacji -- podobnie jak przy lapply w r
+    print(temp2)
+
+    #nie mamy tutaj uzyc map(map) tylko zastosowac comprehension
+    temp3 = list(map(
+        lambda y: list(map(
+            lambda x: int(x),y)),temp2)) # pierwszy map zwraca kazdy element zewnetrznej listy a drugi map mapuje dla kazdego elementu w wewnetrznym elemencie listy na inta
+
+    return (temp3)
 
 
 _input = """
