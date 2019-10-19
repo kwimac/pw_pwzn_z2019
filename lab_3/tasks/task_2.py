@@ -57,5 +57,6 @@ _input = """
 # że funkcja ma pokazywać ile jest x-ów o liczbie zliczeń podanej dla operacji nr 3.
 # W tym przypadku dla drugiej z operacji nr 3 funkcja wyrzuca ile x-ów występuje 2 razy.
 # Mamy 2 razy liczbę 6 i 2 razy liczbę 10, dlatego poprawną odpowiedzią powinno być chyba [0, 2].
+
 if __name__ == '__main__':
     assert check_frequency(_input) == [0, 2]
