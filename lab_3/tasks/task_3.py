@@ -32,7 +32,6 @@ def sort_dates(date_str, date_format=' %a %d %B %Y %H:%M:%S %z'):
     datetime_utc = list(map(lambda x: x.astimezone(datetime.timezone.utc), date_datetime))
     datetime_utc.sort(reverse=True)
 
-    print(datetime_utc)
     return (datetime_utc)
 
 
@@ -115,18 +114,6 @@ if __name__ == '__main__':
         datetime.datetime(2015, 5, 2, 14, 24, 36, tzinfo=datetime.timezone.utc),
         datetime.datetime(2015, 5, 1, 13, 54, 36, tzinfo=datetime.timezone.utc),
     ]
-
-    print(parse_dates(dates))
-    print("%%%%%%%%%%%%%%%%%%%%%%%%%")
-    print("""2015-05-10
-\t20:54:36
-\t13:54:36
-----
-2015-05-02
-\t14:24:36
-----
-2015-05-01
-\t13:54:36""")
 
 assert parse_dates(dates) == """2015-05-10
 \t20:54:36
