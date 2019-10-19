@@ -29,17 +29,32 @@ def sort_dates(date_str, date_format=''):
     :return: sorted desc list of utc datetime objects
     :rtype: list
     """
-    from datetime import datetime, timedelta
+
+    import datetime
+
 
     mod_input = dates.strip()
     listed_dates = mod_input.split('\n')
     list_without_whitespaces = list(map(lambda x: x.strip(), listed_dates))
     # print(list_without_whitespaces)
 
-    formated_list = list(map(lambda date: datetime.strptime(date,"%a %d %b %Y %H:%M:%S %z"), list_without_whitespaces))
+    timestamp_list = []
+    for date in list_without_whitespaces:
+        timestamp = datetime.datetime.strptime(date, '%a %d %b %Y %X %z').timestamp()
+        timestamp_list.append(timestamp)
+
+    result = list(
+        map(lambda x: datetime.datetime.fromtimestamp(x, tz=datetime.timezone.utc).strftime("%a %d %b %Y %H:%M:%S %z"),
+            timestamp_list))
+    # print(result)
+
+    formated_list = list(map(lambda date: datetime.datetime.strptime(date,"%a %d %b %Y %H:%M:%S %z"), result))
     formated_list.sort(reverse=True)
 
-    return(formated_list)
+    # print(formated_list)
+
+    return formated_list
+
 
 def group_dates(dates):
     """
