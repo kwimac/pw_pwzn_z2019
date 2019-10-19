@@ -12,7 +12,7 @@ Zwraca listę posortowanych obiektów typu datetime w strefie czasowej UTC.
 Funkcje group_dates oraz format_day mają pomoc w grupowaniu kodu.
 UWAGA: Proszę ograniczyć użycie pętli do minimum.
 """
-from datetime import datetime
+import datetime
 import os
 from collections import defaultdict, OrderedDict
 os.environ['TZ'] = 'Europe/London'
@@ -27,24 +27,25 @@ def sort_dates(date_str, date_format=''):
     :return: sorted desc list of utc datetime objects
     :rtype: list
     """
-    list_date = []
-    list_date = date_str.splitlines(False)
-    list_date = list(map(lambda x: x.strip(), list_date))
-    list_date = list(filter(None, list_date))
-    # print(list_date)
-    if date_format == '':
-        date_format = '%a %d %b %Y %H:%M:%S %z'
+    list_date = dates.strip()
+    listed_dates = list_date.split('\n')
+    list_no_spaces = list(map(lambda x: x.strip(), listed_dates))
+    timestamp_list = []
+    for date in list_no_spaces:
+        timestamp = datetime.datetime.strptime(date, '%a %d %b %Y %X %z').timestamp()
+        timestamp_list.append(timestamp)
 
-    sorted_list = list(map(lambda date: datetime.strptime(date, date_format), list_date))
-    #print('1')
-    #print(sorted_list)
-    sorted_list.sort(reverse=True)
-    #print('2')
-    #print(sorted_list)
-    sorted_list = list(map(lambda date: date.isoformat(), sorted_list))
-    #print('3')
-    #print(sorted_list)
-    return sorted_list
+    result = list(
+        map(lambda x: datetime.datetime.fromtimestamp(x, tz=datetime.timezone.utc).strftime("%a %d %b %Y %H:%M:%S %z"),
+            timestamp_list))
+    # print(result)
+
+    final_list = list(map(lambda date: datetime.datetime.strptime(date, "%a %d %b %Y %H:%M:%S %z"), result))
+    final_list.sort(reverse=True)
+
+    # print(final_list)
+
+    return final_list
 
 
 def group_dates(dates):
