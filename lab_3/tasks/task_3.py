@@ -83,7 +83,6 @@ def parse_dates(date_str, date_format=''):
     :rtype: str
     """
     date_dict = defaultdict(list)
-
     split_dates = date_str.split('\n')
     for date in split_dates:
         if date.strip():
@@ -96,10 +95,11 @@ def parse_dates(date_str, date_format=''):
 
     for key, times in date_dict.items():
         response_string += '\n----\n'
-        response_string += key + '\n' + '\t'
+        response_string += key + '\n' + "\t"
         response_string += '\t'.join([time for time in times])
 
     response = response_string.split('----', 1)
+    print(response[1])
     return response[1]
 
 
