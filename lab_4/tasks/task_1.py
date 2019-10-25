@@ -11,10 +11,22 @@ użyj wartość z pamięci kalkulatora. Obsłuż przypadki skrajne.
 class Calculator:
     def __init__(self):
         self.memory = None
+        self.operation_dict = {'+': self.__add__, '-': self.__sub__, '*': self.__mul__, '/': self.__divmod__}
         # Podpowiedz: użyj atrybutu do przechowywania wyniku
         # ostatniej wykonanej operacji, tak by metoda memorize przypisywała
         # wynik zapisany w tym atrybucie
         self._short_memory = None
+    def __add__(self, arg1, arg2):
+        return arg1 + arg2
+
+    def __sub__(self, arg1, arg2):
+        return arg1-arg2
+
+    def __mul__(self, arg1, arg2):
+        return arg1*arg2
+
+    def __divmod__(self, arg1, arg2):
+        return arg1/arg2
 
     def run(self, operator, arg1, arg2):
         """
@@ -29,6 +41,10 @@ class Calculator:
         :return: result of operation
         :rtype: float
         """
+        if self.operation_dict.get(operator):
+            return
+
+
         raise NotImplementedError
 
     def memorize(self):
