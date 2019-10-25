@@ -6,7 +6,11 @@ Atrybut memory ma być nienadpisywalny.
 Część 2 (1 pkt): jeżeli drugi argument działania nie jest podany (None)
 użyj wartość z pamięci kalkulatora. Obsłuż przypadki skrajne.
 """
-
+# w klasie mozemy sie odwolywac do funkcji wystepujacej ponizej
+# nazwa klasy CamelCase, funkcje wewnetrzne snake_case, zmienne globalne UPPER_CASE
+# Memory nie edytowalne, chronione
+# operatory najlepiej zdefioniowac w formie słownika
+# atrybut properties
 
 class Calculator:
     def __init__(self):
@@ -44,7 +48,7 @@ class Calculator:
         print(f"Zapamiętana wartość: {self.memory}")
 
 
-if __name__ == '__main__':
+if __name__ == '__main__': #znaczy ze dany plik został uruchomiony, wykonuj tylko ten task ktory został urouchomiony.
     calc = Calculator()
     b = calc.run('+', 1, 2)
     calc.memorize()

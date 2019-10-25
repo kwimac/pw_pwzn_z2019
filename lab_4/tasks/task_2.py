@@ -9,7 +9,8 @@ oraz metodę fabryki korzystającą z metody statycznej tworzącej nowy wektor
 z dwóch punktów.
 Wszystkie metody sprawdzają wymiar.
 """
-
+#dla wiecej niz 3 wymiary zwraca wyjatek
+#metoda statyczna zwraca tuple, fabryka zwraca wektor
 
 class Vector:
     dim = None  # Wymiar vectora

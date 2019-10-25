@@ -121,10 +121,10 @@ def parse_dates(date_str, date_format="%Y-%m-%d %H:%M:%S"):
     for key, times in date_dict.items():
         response_string += '\n----\n'
         response_string += key + '\n' + '\t'
-        response_string += '\t'.join([time for time in times])
+        response_string += ('\n' +'\t').join([time for time in times])
 
     response = response_string.split('----', 1)
-    # print(response[1])
+    print(response[1].strip())
     return response[1]
 
 
@@ -137,19 +137,19 @@ if __name__ == '__main__':
     Fri 01 May 2015 13:54:36 -0000
     """
 
-    assert sort_dates(dates) == [
-        datetime.datetime(2015, 5, 10, 20, 54, 36, tzinfo=datetime.timezone.utc),
-        datetime.datetime(2015, 5, 10, 13, 54, 36, tzinfo=datetime.timezone.utc),
-        datetime.datetime(2015, 5, 2, 14, 24, 36, tzinfo=datetime.timezone.utc),
-        datetime.datetime(2015, 5, 1, 13, 54, 36, tzinfo=datetime.timezone.utc),
-    ]
-    #
-    # assert parse_dates(dates) == """2015-05-10
-    # \t20:54:36
-    # \t13:54:36
-    # ----
-    # 2015-05-02
-    # \t14:24:36
-    # ----
-    # 2015-05-01
-    # \t13:54:36"""
+    # assert sort_dates(dates) == [
+    #     datetime.datetime(2015, 5, 10, 20, 54, 36, tzinfo=datetime.timezone.utc),
+    #     datetime.datetime(2015, 5, 10, 13, 54, 36, tzinfo=datetime.timezone.utc),
+    #     datetime.datetime(2015, 5, 2, 14, 24, 36, tzinfo=datetime.timezone.utc),
+    #     datetime.datetime(2015, 5, 1, 13, 54, 36, tzinfo=datetime.timezone.utc),
+    # ]
+
+    assert parse_dates(dates) == """2015-05-10
+    \t20:54:36
+    \t13:54:36
+    ----
+    2015-05-02
+    \t14:24:36
+    ----
+    2015-05-01
+    \t13:54:36"""
