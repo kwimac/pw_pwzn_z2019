@@ -12,16 +12,19 @@ Wszystkie metody sprawdzają wymiar. czyli zrobic na trzy wymiary dzialania, a j
 
 
 class Vector:
+
     dim = None  # Wymiar vectora
     def __init__(self, *args):
-        raise NotImplemented
+        self.coords = tuple(args)
+        print(self.coords)
+
 
     @staticmethod
     def calculate_vector(beg, end):
         """
         Calculate vector from given points
 
-        :param beg: Begging point
+        :param beg: Begging point xd
         :type beg: list, tuple
         :param end: End point
         :type end: list, tuple
