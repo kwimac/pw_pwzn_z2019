@@ -5,13 +5,14 @@ oraz definiujące jej metody:
     - Rectangle powinien mieć dwa atrybuty odpowiadające bokom (a i b)
     - Klasa Square powinna dziedziczyć z Rectangle.
     - Circle ma posiadać tylko atrybut r (radius).
-- Przekształć metody we własności (properties).
+- Przekształć metody area i perimeter we własności (properties).
 ---------
 Na (2 pkt.):
 - Zwiąż ze sobą boki a i b klasy Square (tzn. modyfikacja boku a lub boku b
 powinna ustawiać tę samą wartość dla drugiego atrybutu).
-- Zaimplementuj metody statyczne pozwalające na obliczenie pola
-figury na podstawie podanych parametrów.
+- Zaimplementuj metody statyczne pozwalające na obliczenie
+pola (get_area) i obwodu (get_perimeter) figury
+na podstawie podanych parametrów.
 - Zaimplementuj classmethod "name" zwracającą nazwę klasy.
 ---------
 Na (3 pkt.):
@@ -21,9 +22,8 @@ tzn. Square dziediczy i z Diamond i Rectangle.
 - Klasa wprowadza atrybuty przekątnych (e i f) oraz metody:
 -- are_diagonals_equal: sprawdź równość przekątnych,
 -- to_square: po sprawdzeniu równości przekątnych zwróci instancję
-klasy Square o takich przekątnych.
-- Zwiąż ze sobą atrybuty e i f (w klasie Diamond) oraz a, b, e i f
-(w klasie Square)
+klasy Square o takich przekątnych lub None (jeżeli przekątne nie są równe).
+- Zwiąż ze sobą atrybuty a, b, e i f w klasie Square.
 """
 
 
@@ -69,7 +69,7 @@ if __name__ == '__main__':
 
     # print("Square")
     sqr_1 = Square(4)
-    assert str(sqr_1) == 'Square: area=8.000, perimeter=16.000'
+    assert str(sqr_1) == 'Square: area=16.000, perimeter=16.000'
 
     diam_1 = Diamond(6, 8)
     assert str(diam_1) == 'Diamond: area=24.000, perimeter=20.000'
@@ -78,4 +78,4 @@ if __name__ == '__main__':
     assert str(diam_2) == 'Diamond: area=0.500, perimeter=2.828'
 
     sqr_3 = diam_2.to_square()
-    assert str(diam_2) == 'Square: area=0.500, perimeter=2.828'
+    assert str(sqr_3) == 'Square: area=0.500, perimeter=2.828'
