@@ -15,8 +15,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <!-- General and theme style sheets -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/reveal.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/theme/serif.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/serif.css" id="theme">
 
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
 <script>
@@ -24,14 +24,14 @@ if( window.location.search.match( /print-pdf/gi ) ) {
         var link = document.createElement( 'link' );
         link.rel = 'stylesheet';
         link.type = 'text/css';
-        link.href = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/print/pdf.css';
+        link.href = 'reveal.js/css/print/pdf.css';
         document.getElementsByTagName( 'head' )[0].appendChild( link );
 }
 
 </script>
 
 <!--[if lt IE 9]>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/html5shiv.js"></script>
+<script src="reveal.js/lib/js/html5shiv.js"></script>
 <![endif]-->
 
 <!-- Loading the mathjax macro -->
@@ -13356,27 +13356,6 @@ a.anchor-link {
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>public attribute var_1.a=4
-protected attribute var_1._access_count=1
-protected attribute accessed via interface var_1.access_count=1
-private attribute var_1._A__b=1824
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -13418,7 +13397,7 @@ private attribute var_1._A__b=1824
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span>%%bash
@@ -13435,7 +13414,7 @@ touch priv_example.py
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">priv_example</span> <span class="k">import</span> <span class="o">*</span>
@@ -13471,7 +13450,7 @@ touch priv_example.py
 <pre>
 <span class="ansi-red-fg">--------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-5-a75ff47d8ccc&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">&lt;ipython-input-6-a75ff47d8ccc&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">from</span> priv_example <span class="ansi-green-fg">import</span> <span class="ansi-blue-fg">*</span>
 <span class="ansi-green-intense-fg ansi-bold">      2</span> print<span class="ansi-blue-fg">(</span>a_priv_example<span class="ansi-blue-fg">)</span>
 <span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span>_b_priv_example<span class="ansi-blue-fg">)</span>
@@ -13486,7 +13465,7 @@ touch priv_example.py
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">__c_priv_example</span><span class="p">)</span>
@@ -13509,7 +13488,7 @@ touch priv_example.py
 <pre>
 <span class="ansi-red-fg">--------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-6-c1662f9e16a8&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">&lt;ipython-input-7-c1662f9e16a8&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span>__c_priv_example<span class="ansi-blue-fg">)</span>
 
 <span class="ansi-red-fg">NameError</span>: name &#39;__c_priv_example&#39; is not defined</pre>
@@ -13522,7 +13501,7 @@ touch priv_example.py
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span>%%bash
@@ -13542,7 +13521,7 @@ touch priv_example_2.py
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">priv_example_2</span> <span class="k">import</span> <span class="o">*</span>
@@ -13578,7 +13557,7 @@ touch priv_example_2.py
 <pre>
 <span class="ansi-red-fg">--------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-8-ef65008f0dc0&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">&lt;ipython-input-9-ef65008f0dc0&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">from</span> priv_example_2 <span class="ansi-green-fg">import</span> <span class="ansi-blue-fg">*</span>
 <span class="ansi-green-intense-fg ansi-bold">      2</span> print<span class="ansi-blue-fg">(</span>a_priv_example_2<span class="ansi-blue-fg">)</span>
 <span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span>b_priv_example_2<span class="ansi-blue-fg">)</span>
@@ -13593,7 +13572,7 @@ touch priv_example_2.py
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">__c_priv_example_2</span><span class="p">)</span>
@@ -13616,7 +13595,7 @@ touch priv_example_2.py
 <pre>
 <span class="ansi-red-fg">--------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-9-daf35b9ff709&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">&lt;ipython-input-11-daf35b9ff709&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span>__c_priv_example_2<span class="ansi-blue-fg">)</span>
 
 <span class="ansi-red-fg">NameError</span>: name &#39;__c_priv_example_2&#39; is not defined</pre>
@@ -13653,7 +13632,7 @@ touch priv_example_2.py
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">numbers</span> <span class="k">import</span> <span class="n">Number</span>
@@ -13683,7 +13662,7 @@ touch priv_example_2.py
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mf">1.</span><span class="p">)</span>
@@ -13731,7 +13710,7 @@ P1 x:  2.0
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
@@ -13753,7 +13732,7 @@ P1 x:  2.0
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
@@ -13775,7 +13754,7 @@ P1 x:  2.0
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mf">1.</span><span class="p">)</span>
@@ -13814,7 +13793,7 @@ P1 x:  2.0
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">p2</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mf">1.</span><span class="p">)</span>
@@ -13851,7 +13830,7 @@ P2 x:  2.0
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
@@ -13885,7 +13864,7 @@ P2 x:  2.0
 <pre>
 <span class="ansi-red-fg">--------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">AttributeError</span>                           Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-16-64cd9c939f83&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">&lt;ipython-input-20-64cd9c939f83&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-intense-fg ansi-bold">     10</span> dog <span class="ansi-blue-fg">=</span> Dog<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">     11</span> dog<span class="ansi-blue-fg">.</span>mouth <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">4</span>
 <span class="ansi-green-fg">---&gt; 12</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span>dog<span class="ansi-blue-fg">.</span>mouth<span class="ansi-blue-fg">)</span>
@@ -13925,7 +13904,7 @@ P2 x:  2.0
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">KlasaA</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>  <span class="c1"># równoważne do class KlasaA:</span>
@@ -13959,7 +13938,7 @@ P2 x:  2.0
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -13976,7 +13955,7 @@ P2 x:  2.0
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Tworzenie instancji obu klas</span>
@@ -14028,7 +14007,7 @@ Czy instancja klasy B jest typu object?:  True
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -14053,7 +14032,7 @@ Czy instancja klasy B jest typu object?:  True
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Tworzenie instancji obu klas</span>
@@ -14117,7 +14096,7 @@ c.b 4
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -14159,7 +14138,7 @@ c.b 4
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
@@ -14169,16 +14148,16 @@ c.b 4
 <span class="n">d</span> <span class="o">=</span> <span class="n">D</span><span class="p">(</span><span class="s1">&#39;lalala&#39;</span><span class="p">)</span>
 <span class="n">e</span> <span class="o">=</span> <span class="n">E</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A.b: &#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B1.b: &#39;</span><span class="p">,</span> <span class="n">b1</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B2.b: &#39;</span><span class="p">,</span> <span class="n">b2</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Metoda describe klasy C:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a.b: &#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;b1.b: &#39;</span><span class="p">,</span> <span class="n">b1</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;b2.b: &#39;</span><span class="p">,</span> <span class="n">b2</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Metoda describe (instancja klasy C):&#39;</span><span class="p">)</span>
 <span class="n">c</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Metoda describe klasy D:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Metoda describe (instancja klasy D):&#39;</span><span class="p">)</span>
 <span class="n">d</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Metoda describe klasy E:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Metoda describe (instancja klasy E):&#39;</span><span class="p">)</span>
 <span class="n">e</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Metoda describe klasy F:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Metoda describe (instancja klasy F):&#39;</span><span class="p">)</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">F</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
 <span class="n">f</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
@@ -14197,19 +14176,19 @@ c.b 4
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>A.b:  5
-B1.b:  2
-B2.b:  3
-Metoda describe klasy C:
+<pre>a.b:  5
+b1.b:  2
+b2.b:  3
+Metoda describe (instancja klasy C):
 C.b = 7
 C.b = 7
-Metoda describe klasy D:
+Metoda describe (instancja klasy D):
 D: a = 1, b = lalala
-Metoda describe klasy E:
+Metoda describe (instancja klasy E):
 C.b = [1, 2, 3]
 E.b = [1, 2, 3]
 E.b = [1, 2, 3]
-Metoda describe klasy F:
+Metoda describe (instancja klasy F):
 C.b = /
 F.b = /
 E.b = /
@@ -14223,7 +14202,7 @@ E.b = /
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Kosa</span><span class="p">:</span>
@@ -14298,7 +14277,7 @@ Młócę zboże
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
@@ -14316,8 +14295,8 @@ Młócę zboże
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Class C&#39;</span><span class="p">)</span>
 
-<span class="k">class</span> <span class="nc">D</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">C</span><span class="p">):</span>
-<span class="c1"># class D(C,B):</span>
+<span class="c1"># class D(B,C):</span>
+<span class="k">class</span> <span class="nc">D</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="n">B</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Class D&#39;</span><span class="p">)</span>
@@ -14330,7 +14309,7 @@ Młócę zboże
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
@@ -14365,8 +14344,8 @@ Class A
 Class C
 ---------------
 Class A
-Class C
 Class B
+Class C
 Class D
 </pre>
 </div>
@@ -14390,7 +14369,7 @@ Class D
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
@@ -14412,11 +14391,11 @@ Class D
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Help on class D in module __main__:
 
-class D(B, C)
+class D(C, B)
  |  Method resolution order:
  |      D
- |      B
  |      C
+ |      B
  |      A
  |      builtins.object
  |  
@@ -14444,7 +14423,7 @@ class D(B, C)
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
@@ -14471,8 +14450,13 @@ class D(B, C)
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Class C&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">increase</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 
+    <span class="k">def</span> <span class="nf">increase</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">counter</span> <span class="o">*=</span> <span class="n">val</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">counter</span><span class="p">)</span>
 
-<span class="k">class</span> <span class="nc">D</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="n">B</span><span class="p">):</span>
+<span class="c1"># niezależnie od kolejności dziedziczenia, </span>
+<span class="c1"># increase dziedziczone jest z C, co powoduje zerowanie atrybutu</span>
+<span class="k">class</span> <span class="nc">D</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="n">B</span><span class="p">):</span>  
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Class D&#39;</span><span class="p">)</span>
@@ -14486,7 +14470,7 @@ class D(B, C)
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
@@ -14521,18 +14505,18 @@ Class B
 2
 ---------------
 Class A
-1
+0
 Class C
-5
+0
 ---------------
 Class A
-1
+0
 Class B
-2
+0
 Class C
-6
+0
 Class D
-5
+0
 </pre>
 </div>
 </div>
@@ -14543,7 +14527,7 @@ Class D
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Machine</span><span class="p">:</span>
@@ -14559,8 +14543,7 @@ Class D
 
 <span class="k">class</span> <span class="nc">Printer</span><span class="p">(</span><span class="n">Machine</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">is_color</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="c1">#         Machine.__init__(self, name)</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">Machine</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">is_color</span> <span class="o">=</span> <span class="n">is_color</span>
 
     <span class="k">def</span> <span class="nf">print</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -14571,12 +14554,14 @@ Class D
 
 
 <span class="k">class</span> <span class="nc">Scanner</span><span class="p">(</span><span class="n">Machine</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">_dpi</span> <span class="o">=</span> <span class="mi">200</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="n">_dpi</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Test lampy&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_dpi</span> <span class="o">=</span> <span class="n">dpi</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">scan</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Scanner </span><span class="si">{self.name}</span><span class="s2"> scan in dpi </span><span class="si">{self._dpi}</span><span class="s2">.&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Scanner </span><span class="si">{self.name}</span><span class="s2"> scan in dpi </span><span class="si">{self.dpi}</span><span class="s2">.&quot;</span><span class="p">)</span>
         
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dpi</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -14590,10 +14575,11 @@ Class D
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Xero</span><span class="p">(</span><span class="n">Printer</span><span class="p">,</span> <span class="n">Scanner</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># class Xero(Printer, Scanner):</span>
+<span class="k">class</span> <span class="nc">Xero</span><span class="p">(</span><span class="n">Scanner</span><span class="p">,</span> <span class="n">Printer</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">is_color</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">is_color</span><span class="o">=</span><span class="n">is_color</span><span class="p">)</span>
         
@@ -14634,9 +14620,11 @@ Machine: Amiga.
 Machine Lexmark do not scan.
 Printer Lexmark print test page in color.
 ---------------
+Test lampy
 Scanner Hp scan in dpi 400.
 Machine: Hp.
 ---------------
+Test lampy
 Scanner Xerox scan in dpi 200.
 Printer Xerox print test page in color.
 </pre>
@@ -14649,7 +14637,47 @@ Printer Xerox print test page in color.
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Kolejnosć dziedziczenia ma znaczenie, gdyż jawne wywołanie __init__ w klasie Printer</span>
+<span class="c1"># przerywa wywołanie super(). W tej kolejności nie wykonuje się </span>
+<span class="c1"># funkcja __init__ klasy Scanner</span>
+<span class="k">class</span> <span class="nc">Xero</span><span class="p">(</span><span class="n">Printer</span><span class="p">,</span> <span class="n">Scanner</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">is_color</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">is_color</span><span class="o">=</span><span class="n">is_color</span><span class="p">)</span>
+<span class="n">xero</span> <span class="o">=</span> <span class="n">Xero</span><span class="p">(</span><span class="s2">&quot;Xerox&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">xero</span><span class="o">.</span><span class="n">scan</span><span class="p">()</span>
+<span class="n">xero</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Scanner Xerox scan in dpi 200.
+Printer Xerox print test page in color.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">Xero</span><span class="p">)</span>
@@ -14769,11 +14797,12 @@ class Xero(Printer, Scanner)
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
-    <span class="mi">2</span> <span class="o">/</span> <span class="mi">0</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
 <span class="k">except</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Uff!&#39;</span><span class="p">)</span>
 </pre></div>
@@ -14812,11 +14841,11 @@ class Xero(Printer, Scanner)
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
-    <span class="mi">2</span> <span class="o">/</span> <span class="mi">0</span>
+    <span class="n">a</span><span class="o">/</span> <span class="n">b</span>
 <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Uff!&#39;</span><span class="p">)</span>
 </pre></div>
@@ -14846,11 +14875,11 @@ class Xero(Printer, Scanner)
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
-    <span class="mi">2</span> <span class="o">/</span> <span class="n">unknown_variable</span>
+    <span class="n">a</span> <span class="o">/</span> <span class="n">unknown_variable</span>
 <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Uff!&#39;</span><span class="p">)</span>
 </pre></div>
@@ -14872,9 +14901,9 @@ class Xero(Printer, Scanner)
 <pre>
 <span class="ansi-red-fg">--------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-35-3ce4d177eb28&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">&lt;ipython-input-47-619cbfc57d94&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg">     </span><span class="ansi-cyan-fg">2</span> <span class="ansi-blue-fg">/</span> unknown_variable
+<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg">     </span>a <span class="ansi-blue-fg">/</span> unknown_variable
 <span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-green-fg">except</span> ZeroDivisionError<span class="ansi-blue-fg">:</span>
 <span class="ansi-green-intense-fg ansi-bold">      4</span>     print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Uff!&#39;</span><span class="ansi-blue-fg">)</span>
 
@@ -14916,7 +14945,7 @@ class Xero(Printer, Scanner)
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">division</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
@@ -14928,6 +14957,7 @@ class Xero(Printer, Scanner)
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wynik dzielenia&quot;</span><span class="p">)</span>
     <span class="k">finally</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;c: </span><span class="si">{c}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">c</span>
 
 <span class="n">division</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span> <span class="o">*</span> <span class="mi">15</span><span class="p">)</span>
@@ -14977,13 +15007,15 @@ c: None
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
-    <span class="mi">2</span> <span class="o">/</span> <span class="mi">0</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
 <span class="k">except</span> <span class="ne">ZeroDivisionError</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nieładnie&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;a</span><span class="si">{a}</span><span class="s1">, b</span><span class="si">{b}</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="k">raise</span> <span class="n">exc</span>
 </pre></div>
 
@@ -15002,6 +15034,7 @@ c: None
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Nieładnie
+a2, b0
 </pre>
 </div>
 </div>
@@ -15015,17 +15048,17 @@ c: None
 <pre>
 <span class="ansi-red-fg">--------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">ZeroDivisionError</span>                        Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-37-a1ce7659c490&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-green-fg">except</span> ZeroDivisionError <span class="ansi-green-fg">as</span> exc<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span>     print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Nieładnie&#39;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 5</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">raise</span> exc
+<span class="ansi-green-fg">&lt;ipython-input-49-bc02dfac09c9&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span>     print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Nieładnie&#39;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      6</span>     print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#39;a{a}, b{b}&#39;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">----&gt; 7</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">raise</span> exc
 
-<span class="ansi-green-fg">&lt;ipython-input-37-a1ce7659c490&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg">     </span><span class="ansi-cyan-fg">2</span> <span class="ansi-blue-fg">/</span> <span class="ansi-cyan-fg">0</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-green-fg">except</span> ZeroDivisionError <span class="ansi-green-fg">as</span> exc<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span>     print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Nieładnie&#39;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span>     <span class="ansi-green-fg">raise</span> exc
+<span class="ansi-green-fg">&lt;ipython-input-49-bc02dfac09c9&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> a<span class="ansi-blue-fg">,</span> b <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">0</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg">     </span>a <span class="ansi-blue-fg">/</span> b
+<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-green-fg">except</span> ZeroDivisionError <span class="ansi-green-fg">as</span> exc<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span>     print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Nieładnie&#39;</span><span class="ansi-blue-fg">)</span>
 
 <span class="ansi-red-fg">ZeroDivisionError</span>: division by zero</pre>
 </div>
@@ -15061,7 +15094,7 @@ c: None
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">MyException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
@@ -15075,13 +15108,10 @@ c: None
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">MyException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
-    <span class="k">pass</span>
-
-<span class="c1"># Błędnie przeprowadzona zmiana typu wyjątku</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Błędnie przeprowadzona zmiana typu wyjątku</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="mi">2</span> <span class="o">/</span> <span class="mi">0</span>
 <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
@@ -15105,20 +15135,20 @@ c: None
 <pre>
 <span class="ansi-red-fg">--------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">ZeroDivisionError</span>                        Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-41-604261afa778&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span> <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">----&gt; 6</span><span class="ansi-red-fg">     </span><span class="ansi-cyan-fg">2</span> <span class="ansi-blue-fg">/</span> <span class="ansi-cyan-fg">0</span>
-<span class="ansi-green-intense-fg ansi-bold">      7</span> <span class="ansi-green-fg">except</span> ZeroDivisionError<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">&lt;ipython-input-51-cde7e5271c63&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg">     </span><span class="ansi-cyan-fg">2</span> <span class="ansi-blue-fg">/</span> <span class="ansi-cyan-fg">0</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-green-fg">except</span> ZeroDivisionError<span class="ansi-blue-fg">:</span>
 
 <span class="ansi-red-fg">ZeroDivisionError</span>: division by zero
 
 During handling of the above exception, another exception occurred:
 
 <span class="ansi-red-fg">MyException</span>                              Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-41-604261afa778&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      6</span>     <span class="ansi-cyan-fg">2</span> <span class="ansi-blue-fg">/</span> <span class="ansi-cyan-fg">0</span>
-<span class="ansi-green-intense-fg ansi-bold">      7</span> <span class="ansi-green-fg">except</span> ZeroDivisionError<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">----&gt; 8</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">raise</span> MyException <span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Dzielenie przez zero&#39;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">&lt;ipython-input-51-cde7e5271c63&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span>     <span class="ansi-cyan-fg">2</span> <span class="ansi-blue-fg">/</span> <span class="ansi-cyan-fg">0</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-green-fg">except</span> ZeroDivisionError<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">----&gt; 5</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">raise</span> MyException <span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Dzielenie przez zero&#39;</span><span class="ansi-blue-fg">)</span>
 
 <span class="ansi-red-fg">MyException</span>: Dzielenie przez zero</pre>
 </div>
@@ -15130,7 +15160,7 @@ During handling of the above exception, another exception occurred:
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Wersja poprawna</span>
@@ -15157,7 +15187,7 @@ During handling of the above exception, another exception occurred:
 <pre>
 <span class="ansi-red-fg">--------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">ZeroDivisionError</span>                        Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-40-83cd8f8c09cc&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">&lt;ipython-input-52-83cd8f8c09cc&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg">     </span><span class="ansi-cyan-fg">2</span> <span class="ansi-blue-fg">/</span> <span class="ansi-cyan-fg">0</span>
 <span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-green-fg">except</span> ZeroDivisionError <span class="ansi-green-fg">as</span> exc<span class="ansi-blue-fg">:</span>
@@ -15167,7 +15197,7 @@ During handling of the above exception, another exception occurred:
 The above exception was the direct cause of the following exception:
 
 <span class="ansi-red-fg">MyException</span>                              Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-40-83cd8f8c09cc&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">&lt;ipython-input-52-83cd8f8c09cc&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-intense-fg ansi-bold">      3</span>     <span class="ansi-cyan-fg">2</span> <span class="ansi-blue-fg">/</span> <span class="ansi-cyan-fg">0</span>
 <span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-green-fg">except</span> ZeroDivisionError <span class="ansi-green-fg">as</span> exc<span class="ansi-blue-fg">:</span>
 <span class="ansi-green-fg">----&gt; 5</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">raise</span> MyException <span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Dzielenie przez zero&#39;</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">from</span> exc
@@ -15192,8 +15222,8 @@ require(
       waitSeconds: 15
     },
     [
-      "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/head.min.js",
-      "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/js/reveal.js"
+      "reveal.js/lib/js/head.min.js",
+      "reveal.js/js/reveal.js"
     ],
 
     function(head, Reveal){
@@ -15208,9 +15238,9 @@ require(
 
             // Optional libraries used to extend on reveal.js
             dependencies: [
-                { src: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/classList.js",
+                { src: "reveal.js/lib/js/classList.js",
                   condition: function() { return !document.body.classList; } },
-                { src: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/notes/notes.js",
+                { src: "reveal.js/plugin/notes/notes.js",
                   async: true,
                   condition: function() { return !!document.body.classList; } }
             ]
