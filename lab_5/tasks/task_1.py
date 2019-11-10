@@ -14,15 +14,15 @@ class CalculatorError(Exception):
     pass
 
 
-class WrongOperation(Exception):
+class WrongOperation(CalculatorError):
     pass
 
 
-class NotNumberArgument(Exception):
+class NotNumberArgument(CalculatorError):
     pass
 
 
-class EmptyMemory(Exception):
+class EmptyMemory(CalculatorError):
     pass
 
 
@@ -51,11 +51,30 @@ class Calculator:
         :return: result of operation
         :rtype: float
         """
+        try:
+            if operator == '/' and arg2 == 0:
+                raise ZeroDivisionError
+        except ZeroDivisionError as excep:
+            raise CalculatorError from excep
+
         if operator in self.operations:
             arg2 = arg2 or self.memory
+            try:
+                if arg2 is None and self.memory is None:
+                    raise CalculatorError
+            except CalculatorError as exception:
+                raise EmptyMemory from exception
             if arg2:
-                self._short_memory = self.operations[operator](arg1, arg2)
+                try:
+                    if int != type(arg2):
+                        raise CalculatorError
+                    self._short_memory = self.operations[operator](arg1, arg2)
+                except CalculatorError as exc:
+                    arg2 = None
+                    raise NotNumberArgument from exc
                 return self._short_memory
+        else:
+            raise WrongOperation
 
     @property
     def memory(self):
@@ -71,6 +90,8 @@ class Calculator:
 
     def in_memory(self):
         """Prints memorized value."""
+        if self.memory is None:
+            raise EmptyMemory
         print(f"Zapamiętana wartość: {self.memory}")
 
 
@@ -83,7 +104,7 @@ if __name__ == '__main__':
     except CalculatorError as exc:
         assert type(exc) == NotNumberArgument
         assert b is None
-
+#to nie bylo jeszcze
     try:
         b = calc.run('^', 2, 3)
     except CalculatorError as exc:

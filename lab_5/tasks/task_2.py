@@ -1,3 +1,5 @@
+from math import pi
+
 """
 Na (1 pkt.):
 - Zaimplementuj klasy: Rectangle, Square, Circle dziedziczące z klasy Figure
@@ -25,35 +27,92 @@ klasy Square o takich przekątnych.
 - Zwiąż ze sobą atrybuty e i f (w klasie Diamond) oraz a, b, e i f
 (w klasie Square)
 """
+from unittest.test.test_result import __init__
 
 
 class Figure:
+
+    @ property
     def area(self):
         raise NotImplementedError
 
+    @property
     def perimeter(self):
         raise NotImplementedError
 
+    @property
     def name(self):
         raise NotImplementedError
 
     def __str__(self):
         return (
-            f'{self.name()}: area={self.area():.3f}, '
-            f'perimeter={self.perimeter():.3f}'
+            f'{self.name}: area={self.area:.3f}, '
+            f'perimeter={self.perimeter:.3f}'
         )
 
 
-class Circle:
-    pass
+class Circle(Figure):
+    radius = None
+    @property
+    def r(self):
+        return self.radius
+
+    def __init__(self,r):
+        self.radius = r
+
+    @property
+    def perimeter(self):
+        return 2 * pi * self.r
+
+    @property
+    def name(self):
+        return "Circle"
+
+    @property
+    def area(self):
+        return pi * self.r**2
+
+    def __str__(self):
+        return (super().__str__())
 
 
-class Rectangle:
-    pass
 
 
-class Square:
-    pass
+
+class Rectangle(Figure):
+    bokA = None
+    bokB = None
+
+    def __init__(self,a,b):
+        self.bokA = a
+        self.bokB = b
+
+    @property
+    def a(self):
+        return self.bokA
+
+    @property
+    def b(self):
+        return self.bokB
+
+    @property
+    def perimeter(self):
+        return 2 * self.a + 2 * self.b
+
+    @property
+    def name(self):
+        return "Rectangle"
+
+
+
+
+class Square(Rectangle):
+
+    def __init__(self,a):
+        self.bokA = a
+        self.bokB = a
+
+
 
 
 class Diamond:
@@ -62,6 +121,8 @@ class Diamond:
 
 if __name__ == '__main__':
     kolo1 = Circle(1)
+
+    print(str(kolo1))
     assert str(kolo1) == 'Circle: area=3.142, perimeter=6.283'
 
     rec_1 = Rectangle(2, 4)
