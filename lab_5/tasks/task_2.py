@@ -205,14 +205,6 @@ class Square(Rectangle, Diamond):
     a = property(get_a, set_a)
     b = property(get_b, set_b)
 
-    @property
-    def area(self):
-        return super().area
-
-    @property
-    def perimeter(self):
-        return super().perimeter
-
     @staticmethod
     def get_area(a):
         return a ** 2
