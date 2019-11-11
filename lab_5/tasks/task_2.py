@@ -103,34 +103,75 @@ class Rectangle(Figure):
     def name(self):
         return "Rectangle"
 
+    @property
+    def area(self):
+        return self.a*self.b
+
+    def __str__(self):
+        return (super().__str__())
 
 
 
-class Square(Rectangle):
+class Diamond(Figure):
+    e = None
+    f = None
+
+    def __init__(self,e,f):
+        self.e = e
+        self.f = f
+
+    @property
+    def area(self):
+        return 0.5 * self.e * self.f
+
+    @property
+    def perimeter(self):
+        a = ((0.5*self.e)**2 + (0.5*self.f)**2)**0.5
+        return 4 * a
+    @property
+    def name(self):
+        return "Diamond"
+
+    def are_diagonals_equal(self):
+        if self.e == self.f:
+            return True
+        else:
+            return False
+
+    def to_square(self):
+        if self.are_diagonals_equal():
+            tmp_square = Square(self.perimeter/4)
+            tmp_square.e = tmp_square.bokA*(2**0.5)
+            tmp_square.f = tmp_square.e
+            return tmp_square
+        else:
+            return False
+
+
+
+class Square(Rectangle,Diamond):
 
     def __init__(self,a):
         self.bokA = a
         self.bokB = a
 
+    @property
+    def name(self):
+        return "Square"
 
 
-
-class Diamond:
-    pass
 
 
 if __name__ == '__main__':
     kolo1 = Circle(1)
 
-    print(str(kolo1))
     assert str(kolo1) == 'Circle: area=3.142, perimeter=6.283'
 
     rec_1 = Rectangle(2, 4)
     assert str(rec_1) == 'Rectangle: area=8.000, perimeter=12.000'
 
-    # print("Square")
     sqr_1 = Square(4)
-    assert str(sqr_1) == 'Square: area=8.000, perimeter=16.000'
+    assert str(sqr_1) == 'Square: area=16.000, perimeter=16.000'
 
     diam_1 = Diamond(6, 8)
     assert str(diam_1) == 'Diamond: area=24.000, perimeter=20.000'
@@ -139,4 +180,4 @@ if __name__ == '__main__':
     assert str(diam_2) == 'Diamond: area=0.500, perimeter=2.828'
 
     sqr_3 = diam_2.to_square()
-    assert str(diam_2) == 'Square: area=0.500, perimeter=2.828'
+    assert str(sqr_3) == 'Square: area=0.500, perimeter=2.828'

@@ -104,7 +104,6 @@ if __name__ == '__main__':
     except CalculatorError as exc:
         assert type(exc) == NotNumberArgument
         assert b is None
-#to nie bylo jeszcze
     try:
         b = calc.run('^', 2, 3)
     except CalculatorError as exc:
