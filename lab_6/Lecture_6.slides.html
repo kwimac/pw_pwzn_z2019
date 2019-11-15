@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 
-<title>Lecture_5 slides</title>
+<title>Lecture_6 slides</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13202,224 +13202,234 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Python-w-zastosowaniach-naukowych">Python w zastosowaniach naukowych<a class="anchor-link" href="#Python-w-zastosowaniach-naukowych">&#182;</a></h1><h2 id="Wyk&#322;ad-5">Wyk&#322;ad 5<a class="anchor-link" href="#Wyk&#322;ad-5">&#182;</a></h2><h3 id="mgr-in&#380;.-Maciej-Kwiatkowski">mgr in&#380;. Maciej Kwiatkowski<a class="anchor-link" href="#mgr-in&#380;.-Maciej-Kwiatkowski">&#182;</a></h3>
+<h1 id="Python-w-zastosowaniach-naukowych">Python w zastosowaniach naukowych<a class="anchor-link" href="#Python-w-zastosowaniach-naukowych">&#182;</a></h1><h2 id="Wyk&#322;ad-6">Wyk&#322;ad 6<a class="anchor-link" href="#Wyk&#322;ad-6">&#182;</a></h2><h3 id="mgr-in&#380;.-Maciej-Kwiatkowski">mgr in&#380;. Maciej Kwiatkowski<a class="anchor-link" href="#mgr-in&#380;.-Maciej-Kwiatkowski">&#182;</a></h3>
 </div>
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Klasy-c.d.">Klasy c.d.<a class="anchor-link" href="#Klasy-c.d.">&#182;</a></h1>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="OOP-(Object-Oriented-Programming)">OOP <em>(Object Oriented Programming)</em><a class="anchor-link" href="#OOP-(Object-Oriented-Programming)">&#182;</a></h1>
+<h1 id="B&#322;edy-i-z&#322;e-praktyki-w-rozwi&#261;zaniach">B&#322;edy i z&#322;e praktyki w rozwi&#261;zaniach<a class="anchor-link" href="#B&#322;edy-i-z&#322;e-praktyki-w-rozwi&#261;zaniach">&#182;</a></h1>
 </div>
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Programowanie obiektowe charakteryzują cztery cechy:</p>
 <ul>
-<li>abstrakcja </li>
-<li>polimorfizm</li>
-<li>hermetyzacja</li>
-<li>dziedziczenie</li>
+<li>falsey i truthy (głównie przy zerze),</li>
+<li>Nie trzeba przyrównywać bool do wartości,</li>
+<li>Można zwracać wartość wyrażenia logicznego niejawnie,</li>
 </ul>
-
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Hermetyzacja">Hermetyzacja<a class="anchor-link" href="#Hermetyzacja">&#182;</a></h1>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Hermetyzacja (inaczej zwana kapsułkowaniem, ang. <em>encapsulation</em>) w programowaniu obiektowym polega na ukryciu części atrybutów/metod klasy tzn. zmianę ich wartości lub wywołanie mogą zrobić tylko inne metody klasy.</p>
-<p>Takie podejście pozwala lepiej realizować cechę abstrakcji (oddzielenia implementacji od użycia) jak również pozwala na “uodpornienie” kodu przed niepożądaną zmianą wartości atrybutów i w efekcie błędnym działaniem klasy.</p>
 
 </div>
 </div>
 </div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Atrybuty i metody niedostępne z “zewnątrz” nazywamy <strong>prywatnymi</strong>.</p>
-<p>Zbiór metod i wartości dostępnych publicznie nazywamy <strong>interfejsem</strong>.</p>
-
-</div>
-</div>
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Prywatno&#347;&#263;">Prywatno&#347;&#263;<a class="anchor-link" href="#Prywatno&#347;&#263;">&#182;</a></h1>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>W Pythonie prywatność zmiennych jest kwestią raczej umowną.</p>
-<p>Oznacza to, że wszystkie atrybuty i metody są domyślnie dostępne, a zablokowanie ich zmienności wiąże się z dodatkowym nakładem pracy (dodatkowym kodem).</p>
-<p>Korzyścią wynikającą z takiego podejścia jest łatwa analiza kodu i przejrzystość klas, minusem łatwa możliwość “uszkodzenia” klasy.</p>
-
-</div>
-</div>
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Konwencja-nazw-zmiennych">Konwencja nazw zmiennych<a class="anchor-link" href="#Konwencja-nazw-zmiennych">&#182;</a></h1>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><code>snake_case</code> - zmienne globalne, parametry funkcji, nazwy paczek i modułów, atrybuty i metody klasy,</li>
-<li><code>UpperCamelCase</code> - klasy, nazwy typów,</li>
-<li><code>UPPER_SNAKE_CASE</code> - zmienne-"stałe" - ich wartości nie powinniśmy zmieniać,</li>
-<li><code>dotted.notation</code> - dostęp do atrybutów obiektu.</li>
-</ul>
-
-</div>
-</div>
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Konwencja-nazw-zmiennych">Konwencja nazw zmiennych<a class="anchor-link" href="#Konwencja-nazw-zmiennych">&#182;</a></h1>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><code>&lt;nazwa_atrybutu&gt;</code> - określa zmienną publiczną,</li>
-<li><code>_&lt;nazwa_atrybutu&gt;</code> - określa zmienną chronioną, tzn. zmienną, której nie powinno sie edytować z zewnątrz klasy, </li>
-<li><code>__&lt;nazwa_atrybutu&gt;</code> - określa zmienną prywatną, zmienną, której nazwa jest ukrywana przez interpreter,</li>
-<li><code>__&lt;nazwa_atrybutu&gt;__</code> - określa zmienną magiczna, która nie jest ukrywana przez interpreter.</li>
-</ul>
-<p>Analogiczna konwencja obowiązuje dla metod.</p>
-
-</div>
-</div>
-</div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
-    <span class="n">_access_count</span> <span class="o">=</span> <span class="mi">0</span>
-    
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_access_count</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">__b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="mi">456</span>
-    
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">access_count</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_access_count</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">not_none</span><span class="p">(</span><span class="n">elem</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">elem</span> <span class="k">if</span> <span class="n">elem</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">1</span>
+    <span class="c1"># nie: return elem or 1</span>
+    <span class="c1"># nie: </span>
+    <span class="c1"># is_none = elem is None</span>
+    <span class="c1"># elem if is_none == False else 1 </span>
+
+<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">not_none</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Stosowanie WET zamiast DRY (np. dodawania zwracania wyjątku w kilku miejscach),</li>
+<li>Nie stosowane PEP8 (odstępy, nazwy zmiennych, łamanie lini),</li>
+</ul>
+
+</div>
+</div>
 </div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Ponowne dziedziczenie,</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">var_1</span> <span class="o">=</span> <span class="n">A</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;public attribute var_1.a=</span><span class="si">{var_1.a}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;protected attribute var_1._access_count=</span><span class="si">{var_1._access_count}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;protected attribute accessed via interface var_1.access_count=</span><span class="si">{var_1.access_count}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;private attribute var_1._A__b=</span><span class="si">{var_1._A__b}</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">ParentError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">ChildError</span><span class="p">(</span><span class="n">ParentError</span><span class="p">):</span>  <span class="c1"># nie: class ChildError(ParentError, Exception)</span>
+    <span class="k">pass</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Zmiana nagłówka metody dziedziczonej.</li>
+</ul>
+
+</div>
+</div>
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Atrybut prywatny nie może być wywołany z zewnątrz</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;private attribute var_1.__b=</span><span class="si">{var_1.__b}</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span> <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+    
+<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="c1"># nie: def sum(a): </span>
+    <span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span><span class="p">):</span> 
+        <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">a</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>zbędny setter i getter</li>
+</ul>
 
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">--------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AttributeError</span>                           Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-3-b2d1894bd208&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg"># Atrybut prywatny nie może być wywołany z zewnątrz</span>
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#39;private attribute var_1.__b={var_1.__b}&#39;</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">AttributeError</span>: &#39;A&#39; object has no attribute &#39;__b&#39;</pre>
 </div>
 </div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span>
+    
+<span class="c1">#   # zbędne</span>
+<span class="c1">#     @property</span>
+<span class="c1">#     def a(self):</span>
+<span class="c1">#         return a</span>
+    
+<span class="c1">#     @a.setter</span>
+<span class="c1">#     def set_a(self, a):</span>
+<span class="c1">#         self.a = a</span>
+</pre></div>
 
+    </div>
 </div>
 </div>
 
 </div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Ogólnie zakładamy w Pythonie, że atrybuty są publiczne, a jeżeli chcemy je ukryć (zrobić zmienną "prywatną") to poprzedzamy nazwę pojedynczym podkreśleniem <code>_</code>.</p>
+<p>Zamiana atrybutu we własność ma sens dla wartości, których nie ma sensu przechowywać, gdyż ich wartość zmieni się ze zmianą innego atrybutu (np. pole kwadratu, jeżeli przechowujemy jego bok).</p>
+<p>Własność z wartością prywatną (np. <code>memory</code> w kalkulatorze) miało na celu zasugerowanie programiście korzystającemu z tego kodu, że wartość zachowana w pamięci nie powinna być łatwo zmienialna (np. można ją nadpisać przy korzystaniu z niej w równaniu).</p>
+<p>Dodanie settera i gettera powinno się pojawić jeżeli chcemy wykonać jakąś operację, przy ustawianiu tej wartości. W związku z tym setter dla boków kwadratu ma sens, ponieważ chcemy zachować interfejs z klasy prostokąt, ale także związanie boków. Setter i getter dla prostokąta nie był już potrzebny.</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Operacje-na-plikach">Operacje na plikach<a class="anchor-link" href="#Operacje-na-plikach">&#182;</a></h1>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Odczyt/zapis-z-pliku">Odczyt/zapis z pliku<a class="anchor-link" href="#Odczyt/zapis-z-pliku">&#182;</a></h1>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Plik moża otworzyć za pomocą funkcji <code>open()</code> wywołanej z przynajmniej jednym parametrem - ścieżką do pliku. Ścieżka może być względna (domyślnie od ścieżka do uruchomienego interpretera) np. <code>file_1.txt</code> lub bezwględna (<code>/home/tutor/Documents/pw_labs/lab_6/file_1.txt</code>).</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span>%%bash
-touch priv_example.py
-<span class="nb">echo</span> <span class="s2">&quot;a_priv_example = 1</span>
-<span class="s2">_b_priv_example = 2</span>
-<span class="s2">__c_priv_example = 3&quot;</span> &gt; priv_example.py
+touch file_1.txt
+<span class="nb">echo</span> -e <span class="s2">&quot;Linia 0</span>
+<span class="s2">lina 1</span>
+<span class="s2">\t\tlinia 2: และ - kot(tajski)</span>
+<span class="s2">  &quot;</span> &gt; file_1.txt
 </pre></div>
 
     </div>
 </div>
 </div>
 
-</div><div class="fragment">
+</div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">priv_example</span> <span class="k">import</span> <span class="o">*</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a_priv_example</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">_b_priv_example</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">file_</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file_1.txt&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Funkcja zwraca obiekt pliku (domyślnie w trybie czytania), z kursorem odczytu umiejscowionym na początku pliku.</p>
+<p>Zależnie od trybu otwarcia z pliku można czytać, pisać do niego lub robić obie te rzeczy równocześnie (sic!). Plik posiada również stan (otwarty/zamknięty), które określają czy możliwa jest interakcja z plikiem.</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Położenie kursora:&#39;</span><span class="p">,</span> <span class="n">file_</span><span class="o">.</span><span class="n">tell</span><span class="p">())</span>  <span class="c1"># określa położenie kursora w pliku</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Można czytać z pliku:&#39;</span><span class="p">,</span> <span class="n">file_</span><span class="o">.</span><span class="n">readable</span><span class="p">())</span>  <span class="c1"># określa czy możliwy jest odczyt</span>
+<span class="c1"># odczyt linijki z pliku, znak końca linii dodawany jest do odczytanego stringa</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Linia 1: {file_.readline()}&#39;</span><span class="p">)</span>  
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Położenie kursora:&#39;</span><span class="p">,</span> <span class="n">file_</span><span class="o">.</span><span class="n">tell</span><span class="p">())</span>
 </pre></div>
 
     </div>
@@ -13436,62 +13446,12 @@ touch priv_example.py
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1
+<pre>Położenie kursora: 0
+Można czytać z pliku: True
+Linia 1: Linia 0
+
+Położenie kursora: 8
 </pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">--------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-6-a75ff47d8ccc&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">from</span> priv_example <span class="ansi-green-fg">import</span> <span class="ansi-blue-fg">*</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> print<span class="ansi-blue-fg">(</span>a_priv_example<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span>_b_priv_example<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">NameError</span>: name &#39;_b_priv_example&#39; is not defined</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">__c_priv_example</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">--------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-7-c1662f9e16a8&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span>__c_priv_example<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">NameError</span>: name &#39;__c_priv_example&#39; is not defined</pre>
 </div>
 </div>
 
@@ -13504,29 +13464,10 @@ touch priv_example.py
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>%%bash
-touch priv_example_2.py
-
-<span class="nb">echo</span> <span class="s2">&quot;__all__ = (&#39;a_priv_example_2&#39;,)</span>
-
-<span class="s2">a_priv_example_2 = 1</span>
-<span class="s2">b_priv_example_2 = 2</span>
-<span class="s2">c_priv_example_2 = 3&quot;</span> &gt; priv_example_2.py
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">priv_example_2</span> <span class="k">import</span> <span class="o">*</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a_priv_example_2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">b_priv_example_2</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Czy plik zamkniety:&quot;</span><span class="p">,</span> <span class="n">file_</span><span class="o">.</span><span class="n">closed</span><span class="p">)</span>  <span class="c1"># stan pliku</span>
+<span class="n">file_</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  <span class="c1"># zamknięcie pliku</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Czy plik zamkniety:&quot;</span><span class="p">,</span> <span class="n">file_</span><span class="o">.</span><span class="n">closed</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">file_</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>  <span class="c1"># czytanie z zamkniętego pliku podniesie błąd</span>
 </pre></div>
 
     </div>
@@ -13543,7 +13484,8 @@ touch priv_example_2.py
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1
+<pre>Czy plik zamkniety: False
+Czy plik zamkniety: True
 </pre>
 </div>
 </div>
@@ -13556,13 +13498,13 @@ touch priv_example_2.py
 <div class="output_subarea output_text output_error">
 <pre>
 <span class="ansi-red-fg">--------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-9-ef65008f0dc0&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">from</span> priv_example_2 <span class="ansi-green-fg">import</span> <span class="ansi-blue-fg">*</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> print<span class="ansi-blue-fg">(</span>a_priv_example_2<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span>b_priv_example_2<span class="ansi-blue-fg">)</span>
+<span class="ansi-red-fg">ValueError</span>                               Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-8-578b8ff31f6f&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> file_<span class="ansi-blue-fg">.</span>close<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># zamknięcie pliku</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Czy plik zamkniety:&#34;</span><span class="ansi-blue-fg">,</span> file_<span class="ansi-blue-fg">.</span>closed<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">----&gt; 4</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span>file_<span class="ansi-blue-fg">.</span>readline<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># czytanie z zamkniętego pliku podniesie błąd</span>
 
-<span class="ansi-red-fg">NameError</span>: name &#39;b_priv_example_2&#39; is not defined</pre>
+<span class="ansi-red-fg">ValueError</span>: I/O operation on closed file.</pre>
 </div>
 </div>
 
@@ -13570,12 +13512,37 @@ touch priv_example_2.py
 </div>
 
 </div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>UWAGA</strong> Ważne jest, żeby zawsze po skończeniu pracy z plikiem zamknąć go.</p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>W związku z koniecznością "sprzątania po sobie" (zamykania plików) możliwe są dwa podejścia:</p>
+<ul>
+<li>otwieranie pliku w trybie z obsługą wyjątków</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">__c_priv_example_2</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">file_</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file_1.txt&#39;</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">file_content</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">file_</span><span class="o">.</span><span class="n">readlines</span><span class="p">())</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">file_</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+    <span class="n">file_</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">file_</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13594,11 +13561,50 @@ touch priv_example_2.py
 <div class="output_subarea output_text output_error">
 <pre>
 <span class="ansi-red-fg">--------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-11-daf35b9ff709&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span>__c_priv_example_2<span class="ansi-blue-fg">)</span>
+<span class="ansi-red-fg">UnsupportedOperation</span>                     Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-10-540eafb45852&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span>     file_content <span class="ansi-blue-fg">=</span> list<span class="ansi-blue-fg">(</span>file_<span class="ansi-blue-fg">.</span>readlines<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span>     a <span class="ansi-blue-fg">=</span> file_<span class="ansi-blue-fg">.</span>readline<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">----&gt; 5</span><span class="ansi-red-fg">     </span>file_<span class="ansi-blue-fg">.</span>write<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;&#39;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      6</span> <span class="ansi-green-fg">finally</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">      7</span>     file_<span class="ansi-blue-fg">.</span>close<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
 
-<span class="ansi-red-fg">NameError</span>: name &#39;__c_priv_example_2&#39; is not defined</pre>
+<span class="ansi-red-fg">UnsupportedOperation</span>: not writable</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Zawartość pliku:&#39;</span><span class="p">,</span> <span class="n">file_content</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Zmienna a: &quot;</span><span class="si">{a}</span><span class="s1">&quot;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Czy plik zamkniety:&quot;</span><span class="p">,</span> <span class="n">file_</span><span class="o">.</span><span class="n">closed</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Zawartość pliku: [&#39;Linia 0\n&#39;, &#39;lina 1\n&#39;, &#39;\t\tlinia 2: และ - kot(tajski)\n&#39;, &#39;  \n&#39;]
+Zmienna a: &#34;&#34;
+Czy plik zamkniety: True
+</pre>
 </div>
 </div>
 
@@ -13609,23 +13615,107 @@ touch priv_example_2.py
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Getter-i-setter">Getter i setter<a class="anchor-link" href="#Getter-i-setter">&#182;</a></h1>
+<ul>
+<li>otwieranie za pomocą menadżera kontekstu - przez wyrażenie <code>with</code> (podejście wygodniejsze)</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file_1.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_</span><span class="p">:</span>
+    <span class="n">file_content</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">file_</span><span class="o">.</span><span class="n">readlines</span><span class="p">())</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">file_</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+    <span class="n">file_</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">--------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">UnsupportedOperation</span>                     Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-12-748ad1a5d4c2&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span>     file_content <span class="ansi-blue-fg">=</span> list<span class="ansi-blue-fg">(</span>file_<span class="ansi-blue-fg">.</span>readlines<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span>     a <span class="ansi-blue-fg">=</span> file_<span class="ansi-blue-fg">.</span>readline<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">----&gt; 4</span><span class="ansi-red-fg">     </span>file_<span class="ansi-blue-fg">.</span>write<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;&#39;</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">UnsupportedOperation</span>: not writable</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Zawartość pliku:&#39;</span><span class="p">,</span> <span class="n">file_content</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Zmienna a:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Czy plik zamkniety:&quot;</span><span class="p">,</span> <span class="n">file_</span><span class="o">.</span><span class="n">closed</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Zawartość pliku: [&#39;Linia 0\n&#39;, &#39;lina 1\n&#39;, &#39;\t\tlinia 2: และ - kot(tajski)\n&#39;, &#39;  \n&#39;]
+Zmienna a: 
+Czy plik zamkniety: True
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Tryby-odczytu">Tryby odczytu<a class="anchor-link" href="#Tryby-odczytu">&#182;</a></h1>
 </div>
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Poza konwencją nazw prywatność realizowana jest za pomocą <strong>gettera</strong> i <strong>settera</strong>. Są to dwie funkcje kontrolujące odczytwanie i zapisywanie do zmiennej.</p>
-<p>Wspomniana na poprzednich zajęciach <em>własność</em> (<code>property</code>) to właśnie taki getter. Ponieważ nie zdefiniowaliśmy settera możliwe było stworzenie <em>nieedytowalnej publicznej zmiennej</em>.</p>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>W celu dodania settera musimy skorzystać z dekoratora <code>&lt;nazwa_własności&gt;.setter</code>.</p>
+<ul>
+<li><code>r</code> - odczyt z pliku (pod warunkiem, że plik istnieje)</li>
+<li><code>w</code> - zapis do pliku (tworzy plik o ile nie istnieje)</li>
+<li><code>a</code> - zapis do pliku (kursor ustawiony na końcu pliku)</li>
+<li><code>+</code> - dodanie przeciwstawnej opcji (<code>r+</code> różni się od <code>w+</code> tym że nie tworzy pliku)</li>
+<li><code>x</code> - stwórz plik i otwórz w trybie zapisu (podnosi wyjątek, jeżeli plik istnieje)</li>
+<li><code>b</code> - otwórz w trybie binarnym</li>
+</ul>
 
 </div>
 </div>
@@ -13635,27 +13725,35 @@ touch priv_example_2.py
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">numbers</span> <span class="k">import</span> <span class="n">Number</span>
-
-
-<span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
-    <span class="n">__x</span> <span class="o">=</span> <span class="kc">None</span>
-    
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span> 
-        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
-
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__x</span>
-
-    <span class="nd">@x</span><span class="o">.</span><span class="n">setter</span>
-    <span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">Number</span><span class="p">):</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Not number value!&quot;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">__x</span> <span class="o">=</span> <span class="n">x</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># odczyt z domyślnym kodowaniem</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file_1.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Położenie kursora:&#39;</span><span class="p">,</span> <span class="n">file_</span><span class="o">.</span><span class="n">tell</span><span class="p">())</span>
+    <span class="n">file_</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">26</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">file_</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Położenie kursora:&#39;</span><span class="p">,</span> <span class="n">file_</span><span class="o">.</span><span class="n">tell</span><span class="p">())</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Położenie kursora: 53
+แล
+Położenie kursora: 32
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -13665,12 +13763,13 @@ touch priv_example_2.py
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mf">1.</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;P1 x: &#39;</span><span class="p">,</span> <span class="n">p1</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
-<span class="n">p1</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mf">2.</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;P1 x: &#39;</span><span class="p">,</span> <span class="n">p1</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
-<span class="n">p1</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;a&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;P1 x: &#39;</span><span class="p">,</span> <span class="n">p1</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># odczyt w bajtach</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file_1.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a+b&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Położenie kursora:&#39;</span><span class="p">,</span> <span class="n">file_</span><span class="o">.</span><span class="n">tell</span><span class="p">())</span>
+    <span class="n">file_</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">26</span><span class="p">)</span>
+    <span class="n">char</span> <span class="o">=</span> <span class="n">file_</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">char</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Położenie kursora:&#39;</span><span class="p">,</span> <span class="n">file_</span><span class="o">.</span><span class="n">tell</span><span class="p">())</span>
 </pre></div>
 
     </div>
@@ -13687,10 +13786,9 @@ touch priv_example_2.py
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>P1 x:  1.0
-P1 x:  2.0
-Not number value!
-P1 x:  2.0
+<pre>Położenie kursora: 53
+b&#39;\xe0\xb9\x81&#39; แ
+Położenie kursora: 29
 </pre>
 </div>
 </div>
@@ -13698,53 +13796,64 @@ P1 x:  2.0
 </div>
 </div>
 
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Modu&#322;y-wspieraj&#261;ce-czytanie-danych">Modu&#322;y wspieraj&#261;ce czytanie danych<a class="anchor-link" href="#Modu&#322;y-wspieraj&#261;ce-czytanie-danych">&#182;</a></h1>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="csv---dane-o-strukturze-tabelarycznej"><code>csv</code> - dane o strukturze tabelarycznej<a class="anchor-link" href="#csv---dane-o-strukturze-tabelarycznej">&#182;</a></h1>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Dane o strukturze tabelarycznej to dane o strukturze "takiej jak w Excelu" lub bazie danych tzn.</p>
+<ul>
+<li>są pogrupowane w kolumny,</li>
+<li>są spójne co do typu wewnątrz kolumny,</li>
+<li>kolumny mogą posiadać nagłówek.</li>
+</ul>
+<p>Kolumnę rozróżnia się za pomocą znaku przystankowego (<em>delimiter</em>). Jeżeli znak przystankowy lub inny znak specjalny ma być użyty w kolumnie, kolumna powinna być zapisana jako ciąg znaków ograniczonych znakiem cytowania (<em>quotechar</em>).</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Tak naprawdę jest to lekkie nadużycie, gdyż rozszerzenie <code>.csv</code> odnosi się do do <em>comma separated value</em>, tak więc znakiem przystankowym powinien być przecinek. Istnieje jeszcze rozszerzenie <code>.tsv</code> odnoszące się do plików separowanych tabulacją.</p>
+
+</div>
+</div>
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Możliwe jest zdefiniowanie gettera i settera atrybutu używając innych, już istniejących w klasie metod.</p>
-<p>Realizuje się to przez wywołanie dekoratora <code>property</code> jako funkcji.</p>
+<p>Moduł csv dostarcza przede wszytkim 4 obiekty:</p>
+<ul>
+<li><code>reader</code> - czytania z pliku,</li>
+<li><code>writer</code> - pisanie do pliku,</li>
+<li><code>DictReader</code> - czytanie do słownika,</li>
+<li><code>DictWriter</code> - pisanie ze słownika.</li>
+</ul>
+<p>Obiekty te przyjmują jako pierwszy parametr obiekt pliku (ważne jest, żeby plik był otworzony w odpowiednim trybie) oraz parametry definiujące strukturę pliku (np. <code>delimiter</code> i <code>quotechar</code>). Więcej info w dokumentacji: <a href="https://docs.python.org/3.7/library/csv.html">https://docs.python.org/3.7/library/csv.html</a></p>
 
 </div>
 </div>
-</div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
-    <span class="k">def</span> <span class="nf">get_x</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__x</span>
-
-    <span class="k">def</span> <span class="nf">set_x</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">Number</span><span class="p">):</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Not number value!&quot;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">__x</span> <span class="o">=</span> <span class="n">x</span>
-
-    <span class="n">x</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">get_x</span><span class="p">,</span> <span class="n">set_x</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div></div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
-    <span class="k">def</span> <span class="nf">get_x</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__x</span>
-
-    <span class="k">def</span> <span class="nf">set_x</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">Number</span><span class="p">):</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Not number value!&quot;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">__x</span> <span class="o">=</span> <span class="n">x</span>
-
-    <span class="n">x</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">get_x</span><span class="p">,</span> <span class="n">set_x</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
 </pre></div>
 
     </div>
@@ -13754,15 +13863,25 @@ P1 x:  2.0
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;csv_test_1.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">_file</span><span class="p">:</span>
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">_file</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">quotechar</span><span class="o">=</span><span class="s2">&quot;*&quot;</span><span class="p">)</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">writerows</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span> <span class="o">*</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mf">1.</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;P1 x: &#39;</span><span class="p">,</span> <span class="n">p1</span><span class="o">.</span><span class="n">get_x</span><span class="p">())</span>
-<span class="n">p1</span><span class="o">.</span><span class="n">set_x</span><span class="p">(</span><span class="mf">2.</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;P1 x: &#39;</span><span class="p">,</span> <span class="n">p1</span><span class="o">.</span><span class="n">get_x</span><span class="p">())</span>
-<span class="n">p1</span><span class="o">.</span><span class="n">set_x</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;P1 x: &#39;</span><span class="p">,</span> <span class="n">p1</span><span class="o">.</span><span class="n">get_x</span><span class="p">())</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">cat</span> csv_test_1.csv
 </pre></div>
 
     </div>
@@ -13779,10 +13898,9 @@ P1 x:  2.0
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>P1 x:  1.0
-P1 x:  2.0
-Not number value!
-P1 x:  2.0
+<pre>
+
+
 </pre>
 </div>
 </div>
@@ -13796,11 +13914,10 @@ P1 x:  2.0
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">p2</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mf">1.</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;P2 x: &#39;</span><span class="p">,</span> <span class="n">p2</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
-<span class="n">p2</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mf">2.</span>
-<span class="n">p2</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;a&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;P2 x: &#39;</span><span class="p">,</span> <span class="n">p2</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;csv_test_1.csv&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">_file</span><span class="p">:</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">_file</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">quotechar</span><span class="o">=</span><span class="s2">&quot;*&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13817,9 +13934,9 @@ P1 x:  2.0
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>P2 x:  1.0
-Not number value!
-P2 x:  2.0
+<pre>[&#39;0&#39;, &#39;a&#39;, &#39;,&#39;]
+[&#39;1&#39;, &#39;b&#39;, &#39;,&#39;]
+[&#39;2&#39;, &#39;c&#39;, &#39;,&#39;]
 </pre>
 </div>
 </div>
@@ -13827,24 +13944,16 @@ P2 x:  2.0
 </div>
 </div>
 
-</div></div></section><section>
+</div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_belly</span> <span class="o">=</span> <span class="kc">None</span>
-        
-    <span class="k">def</span> <span class="nf">eat_sth</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sth</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_belly</span> <span class="o">=</span> <span class="n">sth</span>
-        
-    <span class="n">mouth</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">eat_sth</span><span class="p">)</span>
-    
-<span class="n">dog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">()</span>
-<span class="n">dog</span><span class="o">.</span><span class="n">mouth</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">dog</span><span class="o">.</span><span class="n">mouth</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;csv_test_1.csv&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">_file</span><span class="p">:</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">_file</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13860,36 +13969,108 @@ P2 x:  2.0
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">--------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AttributeError</span>                           Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-20-64cd9c939f83&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">     10</span> dog <span class="ansi-blue-fg">=</span> Dog<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     11</span> dog<span class="ansi-blue-fg">.</span>mouth <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">4</span>
-<span class="ansi-green-fg">---&gt; 12</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span>dog<span class="ansi-blue-fg">.</span>mouth<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">AttributeError</span>: unreadable attribute</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;0&#39;, &#39;a&#39;, &#39;*&#39;, &#39;*&#39;]
+[&#39;1&#39;, &#39;b&#39;, &#39;*&#39;, &#39;*&#39;]
+[&#39;2&#39;, &#39;c&#39;, &#39;*&#39;, &#39;*&#39;]
+</pre>
 </div>
 </div>
 
 </div>
 </div>
 
-</div></section></section><section><section>
+</div></div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;csv_test_1.csv&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">_file</span><span class="p">:</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span>
+        <span class="n">_file</span><span class="p">,</span> <span class="n">fieldnames</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;number&#39;</span><span class="p">,</span> <span class="s1">&#39;letter&#39;</span><span class="p">,</span> <span class="s1">&#39;comment&#39;</span><span class="p">],</span>
+        <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">quotechar</span><span class="o">=</span><span class="s1">&#39;*&#39;</span>
+    <span class="p">)</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>OrderedDict([(&#39;number&#39;, &#39;0&#39;), (&#39;letter&#39;, &#39;a&#39;), (&#39;comment&#39;, &#39;,&#39;)])
+OrderedDict([(&#39;number&#39;, &#39;1&#39;), (&#39;letter&#39;, &#39;b&#39;), (&#39;comment&#39;, &#39;,&#39;)])
+OrderedDict([(&#39;number&#39;, &#39;2&#39;), (&#39;letter&#39;, &#39;c&#39;), (&#39;comment&#39;, &#39;,&#39;)])
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;csv_test_1.csv&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">_file</span><span class="p">:</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span>
+        <span class="n">_file</span><span class="p">,</span> <span class="n">fieldnames</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;number&#39;</span><span class="p">,</span> <span class="s1">&#39;letter&#39;</span><span class="p">],</span>
+        <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span>
+    <span class="p">)</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>OrderedDict([(&#39;number&#39;, &#39;0&#39;), (&#39;letter&#39;, &#39;a&#39;), (None, [&#39;*&#39;, &#39;*&#39;])])
+OrderedDict([(&#39;number&#39;, &#39;1&#39;), (&#39;letter&#39;, &#39;b&#39;), (None, [&#39;*&#39;, &#39;*&#39;])])
+OrderedDict([(&#39;number&#39;, &#39;2&#39;), (&#39;letter&#39;, &#39;c&#39;), (None, [&#39;*&#39;, &#39;*&#39;])])
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Dziedziczenie">Dziedziczenie<a class="anchor-link" href="#Dziedziczenie">&#182;</a></h1>
+<h1 id="json-standard-komunikacji-obiektowej"><code>json</code> standard komunikacji obiektowej<a class="anchor-link" href="#json-standard-komunikacji-obiektowej">&#182;</a></h1>
 </div>
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Dziedziczenie to mechanizm współdzielenia funkcjonalności między klasami. Klasa, która dziedziczy po innej klasie poza własnymi atrybutami i metodami “dziedziczy” atrybuty i metody klasy “rodzica” (posiada do nich dostęp w swojej definicji).</p>
-<p>Klasa, która dziedziczy nazywa się <strong>podklasą</strong> (eng. <em>subclass</em>) lub <em>klasą-dzieckiem</em>.</p>
-<p>Klasa, po której się dziedziczy nazywana jest <strong>klasą bazową</strong> (eng. <em>superclass</em>) lub klasą-rodzicem.</p>
+<p><code>json</code> czyli <em>JavaScript Object Notation</em> to lekki (nie zawierający żadnych metadanych) format zapisu danych o strukturze obiektu (klucz-wartość), którego główną zaletą jest jego czytelność (<em>human-readable</em>). Świadczyć może o tym fakt, że w znacznym stopniu wyparł wcześniej stosowany w komunikacji sieciowej <code>xml</code> (<em>eXtensible Markup Language</em>).</p>
+<p>Zasady konstrukcji poprawnego jsona są opisane tu: <a href="http://json.org/">http://json.org/</a></p>
 
 </div>
 </div>
@@ -13897,7 +14078,266 @@ P2 x:  2.0
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Klasy, po których się dziedziczy, określa się poprzez podanie ich w nagłówku klasy</strong>, po nazwie klasy (w nawiasie, w podobny sposób jak parametry funkcji).</p>
+<p>Ogólnie polecam go do zapisu obiektów (np. konfiguracji, parametrów), lub formatowania złożonych słowników (przy debuggowaniu).</p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Moduł zawiera metody do zapisu i odczytu w dwóch wersjach:</p>
+<ul>
+<li>odczyt <code>load</code> (z obiektu pliku) i <code>loads</code> (ze stringa),</li>
+<li>zapis <code>dump</code> (do obiektu pliku) i <code>dumps</code> (do stringa).</li>
+</ul>
+<p>Dokumentacja: <a href="https://docs.python.org/3.7/library/json.html">https://docs.python.org/3.7/library/json.html</a></p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>OrderedDict([(&#39;number&#39;, &#39;2&#39;), (&#39;letter&#39;, &#39;c&#39;), (None, [&#39;*&#39;, &#39;*&#39;])])
+{
+    &#34;number&#34;: &#34;2&#34;,
+    &#34;letter&#34;: &#34;c&#34;,
+    &#34;null&#34;: [
+        &#34;*&#34;,
+        &#34;*&#34;
+    ]
+}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Inne moduły przydatne przy pracy na plikach:</p>
+<ul>
+<li><code>os.path</code> - operacje systemu operacyjnego na plikach, definiowanie ścieżek etc.</li>
+<li><code>shutil</code> - kopiowanie plików i folderów</li>
+<li><code>pathlib</code> - łączy cechy dwóch powyższych w przyjemnej składni (niezależnej od OS)</li>
+<li><code>tempdir</code> - pliki i foldery tymczasowe</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Wyra&#380;enia-regularne">Wyra&#380;enia regularne<a class="anchor-link" href="#Wyra&#380;enia-regularne">&#182;</a></h1>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Wyrażenia regularne (<em>Regular Expresions</em>, <em>RegEx</em>, <em>RegExp</em>) pozwalają na wyszukiwanie podciągów w ciągu znaków, które spełniają określone zależności. Przydatne przy np.:</p>
+<ul>
+<li>szukaniu w tekście,</li>
+<li>zastępowaniu powtarzalnych fragmentów,</li>
+<li>parsowaniu stringów pochodzących od użytkownika lub stringów o określonej strukturze (np kod pocztowy).</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Wyrażenia regularne mogą zachować się "zbyt" zachłannie (źle sformatowane zapytanie może zacząć analizować cały string) zalecane jest używanie ich na względnie krótkich stringach, albo użycie ich ograniczyć do minimum (dzielić tekst na mniejsze fragmenty, używać regexów jako ostatniego filtra).</p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>W Pythonie za obsługę wyrażeń regularnych odpowiada moduł <code>re</code> (<a href="https://docs.python.org/3.7/library/re.html">https://docs.python.org/3.7/library/re.html</a>).</p>
+<p>Na chwilę obecną skorzystamy tylko z jednej funckji <code>search</code> szukającej pierwszego dopasowania zadanego wyrażenia.</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Wyrażeniem regularnym może być pojedynczy znak z wyjątkiem następujących znaków: <code>\.|[]{}ˆ$*+?</code>. 
+W przypadku chęcia użycia tych znaków konieczne jest ich wyescapowanie.</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Ala ma kota,</span>
+<span class="s1">kot ma drzemkę :\ </span>
+<span class="s1">Ela ma psa...</span>
+<span class="s1">mama ma z nimi dramat&#39;&#39;&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;\.&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;re.Match object; span=(2, 3), match=&#39;a&#39;&gt;
+&lt;re.Match object; span=(42, 43), match=&#39;.&#39;&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>UWAGA</strong>: Problem może pojawić się w przypadku próby wyszukania znaku <code>\</code> (backslash). Problem ten wynika z faktu, że Python również używa go do esacpowania znaków specjalnych. Dlatego w przypadku regexów lepiej używać raw-stringów (<code>r''</code>).</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Ala ma kota,</span>
+<span class="s1">kot ma drzemkę :\ </span>
+<span class="s1">Ela ma psa...</span>
+<span class="s1">mama ma z nimi dramat&#39;&#39;&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\\\</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;re.Match object; span=(29, 30), match=&#39;\\&#39;&gt;
+&lt;re.Match object; span=(29, 30), match=&#39;\\&#39;&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Domyślnie wyszukiwanie jest czułe na wielkość znaku. Opcję tę można wyłączyć ustawiając w zapytaniu odpowiednią flagę.</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;re.Match object; span=(0, 1), match=&#39;A&#39;&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Możliwe jest wyszukanie wszytkich pasujących podciągów za pomocą funkcji <code>findall()</code>.</p>
 
 </div>
 </div>
@@ -13907,71 +14347,97 @@ P2 x:  2.0
 <div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">KlasaA</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>  <span class="c1"># równoważne do class KlasaA:</span>
-    <span class="k">pass</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Case sensitive: &#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Case insensitive: &#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">))</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Dziedziczenie---ograniczenia">Dziedziczenie - ograniczenia<a class="anchor-link" href="#Dziedziczenie---ograniczenia">&#182;</a></h1>
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Case sensitive:  [&#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;]
+Case insensitive:  [&#39;A&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;]
+</pre>
 </div>
 </div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><strong>Każda klasa może być rodzicem dla wielu innych klas potomnych</strong> niezależnie tzn. to że klasa A jest rodzicem klasy B i C nie powoduje, że klasy B i C “widzą” siebie nawzajem. </li>
-<li>Podobnie klasa może dziedziczyć po wielu różnych klasach.</li>
-<li><strong>Dziedziczenie jest relacją przechodnią “w dół”</strong> (oznacza to, że każda instancja dziecko jest typu klasy dziecko i typu klasy rodzica), ale nie “w górę” (instancja klasy rodzica nie jest typu klasy dziecka). </li>
-<li>Dziedziczenie po jakiejś klasie nie wyklucza klasy z możliwości bycia “rodzicem” dla innej klasy.</li>
-</ul>
 
 </div>
 </div>
-</div></div></section><section>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Jeżeli chcemy uzyskać iterablę obiektów <code>Match</code> można użyć funkcję <code>finditer()</code>.</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-
-<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Case sensitive match objects: &#39;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">)))</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Case sensitive match objects:  [&lt;re.Match object; span=(2, 3), match=&#39;a&#39;&gt;, &lt;re.Match object; span=(5, 6), match=&#39;a&#39;&gt;, &lt;re.Match object; span=(10, 11), match=&#39;a&#39;&gt;, &lt;re.Match object; span=(18, 19), match=&#39;a&#39;&gt;, &lt;re.Match object; span=(34, 35), match=&#39;a&#39;&gt;, &lt;re.Match object; span=(37, 38), match=&#39;a&#39;&gt;, &lt;re.Match object; span=(41, 42), match=&#39;a&#39;&gt;, &lt;re.Match object; span=(47, 48), match=&#39;a&#39;&gt;, &lt;re.Match object; span=(49, 50), match=&#39;a&#39;&gt;, &lt;re.Match object; span=(52, 53), match=&#39;a&#39;&gt;, &lt;re.Match object; span=(63, 64), match=&#39;a&#39;&gt;, &lt;re.Match object; span=(65, 66), match=&#39;a&#39;&gt;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Wyrażenie może zaweierać więcej niż jeden znak a część z nich może być podana nie bezpośrednio.</p>
+<p>Można to zrealizować za pomocą:</p>
+<ul>
+<li><code>.</code> - zastępującej jeden dowolny znak</li>
+<li><code>\w</code> - zakresu znaków (w tym przypadku wszystkich liter)</li>
+<li><code>[abc]</code> - podaniem zbioru znaków</li>
+<li><code>&lt;re1&gt;|&lt;re2&gt;</code> - podania dwóch opcjonalnych regexów połączonych znakiem <code>|</code> (pipe)</li>
+</ul>
+
+</div>
+</div>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Tworzenie instancji obu klas</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">B</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Czy klasa B jest podklasą klasy A?: &#39;</span><span class="p">,</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">A</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Czy klasa A jest podklasą klasy object?: &#39;</span><span class="p">,</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="nb">object</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Czy klasa B jest podklasą klasy object?: &#39;</span><span class="p">,</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="nb">object</span><span class="p">))</span>
-<span class="c1">#instancje</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="o">*</span><span class="mi">15</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Czy instancja klasy B jest typu B?: &#39;</span><span class="p">,</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">B</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Czy instancja klasy B jest typu A?: &#39;</span><span class="p">,</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">A</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Czy instancja klasy A jest typu B?: &#39;</span><span class="p">,</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">B</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Czy instancja klasy A jest typu object?: &#39;</span><span class="p">,</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">object</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Czy instancja klasy B jest typu object?: &#39;</span><span class="p">,</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="nb">object</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kropka: &#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;.la&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pipe: &#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;Ela|Ala&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Zbiór: &#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;[EA]la&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Zakres: &#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;\wla&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -13988,85 +14454,10 @@ P2 x:  2.0
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Czy klasa B jest podklasą klasy A?:  True
-Czy klasa A jest podklasą klasy object?:  True
-Czy klasa B jest podklasą klasy object?:  True
-***************
-Czy instancja klasy B jest typu B?:  True
-Czy instancja klasy B jest typu A?:  True
-Czy instancja klasy A jest typu B?:  False
-Czy instancja klasy A jest typu object?:  True
-Czy instancja klasy B jest typu object?:  True
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-
-
-<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
-    
-    
-<span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
-
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">a</span> <span class="o">+</span> <span class="mi">5</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Tworzenie instancji obu klas</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">B</span><span class="p">()</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">C</span><span class="p">()</span>
-
-<span class="n">A</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># nadpisanie atrybutu instancji!!</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a.a&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;b.a&#39;</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;b.b&#39;</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;c.a&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;c.b&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>a.a 5
-b.a 5
-b.b 2
-c.a 6
-c.b 4
+<pre>Kropka:  [&#39;Ala&#39;, &#39;Ela&#39;]
+Pipe:  [&#39;Ala&#39;, &#39;Ela&#39;]
+Zbiór:  [&#39;Ala&#39;, &#39;Ela&#39;]
+Zakres:  [&#39;Ala&#39;, &#39;Ela&#39;]
 </pre>
 </div>
 </div>
@@ -14078,7 +14469,90 @@ c.b 4
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Klasa:-dziedzictwo">Klasa: dziedzictwo<a class="anchor-link" href="#Klasa:-dziedzictwo">&#182;</a></h1>
+<p>W przypadku definiowania zbioru znaków <code>[]</code> wszytkie znaki specjalne są traktowane jako znaki z wyjątkiem:</p>
+<ul>
+<li><code>\</code>, który wciąż służy do escapowania znaków,</li>
+<li><code>-</code>, który umieszczony pomiędzy dwoma znakami oznacza zakres</li>
+<li><code>^</code>, który umieszczony na początku oznacza negację</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;[0-5][0-9]&#39;</span><span class="p">,</span> <span class="s1">&#39;72&#39;</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>None
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;[A-Z]&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;[a\-z]&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>None
+None
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Zdefiniowane zakresy znaków znaków:</p>
+<ul>
+<li><code>\d</code>/<code>\D</code> - cyfry dziesiętne / niecyfry</li>
+<li><code>\s</code>/<code>\S</code> - znaki białe (<code>\t\n\r\f \v</code> i inne np. twarde spacje) / niebiałe znaki</li>
+<li><code>\w</code>/<code>\W</code> - znaki słów (<code>a-zA-Z0-9_</code>) / inne znaki niż znaki słów</li>
+</ul>
+
 </div>
 </div>
 </div><div class="fragment">
@@ -14086,80 +14560,21 @@ c.b 4
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><strong>Klasa dziedzicząca może nadpisywać odziedziczone metody</strong> poprzez zdefiniowanie wewnątrz siebie metody o takiej samej nazwie jak metoda rodzica. <strong>Nie powoduje to jednak nadpisania definicji tej metody w klasie rodzica.</strong></li>
-<li>W przypadku wywołania metody instancji klasy dziecka wywołana zostanie nowo zdefiniowana metoda.</li>
-<li>Klasa dziecko może odwołać się metody rodzica za pomocą funkcji: <code>super().&lt;nazwa_metody&gt;</code>.</li>
+<li><code>[0-9]</code> odpowiada <code>\d</code></li>
+<li><code>[ \t\n\r\f\v]</code> odpowiada <code>\s</code></li>
+<li><code>[a-zA-Z0-9]</code> odpowiada <code>\w</code></li>
 </ul>
 
 </div>
 </div>
-</div></div></section><section>
+</div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">b</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-
-
-<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
-
-<span class="c1"># Klasa C dziedziczy po klasie A, niezależnie od klasy B</span>
-<span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
-
-    <span class="c1"># Klasa C rozszerza swoją definicję względem klasy A o metodę describe</span>
-    <span class="k">def</span> <span class="nf">describe</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;C.b =&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{self.__class__.__name__}</span><span class="s1">.b =&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>
-
-<span class="k">class</span> <span class="nc">D</span><span class="p">(</span><span class="n">C</span><span class="p">):</span>
-    <span class="c1"># Klasa D zmienia definicję metody describe</span>
-    <span class="k">def</span> <span class="nf">describe</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;D: a = </span><span class="si">{self.a}</span><span class="s1">, b = </span><span class="si">{self.b}</span><span class="s1">&#39;</span><span class="p">)</span>
-
-<span class="k">class</span> <span class="nc">E</span><span class="p">(</span><span class="n">C</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">describe</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;E.b =&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>
-
-<span class="k">class</span> <span class="nc">F</span><span class="p">(</span><span class="n">E</span><span class="p">):</span>
-    <span class="k">pass</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">b1</span> <span class="o">=</span> <span class="n">B</span><span class="p">()</span>
-<span class="n">b2</span> <span class="o">=</span> <span class="n">B</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">C</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
-<span class="n">d</span> <span class="o">=</span> <span class="n">D</span><span class="p">(</span><span class="s1">&#39;lalala&#39;</span><span class="p">)</span>
-<span class="n">e</span> <span class="o">=</span> <span class="n">E</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a.b: &#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;b1.b: &#39;</span><span class="p">,</span> <span class="n">b1</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;b2.b: &#39;</span><span class="p">,</span> <span class="n">b2</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Metoda describe (instancja klasy C):&#39;</span><span class="p">)</span>
-<span class="n">c</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Metoda describe (instancja klasy D):&#39;</span><span class="p">)</span>
-<span class="n">d</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Metoda describe (instancja klasy E):&#39;</span><span class="p">)</span>
-<span class="n">e</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Metoda describe (instancja klasy F):&#39;</span><span class="p">)</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">F</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
-<span class="n">f</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;\w\w\d&#39;</span><span class="p">,</span> <span class="s1">&#39;a_2&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;\w\w\w&#39;</span><span class="p">,</span> <span class="s1">&#39;007&#39;</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -14176,22 +14591,8 @@ c.b 4
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>a.b:  5
-b1.b:  2
-b2.b:  3
-Metoda describe (instancja klasy C):
-C.b = 7
-C.b = 7
-Metoda describe (instancja klasy D):
-D: a = 1, b = lalala
-Metoda describe (instancja klasy E):
-C.b = [1, 2, 3]
-E.b = [1, 2, 3]
-E.b = [1, 2, 3]
-Metoda describe (instancja klasy F):
-C.b = /
-F.b = /
-E.b = /
+<pre>&lt;re.Match object; span=(0, 3), match=&#39;a_2&#39;&gt;
+&lt;re.Match object; span=(0, 3), match=&#39;007&#39;&gt;
 </pre>
 </div>
 </div>
@@ -14199,44 +14600,40 @@ E.b = /
 </div>
 </div>
 
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>W celu określenia liczby wystąpień znaku służy:</p>
+<ul>
+<li><code>?</code> - występuje 0 lub 1 raz</li>
+<li><code>*</code> - występuje 0 lub więcej razy</li>
+<li><code>+</code> - występuje przynajmniej raz</li>
+<li><code>{m,n}</code> - występuje od minimum m do maksimum n razy</li>
+<li><code>{m,}</code> - występuje przynajmniej m razy</li>
+<li><code>{,n}</code> - występuje nie więcej niż n razy</li>
+</ul>
+
+</div>
+</div>
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Kosa</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">maintain</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ostrzę kosę&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">match_msg</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{msg:&lt;15}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">fullmatch</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">msg</span><span class="p">)))</span>
 
-    <span class="k">def</span> <span class="nf">cut</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tnę zboże&#39;</span><span class="p">)</span>
-
-
-<span class="k">class</span> <span class="nc">Cep</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">maintain</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sprawdzam supły&#39;</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">hit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Młócę zboże&#39;</span><span class="p">)</span>
-
-
-<span class="k">class</span> <span class="nc">Kombajn</span><span class="p">(</span><span class="n">Cep</span><span class="p">,</span> <span class="n">Kosa</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">maintain</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">Kosa</span><span class="o">.</span><span class="n">maintain</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-        <span class="n">Cep</span><span class="o">.</span><span class="n">maintain</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">do</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">cut</span><span class="p">()</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">hit</span><span class="p">()</span>
-
-
-<span class="n">k</span> <span class="o">=</span> <span class="n">Kombajn</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;konserwacja:&#39;</span><span class="p">)</span>
-<span class="n">k</span><span class="o">.</span><span class="n">maintain</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span> <span class="o">*</span> <span class="mi">15</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;użycie:&#39;</span><span class="p">)</span>
-<span class="n">k</span><span class="o">.</span><span class="n">do</span><span class="p">()</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39; *c?o+mbo&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{pattern}</span><span class="s1">:&#39;</span><span class="p">)</span>
+<span class="n">match_msg</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="s1">&#39;combo&#39;</span><span class="p">)</span>
+<span class="n">match_msg</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="s1">&#39;combo &#39;</span><span class="p">)</span>
+<span class="n">match_msg</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="s1">&#39;cooombo&#39;</span><span class="p">)</span>
+<span class="n">match_msg</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="s1">&#39;oombo&#39;</span><span class="p">)</span>
+<span class="n">match_msg</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">combo&#39;</span><span class="p">)</span>
+<span class="n">match_msg</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="s1">&#39;  combo&#39;</span><span class="p">)</span>
+<span class="n">match_msg</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="s1">&#39;  cmbo&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14253,13 +14650,14 @@ E.b = /
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>konserwacja:
-Ostrzę kosę
-Sprawdzam supły
----------------
-użycie:
-Tnę zboże
-Młócę zboże
+<pre> *c?o+mbo:
+combo           True
+combo           False
+cooombo         True
+oombo           True
+	combo          False
+  combo         True
+  cmbo          False
 </pre>
 </div>
 </div>
@@ -14271,7 +14669,57 @@ Młócę zboże
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Dziedziczenie-diamentowe">Dziedziczenie diamentowe<a class="anchor-link" href="#Dziedziczenie-diamentowe">&#182;</a></h1>
+<ul>
+<li><code>??</code>, <code>+?</code>, <code>*?</code> - niechciwe wersje operatorów</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;&lt;a&gt; b &lt;c&gt;&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;message:&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;&lt;.*&gt;&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;&lt;.*?&gt;&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>message: &lt;a&gt; b &lt;c&gt;
+&lt;a&gt; b &lt;c&gt;
+&lt;a&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>W wyrażeniu regularnym możemy określić położenie względem początku całego ciągu, linii lub słowa:</p>
+<ul>
+<li><code>^</code> - określa początek stringa (lub linii w trybie wielolinijkowym)</li>
+</ul>
+
 </div>
 </div>
 </div><div class="fragment">
@@ -14280,45 +14728,27 @@ Młócę zboże
 <div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Class A&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_findall</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">))</span>
 
-<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Class B&#39;</span><span class="p">)</span>
-
-<span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Class C&#39;</span><span class="p">)</span>
-
-<span class="c1"># class D(B,C):</span>
-<span class="k">class</span> <span class="nc">D</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="n">B</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Class D&#39;</span><span class="p">)</span>
+<span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Ala ma kota,</span>
+<span class="s1">kot ma drzemkę :\ </span>
+<span class="s1">Ela ma psa...</span>
+<span class="s1">mama ma z nimi dramat&#39;&#39;&#39;</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-</div></div></section><section>
+</div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">15</span> <span class="o">*</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">B</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">15</span> <span class="o">*</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">C</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">15</span> <span class="o">*</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
-<span class="n">d</span> <span class="o">=</span> <span class="n">D</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">print_findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^.la&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+<span class="n">print_findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^.la&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">MULTILINE</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14335,18 +14765,8 @@ Młócę zboże
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Class A
----------------
-Class A
-Class B
----------------
-Class A
-Class C
----------------
-Class A
-Class B
-Class C
-Class D
+<pre>^.la : [&#39;Ala&#39;]
+^.la : [&#39;Ala&#39;, &#39;Ela&#39;]
 </pre>
 </div>
 </div>
@@ -14354,25 +14774,24 @@ Class D
 </div>
 </div>
 
-</div></section><section>
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Mechanizm rozwiązywania zależności w dziedziczeniu w Pythonie nazywa się <strong>MRO (Method Resolution Order)</strong>.</li>
-<li>Informację o wynikach działania MRO (kolejności dziedziczenia) można zobaczyć wywołując <code>help(&lt;nazwa klasy&gt;)</code>.</li>
-<li><strong>Metoda</strong> <code>super</code> może nie być tak super, <strong>gdyż jej wywołanie jest zależne od instancji wywołującej metodę</strong> i przez to metoda może zachowywać się w sposób nieoczekiwany przy złożonym dziedziczeniu!</li>
+<li><code>$</code> - określa koniec stringa (lub linii w trybie wielolinijkowym)</li>
 </ul>
 
 </div>
 </div>
-</div></section><section>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">print_findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;ma+ .+$&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+<span class="n">print_findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;ma+ .+$&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">MULTILINE</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14389,30 +14808,8 @@ Class D
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Help on class D in module __main__:
-
-class D(C, B)
- |  Method resolution order:
- |      D
- |      C
- |      B
- |      A
- |      builtins.object
- |  
- |  Methods defined here:
- |  
- |  __init__(self)
- |      Initialize self.  See help(type(self)) for accurate signature.
- |  
- |  ----------------------------------------------------------------------
- |  Data descriptors inherited from A:
- |  
- |  __dict__
- |      dictionary for instance variables (if defined)
- |  
- |  __weakref__
- |      list of weak references to the object (if defined)
-
+<pre>ma+ .+$ : [&#39;ma ma z nimi dramat&#39;]
+ma+ .+$ : [&#39;ma kota,&#39;, &#39;ma drzemkę :\\ &#39;, &#39;ma psa...&#39;, &#39;ma ma z nimi dramat&#39;]
 </pre>
 </div>
 </div>
@@ -14420,66 +14817,91 @@ class D(C, B)
 </div>
 </div>
 
-</div></section><section>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>\b</code> - określa początek/koniec słowa</li>
+<li><code>\B</code> - określa środek słowa</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
-    <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Class A&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">increase</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Ala ma kota,</span>
+<span class="s1">kot ma drzemkę :\ </span>
+<span class="s1">Ela ma psa...</span>
+<span class="s1">mama ma z nimi dramat&#39;&#39;&#39;</span>
 
-    <span class="k">def</span> <span class="nf">increase</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">counter</span> <span class="o">+=</span> <span class="n">val</span>
-        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">counter</span><span class="p">)</span>
-
-
-<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Class B&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">increase</span><span class="p">()</span>
-
-
-<span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Class C&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">increase</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">increase</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">counter</span> <span class="o">*=</span> <span class="n">val</span>
-        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">counter</span><span class="p">)</span>
-
-<span class="c1"># niezależnie od kolejności dziedziczenia, </span>
-<span class="c1"># increase dziedziczone jest z C, co powoduje zerowanie atrybutu</span>
-<span class="k">class</span> <span class="nc">D</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="n">B</span><span class="p">):</span>  
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Class D&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">increase</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">print_findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;ma&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+<span class="n">print_findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\bma\b&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+<span class="n">print_findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;ma\B&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+<span class="n">print_findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\bma\B&#39;</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-</div></section><section>
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>ma : [&#39;ma&#39;, &#39;ma&#39;, &#39;ma&#39;, &#39;ma&#39;, &#39;ma&#39;, &#39;ma&#39;, &#39;ma&#39;]
+\bma\b : [&#39;ma&#39;, &#39;ma&#39;, &#39;ma&#39;, &#39;ma&#39;]
+ma\B : [&#39;ma&#39;, &#39;ma&#39;]
+\bma\B : [&#39;ma&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Grupy">Grupy<a class="anchor-link" href="#Grupy">&#182;</a></h1>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Ostatnim elementem w wyrażeniach regularnych są grupy <code>()</code>. Pozwlają one na grupowanie elementów wyrażenia (sic!), ale również odnosić się do określonej grupy w wyrażeniu lub w uzskanym dopasowaniu.</p>
+<ul>
+<li><code>(...)</code> - zwykła grupa, ciąg dopasowany do <code>...</code> jest dostępny po numerze (od 1)</li>
+<li><code>(?:...)</code> - grupa nie wychwytująca - ogranicza wyrażenie, ale nie jest dodawana do numeracji</li>
+<li><code>(?#...)</code> - komentarz, ignorowany</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">15</span> <span class="o">*</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">B</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">15</span> <span class="o">*</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">C</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">15</span> <span class="o">*</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
-<span class="n">d</span> <span class="o">=</span> <span class="n">D</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">regex</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;(ab)(\w*)(?#jakie literki złapię?)(?:d)&#39;</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="s1">&#39;abcd&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;grupy: &#39;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">groups</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;grupa 0: &#39;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> <span class="c1"># całe dopasowane wyrażenie</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;grupa 1: &#39;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;grupa 2: &#39;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -14496,27 +14918,10 @@ class D(C, B)
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Class A
-1
----------------
-Class A
-1
-Class B
-2
----------------
-Class A
-0
-Class C
-0
----------------
-Class A
-0
-Class B
-0
-Class C
-0
-Class D
-0
+<pre>grupy:  (&#39;ab&#39;, &#39;c&#39;)
+grupa 0:  abcd
+grupa 1:  ab
+grupa 2:  c
 </pre>
 </div>
 </div>
@@ -14524,80 +14929,78 @@ Class D
 </div>
 </div>
 
-</div></section><section>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>(?P&lt;name&gt;...)</code> - nazwana grupa - grupa poza numeracją otrzymuje jeszcze nazwę <code>name</code></li>
+<li><code>(?P=name)</code> - odwołanie do grupy o nazwie</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Machine</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-
-    <span class="k">def</span> <span class="nf">scan</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Machine </span><span class="si">{self.name}</span><span class="s2"> do not scan.&quot;</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">print</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Machine: </span><span class="si">{self.name}</span><span class="s2">.&quot;</span><span class="p">)</span>
-
-
-<span class="k">class</span> <span class="nc">Printer</span><span class="p">(</span><span class="n">Machine</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">is_color</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="n">Machine</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">is_color</span> <span class="o">=</span> <span class="n">is_color</span>
-
-    <span class="k">def</span> <span class="nf">print</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span>
-            <span class="n">f</span><span class="s2">&quot;Printer </span><span class="si">{self.name}</span><span class="s2"> print test page&quot;</span>
-            <span class="n">f</span><span class="s2">&quot;{&#39; in color&#39; if self.is_color else &#39;&#39;}.&quot;</span>
-        <span class="p">)</span>
-
-
-<span class="k">class</span> <span class="nc">Scanner</span><span class="p">(</span><span class="n">Machine</span><span class="p">):</span>
-    <span class="n">_dpi</span> <span class="o">=</span> <span class="mi">200</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="n">_dpi</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Test lampy&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_dpi</span> <span class="o">=</span> <span class="n">dpi</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">scan</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Scanner </span><span class="si">{self.name}</span><span class="s2"> scan in dpi </span><span class="si">{self.dpi}</span><span class="s2">.&quot;</span><span class="p">)</span>
-        
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">dpi</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dpi</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">regex</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;(?P&lt;quote&gt;[</span><span class="se">\&#39;</span><span class="s1">&quot;])(?P&lt;name&gt;[A-Za-z ]*?)(?P=quote)&#39;</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="s1">&#39;Robert &quot;Uncle Bob&quot; Martin&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;grupy: &#39;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">groups</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;grupa 0: &#39;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;grupa 1: &#39;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;grupa 2: &#39;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;słownik grup&#39;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">groupdict</span><span class="p">())</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-</div></section><section>
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>grupy:  (&#39;&#34;&#39;, &#39;Uncle Bob&#39;)
+grupa 0:  &#34;Uncle Bob&#34;
+grupa 1:  &#34;
+grupa 2:  Uncle Bob
+słownik grup {&#39;quote&#39;: &#39;&#34;&#39;, &#39;name&#39;: &#39;Uncle Bob&#39;}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>(?=...)</code> - po wcześniejszym wyrażeniu musi następować wyrażenie <code>...</code></li>
+<li><code>(?!...)</code> - po wcześniejszym wyrażeniu nie może następować wyrażenie <code>...</code></li>
+<li><code>(?&lt;=...)</code> - następujące wyrażenie musi być poprzedzone wyrażeniem <code>...</code></li>
+<li><code>(?&lt;!...)</code> - następujące wyrażenie nie może być poprzedzone wyrażeniem <code>...</code></li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># class Xero(Printer, Scanner):</span>
-<span class="k">class</span> <span class="nc">Xero</span><span class="p">(</span><span class="n">Scanner</span><span class="p">,</span> <span class="n">Printer</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">is_color</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">is_color</span><span class="o">=</span><span class="n">is_color</span><span class="p">)</span>
-        
-<span class="n">machine</span> <span class="o">=</span> <span class="n">Machine</span><span class="p">(</span><span class="s2">&quot;Amiga&quot;</span><span class="p">)</span>
-<span class="n">machine</span><span class="o">.</span><span class="n">scan</span><span class="p">()</span>
-<span class="n">machine</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">15</span> <span class="o">*</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
-<span class="n">printer</span> <span class="o">=</span> <span class="n">Printer</span><span class="p">(</span><span class="s2">&quot;Lexmark&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">printer</span><span class="o">.</span><span class="n">scan</span><span class="p">()</span>
-<span class="n">printer</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">15</span> <span class="o">*</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
-<span class="n">scanner</span> <span class="o">=</span> <span class="n">Scanner</span><span class="p">(</span><span class="s2">&quot;Hp&quot;</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
-<span class="n">scanner</span><span class="o">.</span><span class="n">scan</span><span class="p">()</span>
-<span class="n">scanner</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">15</span> <span class="o">*</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
-<span class="n">xero</span> <span class="o">=</span> <span class="n">Xero</span><span class="p">(</span><span class="s2">&quot;Xerox&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">xero</span><span class="o">.</span><span class="n">scan</span><span class="p">()</span>
-<span class="n">xero</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;(?&lt;=abc)def&#39;</span><span class="p">,</span> <span class="s1">&#39;abcdef&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14610,45 +15013,43 @@ Class D
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[42]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Machine Amiga do not scan.
-Machine: Amiga.
----------------
-Machine Lexmark do not scan.
-Printer Lexmark print test page in color.
----------------
-Test lampy
-Scanner Hp scan in dpi 400.
-Machine: Hp.
----------------
-Test lampy
-Scanner Xerox scan in dpi 200.
-Printer Xerox print test page in color.
-</pre>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;re.Match object; span=(3, 6), match=&#39;def&#39;&gt;</pre>
 </div>
+
 </div>
 
 </div>
 </div>
 
-</div></section><section>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>(?(id/&lt;name&gt;)yes-re|no-re)</code> - jeżeli grupa o id <code>id</code> lub nazwie <code>name</code> występuje sprawdź wyrażenie <code>yes_re</code> jeżeli nie, dopasuj wyrażenie <code>no-re</code> (jeżeli jest zdefiniowane)</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Kolejnosć dziedziczenia ma znaczenie, gdyż jawne wywołanie __init__ w klasie Printer</span>
-<span class="c1"># przerywa wywołanie super(). W tej kolejności nie wykonuje się </span>
-<span class="c1"># funkcja __init__ klasy Scanner</span>
-<span class="k">class</span> <span class="nc">Xero</span><span class="p">(</span><span class="n">Printer</span><span class="p">,</span> <span class="n">Scanner</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">is_color</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">is_color</span><span class="o">=</span><span class="n">is_color</span><span class="p">)</span>
-<span class="n">xero</span> <span class="o">=</span> <span class="n">Xero</span><span class="p">(</span><span class="s2">&quot;Xerox&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">xero</span><span class="o">.</span><span class="n">scan</span><span class="p">()</span>
-<span class="n">xero</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">email_regex</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;(\w+@\w+(?:\.\w+)+)&#39;</span>
+<span class="n">regex</span> <span class="o">=</span> <span class="n">rf</span><span class="s1">&#39;(&lt;)?</span><span class="si">{email_regex}</span><span class="s1">(?(1)&gt;|$)&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="s2">&quot;&lt;user@host.com&gt;&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="s2">&quot;user@host.com&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="s2">&quot;&lt;user@host.com&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="s2">&quot;user@host.com&gt;&quot;</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -14665,8 +15066,10 @@ Printer Xerox print test page in color.
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Scanner Xerox scan in dpi 200.
-Printer Xerox print test page in color.
+<pre>&lt;re.Match object; span=(0, 15), match=&#39;&lt;user@host.com&gt;&#39;&gt;
+&lt;re.Match object; span=(0, 13), match=&#39;user@host.com&#39;&gt;
+None
+None
 </pre>
 </div>
 </div>
@@ -14674,542 +15077,7 @@ Printer Xerox print test page in color.
 </div>
 </div>
 
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">Xero</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Help on class Xero in module __main__:
-
-class Xero(Printer, Scanner)
- |  Xero(name, is_color)
- |  
- |  Method resolution order:
- |      Xero
- |      Printer
- |      Scanner
- |      Machine
- |      builtins.object
- |  
- |  Methods defined here:
- |  
- |  __init__(self, name, is_color)
- |      Initialize self.  See help(type(self)) for accurate signature.
- |  
- |  ----------------------------------------------------------------------
- |  Methods inherited from Printer:
- |  
- |  print(self)
- |  
- |  ----------------------------------------------------------------------
- |  Methods inherited from Scanner:
- |  
- |  scan(self)
- |  
- |  ----------------------------------------------------------------------
- |  Data descriptors inherited from Scanner:
- |  
- |  dpi
- |  
- |  ----------------------------------------------------------------------
- |  Data descriptors inherited from Machine:
- |  
- |  __dict__
- |      dictionary for instance variables (if defined)
- |  
- |  __weakref__
- |      list of weak references to the object (if defined)
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Wyj&#261;tki-i-b&#322;&#281;dy">Wyj&#261;tki i b&#322;&#281;dy<a class="anchor-link" href="#Wyj&#261;tki-i-b&#322;&#281;dy">&#182;</a></h1>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><strong>Błędy składni</strong> (eng. <em>Syntax Error</em>) są to błędy wynikające z kodu, którego nie da się skompilować (np. linijka która powinna się kończyć dwukropkiem go nie posiada), wykrywane przed uruchomieniem interpretera,</li>
-<li><strong>Wyjątki</strong> (eng. <em>Exceptions</em>), czyli błędy w logice kodu. Kod prowadzący do podniesienia wyjątku jest poprawny na poziomie składni, ale prowadzi do błędnego/niemożliwego do zrealizowania polecenia (np. odwołania się do zmiennej przed jej zdefiniowaniem).</li>
-</ul>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Python ułatwia analizę kodu poprzez podanie ścieżki do wyjątku (eng. <em>Traceback</em>) zawierającej wszystkie konteksty (i linijki kodu) od lokalnego (zawierającego błąd) do globalnego (uruchomionego pliku).</p>
-
-</div>
-</div>
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Przechwytywanie-wyj&#261;tk&#243;w">Przechwytywanie wyj&#261;tk&#243;w<a class="anchor-link" href="#Przechwytywanie-wyj&#261;tk&#243;w">&#182;</a></h1>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Spodziewając się, że fragment kodu może powodować błędne działanie (zwłaszcza ten operujący na danych od użytkownika) możliwe jest przechwycenie i obsłużenie potencjalnego wyjątku. Podejście to jest <em>more Pythonic</em>, zwłaszcza gdy nasz kod okazuje się nie do końca być kaczką ;)</p>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Składnia przechwytująca wyjątki to <code>try-except</code> (nie <code>try-catch</code>!).</p>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
-<span class="k">except</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Uff!&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Uff!
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Tak zdefiniowane przechwytywanie jest nadczułe, gdyż może przechwycić każdy wyjątek!</strong> Nigdy w kodzie produkcyjnym nie powinniśmy zostawiać tego typu bloków.<strong>Zakres bloku <code>try</code> powinien być ograniczony do niezbędnego minimum</strong>, żeby spodziewane wyjątki były łatwe do zdefiniowania, a obsługująca je struktura prosta i jednoznaczna.</p>
-<p>W celu określenia jaki błąd chcemy przechwycić po wyrażeniu <code>except</code> podajemy nazwę wyjątku.</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
-    <span class="n">a</span><span class="o">/</span> <span class="n">b</span>
-<span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Uff!&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Uff!
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
-    <span class="n">a</span> <span class="o">/</span> <span class="n">unknown_variable</span>
-<span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Uff!&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">--------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-47-619cbfc57d94&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg">     </span>a <span class="ansi-blue-fg">/</span> unknown_variable
-<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-green-fg">except</span> ZeroDivisionError<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span>     print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Uff!&#39;</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">NameError</span>: name &#39;unknown_variable&#39; is not defined</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>W celu przechwycenia więcej niż jednego wyjątku (ale nie wszystkich) można:</p>
-<ul>
-<li>po wyrażeniu <code>except</code> podać wyjątki w tupli - wówczas wszystkie wyjątki zostaną obsłużone w ten sam sposób,</li>
-<li>podać więcej niż jedno wyrażenie <code>except</code> - wówczas struktura zachowa się podobnie do wyrażenia <code>if-elif-else</code>, w którym wyjątki sprawdzane będą w kolejności podania.</li>
-</ul>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Podobieństwo jest tym większe, że możliwe jest dodanie bloku <code>else</code> wykonywanego tylko w przypadku, gdy żaden z wyjątków nie zostanie podniesiony.</p>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Ostatnim wyrażeniem możliwym do zdefiniowania jest <code>finally</code>, wykonywane <strong>zawsze</strong> (niezależnie od podniesionego wyjątku lub jego braku) po bloku <code>try</code>.</p>
-
-</div>
-</div>
-</div></div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">division</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
-    <span class="k">except</span> <span class="p">(</span><span class="ne">ZeroDivisionError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
-        <span class="n">c</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wynik dzielenia&quot;</span><span class="p">)</span>
-    <span class="k">finally</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;c: </span><span class="si">{c}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">c</span>
-
-<span class="n">division</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span> <span class="o">*</span> <span class="mi">15</span><span class="p">)</span>
-<span class="n">division</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Wynik dzielenia
-c: 2.0
----------------
-c: None
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Podnoszenie-wyj&#261;tk&#243;w">Podnoszenie wyj&#261;tk&#243;w<a class="anchor-link" href="#Podnoszenie-wyj&#261;tk&#243;w">&#182;</a></h1>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Przechwytywanie wyjątków nie zawsze musi się kończyć jego obłużeniem, czasami przydatne byłoby dodanie kodu uzupełniającego podniesiony wyjątek (np. logowanie danych o kontekście wystąpienia danego wyjątku). W celu wykonania jakiejś operacji po przechwyceniu wyjątku stosujemy następującą składnię:</p>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
-<span class="k">except</span> <span class="ne">ZeroDivisionError</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nieładnie&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;a</span><span class="si">{a}</span><span class="s1">, b</span><span class="si">{b}</span><span class="s1">&#39;</span><span class="p">)</span>
-    <span class="k">raise</span> <span class="n">exc</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Nieładnie
-a2, b0
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">--------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ZeroDivisionError</span>                        Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-49-bc02dfac09c9&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span>     print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Nieładnie&#39;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      6</span>     print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#39;a{a}, b{b}&#39;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 7</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">raise</span> exc
-
-<span class="ansi-green-fg">&lt;ipython-input-49-bc02dfac09c9&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> a<span class="ansi-blue-fg">,</span> b <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">0</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg">     </span>a <span class="ansi-blue-fg">/</span> b
-<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-green-fg">except</span> ZeroDivisionError <span class="ansi-green-fg">as</span> exc<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span>     print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Nieładnie&#39;</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">ZeroDivisionError</span>: division by zero</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Tworzenie-wyj&#261;tk&#243;w">Tworzenie wyj&#261;tk&#243;w<a class="anchor-link" href="#Tworzenie-wyj&#261;tk&#243;w">&#182;</a></h1>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>W niektórych przypadkach lepiej zdefiniować własny wyjątek, np. w celu rozróżnienia błedu wynikającego ze złego użycia zdefiniowanej klasy lub złych danych wejściowych, od błędu logicznego - wystąpienia sytuacji nie przewidzianej przez programistę.</p>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Wyjątki definiuje się jako klasę, dziediczącą po <code>Exception</code> lub którejś z klas potomnych od niej (<a href="https://docs.python.org/3/library/exceptions.html">https://docs.python.org/3/library/exceptions.html</a>).</p>
-<p>Struktura dziedziczenia wyjątków wbudowanych: <a href="https://docs.python.org/3/library/exceptions.html#exception-hierarchy">https://docs.python.org/3/library/exceptions.html#exception-hierarchy</a></p>
-
-</div>
-</div>
-</div></div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">MyException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
-    <span class="k">pass</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Błędnie przeprowadzona zmiana typu wyjątku</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="mi">2</span> <span class="o">/</span> <span class="mi">0</span>
-<span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
-    <span class="k">raise</span> <span class="n">MyException</span> <span class="p">(</span><span class="s1">&#39;Dzielenie przez zero&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">--------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ZeroDivisionError</span>                        Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-51-cde7e5271c63&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg">     </span><span class="ansi-cyan-fg">2</span> <span class="ansi-blue-fg">/</span> <span class="ansi-cyan-fg">0</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-green-fg">except</span> ZeroDivisionError<span class="ansi-blue-fg">:</span>
-
-<span class="ansi-red-fg">ZeroDivisionError</span>: division by zero
-
-During handling of the above exception, another exception occurred:
-
-<span class="ansi-red-fg">MyException</span>                              Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-51-cde7e5271c63&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span>     <span class="ansi-cyan-fg">2</span> <span class="ansi-blue-fg">/</span> <span class="ansi-cyan-fg">0</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-green-fg">except</span> ZeroDivisionError<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">----&gt; 5</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">raise</span> MyException <span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Dzielenie przez zero&#39;</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">MyException</span>: Dzielenie przez zero</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Wersja poprawna</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="mi">2</span> <span class="o">/</span> <span class="mi">0</span>
-<span class="k">except</span> <span class="ne">ZeroDivisionError</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
-    <span class="k">raise</span> <span class="n">MyException</span> <span class="p">(</span><span class="s1">&#39;Dzielenie przez zero&#39;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">exc</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">--------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ZeroDivisionError</span>                        Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-52-83cd8f8c09cc&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg">     </span><span class="ansi-cyan-fg">2</span> <span class="ansi-blue-fg">/</span> <span class="ansi-cyan-fg">0</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-green-fg">except</span> ZeroDivisionError <span class="ansi-green-fg">as</span> exc<span class="ansi-blue-fg">:</span>
-
-<span class="ansi-red-fg">ZeroDivisionError</span>: division by zero
-
-The above exception was the direct cause of the following exception:
-
-<span class="ansi-red-fg">MyException</span>                              Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-52-83cd8f8c09cc&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span>     <span class="ansi-cyan-fg">2</span> <span class="ansi-blue-fg">/</span> <span class="ansi-cyan-fg">0</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-green-fg">except</span> ZeroDivisionError <span class="ansi-green-fg">as</span> exc<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">----&gt; 5</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">raise</span> MyException <span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Dzielenie przez zero&#39;</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">from</span> exc
-
-<span class="ansi-red-fg">MyException</span>: Dzielenie przez zero</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></section></section>
+</div></div></section></section>
 </div>
 </div>
 
