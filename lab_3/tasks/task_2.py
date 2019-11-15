@@ -45,7 +45,6 @@ _input = """
 1 10
 1 6
 2 5
-3 2
 """
 if __name__ == '__main__':
     # popełnił Pan chyba przypadkiem błąd i powinno być [0,2] a nie [0,1] bo występują 2 elementy które wystąpiły 2 razy (6 i 10)

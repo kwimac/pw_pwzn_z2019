@@ -5,6 +5,7 @@ z posortowanymi zdarzeniami.
 Funkcja przyjmuje ciag zdarzeń (zapisanych w formie timestampu w dowolnej strefie czasowej),
 przetwarza je na zdarzenia w strefie czasowej UTC i sortuje.
 Posortowane zdarzenia są grupowane na dni i wypisywane od najnowszych do najstarszych.
+
 Na 1pkt. Uzupełnij funkcję sort_dates, która przyjmuje dwa parametry:
 - log (wielolinijkowy ciąg znaków z datami) zdarzeń
 - format daty (podany w assercie format ma być domyślnym)
@@ -98,8 +99,6 @@ def parse_dates(date_str, date_format=''):
         response_string += key + '\n' + "\t"
         response_string += '\t'.join([time for time in times])
 
-    response = response_string.split('----', 1)
-    print(response[1])
     return response[1]
 
 
