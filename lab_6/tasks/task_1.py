@@ -34,11 +34,64 @@ Otrzymuje się wtedy 2 pkt.
 UWAGA 2: Wszystkie jednoski masy występują w przykładzie.
 """
 from pathlib import Path
-
+import csv
+from decimal import Decimal
 
 def select_animals(input_path, output_path, compressed=False):
-    pass
 
+    with open(input_path) as file_:
+        reader = csv.DictReader(file_)
+
+        mass_units = {
+            'Mg': 1000,
+            'kg': 1,
+            'g': 0.001,
+            'mg': 0.000001,
+        }
+
+        f_mass = {}
+        m_mass = {}
+        output = []
+
+        for row in reader:
+            mass = row['mass'].split(' ')
+            kg_mass = float(mass[0]) * mass_units[mass[1]]
+
+            if row['gender'] == 'female':
+                if row['genus'] not in f_mass.keys():
+                    f_mass[row['genus']] = kg_mass/mass_units[mass[1]]
+                else:
+                    if kg_mass < f_mass[row['genus']]:
+                        f_mass[row['genus']] = kg_mass/mass_units[mass[1]]
+
+            elif row['gender'] == 'male':
+                if row['genus'] not in m_mass.keys():
+                    m_mass[row['genus']] = kg_mass/mass_units[mass[1]]
+                else:
+                    if kg_mass < f_mass[row['genus']]:
+                        m_mass[row['genus']] = kg_mass/mass_units[mass[1]]
+
+            if float(mass[0]) in f_mass.values():
+                output.append(row)
+            if float(mass[0]) in m_mass.values():
+                output.append(row)
+
+            output = sorted(output, key=lambda row: (row['genus'], row['name']))
+
+        with open(output_path, 'w', newline='') as file_:
+            if compressed:
+                writer = csv.writer(file_, delimiter=',', quotechar="*")
+                writer.writerow(['uuid_gender_mass'])
+                gender = {'male': 'M', 'female': 'F'}
+                for row in output:
+                    mass = row['mass'].split(' ')
+                    writer.writerow(['{}_{}_{}'.format(row['id'], gender[row['gender']], '%.3e' % Decimal(
+                        float(mass[0]) * mass_units[mass[1]]))])
+            else:
+                fields = ['id', 'mass', 'genus', 'name', 'gender']
+                writer = csv.DictWriter(file_, delimiter=',', fieldnames=fields)
+                writer.writeheader()
+                writer.writerows(output)
 
 if __name__ == '__main__':
     input_path = Path('s_animals.txt')
