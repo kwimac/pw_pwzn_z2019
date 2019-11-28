@@ -15,8 +15,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <!-- General and theme style sheets -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/reveal.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/theme/serif.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/serif.css" id="theme">
 
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
 <script>
@@ -24,14 +24,14 @@ if( window.location.search.match( /print-pdf/gi ) ) {
         var link = document.createElement( 'link' );
         link.rel = 'stylesheet';
         link.type = 'text/css';
-        link.href = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/print/pdf.css';
+        link.href = 'reveal.js/css/print/pdf.css';
         document.getElementsByTagName( 'head' )[0].appendChild( link );
 }
 
 </script>
 
 <!--[if lt IE 9]>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/html5shiv.js"></script>
+<script src="reveal.js/lib/js/html5shiv.js"></script>
 <![endif]-->
 
 <!-- Loading the mathjax macro -->
@@ -13409,7 +13409,7 @@ Popped elem: 1 from: {2, 3} of type: &lt;class &#39;set&#39;&gt;
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">KlasaA</span><span class="p">:</span>  <span class="c1"># Nagłowek klasy</span>
@@ -13419,9 +13419,33 @@ Popped elem: 1 from: {2, 3} of type: &lt;class &#39;set&#39;&gt;
         <span class="n">c</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Zmienna zdefiniowana w przestrzeni nazw klasy (tymczasowa)</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;self: </span><span class="si">{self}</span><span class="s1">, b: </span><span class="si">{b}</span><span class="s1">, c: </span><span class="si">{c}</span><span class="s1">&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span>
+    <span class="k">def</span> <span class="nf">metoda_b</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;metoda_b&#39;</span><span class="p">)</span>
+        
+<span class="n">KlasaA</span><span class="o">.</span><span class="n">a</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[1]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[]</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -13500,8 +13524,8 @@ Popped elem: 1 from: {2, 3} of type: &lt;class &#39;set&#39;&gt;
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>a &lt;__main__.KlasaA object at 0x7f8d0cc6afd0&gt; (&lt;class &#39;__main__.KlasaA&#39;&gt;)
-self: &lt;__main__.KlasaA object at 0x7f8d0cc6afd0&gt;, b: 1, c: 1
+<pre>a &lt;__main__.KlasaA object at 0x7f82840799d0&gt; (&lt;class &#39;__main__.KlasaA&#39;&gt;)
+self: &lt;__main__.KlasaA object at 0x7f82840799d0&gt;, b: 1, c: 1
 </pre>
 </div>
 </div>
@@ -13560,7 +13584,7 @@ self: &lt;__main__.KlasaA object at 0x7f8d0cc6afd0&gt;, b: 1, c: 1
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">KlasaA</span><span class="p">()</span>
@@ -13569,7 +13593,7 @@ self: &lt;__main__.KlasaA object at 0x7f8d0cc6afd0&gt;, b: 1, c: 1
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">a</span> <span class="ow">is</span> <span class="n">KlasaA</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>
 <span class="n">a2</span> <span class="o">=</span> <span class="n">KlasaA</span><span class="p">()</span>
 <span class="n">a2</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">a</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">KlasaA</span><span class="o">.</span><span class="n">a</span><span class="p">)</span> 
 </pre></div>
 
     </div>
@@ -13586,10 +13610,10 @@ self: &lt;__main__.KlasaA object at 0x7f8d0cc6afd0&gt;, b: 1, c: 1
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[]
-[]
-True
+<pre>[4]
 [4]
+True
+[4, 4]
 </pre>
 </div>
 </div>
@@ -13608,7 +13632,7 @@ True
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;a.a = </span><span class="si">{a.a}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -13632,10 +13656,10 @@ True
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>a.a = [4]
+<pre>a.a = [4, 4]
 a.a = 1
-KlasaA.a = [4]
-a2.a = [4]
+KlasaA.a = [4, 4]
+a2.a = [4, 4]
 </pre>
 </div>
 </div>
@@ -13655,7 +13679,7 @@ a2.a = [4]
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
@@ -13679,7 +13703,7 @@ a2.a = [4]
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-9-81bb0b9b3b20&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">&lt;ipython-input-10-81bb0b9b3b20&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-intense-fg ansi-bold">      1</span> a<span class="ansi-blue-fg">.</span>b <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">5</span>
 <span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>a2<span class="ansi-blue-fg">.</span>b
 
@@ -13708,7 +13732,7 @@ a2.a = [4]
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">KlasaB</span><span class="p">:</span>
@@ -13731,12 +13755,13 @@ a2.a = [4]
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">b_1</span> <span class="o">=</span> <span class="n">KlasaB</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">b_1</span><span class="o">.</span><span class="n">add_to_val</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">b_2</span> <span class="o">=</span> <span class="n">KlasaB</span><span class="p">()</span>
+<span class="n">b_1</span><span class="o">.</span><span class="n">val</span>
 </pre></div>
 
     </div>
@@ -13760,13 +13785,26 @@ val = 3
 </div>
 </div>
 
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[16]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>9</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">date</span><span class="p">,</span> <span class="n">datetime</span>
@@ -13830,7 +13868,7 @@ val = 3
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">date</span><span class="p">,</span> <span class="n">datetime</span>
@@ -13994,7 +14032,7 @@ Age of born on 16-11-1995: 23
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">date</span><span class="p">,</span> <span class="n">datetime</span>
@@ -14037,7 +14075,7 @@ Age of born on 16-11-1995: 23
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">student</span> <span class="o">=</span> <span class="n">Human</span><span class="o">.</span><span class="n">from_age</span><span class="p">(</span><span class="n">day</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
@@ -14327,8 +14365,8 @@ require(
       waitSeconds: 15
     },
     [
-      "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/head.min.js",
-      "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/js/reveal.js"
+      "reveal.js/lib/js/head.min.js",
+      "reveal.js/js/reveal.js"
     ],
 
     function(head, Reveal){
@@ -14343,9 +14381,9 @@ require(
 
             // Optional libraries used to extend on reveal.js
             dependencies: [
-                { src: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/classList.js",
+                { src: "reveal.js/lib/js/classList.js",
                   condition: function() { return !document.body.classList; } },
-                { src: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/notes/notes.js",
+                { src: "reveal.js/plugin/notes/notes.js",
                   async: true,
                   condition: function() { return !!document.body.classList; } }
             ]

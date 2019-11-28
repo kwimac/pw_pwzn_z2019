@@ -15,8 +15,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <!-- General and theme style sheets -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/reveal.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/theme/serif.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/serif.css" id="theme">
 
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
 <script>
@@ -24,14 +24,14 @@ if( window.location.search.match( /print-pdf/gi ) ) {
         var link = document.createElement( 'link' );
         link.rel = 'stylesheet';
         link.type = 'text/css';
-        link.href = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/print/pdf.css';
+        link.href = 'reveal.js/css/print/pdf.css';
         document.getElementsByTagName( 'head' )[0].appendChild( link );
 }
 
 </script>
 
 <!--[if lt IE 9]>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/html5shiv.js"></script>
+<script src="reveal.js/lib/js/html5shiv.js"></script>
 <![endif]-->
 
 <!-- Loading the mathjax macro -->
@@ -13337,12 +13337,13 @@ Sortowanie po drugim elemencie tupli [(10, -1), (2, 1), (1, 2), (15, 3)]
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">list_f</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">,</span> <span class="n">list_f</span><span class="p">)))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">list_f</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
+<span class="c1"># print(list(filter(lambda x: x&gt;0, list_f)))</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">list_f</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="n">list_f</span><span class="p">)))</span>
 </pre></div>
 
     </div>
@@ -13359,8 +13360,8 @@ Sortowanie po drugim elemencie tupli [(10, -1), (2, 1), (1, 2), (15, 3)]
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[1, 2, 4]
-[1, -5, 2, -3, 4]
+<pre>[1, -5, 2, -3, 4]
+[1, 0, -5, 2, -3, 4]
 </pre>
 </div>
 </div>
@@ -13379,7 +13380,7 @@ Sortowanie po drugim elemencie tupli [(10, -1), (2, 1), (1, 2), (15, 3)]
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">list_f</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]]</span>
@@ -13412,13 +13413,14 @@ Sortowanie po drugim elemencie tupli [(10, -1), (2, 1), (1, 2), (15, 3)]
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">list_f</span><span class="p">)</span>
-<span class="n">_map</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">pop</span><span class="p">(),</span> <span class="n">list_f</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">list_f</span><span class="p">)</span>
-<span class="nb">list</span><span class="p">(</span><span class="n">_map</span><span class="p">)</span>
+<span class="c1"># _map = map(lambda x: x.pop(), list_f)</span>
+<span class="c1"># print(_map)</span>
+<span class="c1"># print(list_f)</span>
+<span class="c1"># list(_map)</span>
 </pre></div>
 
     </div>
@@ -13435,33 +13437,8 @@ Sortowanie po drugim elemencie tupli [(10, -1), (2, 1), (1, 2), (15, 3)]
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[[1, 2], [], [4]]
-[[1, 2], [], [4]]
+<pre>[[1], [], [4]]
 </pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">IndexError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-4-bb1c8fb1c26d&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> _map <span class="ansi-blue-fg">=</span> map<span class="ansi-blue-fg">(</span><span class="ansi-green-fg">lambda</span> x<span class="ansi-blue-fg">:</span> x<span class="ansi-blue-fg">.</span>pop<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> list_f<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> print<span class="ansi-blue-fg">(</span>list_f<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 4</span><span class="ansi-red-fg"> </span>list<span class="ansi-blue-fg">(</span>_map<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">&lt;ipython-input-4-bb1c8fb1c26d&gt;</span> in <span class="ansi-cyan-fg">&lt;lambda&gt;</span><span class="ansi-blue-fg">(x)</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> print<span class="ansi-blue-fg">(</span>list_f<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>_map <span class="ansi-blue-fg">=</span> map<span class="ansi-blue-fg">(</span><span class="ansi-green-fg">lambda</span> x<span class="ansi-blue-fg">:</span> x<span class="ansi-blue-fg">.</span>pop<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> list_f<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> print<span class="ansi-blue-fg">(</span>list_f<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> list<span class="ansi-blue-fg">(</span>_map<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">IndexError</span>: pop from empty list</pre>
 </div>
 </div>
 
@@ -13499,10 +13476,23 @@ Sortowanie po drugim elemencie tupli [(10, -1), (2, 1), (1, 2), (15, 3)]
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fun</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fun</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -13649,7 +13639,7 @@ kwargs: {&#39;d&#39;: None}
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">append_list</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">calls</span><span class="o">=</span><span class="p">[]):</span>  <span class="c1"># Tak nie powinniśmy* inicjować funkcji.</span>
@@ -13664,7 +13654,7 @@ kwargs: {&#39;d&#39;: None}
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">append_list</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
@@ -13675,24 +13665,29 @@ kwargs: {&#39;d&#39;: None}
 </div>
 </div>
 
-</div></div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">append_list</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">append_list</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
-</pre></div>
+<div class="output_wrapper">
+<div class="output">
 
-    </div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[None, 1, 2]
+[None, 1, 2]
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">append_list</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
@@ -13700,6 +13695,25 @@ kwargs: {&#39;d&#39;: None}
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1, 1, 1]
+[1, 1, 1, 1]
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -13715,7 +13729,7 @@ Parametry domyślne funkcji są przechowywane jako atrybut instancji definicji f
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">append_list</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">calls</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>  <span class="c1"># Bezpieczna definicja funkcji z domyślną listą</span>
@@ -13732,7 +13746,7 @@ Parametry domyślne funkcji są przechowywane jako atrybut instancji definicji f
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">append_list</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
@@ -13812,7 +13826,7 @@ Parametry domyślne funkcji są przechowywane jako atrybut instancji definicji f
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">echo</span> <span class="o">=</span> <span class="p">[]</span>
@@ -13828,10 +13842,11 @@ Parametry domyślne funkcji są przechowywane jako atrybut instancji definicji f
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">try_echo</span><span class="p">(</span><span class="s1">&#39;aaa&#39;</span><span class="p">)</span>
+<span class="n">try_echo</span><span class="p">(</span><span class="s1">&#39;aaa&#39;</span><span class="p">)</span>
 <span class="n">try_echo</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">echo</span><span class="p">)</span>
 </pre></div>
@@ -13851,8 +13866,9 @@ Parametry domyślne funkcji są przechowywane jako atrybut instancji definicji f
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>aaa ...aaa
+aaa ...aaa
 1 ...1
-[&#39;aaa&#39;, 1]
+[&#39;aaa&#39;, 1, &#39;aaa&#39;, &#39;aaa&#39;, 1]
 </pre>
 </div>
 </div>
@@ -13874,7 +13890,7 @@ Parametry domyślne funkcji są przechowywane jako atrybut instancji definicji f
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">echo</span> <span class="o">=</span> <span class="p">[]</span>
@@ -13890,7 +13906,7 @@ Parametry domyślne funkcji są przechowywane jako atrybut instancji definicji f
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">try_echo_2</span><span class="p">(</span><span class="s1">&#39;aaa&#39;</span><span class="p">)</span>
@@ -13935,7 +13951,7 @@ Parametry domyślne funkcji są przechowywane jako atrybut instancji definicji f
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">echo</span> <span class="o">=</span> <span class="p">[]</span>
@@ -13952,7 +13968,7 @@ Parametry domyślne funkcji są przechowywane jako atrybut instancji definicji f
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">try_echo_3</span><span class="p">(</span><span class="s1">&#39;aaa&#39;</span><span class="p">)</span>
@@ -13975,10 +13991,10 @@ Parametry domyślne funkcji są przechowywane jako atrybut instancji definicji f
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">UnboundLocalError</span>                         Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-18-fae27efc333a&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">&lt;ipython-input-37-fae27efc333a&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>try_echo_3<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;aaa&#39;</span><span class="ansi-blue-fg">)</span>
 
-<span class="ansi-green-fg">&lt;ipython-input-17-098607e4737a&gt;</span> in <span class="ansi-cyan-fg">try_echo_3</span><span class="ansi-blue-fg">(sth)</span>
+<span class="ansi-green-fg">&lt;ipython-input-36-098607e4737a&gt;</span> in <span class="ansi-cyan-fg">try_echo_3</span><span class="ansi-blue-fg">(sth)</span>
 <span class="ansi-green-intense-fg ansi-bold">      1</span> echo <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">]</span>
 <span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-green-fg">def</span> try_echo_3<span class="ansi-blue-fg">(</span>sth<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg">     </span>print<span class="ansi-blue-fg">(</span>echo<span class="ansi-blue-fg">)</span>
@@ -14007,7 +14023,7 @@ Parametry domyślne funkcji są przechowywane jako atrybut instancji definicji f
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>
@@ -14042,11 +14058,12 @@ Parametry domyślne funkcji są przechowywane jako atrybut instancji definicji f
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>level 1 David
-level 2 Bob
-level 3 Alice
-Clark
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">&#34;&lt;ipython-input-39-0b5ea9179a3a&gt;&#34;</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">12</span>
+<span class="ansi-red-fg">    </span>
+    ^
+<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> name &#39;name&#39; is assigned to before global declaration
 </pre>
 </div>
 </div>
@@ -14086,7 +14103,7 @@ Jest to spowodowane faktem, że zaimportowane pliki przechowywane są w słownik
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>  <span class="c1"># Importuję moduł wbudowany math </span>
@@ -14397,10 +14414,11 @@ FILE
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">acos</span><span class="p">)</span>  <span class="c1"># Wyświetla docstring funkcji</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># help(math.acos)  # Wyświetla docstring funkcji</span>
+<span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14413,17 +14431,15 @@ FILE
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[44]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Help on built-in function acos in module math:
 
-acos(x, /)
-    Return the arc cosine (measured in radians) of x.
 
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>1.2246467991473532e-16</pre>
 </div>
+
 </div>
 
 </div>
@@ -14477,14 +14493,14 @@ acos(x, /)
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">pi</span>  <span class="c1"># importowanie konkretnego obiektu z modułu</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Pi: </span><span class="si">{pi}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span> <span class="k">as</span> <span class="n">cosinus</span>  <span class="c1"># importowanie obiektów również wspiera importowanie mnogie i aliasowanie</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;cos(pi): {cosinus(pi)}&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;cos(pi): {cos(pi)}&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;sin(pi): {sin(pi)}&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14503,25 +14519,8 @@ acos(x, /)
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Pi: 3.141592653589793
 cos(pi): -1.0
+sin(pi): 1.2246467991473532e-16
 </pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-25-e7cc332bea43&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-green-fg">from</span> math <span class="ansi-green-fg">import</span> sin<span class="ansi-blue-fg">,</span> cos <span class="ansi-green-fg">as</span> cosinus  <span class="ansi-red-fg"># importowanie obiektów również wspiera importowanie mnogie i aliasowanie</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#39;cos(pi): {cosinus(pi)}&#39;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 5</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#39;cos(pi): {cos(pi)}&#39;</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">NameError</span>: name &#39;cos&#39; is not defined</pre>
 </div>
 </div>
 
@@ -14544,14 +14543,14 @@ cos(pi): -1.0
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">os.path</span>  <span class="c1"># importowanie zagnieżdżonych modułów</span>
 <span class="c1"># help(os)</span>
-<span class="n">help</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">)</span>
-<span class="c1"># help(os.path)</span>
+<span class="c1"># help(os.walk)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14568,64 +14567,144 @@ cos(pi): -1.0
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Help on function walk in module os:
+<pre>Help on module posixpath:
 
-walk(top, topdown=True, onerror=None, followlinks=False)
-    Directory tree generator.
+NAME
+    posixpath - Common operations on Posix pathnames.
+
+MODULE REFERENCE
+    https://docs.python.org/3.7/library/posixpath
     
-    For each directory in the directory tree rooted at top (including top
-    itself, but excluding &#39;.&#39; and &#39;..&#39;), yields a 3-tuple
+    The following documentation is automatically generated from the Python
+    source files.  It may be incomplete, incorrect or include features that
+    are considered implementation detail and may vary between Python
+    implementations.  When in doubt, consult the module reference at the
+    location listed above.
+
+DESCRIPTION
+    Instead of importing this module directly, import os and refer to
+    this module as os.path.  The &#34;os.path&#34; name is an alias for this
+    module on Posix systems; on other systems (e.g. Mac, Windows),
+    os.path provides the same operations in a manner specific to that
+    platform, and is an alias to another module (e.g. macpath, ntpath).
     
-        dirpath, dirnames, filenames
+    Some of this can actually be useful on non-Posix systems too, e.g.
+    for manipulation of the pathname component of URLs.
+
+FUNCTIONS
+    abspath(path)
+        Return an absolute path.
     
-    dirpath is a string, the path to the directory.  dirnames is a list of
-    the names of the subdirectories in dirpath (excluding &#39;.&#39; and &#39;..&#39;).
-    filenames is a list of the names of the non-directory files in dirpath.
-    Note that the names in the lists are just names, with no path components.
-    To get a full path (which begins with top) to a file or directory in
-    dirpath, do os.path.join(dirpath, name).
+    basename(p)
+        Returns the final component of a pathname
     
-    If optional arg &#39;topdown&#39; is true or not specified, the triple for a
-    directory is generated before the triples for any of its subdirectories
-    (directories are generated top down).  If topdown is false, the triple
-    for a directory is generated after the triples for all of its
-    subdirectories (directories are generated bottom up).
+    commonpath(paths)
+        Given a sequence of path names, returns the longest common sub-path.
     
-    When topdown is true, the caller can modify the dirnames list in-place
-    (e.g., via del or slice assignment), and walk will only recurse into the
-    subdirectories whose names remain in dirnames; this can be used to prune the
-    search, or to impose a specific order of visiting.  Modifying dirnames when
-    topdown is false is ineffective, since the directories in dirnames have
-    already been generated by the time dirnames itself is generated. No matter
-    the value of topdown, the list of subdirectories is retrieved before the
-    tuples for the directory and its subdirectories are generated.
+    commonprefix(m)
+        Given a list of pathnames, returns the longest common leading component
     
-    By default errors from the os.scandir() call are ignored.  If
-    optional arg &#39;onerror&#39; is specified, it should be a function; it
-    will be called with one argument, an OSError instance.  It can
-    report the error to continue with the walk, or raise the exception
-    to abort the walk.  Note that the filename is available as the
-    filename attribute of the exception object.
+    dirname(p)
+        Returns the directory component of a pathname
     
-    By default, os.walk does not follow symbolic links to subdirectories on
-    systems that support them.  In order to get this functionality, set the
-    optional argument &#39;followlinks&#39; to true.
+    exists(path)
+        Test whether a path exists.  Returns False for broken symbolic links
     
-    Caution:  if you pass a relative pathname for top, don&#39;t change the
-    current working directory between resumptions of walk.  walk never
-    changes the current directory, and assumes that the client doesn&#39;t
-    either.
+    expanduser(path)
+        Expand ~ and ~user constructions.  If user or $HOME is unknown,
+        do nothing.
     
-    Example:
+    expandvars(path)
+        Expand shell variables of form $var and ${var}.  Unknown variables
+        are left unchanged.
     
-    import os
-    from os.path import join, getsize
-    for root, dirs, files in os.walk(&#39;python/Lib/email&#39;):
-        print(root, &#34;consumes&#34;, end=&#34;&#34;)
-        print(sum([getsize(join(root, name)) for name in files]), end=&#34;&#34;)
-        print(&#34;bytes in&#34;, len(files), &#34;non-directory files&#34;)
-        if &#39;CVS&#39; in dirs:
-            dirs.remove(&#39;CVS&#39;)  # don&#39;t visit CVS directories
+    getatime(filename)
+        Return the last access time of a file, reported by os.stat().
+    
+    getctime(filename)
+        Return the metadata change time of a file, reported by os.stat().
+    
+    getmtime(filename)
+        Return the last modification time of a file, reported by os.stat().
+    
+    getsize(filename)
+        Return the size of a file, reported by os.stat().
+    
+    isabs(s)
+        Test whether a path is absolute
+    
+    isdir(s)
+        Return true if the pathname refers to an existing directory.
+    
+    isfile(path)
+        Test whether a path is a regular file
+    
+    islink(path)
+        Test whether a path is a symbolic link
+    
+    ismount(path)
+        Test whether a path is a mount point
+    
+    join(a, *p)
+        Join two or more pathname components, inserting &#39;/&#39; as needed.
+        If any component is an absolute path, all previous path components
+        will be discarded.  An empty last part will result in a path that
+        ends with a separator.
+    
+    lexists(path)
+        Test whether a path exists.  Returns True for broken symbolic links
+    
+    normcase(s)
+        Normalize case of pathname.  Has no effect under Posix
+    
+    normpath(path)
+        Normalize path, eliminating double slashes, etc.
+    
+    realpath(filename)
+        Return the canonical path of the specified filename, eliminating any
+        symbolic links encountered in the path.
+    
+    relpath(path, start=None)
+        Return a relative version of a path
+    
+    samefile(f1, f2)
+        Test whether two pathnames reference the same actual file
+    
+    sameopenfile(fp1, fp2)
+        Test whether two open file objects reference the same file
+    
+    samestat(s1, s2)
+        Test whether two stat buffers reference the same file
+    
+    split(p)
+        Split a pathname.  Returns tuple &#34;(head, tail)&#34; where &#34;tail&#34; is
+        everything after the final slash.  Either part may be empty.
+    
+    splitdrive(p)
+        Split a pathname into drive and path. On Posix, drive is always
+        empty.
+    
+    splitext(p)
+        Split the extension from a pathname.
+        
+        Extension is everything from the last dot to the end, ignoring
+        leading dots.  Returns &#34;(root, ext)&#34;; ext may be empty.
+
+DATA
+    __all__ = [&#39;normcase&#39;, &#39;isabs&#39;, &#39;join&#39;, &#39;splitdrive&#39;, &#39;split&#39;, &#39;splite...
+    altsep = None
+    curdir = &#39;.&#39;
+    defpath = &#39;/bin:/usr/bin&#39;
+    devnull = &#39;/dev/null&#39;
+    extsep = &#39;.&#39;
+    pardir = &#39;..&#39;
+    pathsep = &#39;:&#39;
+    sep = &#39;/&#39;
+    supports_unicode_filenames = False
+
+FILE
+    /home/tutor/.virtualenvs/pw_labs/lib/python3.7/posixpath.py
+
 
 </pre>
 </div>
@@ -14727,7 +14806,7 @@ walk(top, topdown=True, onerror=None, followlinks=False)
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span>%%bash
@@ -14756,22 +14835,14 @@ tree .
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>.
 ├── __init__.py
-├── __pycache__
-│   └── __init__.cpython-37.pyc
 ├── submodule
 │   ├── __init__.py
-│   ├── module_1.py
-│   └── __pycache__
-│       ├── __init__.cpython-37.pyc
-│       └── module_1.cpython-37.pyc
+│   └── module_1.py
 └── submodule_2
     ├── __init__.py
-    ├── module_2.py
-    └── __pycache__
-        ├── __init__.cpython-37.pyc
-        └── module_2.cpython-37.pyc
+    └── module_2.py
 
-5 directories, 10 files
+2 directories, 5 files
 </pre>
 </div>
 </div>
@@ -14782,11 +14853,11 @@ tree .
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">test_dir.submodule_2</span> <span class="k">import</span> <span class="n">module_2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">module_2</span><span class="o">.</span><span class="n">var_2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">module_2</span><span class="o">.</span><span class="n">vaddr_2</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14812,6 +14883,41 @@ tree .
 </div>
 
 </div></div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[86]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="s1">&#39;2019-10-18 10:02:00&#39;</span><span class="p">,</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">)</span>
+<span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">hour</span><span class="o">=</span><span class="mi">23</span><span class="p">,</span> <span class="n">minute</span><span class="o">=</span><span class="mi">59</span><span class="p">,</span> <span class="n">second</span><span class="o">=</span><span class="mi">59</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[86]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>datetime.datetime(2019, 10, 19, 23, 59, 59)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14933,8 +15039,8 @@ require(
       waitSeconds: 15
     },
     [
-      "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/head.min.js",
-      "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/js/reveal.js"
+      "reveal.js/lib/js/head.min.js",
+      "reveal.js/js/reveal.js"
     ],
 
     function(head, Reveal){
@@ -14949,9 +15055,9 @@ require(
 
             // Optional libraries used to extend on reveal.js
             dependencies: [
-                { src: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/classList.js",
+                { src: "reveal.js/lib/js/classList.js",
                   condition: function() { return !document.body.classList; } },
-                { src: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/notes/notes.js",
+                { src: "reveal.js/plugin/notes/notes.js",
                   async: true,
                   condition: function() { return !!document.body.classList; } }
             ]
@@ -14966,7 +15072,7 @@ require(
         Reveal.addEventListener('slidechanged', update);
 
         function setScrollingSlide() {
-            var scroll = false
+            var scroll = true
             if (scroll === true) {
               var h = $('.reveal').height() * 0.95;
               $('section.present').find('section')
