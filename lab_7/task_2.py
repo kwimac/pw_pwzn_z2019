@@ -46,7 +46,9 @@ def iterate(board):
     """
     pass
 
-
+#ważne1: bez periodycznych warunkow brzegowych
+#wazne2: nie korzystac z forow tylko z dzialan macierzowych
+#wazne3: wskazowka - w drugiej funkcji skorzystac z calculate
 if __name__ == '__main__':
     _board = np.array([
         [False, False, False,  True, False,  True],

@@ -1,6 +1,7 @@
 import numpy as np
 
-
+# zadania maja byc wykonane na nowym interpreterze z zainstalowanym tylko numpy
+# po rozwiazaniu nalezy wygenerowac plik requirements i zacommitowac wszystko na gita
 def least_sq(xy):
     """
     Fits linear function to given vector of 2D points.
@@ -19,7 +20,8 @@ def least_sq(xy):
     """
     pass
 
-
+# wazne: program ma dzialac dla dowolnego N
+# ważne2: robic na mnozeniu macierzowym
 if __name__ == '__main__':
     points = np.array([[0.008631342087986165,
                         1.0008364249814004,

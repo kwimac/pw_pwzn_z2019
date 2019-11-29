@@ -1,6 +1,6 @@
 import numpy as np
 
-
+# termin do poniedzialku do 23:59
 def estimate_pi(n):
     """
     Returns estimated value of pi.
