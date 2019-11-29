@@ -34,10 +34,10 @@ def check_animal_list(file_path):
 if __name__ == '__main__':
     assert check_animal_list('s_animals_sce.txt') == (2, 2)
     assert check_animal_list('animals_sc_corrupted.txt') == (5, 0)
+<<<<<<< HEAD
 
 # Na podstawie Pana komentarza w konwersacji rozumiem, że program powinien uznawac wielkie litery w UUID jako blad.
 # Taka tez informacje znalazalam w internecie: "6.5.4 Software generating the hexadecimal representation of a UUID shall not use upper case letters."
 # Jednak w wielu zrodlach dopuszczalne jest uzycie rowniez wielkich liter. Wtedy f_pattern i m_pattern wygladalyby nastepujaco:
 #    f_pattern = r'^[\da-fA-F]{8}\-[\da-fA-F]{4}\-[\da-fA-F]{4}\-[\da-fA-F]{4}\-[\da-fA-F]{12}_F_[\d]\.[\d]{3}[e][\-\+][\d]{2}$'
 #    m_pattern = r'^[\da-fA-F]{8}\-[\da-fA-F]{4}\-[\da-fA-F]{4}\-[\da-fA-F]{4}\-[\da-fA-F]{12}_M_[\d]\.[\d]{3}[e][\-\+][\d]{2}$'
-

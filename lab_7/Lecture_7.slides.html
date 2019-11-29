@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 
-<title>Lecture_1_part_2 slides</title>
+<title>Lecture_7 slides</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13202,23 +13202,66 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Python-w-zastosowaniach-naukowych">Python w zastosowaniach naukowych<a class="anchor-link" href="#Python-w-zastosowaniach-naukowych">&#182;</a></h1><h2 id="Wyk&#322;ad-1-cz.-2">Wyk&#322;ad 1 cz. 2<a class="anchor-link" href="#Wyk&#322;ad-1-cz.-2">&#182;</a></h2><h3 id="mgr-in&#380;.-Maciej-Kwiatkowski">mgr in&#380;. Maciej Kwiatkowski<a class="anchor-link" href="#mgr-in&#380;.-Maciej-Kwiatkowski">&#182;</a></h3>
+<h1 id="Python-w-zastosowaniach-naukowych">Python w zastosowaniach naukowych<a class="anchor-link" href="#Python-w-zastosowaniach-naukowych">&#182;</a></h1><h2 id="Wyk&#322;ad-7">Wyk&#322;ad 7<a class="anchor-link" href="#Wyk&#322;ad-7">&#182;</a></h2><h3 id="mgr-in&#380;.-Maciej-Kwiatkowski">mgr in&#380;. Maciej Kwiatkowski<a class="anchor-link" href="#mgr-in&#380;.-Maciej-Kwiatkowski">&#182;</a></h3>
 </div>
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Repozytorium-kodu">Repozytorium kodu<a class="anchor-link" href="#Repozytorium-kodu">&#182;</a></h1>
+<h1 id="B&#322;edy-i-z&#322;e-praktyki-w-rozwi&#261;zaniach">B&#322;edy i z&#322;e praktyki w rozwi&#261;zaniach<a class="anchor-link" href="#B&#322;edy-i-z&#322;e-praktyki-w-rozwi&#261;zaniach">&#182;</a></h1>
 </div>
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Repozytorium (łac. repositorium) – miejsce uporządkowanego przechowywania dokumentów, z których wszystkie przeznaczone są do udostępniania.</p>
-</blockquote>
-<p>za: <a href="https://pl.wikipedia.org/wiki/Repozytorium">https://pl.wikipedia.org/wiki/Repozytorium</a></p>
+<p><strong>Nieczytelny kod.</strong></p>
+<p>Za długie linie, brak odstępów i komentarzy między blokami realizującymi konkretne zadanie (można też wydzielać do funkcji niektóre elementy logiki) lub funkcjami. Ogólnie polecam lekturę PEP8.</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Wczytywanie całego pliku do pamięci.</strong></p>
+<p>Metoda <code>read</code> i <code>readlines</code> zwracają odpowiednio cały plik jako string i listę stringów. Jeżeli chcemy przeparsować duży plik wówczas niepotrzebnie zapychamy RAM. Bezpieczniejesze jest czytanie za pomocą pętli <code>while</code> lub modułów, które zwracają iterator np. <code>csv</code>.</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Sortowanie w celu wybrania minimum.</strong></p>
+<p>Taką praktykę można stosować tylko w przypadku, gdy znamy rozmiar sortowanego zbioru (i jest on mały) oraz chcemy wybrać więcej niż jedno minimum. W przeciwnym wypadku przechowujemy minimum i nadpisujemy ją tylko nowym minimum.</p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Używanie złożonych modułów do prostego zadania.</strong></p>
+<p>Pandas jest modułem służącym do analizy danych. Jest też drogi (czasowo, pamięciowo) w instalacji i złożony. Jeżeli używamy kilku procent modułu w celu zrealizowania jakiegoś zadania, prawdopodobnie możemy z nieg zrezygnować.</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Ręczne formatowanie strnigów przy zapisie do pliku danych sformatowanych.</strong></p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Grupy w regexach - koniecznie/niekonieczne użycie</strong></p>
+<p>Grupy dodajemy głównie wtedy, gdy chcemy ponownie wykorzystać fragment tekstu. Mogą też służyć jako etykietki fragmentów złożonego regexa. Łącząc te dwie właściwości można analizować trafienia (<code>match</code>) sprawdzając wartość grupy. W przypadku zadania drugiego było to dodanie grupy na płeć (w efekcie mamy tylko jeden regex).</p>
 
 </div>
 </div>
@@ -13226,28 +13269,75 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Dodawanie-zale&#380;no&#347;ci">Dodawanie zale&#380;no&#347;ci<a class="anchor-link" href="#Dodawanie-zale&#380;no&#347;ci">&#182;</a></h1>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="R&#281;czne-dodawanie-zale&#380;no&#347;ci">R&#281;czne dodawanie zale&#380;no&#347;ci<a class="anchor-link" href="#R&#281;czne-dodawanie-zale&#380;no&#347;ci">&#182;</a></h2>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>W celu dodania nowych funckjonalności do projektu możemy:</p>
 <ul>
-<li>W trakcie zajęć korzystać będziemy z repozytorium Git. Jeżeli jeszcze nie mamy go zainstalowanego to proszę o instalację: <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></li>
-<li>Jest to bezpłatny system kontroli wersji o otwartych źródłach (ang. version control system, VCS) działający zarówno lokalnie, jak i pozwalający na dzielenie się kodem.</li>
-<li>Platformą hostującą zdalne repozytorium będzie GitHub - proszę sobie tam założyć konto: <a href="https://github.com/">https://github.com/</a></li>
+<li>dodać plik z zależnościami do ścieżki uruchomienia interpretera lub ścieżki wyszukiwania modułów,</li>
+<li>dodać do ścieżki wyszukiwania modułów (zmienna środowiskowa <code>PYTHONPATH</code> przed uruchomieniem interpretera / zmienna <code>sys.path</code> po uruchomieniu) ścieżkę do folderu/pliku z zależnościami.</li>
 </ul>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Podstawowe komendy:</p>
+<p>Co z gotowymi modułami?</p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="pip">pip<a class="anchor-link" href="#pip">&#182;</a></h2>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>pip</code> (<em>Pip Installs Packages</em>) to wbudowany moduł Pythona pozwalający na instalację innych paczek (<a href="https://pip.pypa.io/en/stable/">dokumentacja</a>).</p>
+<p>Standardowo moduł ten instaluje (na podstawie dostępu do Internetu) paczki z <strong>PyPI</strong> (<em>Python Package Index</em>) repozytorium oficjalnie dostępnych zależności:</p>
+<h3 id="https://pypi.org/"><a href="https://pypi.org/">https://pypi.org/</a><a class="anchor-link" href="#https://pypi.org/">&#182;</a></h3>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Moduł ma przypisaną komendę uruchomienia w konsoli np. w celu zainstalowania paczki należy wpisać:</p>
+<p><code>$ pip install &lt;nazwa_paczki&gt;</code></p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Inne komendy:</p>
 <ul>
-<li><code>git clone https://...</code> - skopiowanie (klonowanie) zdalnego repo lokalnie</li>
-<li><code>git init</code> - zainicjowanie nowego lokalnego repozytorium</li>
-<li><code>git pull</code> - pobranie zmian ze zdalnego repo</li>
-<li><code>git add</code> - dodanie plików do śledzenia przez repozytorium</li>
-<li><code>git commit</code> - utworzenie wpisu w repozytorium</li>
-<li><code>git push</code> - wysłanie wpisu na zdalne repo</li>
-<li><code>git status</code> - sprawdzenie stanu repozytorium</li>
-<li><code>git log</code> - podgląd repozytorium</li>
+<li><code>$ pip help</code> - ogólna pomoc</li>
+<li><code>$ pip help &lt;nazwa polecenia&gt;</code> - pomoc dot. polecenia</li>
+<li><code>$ pip list</code> - lista zainstalowanych pakietów</li>
+<li><code>$ pip search &lt;nazwa paczki&gt;</code> - szuka pakietów w repozytorium online (czasami również pakietów korzystających z wyszukiwanego) </li>
+<li><code>$ pip install &lt;nazwa paczki&gt;</code> - instalowanie paczki</li>
+<li><code>$ pip uninstall &lt;nazwa_paczki&gt;</code> - odinstalowanie paczki</li>
+<li><code>$ pip list -o</code> - sprawdzenie nieaktualnych paczek</li>
+<li><code>$ pip install -U &lt;nazwa_paczki&gt;</code> - (upgrade) instalacja nowej wersji paczki</li>
 </ul>
 
 </div>
@@ -13256,54 +13346,2450 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Do samodzielnej nauki:</p>
+<h2 id="Wersjonowanie">Wersjonowanie<a class="anchor-link" href="#Wersjonowanie">&#182;</a></h2>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Każda dłużej utrzymywana paczka zaczyna być wersjonowana (dodawane są nowe funkcjonalności, zmieniany jest interfejs itp.).</p>
+<p>Sposobów opisywania wersji jest wiele:</p>
 <ul>
-<li>Tutorial GitHuba: <a href="https://guides.github.com/introduction/git-handbook/">https://guides.github.com/introduction/git-handbook/</a></li>
-<li>Dokumentacja, video, książka Git Pro: <a href="https://git-scm.com/doc">https://git-scm.com/doc</a></li>
-<li>Książka w wersji polskiej (1 edycja): <a href="https://git-scm.com/book/pl/v1">https://git-scm.com/book/pl/v1</a></li>
-<li>Online tutorial z częsci komend:<a href="https://learngitbranching.js.org/">https://learngitbranching.js.org/</a></li>
+<li>iterator (kolejne liczby)</li>
+<li>data releasu </li>
+<li>różne wersje sekwencji (np. sematnyczne: <code>minor.major.patch</code>).</li>
 </ul>
 
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Python posiada własną specyfikację wersjonowania opisaną w <a href="https://www.python.org/dev/peps/pep-0440/">PEP 440</a>.</p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="pip-i-wersjonowanie">pip i wersjonowanie<a class="anchor-link" href="#pip-i-wersjonowanie">&#182;</a></h2>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>W celu zapewnienia listy paczek w odpowiedniej wersji w projekcie powinien znajdować się plik <code>requirements.txt</code> zawierający listy tychże. W celu stworzenia takiego pliku służy komenda:</p>
+<p><code>$ pip freeze &gt; requirements.txt</code></p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Komenda <code>$ pip install –r requirements.txt</code> instaluje wszystkie paczki opisane 
+w pliku. Jeżeli paczka jest już zainstalowana, ale w innej wersji, zostanie odinstalowana i zainstalowana w zdefiniowanej w pliku.</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>UWAGA</strong>: Możliwe jest zainstalowanie paczki nie tylko z PyPI, ale także z repozytorium kodu, hostu plików, ale i lokalnej ścieżki.</p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Szybkie-wtr&#261;cenie-o-API">Szybkie wtr&#261;cenie o API<a class="anchor-link" href="#Szybkie-wtr&#261;cenie-o-API">&#182;</a></h2>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>API</strong> (<em>Application Programming Interface</em>) - definicja funkcji, metod, typów modułu jakiegoś modułu, do której musi stosować się <strong>kod źródłowy</strong> innych modyułów by moduły te mogły współpracować.</li>
+<li><strong>ABI</strong> (<em>Application Binary Interface</em>) - definicje funkcji, metod, typów, format wywołania funkcji, jakiegoś modułu do której musi stosować się <strong>skompilowany</strong> kod innych modułów by moduły te mogły współpracować.</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>ABI jest problemem tylko przy tworzeniu bibliotek w językach kompilowanych (C/C++/...). W Javie/Pythonie ten problem nie istnieje na poziomie maszyny wirtualnej/interpretera.</p>
+<p>API i ABI są od siebie niezależne program o tym samym API skompilowany pod windowsem będzie miał inne ABI niż skompilowany pod linuksem. Dwie wersje biblioteki o tym samym API mogą mieć inne ABI.</p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Zarz&#261;dzanie-wieloma-projektami">Zarz&#261;dzanie wieloma projektami<a class="anchor-link" href="#Zarz&#261;dzanie-wieloma-projektami">&#182;</a></h2>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Tworząc więcej niż jeden projekt bezpiecznym jest przygotowanie dedykowanego interpretera ze wszystkimi zależnościami dla każdego projektu. Wynika to z kilku faktów:</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Tworząc nowy projekt (prawdopodobnie) będziemy chcieli skorzystać z najnowszych wersji bibliotek. Nowa wersja biblioteki <em>może</em> mieć zmienione API i to spowoduje, że starszy projekt nie będzie się już uruchamiał, co powoduje koniecnzość upgrade'owania starszego projektu (niepotrzebna praca).</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Oddzielny projekt pozwala nam na określenie, które moduły są niezbędne do działania tworzonej aplikacji, w efekcie przy instalowaniu jej na innej maszynie (wirtualnej, zdalnym serwerze, maszynie odbiorcy) można skrócić czas tworzenia środowiska.</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Znając listę zależności aplikacji można łatwiej nią zarządzać i wersjonować w przypadku długo żyjących aplikacji.</li>
+</ul>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#346;rodowisko-wirtualne">&#346;rodowisko wirtualne<a class="anchor-link" href="#&#346;rodowisko-wirtualne">&#182;</a></h2>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Środowisko wirtualne to izolowany interpreter Pythona. Izolowany tzn. nie wpływa on na inne interpretery (w tym systemowy). Jest to przydatne np. przy używaniu Pythona na zdalnym serwerze.</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Środowisko wirtualne składa się z:</p>
+<ul>
+<li>linku do Interpretera Pythona,</li>
+<li>zainstalowanych paczek Pythona,</li>
+<li>skompilowanego kodu C łączączego się z Pythonem.</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>W celu stworzenia środowiska wirtualnego można skorzystać z wbudowanego modułu <code>venv</code> lub zainstalować paczkę <code>virtualenv</code>.</p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>W celu stworzenia środowiska wirtualnego korzystamy z komendy <code>$ python -m venv &lt;nazwa_środowiska&gt;</code>.</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>%%bash
+mkdir -p /tmp/pyth-example
+<span class="nb">cd</span> /tmp/pyth-example
+rm -r lab7_env
+/usr/bin/python3 -m venv lab7_env
+
+ls lab7_env
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>bin
+include
+lib
+lib64
+pyvenv.cfg
+share
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>rm: cannot remove &#39;lab7_env&#39;: No such file or directory
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Domyślnie utworzone zostanie nowy interpreter bez dodatowych paczek.</p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="W&#322;&#261;czanie-i-wy&#322;&#261;czanie-&#347;rodowiska">W&#322;&#261;czanie i wy&#322;&#261;czanie &#347;rodowiska<a class="anchor-link" href="#W&#322;&#261;czanie-i-wy&#322;&#261;czanie-&#347;rodowiska">&#182;</a></h2>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>%%bash
+<span class="nb">cd</span> /tmp/pyth-example
+which python
+which pip
+python --version
+
+<span class="nb">echo</span> -----
+<span class="nb">source</span> lab7_env/bin/activate <span class="c1"># włącza środowisko</span>
+which python
+which pip
+python --version
+
+<span class="nb">echo</span> -----
+deactivate  <span class="c1"># wyłącza środowisko</span>
+which python
+which pip
+python --version
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>/home/tutor/.virtualenvs/pw_labs/bin/python
+/home/tutor/.virtualenvs/pw_labs/bin/pip
+Python 3.7.4
+-----
+/tmp/pyth-example/lab7_env/bin/python
+/tmp/pyth-example/lab7_env/bin/pip
+Python 3.6.9
+-----
+/home/tutor/.virtualenvs/pw_labs/bin/python
+/home/tutor/.virtualenvs/pw_labs/bin/pip
+Python 3.7.4
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Numpy">Numpy<a class="anchor-link" href="#Numpy">&#182;</a></h2>
 </div>
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Na pierwszych zajęciach:</p>
-<ul>
-<li>forkujemy repo: <a href="https://github.com/sucharinio/pw_pwzn_z2019">https://github.com/sucharinio/pw_pwzn_z2019</a> (czyli tworzymy własną zdalną kopię repozytorium)</li>
-<li>clonujemy repo (czyli ściągamy je lokalnie)</li>
-<li>ustawiamy dane edytora:
-<pre><code>$ git config --global user.name "Jan Nowak"
-$ git config --global user.email jannowak@example.com</code></pre>
-</li>
-</ul>
-
+<h3 id="Wielowymiarowe-tablice">Wielowymiarowe tablice<a class="anchor-link" href="#Wielowymiarowe-tablice">&#182;</a></h3>
 </div>
 </div>
-</div></section></section><section><section>
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Na każdych zajęciach:</p>
+<p>Moduł NumPy (<strong><em>Num</em>erical <em>Py</em>thon</strong>) jest samodzielna biblioteką (historycznie submodułem SciPy) wprowadzającym wielowymiarową tablicę (<code>ndarray</code>) jako swoją główną funkcjonalność.</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;numpy.ndarray&#39;&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Tablica opisana jest przez dwa parametry: liczbę elementów (<code>size</code>) i "kształt" (<code>shape</code>) tablicy, czyli krotkę, której długość określa liczbę wymiarów a wartości na poszczególnych indeksach określają liczbę elementów tablicy w danym wymiarze.</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;array: &#39;</span><span class="p">,</span> <span class="n">arr</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;array shape: &#39;</span><span class="p">,</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;array size: &#39;</span><span class="p">,</span> <span class="n">arr</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>array:  [0 1 2 3 4 5 6 7 8]
+array shape:  (9,)
+array size:  9
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Główną zaletą wielowymiarowych tablic z NumPy jest możliwość łatwego slicingu, zmiany wymiarów, operacji między wieloma tablicami, zarówno macierzowo jak i elementarnie (<em>elementwise</em>).</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr2</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># zmiana wektora w macierz 2D</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[[0 1 2]
+ [3 4 5]
+ [6 7 8]]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Elementy 4 - 6 wektora&#39;</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">6</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Elementy 4 - 6 macierzy&#39;</span><span class="p">,</span> <span class="n">arr2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Elementy 4 - 6 wektora [3 4 5]
+Elementy 4 - 6 macierzy [3 4 5]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="p">[</span><span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="mi">7</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Elementy 2,5,8 wektora&#39;</span><span class="p">,</span> <span class="n">a1</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a1</span><span class="p">))</span>
+<span class="n">a2</span> <span class="o">=</span> <span class="n">arr2</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Elementy 4 - 6 macierzy&#39;</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Rozmiar i kształt&#39;</span><span class="p">,</span> <span class="n">a2</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">a2</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Elementy 2,5,8 wektora [1, 4, 7] &lt;class &#39;list&#39;&gt;
+Elementy 4 - 6 macierzy [1 4 7] &lt;class &#39;numpy.ndarray&#39;&gt;
+Rozmiar i kształt 3 (3,)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Slicing działa w podobny sposób jak w listach, lecz z pewnymi wyjątkami.</p>
+<p>Podobieństwa:</p>
 <ul>
-<li>(opcjonalnie) przechodzimy na branch do którego chcemy domergować nowe zadania.<br/>
-<code>$ git checkout master</code></li>
-<li>Ściągamy zmiany ze zdalnego repozytorium:<br/>
-<code>$ git pull https://github.com/sucharinio/pw_pwzn_z2019.git master</code></li>
-<li>Rozwiązujemy potencjalne konflikty i mergujemy zmiany.</li>
-<li>Rozwiązujemy zadania, zapisujemy zmiany.<br/>
-<pre><code>git add .
-git commmit -m "Solution lab n."</code></pre>
-</li>
-<li>Updatujemy swoje zdalne repo o zmiany:<br/>
-<code>$ git push origin master</code></li>
+<li>trzy wartości separowane dwukropkiem określające początek (włączny), koniec (wyłączny) i krok (domyślnie 1).</li>
+</ul>
+<p>Różnice:</p>
+<ul>
+<li>możemy tworzyć wielowymiarowe zapytanie - slicing wymiaru separowany jest przecinkiem,</li>
+<li>przypisanie do zmiennej nie tworzy oddzielnego obiektu,</li>
+<li>Przypisanie wartości do slice'a działa elementarnie, czyli na każdym elemencie z osobna).</li>
 </ul>
 
 </div>
 </div>
-</div></section></section>
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span><span class="p">,</span> <span class="n">a2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(array([0, 1, 2, 3, 4, 5, 6, 7, 8]), array([1, 4, 7]))</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[0, 1, 2],
+       [3, 4, 5],
+       [6, 7, 8]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">arr2</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">arr2</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">arr2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">arr2</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span> <span class="c1"># mnożenie tworzy nową tablicę</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[3 4 5] [1 4 7] [ 3 16 35]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr2</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># przypisanie do slice&#39;a</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;arr&#39;</span><span class="p">,</span> <span class="n">arr</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a2&#39;</span><span class="p">,</span> <span class="n">a2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[[0 5 2]
+ [3 5 5]
+ [6 5 8]]
+arr [0 5 2 3 5 5 6 5 8]
+a2 [5 5 5]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ll</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">))</span>
+<span class="n">ll</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">7</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>  <span class="c1"># Takie coś jest w listach niemożliwe</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">--------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-12-af8c89980914&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> ll <span class="ansi-blue-fg">=</span> list<span class="ansi-blue-fg">(</span>range<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">9</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>ll<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">:</span><span class="ansi-cyan-fg">7</span><span class="ansi-blue-fg">:</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">4</span>  <span class="ansi-red-fg"># Takie coś jest w listach niemożliwe</span>
+
+<span class="ansi-red-fg">TypeError</span>: must assign iterable to extended slice</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Wbudowane-metody-gnerowania-tablic">Wbudowane metody gnerowania tablic<a class="anchor-link" href="#Wbudowane-metody-gnerowania-tablic">&#182;</a></h3>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="c1"># Tablica zer</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[13]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[0., 0., 0.],
+       [0., 0., 0.],
+       [0., 0., 0.]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="c1"># Tablica jedynek</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[14]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[1., 1., 1.],
+       [1., 1., 1.],
+       [1., 1., 1.]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Tablica z niezainicjalozowaną pamięcią. </span>
+<span class="c1"># Odrobinę szybsza od pozostałych **nie ma gwarancji wyzerowania!**</span>
+<span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[15]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[1., 1., 1.],
+       [1., 1., 1.],
+       [1., 1., 1.]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Na podstawie funkcji specjlanych niektórych bibliotek np. random</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[16]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[99, 26, 27],
+       [53, 92, 99],
+       [85, 59, 88]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Tworz&#261;ce-wektor">Tworz&#261;ce wektor<a class="anchor-link" href="#Tworz&#261;ce-wektor">&#182;</a></h4>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># Prawie jak range</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[17]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([4, 5, 6, 7, 8, 9])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="o">.</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Choć trochę bardziej rozbudowany</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[18]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([9. , 9.1, 9.2, 9.3, 9.4, 9.5, 9.6, 9.7, 9.8, 9.9])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 10 punktów równomiwenie rozłożonych między 1 a 100 (włącznie)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[19]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([  1.,  12.,  23.,  34.,  45.,  56.,  67.,  78.,  89., 100.])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 10 punktów równomiwenie rozłożonych między 1 a 100 (wyłącznie)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[20]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([ 1. , 10.9, 20.8, 30.7, 40.6, 50.5, 60.4, 70.3, 80.2, 90.1])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 10 punktów między 1 a 1E10 rozłożonych na skali logarytmicznej (o podstawie 10)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[21]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([1.e+01, 1.e+02, 1.e+03, 1.e+04, 1.e+05, 1.e+06, 1.e+07, 1.e+08,
+       1.e+09, 1.e+10])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Operacje-na-tablicach">Operacje na tablicach<a class="anchor-link" href="#Operacje-na-tablicach">&#182;</a></h3>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[[0 1 2]
+ [3 4 5]
+ [6 7 8]]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Wykonanie operacji na dwóch tablicach wymaga, aby obie tablice miały ten sam kształt lub rozmiar w tablicy, w różniących się wymiarch wynosił 1. Wówczas możliwe jest wykonanie <em>broadcastingu</em>, czyli dopasowywanie wymiaru tablicy do drugiego argumentu operacji.</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[23]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">*</span> <span class="mi">3</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[24]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[ 0,  3,  6],
+       [ 9, 12, 15],
+       [18, 21, 24]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">*</span> <span class="n">arr</span> <span class="c1"># operacje są elementarne (tzn. na tych)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[25]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[ 0,  1,  4],
+       [ 9, 16, 25],
+       [36, 49, 64]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">arr</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[26]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[[ 0,  1,  2],
+        [ 3,  4,  5],
+        [ 6,  7,  8]],
+
+       [[ 0,  2,  4],
+        [ 6,  8, 10],
+        [12, 14, 16]],
+
+       [[ 0,  3,  6],
+        [ 9, 12, 15],
+        [18, 21, 24]]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">arr</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[27]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[0.        , 0.5       , 0.66666667],
+       [0.75      , 0.8       , 0.83333333],
+       [0.85714286, 0.875     , 0.88888889]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Mno&#380;enie-macierzowe">Mno&#380;enie macierzowe<a class="anchor-link" href="#Mno&#380;enie-macierzowe">&#182;</a></h4>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">@</span> <span class="n">arr</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[28]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[ 15,  18,  21],
+       [ 42,  54,  66],
+       [ 69,  90, 111]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[29]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>20</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Jeżeli chcemy rozpiąć macierz konieczne jest używanie wektorów dwuwymiarowych</span>
+<span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[30]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[ 2,  3,  4],
+       [ 4,  6,  8],
+       [ 6,  9, 12]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">)[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:]</span> <span class="c1"># inny sposób zmiany kształtu tablicy</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[31]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[ 2,  3,  4],
+       [ 4,  6,  8],
+       [ 6,  9, 12]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Albo użyć specjalnej metody</span>
+<span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[32]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[ 2,  3,  4],
+       [ 4,  6,  8],
+       [ 6,  9, 12]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Indeksowanie-warunkowe">Indeksowanie warunkowe<a class="anchor-link" href="#Indeksowanie-warunkowe">&#182;</a></h3>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rand_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">rand_arr</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[33]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[-3, -3, -3],
+       [ 2,  0, -1],
+       [-1, -1, -1]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sqrt_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">rand_arr</span><span class="p">)</span>
+<span class="n">sqrt_arr</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/home/tutor/.virtualenvs/pw_labs/lib/python3.7/site-packages/ipykernel_launcher.py:1: RuntimeWarning: invalid value encountered in sqrt
+  &#34;&#34;&#34;Entry point for launching an IPython kernel.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[34]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[       nan,        nan,        nan],
+       [1.41421356, 0.        ,        nan],
+       [       nan,        nan,        nan]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Pojawiająca się wartość <code>nan</code> oznacza <em>not a number</em> i należy ją traktować jako wynik operacji nie iterpretowalny jako liczbę (w przeciwieństwie do <code>None</code> oznaczającego brak wartości).</p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">sqrt_arr</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[35]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[ True,  True,  True],
+       [False, False,  True],
+       [ True,  True,  True]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sqrt_arr</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">sqrt_arr</span><span class="p">)]</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[36]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([nan, nan, nan, nan, nan, nan, nan])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Indeksowanie wartościami logicznymi zwraca jednowymiarową referencję do obiektów spełniających warunek. Warunek nie musi być <code>bool</code>em, ale musi być rzutowalny do niego.</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># taka operacja nie podniesie błędu, ale jest konwersją stratną</span>
+<span class="n">sqrt_arr</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">sqrt_arr</span><span class="p">)]</span>  <span class="o">=</span> <span class="mi">0</span>
+<span class="n">sqrt_arr</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[37]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[0.        , 0.        , 0.        ],
+       [1.41421356, 0.        , 0.        ],
+       [0.        , 0.        , 0.        ]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rand_arr</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[38]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[-3, -3, -3],
+       [ 2,  0, -1],
+       [-1, -1, -1]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rand_arr</span><span class="p">[</span><span class="n">rand_arr</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">4</span>
+<span class="n">rand_arr</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[39]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[-3, -3, -3],
+       [ 6,  4, -1],
+       [-1, -1, -1]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Indeksowanie-krotkami">Indeksowanie krotkami<a class="anchor-link" href="#Indeksowanie-krotkami">&#182;</a></h4>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Możliwe jest generowanie podtablicy na podstawie dokładnego adresowania. 
+Wówczas jako indeks podawana jest pojedyncza wartość na wymiar (pobieranie jednego elementu) albo iterabla na wymiar (podtablica).</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">arr</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[40]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[41]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>7</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span><span class="p">[[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[42]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([7, 5])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Takiego indeksowania można również użyć do zmieniania wartości tablicy, jednak w przypadku wielokrotnego odwołania do indeksu zachowanie interpretera może być niedeterministyczne.</p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>W celu znalezienia elemtów tablicy spełniających zadany warunek można użyć funkcji <code>where</code>. Funkcja ta zwraca krotkę tablic indeksów elementów spełniających warunek.</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rand_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">rand_arr</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[43]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[0.83926566, 0.74824941, 0.42059846],
+       [0.81707976, 0.20295623, 0.29562976],
+       [0.80138629, 0.86210388, 0.6201529 ]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">rand_arr</span> <span class="o">&lt;</span> <span class="o">.</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[44]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(array([0, 1, 1, 2]), array([2, 1, 2, 2]))</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rand_arr</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">rand_arr</span> <span class="o">&lt;</span> <span class="o">.</span><span class="mi">7</span><span class="p">)]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[45]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([0.42059846, 0.20295623, 0.29562976, 0.6201529 ])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Typy-danych">Typy danych<a class="anchor-link" href="#Typy-danych">&#182;</a></h3>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Tablice w NumPy mają określony typ (np. liczby zmiennoprzecinkowe lub całkowite) ale także rozmiar (Liczbę bajtów na element tablicy). Wykorczenie poza rozmiar może powodować błąd (w listach nie ma te ograniczenia).</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Tablica 12 dodatnich liczb całkowitych, </span>
+<span class="c1"># z których każda może zajmować do dwóch bajtów</span>
+<span class="n">integers</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint16</span><span class="p">)</span>
+<span class="c1"># jeszcze inny sposób zmiany kształtu, </span>
+<span class="c1"># -1 ozncza &quot;ile potrzeba&quot;</span>
+<span class="n">integers</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span>  
+<span class="n">integers</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[46]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[ 0,  1,  2,  3,  4],
+       [ 5,  6,  7,  8,  9],
+       [10, 11, 12, 13, 14],
+       [15, 16, 17, 18, 19]], dtype=uint16)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">2</span> <span class="o">**</span> <span class="mi">16</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[47]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>65536</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">2</span> <span class="o">**</span> <span class="n">integers</span> <span class="c1"># wychodzimy poza zakres zmiennych</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[48]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[    1,     2,     4,     8,    16],
+       [   32,    64,   128,   256,   512],
+       [ 1024,  2048,  4096,  8192, 16384],
+       [32768,     0,     0,     0,     0]], dtype=uint16)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Sortowanie">Sortowanie<a class="anchor-link" href="#Sortowanie">&#182;</a></h3>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rand_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span> 
+<span class="n">rand_arr</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[49]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([0.26251054, 0.20116038, 0.42395375, 0.20736527, 0.7272086 ,
+       0.68140414, 0.48339288, 0.77528569, 0.20527233, 0.28505343,
+       0.95068803, 0.32138002])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">rand_arr</span><span class="p">)</span> <span class="c1"># Działa jak sorted</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[50]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([0.20116038, 0.20527233, 0.20736527, 0.26251054, 0.28505343,
+       0.32138002, 0.42395375, 0.48339288, 0.68140414, 0.7272086 ,
+       0.77528569, 0.95068803])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>W przypadku tablic wielowymiarowych możliwe jest sortowanie tylko po wybranym wymiarze. Można to zrealizować na dwa sposoby:</p>
+<ul>
+<li>podanie wymiaru sortowania (podawanie wymiaru działa także w innych funkcjach),</li>
+<li>sortowanie przez indeksy.</li>
+</ul>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Sortowanie-przez-podanie-wymiaru">Sortowanie przez podanie wymiaru<a class="anchor-link" href="#Sortowanie-przez-podanie-wymiaru">&#182;</a></h4>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rand_arr</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span>
+<span class="n">rand_arr</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[51]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[0.26251054, 0.20116038, 0.42395375],
+       [0.20736527, 0.7272086 , 0.68140414],
+       [0.48339288, 0.77528569, 0.20527233],
+       [0.28505343, 0.95068803, 0.32138002]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">rand_arr</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[52]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[0.20116038, 0.26251054, 0.42395375],
+       [0.20736527, 0.68140414, 0.7272086 ],
+       [0.20527233, 0.48339288, 0.77528569],
+       [0.28505343, 0.32138002, 0.95068803]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">rand_arr</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[53]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[0.20736527, 0.20116038, 0.20527233],
+       [0.26251054, 0.7272086 , 0.32138002],
+       [0.28505343, 0.77528569, 0.42395375],
+       [0.48339288, 0.95068803, 0.68140414]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Sortowanie-przez-indeksy">Sortowanie przez indeksy<a class="anchor-link" href="#Sortowanie-przez-indeksy">&#182;</a></h4>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rand_arr</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[54]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[0.26251054, 0.20116038, 0.42395375],
+       [0.20736527, 0.7272086 , 0.68140414],
+       [0.48339288, 0.77528569, 0.20527233],
+       [0.28505343, 0.95068803, 0.32138002]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">rand_arr</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[55]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[1, 0, 2],
+       [0, 1, 3],
+       [3, 2, 0],
+       [2, 3, 1]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sort_ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">rand_arr</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">sort_ind</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[56]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([0, 1, 2, 3])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rand_arr</span><span class="p">[</span><span class="n">sort_ind</span><span class="p">]</span>  <span class="c1"># sortowanie po 1 kolumnie</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[57]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[0.26251054, 0.20116038, 0.42395375],
+       [0.20736527, 0.7272086 , 0.68140414],
+       [0.48339288, 0.77528569, 0.20527233],
+       [0.28505343, 0.95068803, 0.32138002]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div></section></section>
 </div>
 </div>
 
