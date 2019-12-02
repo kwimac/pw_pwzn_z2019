@@ -9,8 +9,8 @@ def least_sq(xy):
     najmniejszych kwadratów.
     (1 pkt.)
 
-    A = (Sum(x^2)*Sum(y)-Sum(x)*Sum(xy))/Delta
-    B = (N*Sum(xy)-Sum(x)*Sum(y))/Delta
+    A = (N*Sum(xy)-Sum(x)*Sum(y))/Delta
+    B = (Sum(x^2)*Sum(y)-Sum(x)*Sum(xy))/Delta
     Delta = N*Sum(x^2) - (Sum(x)^2)
 
     :param xy: vector of 2D points (shape (2, n))
