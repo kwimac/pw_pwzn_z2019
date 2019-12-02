@@ -16,7 +16,11 @@ def estimate_pi(n):
     :return: Estimated Pi value
     :rtype: float
     """
-    pass
+    points = np.random.uniform(-1,1,(2,n))
+
+    k = (np.sqrt(points[0]**2 + points[1]**2) <= 1).sum()
+
+    return 4*k/n
 
 
 if __name__ == '__main__':
