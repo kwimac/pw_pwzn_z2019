@@ -68,7 +68,7 @@ def select_animals(input_path, output_path, compressed=False):
     df_grouped = df.groupby(['genus', 'gender'])['mass'].min()
 
     
-
+#commmit
 
     # male_wolf = None
     # female_wolf = None
