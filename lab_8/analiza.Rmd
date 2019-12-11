@@ -1,0 +1,73 @@
+---
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.2'
+      jupytext_version: 1.3.0
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+---
+
+```{python}
+from numpy import genfromtxt 
+from numpy import linspace
+import matplotlib.pyplot as plt
+from tools.fit_funcs import least_sq
+data = genfromtxt('tasks/data/input01.txt', delimiter=',')[1::] 
+data
+```
+
+```{python}
+xy = data[:,0:2]
+coefs = least_sq(xy)
+coefs
+
+```
+
+```{python}
+y_percentage_error = abs(data[:,2]/data[:,1])
+y_percentage_error
+
+```
+
+```{python}
+data_no_big_errors = (data[y_percentage_error < 0.05])
+xy_no_big_errors = data_no_big_errors[:,0:2]
+```
+
+```{python}
+coefs_no_big_errors = least_sq(xy_no_big_errors)
+coefs_no_big_errors
+```
+
+```{python}
+x = linspace(-3,7)
+fitted_line = coefs[0]*x + coefs[1]
+fitted_line
+
+```
+
+```{python}
+adj_fitted_line = coefs_no_big_errors[0]*x + coefs_no_big_errors[1]
+adj_fitted_line
+```
+
+```{python}
+fig = plt.figure()
+plt.plot(x, fitted_line, '--' ,label="all")
+plt.plot(x, adj_fitted_line, 'g--', label = '$\Delta$ < 5%')
+plt.errorbar(data[:,0],data[:,1], yerr = data[:,2], color="red", marker="^", markersize=2,fmt=' ')
+plt.errorbar(data_no_big_errors[:,0],data_no_big_errors[:,1], yerr = data_no_big_errors[:,2], color="black", marker='s', markersize=2,fmt=' ')
+plt.legend(loc=2)
+plt.show()
+
+
+```
+
+```{python}
+fig.savefig("wykresik.png", dpi = 200)
+```
