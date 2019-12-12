@@ -1,0 +1,540 @@
+---
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.1'
+      jupytext_version: 1.2.4
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+---
+
+<!-- #region {"slideshow": {"slide_type": "slide"}} -->
+# Python w zastosowaniach naukowych  
+## Wykład 9
+### mgr inż. Maciej Kwiatkowski
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "slide"}} -->
+# Interfejs graficzny
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "slide"}} -->
+## Aplikacja
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+**Aplikacja** to samodzielny program służący do realizowania konkretnego zadania.
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+Aplikację można podzielić (zgrubnie) na dwie warstwy:
+* komunikację z użytkownikiem (interfejs, *frontend*),
+* przetwarzanie informacji (logikę, *backend*).
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+**Implementacja warstw nie powinna być od siebie zależna** 
+tzn. metody i atrybuty związane z wyświetlaniem nie powinny być umieszczone w logice i odwrotnie.
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "subslide"}} -->
+### MVC
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+**MVC** (*Model - View - Controler*) to wzorzec architektoniczny zakładający podział aplikacji na 3 częsci: 
+* **Model** - reprezentujący dane obsługiwane w programie. Model może być:
+    * *pasywny* - dane zmieniane są na skutek akcji kontrolera,
+    * *aktywny* - dane przechowywane w modelu mogą się zmienić niezależnie od działania użytkownika, co powoduję komunikację z odpowiednim kontrolerem,
+* **Widok** - odpowiedzialny za prezentację danych, może zmieniać stan modelu w zakresie związanym z prezentacją (ale nie dane). Może składać się z podwidoków.
+* **Kontroler** - odpowiedzialny za odbiór, przetworzenie i analizę danych wejściowych. Zależnie od danych wejściowych kontroler może:
+    * zmienić stan modelu,
+    * odświeżyć widok,
+    * przełączyć sterowanie na inny kontroler.
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+Każda z częsci reprezentowana jest jako oddzielny obiekt, więc dostarcza swój interfejs. Oznacza to, że w klasie modelu powinniśmy mieć metody interakcji z danymi, ale publiczne metody modelu nie są wywoływane.
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "slide"}} -->
+## GUI
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+**GUI** (*Graphical User Interface*) to określenie sposobu prezentacji informacji przez komputer oraz interakcji z użytkownikiem, polegającego na rysowaniu i obsługiwaniu widżetów (*widgets*). 
+
+Innymi słowy są to wszystkie aplikacje okienkowe, w których wszystko można “wyklikać”.
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+Z UI wiąże się jeszcze pojęcie **UX** (*User eXpreience*), czyli czytelności (wiem co), przejrzystości (wiem gdzie) i intuicyjności (wiem jak) interfejsu.
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+Dobry UX można streścić do stwierdzenia: "Dobry interfejs jest jak dobry żart: nie trzeba go tłumaczyć".
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "subslide"}} -->
+### Widżet
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+Widżet jest elementem GUI umożliwiającym komunikację programu z użytkownikiem. 
+
+Widżetowi przypisuje się pewien prostokąt na ekranie o określonym położeniu i wymiarach (w pikselach). 
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+Funkcje widżetów:
+* przekazywanie do programu danych lub poleceń użytkownika (**wejścia**),
+* wizualizacja danych lub informacji o stanie programu (**wyjścia**),
+* zarządzanie innymi widżetami (**widżety pojemnikowe**).
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "subslide"}} -->
+* **Wejścia**: przycisk (*button*), wejście tekstowe/linijka
+(*entry*), pole tekstowe (*text*), przycisk wyboru (*checkbox*), przycisk wyłącznego wyboru (*radio button*),
+* **Wyjścia**: etykieta (*label*), pasek postępu (*progress bar*), okienko wiadomości (*message box*),
+* **Wejścia-wyjścia**: lista wyboru (*listbox*), płótno (*canvas*), okienko dialogowe (*dialogue box*), suwak (*scrollbar*).
+* **Pojemniki**: ramka (*frame*), okienko (*top level*), menu (*menu*).
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "slide"}} -->
+## Tkinter
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+Biblioteka widzetów **Tk** wywodzi się z języka **Tool Command Language (Tcl)** stworzonego w w późnych latach 80 ubiegłego wieku przez Johna Ousterhout na uniwerytecie Berkeley. Pierwotnie stworzona na pratformie Unix dzięki swojej prostocie została spopularyzowana na pozostałem duże platformy (macOS i Windows).
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+**Tkinter** jest modułem zawierającym interfejs do biblioteki Tk. Do jego głównych zalet należą:
+* jest biblioteką standardową,
+* jest stabilny - API nie podlega częstym zmianom,
+* dostarcza narzędzia tylko do tworzenia GUI - zarządzanie wątkami, systemem plików etc. może być zrealizowane w dowolny sposób,
+* jest prosty - znając podstawy programowania obiektowego można stworzyć rozbudowane GUI.
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+### Przykłady
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+Demo wbudowane w moduł
+<!-- #endregion -->
+
+```{bash slideshow={'slide_type': 'fragment'}}
+python -m tkinter
+```
+
+```{python slideshow={'slide_type': 'subslide'}}
+import tkinter as tk
+
+# definicja pojedynczego pojemnika
+class DestroyableFrame(tk.Frame):
+    def __init__(self, master=None):
+        super().__init__(master)
+        self.grid() # umiejscowienie widżetu
+        self.createWidgets()
+
+    def createWidgets(self):
+        self.quitButton = tk.Button(
+            self, 
+            text='Quit',
+            command=self.master.destroy,
+        )
+        self.quitButton.grid()
+
+app = DestroyableFrame()  # instancja aplikacji nie powoduje jej uruchomienia
+app.master.title('Sample application') 
+app.mainloop()  # dopiero uruchomienie go w pętli pozwala oknu się pojawić
+```
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+Na powyższym przykładzie można zobaczyć schemat tworzenia zbiornika w Tkinterze. Składa się on z:
+* Obowiązkwo:
+    * zdefiniowania pojemnika 
+    * narysowania pojemnika (tu metoda `grid`)
+* Dodatkowo:
+    * dodanie widżetów dzieci
+    * powiązania widżetów ze sobą
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+Tak stworzony zbiornik można albo wykorzystać jako element składowy albo jako samodzielne okno. Jeżeli zdecydujemy się użyć go jako okno ważne jest żeby:
+* posiadać referencję do tego obiektu,
+* uruchomić go w pętli.
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+Dlaczego ważne jest posiadanie referencji do głównego obiektu? Wszystkie pozostałe obiekty znajdujące się wewnątrz widżetu są ze sobą powiązane poprzez relację rodzic-dziecko (odpowiednio atrybuty `master` i `children`) dlatego nawet jeżeli nie przypiszemy widżetu do zmiennej to podany przy tworzeniu rodzic (pierwszy parametr konstruktora) będzie przechowywał referencję do widżetu.
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "subslide"}} -->
+### Zamknięcie okna a zamknięcie widżetu
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+W poprzednim przykładzie mieliśmy dwie możliwości zamknięcia okna:
+* zamknięcie okna na poziomie kernela graficznego (krzyżyk w belce okna),
+* zamknięcie za pomocą przycisku wewnątrz okna (przycisk "Quit").
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+To druga metoda odwoływała się do rodzica i na nim wywoływała metodę `destroy`. Co jest w tym przypadku rodzicem? Obiekt ramki. Pytanie czy użycie instancji `QuitFrame` jako elementu większego okna da podobny efekt?
+<!-- #endregion -->
+
+```{python slideshow={'slide_type': 'fragment'}}
+import tkinter as tk
+
+window = tk.Frame()
+window.grid()
+DestroyableFrame(window)
+DestroyableFrame(window)
+# te komendy tworzą już nowe okno
+window.mainloop()
+DestroyableFrame().mainloop()
+```
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+Zniknęły wszystkie przyciski, ale proces wciąż działał. Wynika to z faktu, że wywołanie pętli wyświetlania tworzy (lub korzysta z instniejącej) instancji obiektu `tk.Tk`, który jest faktycznym **głównym oknem** aplikacji (powinna stworzona być tylko jedna). Dopiero zniszczenie tego obiektu (metoda `destroy`) przerywa proces wyświetlania okna.
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+Instnieje jeszcze metoda `quit`, która zawiesza wyświetlanie okna, ale go nie usuwa. Przerwanie wyświetlania powoduje dalsze wykonanie kodu, i wraca do istniejącego okna przy kolejnym uruchomieniu pętli wyświetlania.  
+<!-- #endregion -->
+
+```{python}
+import tkinter as tk
+
+class QuitFrame(QuitFrame):
+    def createWidgets(self):
+        self.quitButton = tk.Button(
+            self, 
+            text='Quit',
+            command=self.master.quit,
+        )
+        self.quitButton.grid()
+
+app = QuitFrame()
+app.master.title('Sample application') 
+app.mainloop()
+print('Kod wykonuje się dalej')
+app.mainloop()
+app.master.destroy()
+```
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+Widżet jest elementem GUI umożliwiającym komunikację programu z użytkownikiem. 
+
+Widżetowi przypisuje się pewien prostokąt na ekranie o określonym położeniu i wymiarach (w pikselach). 
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+Funkcje widżetów:
+* przekazywanie do programu danych lub poleceń użytkownika (**wejścia**),
+* wizualizacja danych lub informacji o stanie programu (**wyjścia**),
+* zarządzanie innymi widżetami (**widżety pojemnikowe**).
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "subslide"}} -->
+* **Wejścia**: przycisk (*button*), wejście tekstowe/linijka
+(*entry*), pole tekstowe (*text*), przycisk wyboru (*checkbox*), przycisk wyłącznego wyboru (*radio button*),
+* **Wyjścia**: etykieta (*label*), pasek postępu (*progress bar*), okienko wiadomości (*message box*),
+* **Wejścia-wyjścia**: lista wyboru (*listbox*), płótno (*canvas*), okienko dialogowe (*dialogue box*), suwak (*scrollbar*).
+* **Pojemniki**: ramka (*frame*), okienko (*top level*), menu (*menu*).
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "subslide"}} -->
+### Rozmieszczanie widżetów
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+Rsyowanie widżetu odbywa się za pomocą jednej z trzech metod: `grid` (ułóż na siatce), `pack` (upchnij), `place` (umieść) i te nazwy bardzo dobrze opisują sposób rozmieszczenia obiektu:
+* `grid` - zakłada że widżet można umieścić w którejść komórce macierzy (domyślnie w pierwszej kolumnie w kolenych wierszach). Istnieje możliwość rozciągania obiektu między kilka komórek (`span`).
+* `pack` - dodaje elemnty kolejno w zadanym kierunku (`side`, domyślnie od góry do dołu).
+* `place` - doadaje widżet w dokładnie określonym miejscu (stosować tylko w przypadku umieszczania elementu w konkretnym miejscu).
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+**UWAGA**: Używając geometrii siatki, nie można już umieszczać elemnetów przez upychanie i odwrotnie!
+<!-- #endregion -->
+
+```{python slideshow={'slide_type': 'fragment'}}
+import tkinter as tk
+
+class MixedGeometryFrame(tk.Frame):
+    def __init__(self, *args, **kwargs):
+        # główne okno aplikacji
+        super().__init__(*args, **kwargs)
+        self.pack(expand=True, fill=tk.BOTH)
+        
+        # okno rysowane przez upychanie
+        f1 = tk.Frame(self)
+        f1.pack(side=tk.TOP, fill=tk.BOTH)
+        tk.Label(f1, text="Red", bg="red", fg="white").pack(fill=tk.X)
+        tk.Label(f1, text="Green", bg="green", fg="black").pack(fill=tk.X)
+        tk.Label(f1, text="Blue", bg="blue", fg="white").pack(fill=tk.X)
+        
+        # okno rysowane na siatce
+        f2 = tk.Frame(self)
+        f2.pack(side=tk.BOTTOM)
+        tk.Label(f2, text="First").grid(row=0, sticky=tk.W)
+        tk.Label(f2, text="Second").grid(row=1, sticky=tk.W)
+
+        e1 = tk.Entry(f2)
+        e2 = tk.Entry(f2)
+        e1.grid(row=0, column=1)
+        e2.grid(row=1, column=1)
+        
+MixedGeometryFrame().mainloop()
+```
+
+<!-- #region {"slideshow": {"slide_type": "subslide"}} -->
+### Zdarzenia w aplikacji
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+#### Zdarzenia uruchamiane przez widżet
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+Część widżetów może mieć zdefiniowaną akcję, w momencie wejścia w interakcję z nim (wciśnięcie przycisku, przesunięcie suwaka, itp.). Funkcję te definiujemy w parametrze `command` widżetu.
+
+**UWAGA** Przypisujemy funkcję, nie wywołanie funkcji!
+
+**UWAGA 2** Ponieważ przypisujemy funkcję, nie wywołanie, jeżeli chcemy do funkcji przekazać niezwiązane z Tkinterem paramtry, musimy to zrobić przypisując "funkcję" do parametru `command`. Parametry takie możemy zdefiniować za pomocą funckji `functools.partial`.
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "subslide"}} -->
+#### Kontrolki 
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+Tkinter posiada kontrolki (*control variable*), które rozszerzają funckjonalność zwykłej zmiennej o możliwość powiązania jej stanu z widżetem. Powiązanie to jest relaizowane za pomocą gettera i settera, który odpowiednio pozwala na pobranie obecnej wartości z widżetu lub nadpisanie wartości kontrolki przez widżet.
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+Powiązanie może odbywać się również na zmianie wartości kontrolki. Możliwymi zdarzeniami są:
+* odczyt (`r`),
+* zapis (`w`),
+* usunięcie(`u`).
+<!-- #endregion -->
+
+```{python slideshow={'slide_type': 'fragment'}}
+import tkinter as tk
+
+root = tk.Frame()
+root.pack()
+my_variable = tk.StringVar()
+
+def trace_when_my_variable_written(*_):
+    print (f"Traced variable {my_variable.get()}")
+
+    
+# Podłączenie funckji do zmiennej - tzw. obserwator
+my_variable.trace_variable("w", trace_when_my_variable_written)
+
+# Powiązanie kontrolki
+tk.Label(root, textvariable = my_variable).pack(padx=5, pady=5)
+tk.Entry(root, textvariable = my_variable).pack(padx=5, pady=5)
+
+root.mainloop()
+```
+
+<!-- #region {"slideshow": {"slide_type": "subslide"}} -->
+#### Zdarzenia pochodzące z peryferiów
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+Przez peryferia określa się np. klawiaturę i myszkę. Zdarzenia (*event*) od nich pochodzące (wciśnięcie przycisku na klawiaturze, najechanie kursorem) można przypisać (*bind*) do funkcji wykonującej (*handlera*) na trzy sposoby:
+* do widżetu `canv.bind('<Button-2>', _drawOrangeBlob)`
+* do klasy widzetów `frame.bind_class('<Button-2>', _drawOrangeBlob)`
+* na poziomie aplikacji `window.bind('<Key-Print>', _printScreen)`
+
+Gdzie: 
+* `canv`, `frame`, `window` to widżety,
+* `_drawOrangeBlob`, `_printScreen` to nazwy przypisywanych funkcji,
+* `<Button-2>`, `<Key-Print>` przechwytywane zmienne
+<!-- #endregion -->
+
+```{python slideshow={'slide_type': 'fragment'}}
+import tkinter as tk
+
+def key(event):
+    print("pressed", repr(event.char))
+
+def callback(event):
+    frame.focus_set()
+    print("clicked at", event.x, event.y)
+
+frame = tk.Frame(width=100, height=100)
+frame.bind("<Key>", key)
+frame.bind("<Button-1>", callback)
+frame.pack()
+
+frame.mainloop()
+```
+
+<!-- #region {"slideshow": {"slide_type": "subslide"}} -->
+### Stylowanie widżetów
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+Możliew są dwa podejścia do zmieniania stylizacji widżetów:
+* podając atrybuty do widżetów (np. `fg` oznaczający kolor czcionki) z głównego modułu `tkinter`,
+* Korzystać z widżetów zdefiniowanych w podmodule `tkinter.ttk`, w których zamiast atrybutów definiuje się obiekt stylu, który nadaje się widżetowi. W tym przypadku widżety nie mają atrybutów odpowiadających za stylowanie.
+<!-- #endregion -->
+
+```{python slideshow={'slide_type': 'fragment'}}
+import tkinter as tk
+
+frame = tk.Frame(width=100, height=100)
+tk.Label(frame, text="Test", fg="black", bg="white").pack()
+tk.Label(frame, text="Test", fg="black", bg="white").pack()
+frame.pack()
+
+frame.mainloop()
+```
+
+```{python slideshow={'slide_type': 'fragment'}}
+from tkinter import ttk
+
+# Obiekt stylu
+style = ttk.Style()
+style.configure("BW.TLabel", foreground="black", background="white")
+
+frame = tk.Frame(width=100, height=100)
+frame.pack()
+ttk.Label(frame, text="Test", style="BW.TLabel").pack()
+ttk.Label(frame, text="Test", style="BW.TLabel").pack()
+
+frame.mainloop()
+```
+
+<!-- #region {"slideshow": {"slide_type": "subslide"}} -->
+### Osadzanie wykresu
+<!-- #endregion -->
+
+```{python}
+import tkinter as tk
+
+import numpy as np
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_tkagg import (
+    FigureCanvasTkAgg, 
+    NavigationToolbar2Tk,
+)
+# Domyślne przypisanie przycisków do wykresu
+from matplotlib.backend_bases import key_press_handler
+
+
+root = tk.Frame()
+root.pack()
+
+# Standardowe rysowanie wykresu
+fig = plt.Figure(figsize=(5, 4), dpi=100)
+x = np.arange(0, 3, .01)
+fig.add_subplot().plot(x, 2 * np.sin(2 * np.pi * x))
+
+#  Stworzenie obszaru rysowania
+canvas = FigureCanvasTkAgg(fig, master=root)
+canvas_widget = canvas.get_tk_widget()
+canvas.draw()
+canvas_widget.pack(side=tk.TOP, fill=tk.BOTH, expand=1)
+
+toolbar = NavigationToolbar2Tk(canvas, root)
+toolbar.update()
+canvas_widget.pack(side=tk.TOP, fill=tk.BOTH, expand=1)
+
+# Połączenie zdarzenia wciśnięcia przycisku klawiatury z wykresem
+def on_key_press(event):
+    print("you pressed {}".format(event.key))
+    key_press_handler(event, canvas, toolbar)
+
+
+canvas.mpl_connect("key_press_event", on_key_press)
+
+button = tk.Button(master=root, text="Quit", command=root.master.destroy)
+button.pack(side=tk.BOTTOM)
+
+root.master.title("Embedding in Tk")
+root.mainloop()
+```
+
+<!-- #region {"slideshow": {"slide_type": "subslide"}} -->
+### Problemy z obrazkami
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+Moduł domyślnie posiada dwie klasy do wyświetlania obrazu:
+* `tk.BitmapImage` wspierający format `.xbm` (*X BitMap*),
+* `tk.PhotoImage` wspierający formaty `.gif`, `.pgm` (*Portable GrayMap*) i `ppm` (*Portable PixleMap*),
+które nie są aż tak popularnymi formatami.
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+W celu wykorzystania grafiki w innym formacie niż powyższe, musimy skorzystać z modułu PIL (*Python Imaging Library*), który obecnie rozwijany jest pod nazwą *Pillow* (który to projekt jest forkiem od PIL...).
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+Instalacja: `pip install Pillow`
+<!-- #endregion -->
+
+```{python}
+import sys
+
+from PIL import Image, ImageTk
+import tkinter as tk
+
+class Example(tk.Frame):
+  
+    def __init__(self):
+        super().__init__()   
+         
+        self.load_image() 
+        self.init_ui()
+        
+        
+    def load_image(self):
+        try:
+            self.img = Image.open("images/matplotlib_gig_parts.png")
+        except IOError:
+            print("Unable to load image")
+            self.master.destroy()
+    
+    def init_ui(self):
+      
+        self.master.title("Label")
+        
+        tatras = ImageTk.PhotoImage(self.img)
+        label = tk.Label(self, image=tatras)
+        # UWAGA: referencja do obrazka musi być dodana jawnie 
+        label.image = tatras
+        
+        label.pack()
+        self.pack()
+        
+ex = Example()
+ex.pack()
+ex.mainloop()
+```
+
+<!-- #region {"slideshow": {"slide_type": "slide"}} -->
+## Źródła
+<!-- #endregion -->
+
+<!-- #region {"slideshow": {"slide_type": "fragment"}} -->
+* [MVC - Wikipedia](https://pl.wikipedia.org/wiki/Model-View-Controller)
+* [Dokumentacja modułu](https://docs.python.org/3/library/tkinter.html#module-tkinter)
+* [Tkinterbook](http://effbot.org/tkinterbook/)
+* [Tkinter 8.5 reference](https://web.archive.org/web/20190510060459/http://infohost.nmt.edu/tcc/help/pubs/tkinter/web/index.html)
+* [*Tkinter GUI Application Development Blueprints*, Bhaskar Chaudhary, 2015 PACKT](https://subscription.packtpub.com/book/application_development/9781785889738)
+* [Zagnieżdżanie wykresu](https://matplotlib.org/3.1.0/gallery/user_interfaces/embedding_in_tk_sgskip.html)
+<!-- #endregion -->
