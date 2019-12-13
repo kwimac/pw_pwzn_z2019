@@ -1,3 +1,4 @@
+# 13.12.2019r
 import tkinter as tk
 from functools import partial
 
