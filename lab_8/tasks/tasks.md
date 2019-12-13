@@ -23,7 +23,7 @@ W odpowiednim miejscu konfiguracji dodaj następujące linijki:
 c.NotebookApp.contents_manager_class="jupytext.TextFileContentsManager"
 c.ContentsManager.default_jupytext_formats = ".ipynb,.Rmd"
 ```
-Skopiuj zawartość katalogu, w którym stworzyłeś repozytorium 
+Skopiuj zawartość katalogu, który stworzyłeś
 do folderu `config/` i dodaj go do repozytorium.
 ## 3 (2 pkt):
 * Stwórz nowy plik: `analiza.Rmd` i dodaj go do repozytorium. 
@@ -51,5 +51,5 @@ Prosta dopasowana do wszystkich punktów ma się nazywać `all` (kolor niebieski
 prosta z ograniczeniem `Δ<5%` (kolor zielony).
 * W pliku powinna znajdować się linijka wyświetlająca tylko skończony wykres 
 oraz druga pozwalająca na zapisanie go do pliku `fitted_input01` 
-w fromacie `png`, z rozdzielczością 100 dpi.
+w fromacie `png`, z rozdzielczością 200 dpi.
 * Uzyskany wykres ma wyglądać jak `exaple.png`
