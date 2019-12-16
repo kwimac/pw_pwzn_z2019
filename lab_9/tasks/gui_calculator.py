@@ -100,7 +100,7 @@ class CalculatorGUI(tk.Frame):
             self.variables['var_2'] = ''
         self.update_screen()
 
-    def update_var(self, num):
+    def update_var(self, num, *args):
         state = self.state.get()
         if state:
             self.variables['var_1'] += str(num)
@@ -110,13 +110,13 @@ class CalculatorGUI(tk.Frame):
             self.variables['var_2'] = self.variables['var_2'].lstrip('0')
         self.update_screen()
 
-    def set_operator(self, operator):
+    def set_operator(self, operator, *args):
         if self.variables['var_1']:
             self.variables['operator'] = operator
             self.state.set(not self.state.get())
             self.update_screen()
 
-    def calculate_result(self):
+    def calculate_result(self, *args):
         if self.variables['var_1'] and self.variables['var_2']:
             var_1 = self.variables['var_1']
             var_2 = self.variables['var_2']
@@ -149,5 +149,14 @@ if __name__ == '__main__':
     root = tk.Tk()
     ramka = CalculatorGUI(root)
     ramka.pack()
-    #root.bind("<Key>", partial(ramka.set_operator, "/"))
+    root.bind("</>", partial(ramka.set_operator, '/'))
+    root.bind("<+>", partial(ramka.set_operator, '+'))
+    root.bind("<minus>", partial(ramka.set_operator, '-'))
+    root.bind("<*>", partial(ramka.set_operator, '*'))
+    root.bind("<Return>", partial(ramka.calculate_result))
+    for i in range(0,10,1):
+        what_to_bind = str(i)
+        root.bind(what_to_bind,partial(ramka.update_var, i))
+
+
     ramka.mainloop()
