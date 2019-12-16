@@ -36,22 +36,42 @@ class CalculatorGUI(tk.Frame):
             tk.Button(
                 num_pad, text=num, width=5,
                 command=partial(self.update_var, num)
-            ).grid(row=ii // 3, column=(2-ii) % 3)
-        ii += 1
+            ).grid(row=ii // 3, column=((2-ii) % 3) + 2)
+
+        tk.Button(
+            num_pad, text='MC', width=5,
+            command=self.calculator.clean_memory
+        ).grid(row=0, column=1)
+
+        tk.Button(
+            num_pad, text='MR', width=5,
+            command=self.memory_read
+        ).grid(row=1, column=1)
+
+        tk.Button(
+            num_pad, text='M+', width=5,
+            command=self.memorize
+        ).grid(row=2, column=1)
+
+        tk.Button(
+            num_pad, text='.', width=5,
+            command=partial(self.update_var, '.')
+        ).grid(row=3, column=3)
+
         tk.Button(
             num_pad, text='C', width=5,
             command=self.clear
-        ).grid(row=ii // 3, column=ii % 3)
-        ii += 1
+        ).grid(row=3, column=1)
+
         tk.Button(
             num_pad, text='0', width=5,
             command=partial(self.update_var, '0')
-        ).grid(row=ii // 3, column=ii % 3)
+        ).grid(row=3, column=2)
         ii += 1
         tk.Button(
             num_pad, text='=', width=5,
             command=self.calculate_result
-        ).grid(row=ii // 3, column=ii % 3)
+        ).grid(row=3, column=4)
 
         # klawiatura operacji
         operation_pad = tk.Frame(bottom_pad)
@@ -98,15 +118,36 @@ class CalculatorGUI(tk.Frame):
 
     def calculate_result(self):
         if self.variables['var_1'] and self.variables['var_2']:
-            var_1 = int(self.variables['var_1'])
-            var_2 = int(self.variables['var_2'])
+            var_1 = self.variables['var_1']
+            var_2 = self.variables['var_2']
             self.screen['text'] = self.calculator.run(
                 self.variables['operator'], var_1, var_2
             )
             self.init_variables()
 
+    def memory_read(self):
+        state = self.state.get()
+        if state:
+            print(self.calculator._short_memory)
+            self.variables['var_1'] = float(self.calculator.memory)
+        else:
+            self.variables['var_2'] = float(self.calculator.memory)
+        self.update_screen()
+
+    def memorize(self):
+        state = self.state.get()
+        if state:
+            print(self.screen['text'])
+            self.calculator._short_memory = self.variables['var_1'] or self.screen['text']
+            self.calculator.memorize()
+        else:
+            self.calculator._short_memory = self.variables['var_2'] or self.variables['var_1']
+            self.calculator.memorize()
+
 
 if __name__ == '__main__':
     root = tk.Tk()
-    CalculatorGUI(root).pack()
-    root.mainloop()
+    ramka = CalculatorGUI(root)
+    ramka.pack()
+    #root.bind("<Key>", partial(ramka.set_operator, "/"))
+    ramka.mainloop()
