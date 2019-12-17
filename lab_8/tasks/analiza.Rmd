@@ -1,0 +1,41 @@
+```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+from tools.fit_funcs import least_sq
+```
+
+```{python}
+data = np.loadtxt("data/input01.txt", delimiter=',', skiprows = 1)
+```
+
+```{python}
+x = data[:,0]
+y = data[:,1]
+err = data[:,2]
+
+b, a = least_sq(data[:, 0:2].T)
+```
+
+```{python}
+better_data = data[err/y <= 0.05, :]
+worse_data = data[err/y > 0.05, :]
+
+better_b, better_a = least_sq(better_data[:, :2].T)
+```
+
+```{python}
+wykres = plt.figure()
+plt.errorbar(x = better_data[:, 0].T, y = better_data[:, 1].T, yerr = better_data[:, 2].T, markersize = 2, marker = 's', color = 'black', ls = 'none')
+plt.errorbar(x = worse_data[:, 0].T, y = worse_data[:, 1].T, yerr = worse_data[:, 2].T, markersize = 2, marker = '^', color = 'red', ls = 'none')
+plt.plot(data[:, 0], a*data[:, 0]+b, label = 'all', color = 'blue', ls = '--')
+plt.plot(better_data[:, 0], better_a*better_data[:, 0]+better_b, label = r'$\Delta < 5\%$', color = 'green', ls = '--')
+plt.legend()
+```
+
+```{python}
+wykres
+```
+
+```{python}
+wykres.savefig('fitted_input01.png', dpi = 200)
+```
