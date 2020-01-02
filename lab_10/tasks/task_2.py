@@ -20,12 +20,13 @@ def get_daily_data(woeid, year, month, day, timeout):
     return data
 
 
-def save_to_csv(dict, filename):
+def save_to_csv(lista, filename):
     file = open(filename, 'w')
     # create the csv writer object
     csvwriter = writer(file)
-    csvwriter.writerow(dict.keys())
-    csvwriter.writerow(dict.values())
+    csvwriter.writerow(lista[0].keys())
+    for i in lista:
+        csvwriter.writerow(i.values())
 
     file.close()
 
@@ -54,11 +55,12 @@ def get_city_data(
         filename = str(year) + "_" + str(month) + "_" + str(i+1)
         file_full_path = folder / filename
         try:
-            save_to_csv(data[0],file_full_path)
+            for i in data:
+                save_to_csv(data,file_full_path)
             file_names.append(filename)
         except:
-            raise requests.exceptions.HTTPError
-            #return str(folder), file_names
+            #raise requests.exceptions.HTTPError
+            return str(folder), file_names
 
     return str(folder), file_names
 
