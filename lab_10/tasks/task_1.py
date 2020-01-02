@@ -10,7 +10,6 @@ def get_cities_woeid(query: str, timeout: float = 5.):
         new_dict[i['title']] = i['woeid']
     return new_dict
 
-# dodac obsluge bledow
 if __name__ == '__main__':
     assert get_cities_woeid('Warszawa') == {}
     assert get_cities_woeid('War') == {
