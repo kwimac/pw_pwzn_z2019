@@ -11,8 +11,7 @@ def get_metaweather(url, query, timeout=5.):
         timeout=timeout,
     )
     if query:
-        params=query,
-
+        get_params['params'] = query
     response = requests.get(
         url,
         **get_params

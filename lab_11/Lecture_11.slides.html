@@ -13444,7 +13444,7 @@ a.anchor-link {
 </div>
 </div>
 
-</div></div><div class="fragment">!tree ./ex_debugger/</div></section><section>
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13796,8 +13796,6 @@ ipdb&gt; n
 <span class="ansi-green-fg">      5 </span><span class="ansi-red-fg">    </span>head<span class="ansi-blue-fg">,</span> tail <span class="ansi-blue-fg">=</span> os<span class="ansi-blue-fg">.</span>path<span class="ansi-blue-fg">.</span>split<span class="ansi-blue-fg">(</span>filename<span class="ansi-blue-fg">)</span>
 <span class="ansi-green-fg">----&gt; 6 </span><span class="ansi-red-fg">    </span><span class="ansi-green-fg">return</span> head
 
-ipdb&gt; p os
-&lt;module &#39;os&#39; from &#39;/home/tutor/.virtualenvs/pw_labs/lib/python3.7/os.py&#39;&gt;
 ipdb&gt; c
 &gt; <span class="ansi-green-fg">/home/tutor/Documents/pw_labs/lab_11/ex_debugger/example_2.py</span>(5)<span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
 <span class="ansi-green-fg">      1 </span><span class="ansi-green-fg">import</span> util
@@ -13846,10 +13844,10 @@ ipdb&gt; q
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> -d -b ex_debugger/example.py:4  ex_debugger/example.py
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> -d -b ex_debugger/example_2.py:4  ex_debugger/example_2.py
 </pre></div>
 
     </div>
@@ -13866,37 +13864,49 @@ ipdb&gt; q
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Breakpoint 1 at /home/tutor/Documents/pw_labs/lab_11/ex_debugger/example.py:4
+<pre>Breakpoint 1 at /home/tutor/Documents/pw_labs/lab_11/ex_debugger/example_2.py:4
 NOTE: Enter &#39;c&#39; at the ipdb&gt;  prompt to continue execution.
-&gt; <span class="ansi-green-fg">/home/tutor/Documents/pw_labs/lab_11/ex_debugger/example.py</span>(1)<span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+&gt; <span class="ansi-green-fg">/home/tutor/Documents/pw_labs/lab_11/ex_debugger/example_2.py</span>(1)<span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
 <span class="ansi-green-fg">----&gt; 1 </span><span class="ansi-green-fg">import</span> util
 <span class="ansi-green-fg">      2 </span>
 <span class="ansi-green-fg">      3 </span>filename <span class="ansi-blue-fg">=</span> __file__
-<span class="ansi-red-intense-fg ansi-bold">1</span><span class="ansi-green-fg">     4 </span><span class="ansi-green-fg">import</span> pdb<span class="ansi-blue-fg">;</span> pdb<span class="ansi-blue-fg">.</span>set_trace<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># Ustawienie kursora debuggera</span>
-<span class="ansi-green-fg">      5 </span>filename_path <span class="ansi-blue-fg">=</span> util<span class="ansi-blue-fg">.</span>get_path<span class="ansi-blue-fg">(</span>filename<span class="ansi-blue-fg">)</span>
+<span class="ansi-red-intense-fg ansi-bold">1</span><span class="ansi-green-fg">     4 </span>filename_path <span class="ansi-blue-fg">=</span> util<span class="ansi-blue-fg">.</span>get_path<span class="ansi-blue-fg">(</span>filename<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">      5 </span>print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#39;path = {filename_path}&#39;</span><span class="ansi-blue-fg">)</span>
 
 ipdb&gt; c
-&gt; <span class="ansi-green-fg">/home/tutor/Documents/pw_labs/lab_11/ex_debugger/example.py</span>(4)<span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+&gt; <span class="ansi-green-fg">/home/tutor/Documents/pw_labs/lab_11/ex_debugger/example_2.py</span>(4)<span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">      1 </span><span class="ansi-green-fg">import</span> util
 <span class="ansi-green-fg">      2 </span>
 <span class="ansi-green-fg">      3 </span>filename <span class="ansi-blue-fg">=</span> __file__
-<span class="ansi-red-intense-fg ansi-bold">1</span><span class="ansi-green-fg">---&gt; 4 </span><span class="ansi-green-fg">import</span> pdb<span class="ansi-blue-fg">;</span> pdb<span class="ansi-blue-fg">.</span>set_trace<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># Ustawienie kursora debuggera</span>
-<span class="ansi-green-fg">      5 </span>filename_path <span class="ansi-blue-fg">=</span> util<span class="ansi-blue-fg">.</span>get_path<span class="ansi-blue-fg">(</span>filename<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">      6 </span>print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#39;path = {filename_path}&#39;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-red-intense-fg ansi-bold">1</span><span class="ansi-green-fg">---&gt; 4 </span>filename_path <span class="ansi-blue-fg">=</span> util<span class="ansi-blue-fg">.</span>get_path<span class="ansi-blue-fg">(</span>filename<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">      5 </span>print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#39;path = {filename_path}&#39;</span><span class="ansi-blue-fg">)</span>
 
-ipdb&gt; c
-&gt; /home/tutor/Documents/pw_labs/lab_11/ex_debugger/example.py(5)&lt;module&gt;()
--&gt; filename_path = util.get_path(filename)
-(Pdb) s
+ipdb&gt; s
 --Call--
-&gt; /home/tutor/Documents/pw_labs/lab_11/ex_debugger/util.py(3)get_path()
--&gt; def get_path(filename):
-(Pdb) u
-&gt; /home/tutor/Documents/pw_labs/lab_11/ex_debugger/example.py(5)&lt;module&gt;()
--&gt; filename_path = util.get_path(filename)
-(Pdb) d
-&gt; /home/tutor/Documents/pw_labs/lab_11/ex_debugger/util.py(3)get_path()
--&gt; def get_path(filename):
-(Pdb) q
+&gt; <span class="ansi-green-fg">/home/tutor/Documents/pw_labs/lab_11/ex_debugger/util.py</span>(3)<span class="ansi-cyan-fg">get_path</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">      1 </span><span class="ansi-green-fg">import</span> os
+<span class="ansi-green-fg">      2 </span>
+<span class="ansi-green-fg">----&gt; 3 </span><span class="ansi-green-fg">def</span> get_path<span class="ansi-blue-fg">(</span>filename<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">      4 </span><span class="ansi-red-fg">    </span><span class="ansi-blue-fg">&#34;&#34;&#34;Return file&#39;s path or empty string if no path.&#34;&#34;&#34;</span>
+<span class="ansi-green-fg">      5 </span><span class="ansi-red-fg">    </span>head<span class="ansi-blue-fg">,</span> tail <span class="ansi-blue-fg">=</span> os<span class="ansi-blue-fg">.</span>path<span class="ansi-blue-fg">.</span>split<span class="ansi-blue-fg">(</span>filename<span class="ansi-blue-fg">)</span>
+
+ipdb&gt; u
+&gt; <span class="ansi-green-fg">/home/tutor/Documents/pw_labs/lab_11/ex_debugger/example_2.py</span>(4)<span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">      1 </span><span class="ansi-green-fg">import</span> util
+<span class="ansi-green-fg">      2 </span>
+<span class="ansi-green-fg">      3 </span>filename <span class="ansi-blue-fg">=</span> __file__
+<span class="ansi-red-intense-fg ansi-bold">1</span><span class="ansi-green-fg">---&gt; 4 </span>filename_path <span class="ansi-blue-fg">=</span> util<span class="ansi-blue-fg">.</span>get_path<span class="ansi-blue-fg">(</span>filename<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">      5 </span>print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#39;path = {filename_path}&#39;</span><span class="ansi-blue-fg">)</span>
+
+ipdb&gt; d
+&gt; <span class="ansi-green-fg">/home/tutor/Documents/pw_labs/lab_11/ex_debugger/util.py</span>(3)<span class="ansi-cyan-fg">get_path</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">      1 </span><span class="ansi-green-fg">import</span> os
+<span class="ansi-green-fg">      2 </span>
+<span class="ansi-green-fg">----&gt; 3 </span><span class="ansi-green-fg">def</span> get_path<span class="ansi-blue-fg">(</span>filename<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">      4 </span><span class="ansi-red-fg">    </span><span class="ansi-blue-fg">&#34;&#34;&#34;Return file&#39;s path or empty string if no path.&#34;&#34;&#34;</span>
+<span class="ansi-green-fg">      5 </span><span class="ansi-red-fg">    </span>head<span class="ansi-blue-fg">,</span> tail <span class="ansi-blue-fg">=</span> os<span class="ansi-blue-fg">.</span>path<span class="ansi-blue-fg">.</span>split<span class="ansi-blue-fg">(</span>filename<span class="ansi-blue-fg">)</span>
+
+ipdb&gt; q
 </pre>
 </div>
 </div>
@@ -14190,7 +14200,9 @@ AssertionError
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pytest
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># flaga &#39;-k&#39; pozwala na podania wzorca nazwy, </span>
+<span class="c1"># który muszą spełniać nazwy uruchomianych testów</span>
+<span class="o">!</span>pytest -k sample.py
 </pre></div>
 
     </div>
@@ -14210,13 +14222,9 @@ AssertionError
 <pre><span class="ansi-bold">============================= test session starts ==============================</span>
 platform linux -- Python 3.7.4, pytest-5.2.1, py-1.8.0, pluggy-0.13.0
 rootdir: /home/tutor/Documents/pw_labs/lab_11
-collected 10 items                                                             
+collected 15 items / 14 deselected / 1 selected                                
 
-ex_tests/test_fixture.py <span class="ansi-green-fg">.</span><span class="ansi-green-fg">.</span><span class="ansi-cyan-fg">                                              [ 20%]</span>
-ex_tests/test_parametrize.py <span class="ansi-green-fg">.</span><span class="ansi-green-fg">.</span><span class="ansi-cyan-fg">                                          [ 40%]</span>
-ex_tests/test_sample.py <span class="ansi-red-fg">F</span><span class="ansi-cyan-fg">                                                [ 50%]</span>
-ex_tests/test_time_util.py <span class="ansi-green-fg">.</span><span class="ansi-cyan-fg">                                             [ 60%]</span>
-ex_tests/test_xunit.py <span class="ansi-green-fg">.</span><span class="ansi-green-fg">.</span><span class="ansi-green-fg">.</span><span class="ansi-green-fg">.</span><span class="ansi-cyan-fg">                                              [100%]</span>
+ex_tests/test_sample.py <span class="ansi-red-fg">F</span><span class="ansi-cyan-fg">                                                [100%]</span>
 
 =================================== FAILURES ===================================
 <span class="ansi-red-intense-fg ansi-bold">_________________________________ test_answer __________________________________</span>
@@ -14227,7 +14235,7 @@ ex_tests/test_xunit.py <span class="ansi-green-fg">.</span><span class="ansi-gre
 <span class="ansi-red-intense-fg ansi-bold">E        +  where 4 = inc(3)</span>
 
 <span class="ansi-red-intense-fg ansi-bold">ex_tests/test_sample.py</span>:6: AssertionError
-<span class="ansi-red-intense-fg ansi-bold">========================= 1 failed, 9 passed in 0.06s ==========================</span>
+<span class="ansi-red-intense-fg ansi-bold">======================= 1 failed, 14 deselected in 0.08s =======================</span>
 </pre>
 </div>
 </div>
@@ -14238,11 +14246,11 @@ ex_tests/test_xunit.py <span class="ansi-green-fg">.</span><span class="ansi-gre
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># analogiczne uruchomienie, ale z jawnym użyciem interpretera</span>
-<span class="o">!</span>python -m pytest .
+<span class="o">!</span>python -m pytest ./ex_tests/test_sample.py
 </pre></div>
 
     </div>
@@ -14262,13 +14270,9 @@ ex_tests/test_xunit.py <span class="ansi-green-fg">.</span><span class="ansi-gre
 <pre><span class="ansi-bold">============================= test session starts ==============================</span>
 platform linux -- Python 3.7.4, pytest-5.2.1, py-1.8.0, pluggy-0.13.0
 rootdir: /home/tutor/Documents/pw_labs/lab_11
-collected 10 items                                                             
+collected 1 item                                                               
 
-ex_tests/test_fixture.py <span class="ansi-green-fg">.</span><span class="ansi-green-fg">.</span><span class="ansi-cyan-fg">                                              [ 20%]</span>
-ex_tests/test_parametrize.py <span class="ansi-green-fg">.</span><span class="ansi-green-fg">.</span><span class="ansi-cyan-fg">                                          [ 40%]</span>
-ex_tests/test_sample.py <span class="ansi-red-fg">F</span><span class="ansi-cyan-fg">                                                [ 50%]</span>
-ex_tests/test_time_util.py <span class="ansi-green-fg">.</span><span class="ansi-cyan-fg">                                             [ 60%]</span>
-ex_tests/test_xunit.py <span class="ansi-green-fg">.</span><span class="ansi-green-fg">.</span><span class="ansi-green-fg">.</span><span class="ansi-green-fg">.</span><span class="ansi-cyan-fg">                                              [100%]</span>
+ex_tests/test_sample.py <span class="ansi-red-fg">F</span><span class="ansi-cyan-fg">                                                [100%]</span>
 
 =================================== FAILURES ===================================
 <span class="ansi-red-intense-fg ansi-bold">_________________________________ test_answer __________________________________</span>
@@ -14279,7 +14283,7 @@ ex_tests/test_xunit.py <span class="ansi-green-fg">.</span><span class="ansi-gre
 <span class="ansi-red-intense-fg ansi-bold">E        +  where 4 = inc(3)</span>
 
 <span class="ansi-red-intense-fg ansi-bold">ex_tests/test_sample.py</span>:6: AssertionError
-<span class="ansi-red-intense-fg ansi-bold">========================= 1 failed, 9 passed in 0.06s ==========================</span>
+<span class="ansi-red-intense-fg ansi-bold">============================== 1 failed in 0.02s ===============================</span>
 </pre>
 </div>
 </div>
@@ -14327,6 +14331,218 @@ ex_tests/test_xunit.py <span class="ansi-green-fg">.</span><span class="ansi-gre
 
 </div>
 </div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Przechwytywanie-wyj&#261;tk&#243;w">Przechwytywanie wyj&#261;tk&#243;w<a class="anchor-link" href="#Przechwytywanie-wyj&#261;tk&#243;w">&#182;</a></h4>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Spodziewając się, że fragment kodu może powodować błędne działanie (zwłaszcza ten operujący na danych od użytkownika) możliwe jest przechwycenie i obsłużenie potencjalnego wyjątku. Pisząc testy należy skupićsię na sprawdzeniu czy i jaki wyjątek jest podnoszony. Tego typu testy pozwolą na sprawdzenie czy wyjątki nie są podnoszone w niespodziewanych momentach warunkach.</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Test mozna zrealizować przez strukturę <code>try-catch</code>, jednak <code>pytest</code> dostarcza prostszą składnię z domyślnym komunikatem, dla testów które nie przeszły. Podobnie jak <code>try-catch</code> składnia ta jest wrażliwa na schemat dziedziczenia wyjątków.</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
+
+<span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ZeroDivisionError</span><span class="p">)</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+    <span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Podniesiony wyjątek:&#39;</span><span class="p">,</span> <span class="n">exc</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Podniesiony wyjątek: &lt;ExceptionInfo ZeroDivisionError tblen=1&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> ex_tests/naive_fraction.py
+<span class="k">class</span> <span class="nc">FractionException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;Ułamek nie może mieć zera w mianowniku!&#39;</span>
+
+<span class="k">class</span> <span class="nc">Fraction</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nominator</span><span class="p">,</span> <span class="n">denominator</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nominator</span> <span class="o">=</span> <span class="n">nominator</span>
+        <span class="k">if</span> <span class="n">denominator</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">FractionException</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">denominator</span> <span class="o">=</span> <span class="n">denominator</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Overwriting ex_tests/naive_fraction.py
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> ex_tests/test_naive_fraction.py
+<span class="kn">import</span> <span class="nn">pytest</span>
+
+<span class="kn">from</span> <span class="nn">naive_fraction</span> <span class="k">import</span> <span class="p">(</span>
+    <span class="n">Fraction</span><span class="p">,</span>
+    <span class="n">FractionException</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">test_fraction_creation_success</span><span class="p">():</span>
+    <span class="n">frac</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">frac</span><span class="o">.</span><span class="n">nominator</span> <span class="o">==</span> <span class="mi">1</span>
+    <span class="k">assert</span> <span class="n">frac</span><span class="o">.</span><span class="n">denominator</span> <span class="o">==</span> <span class="mi">2</span>
+
+
+<span class="k">def</span> <span class="nf">test_fraction_creation_success__mising_param</span><span class="p">():</span>
+    <span class="n">frac</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">frac</span><span class="o">.</span><span class="n">nominator</span> <span class="o">==</span> <span class="mi">5</span>
+    <span class="k">assert</span> <span class="n">frac</span><span class="o">.</span><span class="n">denominator</span> <span class="o">==</span> <span class="mi">1</span>
+ 
+<span class="c1"># Jeżeli chcemy sprawdzić tylko czy wyjątek jest podnoszony</span>
+<span class="k">def</span> <span class="nf">test_fraction_creation_failure</span><span class="p">():</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="n">FractionException</span><span class="p">):</span>
+        <span class="n">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    
+<span class="c1"># Test jest zbyt szeroki, wyjątek jest wyciszony</span>
+<span class="k">def</span> <span class="nf">test_fraction_creation_failure__too_broad</span><span class="p">():</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+        <span class="n">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span> 
+    
+<span class="c1"># Test nie przejdzie z powodu podniesionego błędu różnego od oczekiwanego</span>
+<span class="k">def</span> <span class="nf">test_fraction_creation_failure__too_broad</span><span class="p">():</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="n">FractionException</span><span class="p">):</span>
+        <span class="n">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Overwriting ex_tests/test_naive_fraction.py
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pytest -k fraction.py
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre><span class="ansi-bold">============================= test session starts ==============================</span>
+platform linux -- Python 3.7.4, pytest-5.2.1, py-1.8.0, pluggy-0.13.0
+rootdir: /home/tutor/Documents/pw_labs/lab_11
+collected 15 items / 11 deselected / 4 selected                                
+
+ex_tests/test_naive_fraction.py <span class="ansi-green-fg">.</span><span class="ansi-green-fg">.</span><span class="ansi-green-fg">.</span><span class="ansi-red-fg">F</span><span class="ansi-cyan-fg">                                     [100%]</span>
+
+=================================== FAILURES ===================================
+<span class="ansi-red-intense-fg ansi-bold">__________________ test_fraction_creation_failure__too_broad ___________________</span>
+
+<span class="ansi-bold">    def test_fraction_creation_failure__too_broad():</span>
+<span class="ansi-bold">        with pytest.raises(FractionException):</span>
+<span class="ansi-bold">&gt;           Fraction(1, 3/0)</span>
+<span class="ansi-red-intense-fg ansi-bold">E           ZeroDivisionError: division by zero</span>
+
+<span class="ansi-red-intense-fg ansi-bold">ex_tests/test_naive_fraction.py</span>:33: ZeroDivisionError
+<span class="ansi-red-intense-fg ansi-bold">================== 1 failed, 3 passed, 11 deselected in 0.08s ==================</span>
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -14373,7 +14589,7 @@ ex_tests/test_xunit.py <span class="ansi-green-fg">.</span><span class="ansi-gre
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> ex_tests/util.py
@@ -14412,7 +14628,7 @@ ex_tests/test_xunit.py <span class="ansi-green-fg">.</span><span class="ansi-gre
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> ex_tests/test_xunit.py
@@ -14504,7 +14720,7 @@ ex_tests/test_xunit.py <span class="ansi-green-fg">.</span><span class="ansi-gre
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pytest -s ex_tests/test_xunit.py  # opcja -s zapewnia, że printy nie będą wyciszane
@@ -14574,7 +14790,7 @@ teardown_module   module:test_xunit
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> ex_tests/test_fixture.py
@@ -14600,7 +14816,7 @@ teardown_module   module:test_xunit
 
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">usefixtures</span><span class="p">(</span><span class="s1">&#39;set_connection&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">test_numbers_3_4</span><span class="p">(</span><span class="n">param_2</span><span class="p">):</span>
-    <span class="k">assert</span> <span class="n">multiply</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="o">==</span> <span class="mi">12</span>
+    <span class="k">assert</span> <span class="n">multiply</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">param_2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">12</span>
 </pre></div>
 
     </div>
@@ -14628,7 +14844,7 @@ teardown_module   module:test_xunit
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pytest -s ex_tests/test_fixture.py 
@@ -14659,7 +14875,7 @@ ex_tests/test_fixture.py
 <span class="ansi-green-fg">.</span>4
 <span class="ansi-green-fg">.</span>
 
-<span class="ansi-green-intense-fg ansi-bold">============================== 2 passed in 0.01s ===============================</span>
+<span class="ansi-green-intense-fg ansi-bold">============================== 2 passed in 0.02s ===============================</span>
 </pre>
 </div>
 </div>
@@ -14693,7 +14909,7 @@ ex_tests/test_fixture.py
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> ex_tests/test_parametrize.py
@@ -14743,7 +14959,7 @@ ex_tests/test_fixture.py
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># parametr -v lub --verbose dokładniej opisuje wykonywane testy </span>
@@ -14773,7 +14989,7 @@ collected 2 items
 ex_tests/test_parametrize.py::test_numbers_3_parametrize[Numbers] <span class="ansi-green-fg">PASSED</span><span class="ansi-cyan-fg"> [ 50%]</span>
 ex_tests/test_parametrize.py::test_numbers_3_parametrize[a-aaaa] <span class="ansi-green-fg">PASSED</span><span class="ansi-cyan-fg">  [100%]</span>
 
-<span class="ansi-green-intense-fg ansi-bold">============================== 2 passed in 0.01s ===============================</span>
+<span class="ansi-green-intense-fg ansi-bold">============================== 2 passed in 0.02s ===============================</span>
 </pre>
 </div>
 </div>
@@ -14824,10 +15040,10 @@ ex_tests/test_parametrize.py::test_numbers_3_parametrize[a-aaaa] <span class="an
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">unittest.mock</span> <span class="k">import</span> <span class="n">MagicMock</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">unittest.mock</span> <span class="k">import</span> <span class="n">Mock</span>
 
 <span class="n">my_mock</span> <span class="o">=</span> <span class="n">Mock</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">my_mock</span><span class="p">)</span>
@@ -14835,6 +15051,7 @@ ex_tests/test_parametrize.py::test_numbers_3_parametrize[a-aaaa] <span class="an
 <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;my mock.a = </span><span class="si">{my_mock.a}</span><span class="s1">, my_mock.b = </span><span class="si">{my_mock.b}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;my_mock called:&#39;</span><span class="p">,</span> <span class="n">my_mock</span><span class="p">())</span>
 <span class="n">my_mock</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;my_mock called:&#39;</span><span class="p">,</span> <span class="n">my_mock</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;my_mock called:&#39;</span><span class="p">,</span> <span class="n">my_mock</span><span class="p">())</span>
       
       
@@ -14854,18 +15071,32 @@ ex_tests/test_parametrize.py::test_numbers_3_parametrize[a-aaaa] <span class="an
     <div class="prompt"></div>
 
 
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;Mock id=&#39;140493167951824&#39;&gt;
+my mock has &#34;a&#34;: True, my_mock.b has &#34;b&#34;: True
+my mock.a = 1, my_mock.b = &lt;Mock name=&#39;mock.b&#39; id=&#39;140493186771088&#39;&gt;
+my_mock called: &lt;Mock name=&#39;mock()&#39; id=&#39;140493167536336&#39;&gt;
+my_mock called: 4
+my_mock called: 4
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 <div class="output_subarea output_text output_error">
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-23-1d5297f8d7bd&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">from</span> unittest<span class="ansi-blue-fg">.</span>mock <span class="ansi-green-fg">import</span> MagicMock
-<span class="ansi-green-intense-fg ansi-bold">      2</span> 
-<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg"> </span>my_mock <span class="ansi-blue-fg">=</span> Mock<span class="ansi-blue-fg">(</span>a<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> print<span class="ansi-blue-fg">(</span>my_mock<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span> print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#39;my mock has &#34;a&#34;: {hasattr(my_mock, &#34;a&#34;)}, my_mock.b has &#34;b&#34;: {hasattr(my_mock, &#34;a&#34;)}&#39;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-27-a2e42b852fe4&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">     11</span> 
+<span class="ansi-green-intense-fg ansi-bold">     12</span> 
+<span class="ansi-green-fg">---&gt; 13</span><span class="ansi-red-fg"> </span><span class="ansi-cyan-fg">1</span> <span class="ansi-green-fg">in</span> my_mock
 
-<span class="ansi-red-fg">NameError</span>: name &#39;Mock&#39; is not defined</pre>
+<span class="ansi-red-fg">TypeError</span>: argument of type &#39;Mock&#39; is not iterable</pre>
 </div>
 </div>
 
@@ -14883,7 +15114,7 @@ ex_tests/test_parametrize.py::test_numbers_3_parametrize[a-aaaa] <span class="an
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">unittest.mock</span> <span class="k">import</span> <span class="n">MagicMock</span>
@@ -14910,17 +15141,17 @@ ex_tests/test_parametrize.py::test_numbers_3_parametrize[a-aaaa] <span class="an
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;MagicMock id=&#39;139956740235344&#39;&gt;
+<pre>&lt;MagicMock id=&#39;140493167494160&#39;&gt;
 my mock has &#34;a&#34;: True, my_mock.b has &#34;b&#34;: True
-my mock.a = 1, my_mock.b = &lt;MagicMock name=&#39;mock.b&#39; id=&#39;139956739917072&#39;&gt;
-my_mock called: &lt;MagicMock name=&#39;mock()&#39; id=&#39;139957213664336&#39;&gt;
+my mock.a = 1, my_mock.b = &lt;MagicMock name=&#39;mock.b&#39; id=&#39;140493173230672&#39;&gt;
+my_mock called: &lt;MagicMock name=&#39;mock()&#39; id=&#39;140493167467600&#39;&gt;
 </pre>
 </div>
 </div>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[25]:</div>
+    <div class="prompt output_prompt">Out[28]:</div>
 
 
 
@@ -14937,7 +15168,7 @@ my_mock called: &lt;MagicMock name=&#39;mock()&#39; id=&#39;139957213664336&#39;
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Mock posiada jeszcze wiele przydatnych atrybutów:</span>
@@ -14954,7 +15185,7 @@ my_mock called: &lt;MagicMock name=&#39;mock()&#39; id=&#39;139957213664336&#39;
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[26]:</div>
+    <div class="prompt output_prompt">Out[29]:</div>
 
 
 
@@ -15001,7 +15232,7 @@ my_mock called: &lt;MagicMock name=&#39;mock()&#39; id=&#39;139957213664336&#39;
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">unittest.mock</span> <span class="k">import</span> <span class="n">Mock</span>
@@ -15046,7 +15277,7 @@ my_mock called with: [call(&#39;1&#39;), call({4: 5})]
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">ZeroDivisionError</span>                         Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-27-e9f8cba2c83d&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">&lt;ipython-input-30-e9f8cba2c83d&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-intense-fg ansi-bold">      8</span> 
 <span class="ansi-green-intense-fg ansi-bold">      9</span> my_mock<span class="ansi-blue-fg">.</span>side_effect <span class="ansi-blue-fg">=</span> ZeroDivisionError
 <span class="ansi-green-fg">---&gt; 10</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;my_mock called:&#39;</span><span class="ansi-blue-fg">,</span> my_mock<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
@@ -15083,7 +15314,7 @@ my_mock called with: [call(&#39;1&#39;), call({4: 5})]
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>cat ex_debugger/util.py
@@ -15119,7 +15350,7 @@ def get_path(filename):
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -15164,7 +15395,7 @@ mock called: 1
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> ex_tests/time_util.py
@@ -15199,7 +15430,7 @@ mock called: 1
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> ex_tests/test_time_util.py
@@ -15212,8 +15443,8 @@ mock called: 1
 
 
 <span class="c1"># Mockowanie w ten sposób nie da efektów, bo funkcja jest już zdefiniowana</span>
-<span class="c1"># @patch(&#39;datetime.datetime&#39;)</span>
-<span class="nd">@patch</span><span class="p">(</span><span class="s1">&#39;time_util.datetime&#39;</span><span class="p">)</span>
+<span class="nd">@patch</span><span class="p">(</span><span class="s1">&#39;datetime.datetime&#39;</span><span class="p">)</span>
+<span class="c1"># @patch(&#39;time_util.datetime&#39;)</span>
 <span class="k">def</span> <span class="nf">test_numbers_3_parametrize</span><span class="p">(</span><span class="n">datetime_mock</span><span class="p">,</span> <span class="n">capsys</span><span class="p">):</span>
     <span class="n">datetime_mock</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
     <span class="n">tell_me_yesterday</span><span class="p">()</span>
@@ -15246,7 +15477,7 @@ mock called: 1
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pytest ex_tests/test_time_util.py 
@@ -15271,9 +15502,29 @@ platform linux -- Python 3.7.4, pytest-5.2.1, py-1.8.0, pluggy-0.13.0
 rootdir: /home/tutor/Documents/pw_labs/lab_11
 collected 1 item                                                               
 
-ex_tests/test_time_util.py <span class="ansi-green-fg">.</span><span class="ansi-cyan-fg">                                             [100%]</span>
+ex_tests/test_time_util.py <span class="ansi-red-fg">F</span><span class="ansi-cyan-fg">                                             [100%]</span>
 
-<span class="ansi-green-intense-fg ansi-bold">============================== 1 passed in 0.01s ===============================</span>
+=================================== FAILURES ===================================
+<span class="ansi-red-intense-fg ansi-bold">__________________________ test_numbers_3_parametrize __________________________</span>
+
+datetime_mock = &lt;MagicMock name=&#39;datetime&#39; id=&#39;140113052728912&#39;&gt;
+capsys = &lt;_pytest.capture.CaptureFixture object at 0x7f6e9cbc79d0&gt;
+
+<span class="ansi-bold">    @patch(&#39;datetime.datetime&#39;)</span>
+<span class="ansi-bold">    # @patch(&#39;time_util.datetime&#39;)</span>
+<span class="ansi-bold">    def test_numbers_3_parametrize(datetime_mock, capsys):</span>
+<span class="ansi-bold">        datetime_mock.now.return_value = datetime(2019, 1, 1)</span>
+<span class="ansi-bold">        tell_me_yesterday()</span>
+<span class="ansi-bold">        # metoda przechwytuje to co zostało wypisane na standardowe wyjście</span>
+<span class="ansi-bold">&gt;       assert capsys.readouterr().out == &#39;Yesterday was: 2019-01-01\n&#39;</span>
+<span class="ansi-red-intense-fg ansi-bold">E       AssertionError: assert &#39;Yesterday was: 2020-01-11\n&#39; == &#39;Yesterday was: 2019-01-01\n&#39;</span>
+<span class="ansi-red-intense-fg ansi-bold">E         - Yesterday was: 2020-01-11</span>
+<span class="ansi-red-intense-fg ansi-bold">E         ?                  ^^    ^</span>
+<span class="ansi-red-intense-fg ansi-bold">E         + Yesterday was: 2019-01-01</span>
+<span class="ansi-red-intense-fg ansi-bold">E         ?                  ^^    ^</span>
+
+<span class="ansi-red-intense-fg ansi-bold">ex_tests/test_time_util.py</span>:16: AssertionError
+<span class="ansi-red-intense-fg ansi-bold">============================== 1 failed in 0.05s ===============================</span>
 </pre>
 </div>
 </div>
