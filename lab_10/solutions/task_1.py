@@ -6,13 +6,12 @@ import requests
 API_URL = 'https://www.metaweather.com/api/'
 
 
-def get_metaweather(url, query, timeout=5.):
+def get_metaweather(url, query=None, timeout=5.):
     get_params = dict(
         timeout=timeout,
     )
     if query:
-        params=query,
-
+        get_params['params'] = query
     response = requests.get(
         url,
         **get_params

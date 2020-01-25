@@ -27,9 +27,9 @@ def get_city_data(
     downloaded_paths = []
     for day in range(1, calendar.monthrange(year, month)[1] + 1):
         url = urljoin(API_URL, f'location/{woeid}/{year}/{month}/{day}')
-        data = get_metaweather(url, timeout)
-        date = datetime(year=year, month=month, day=day)
+        data = get_metaweather(url, timeout=timeout)
         if data:
+            date = datetime(year=year, month=month, day=day)
             file_name = f'{date.strftime("%Y_%m_%d")}.csv'
             with open(str(path / file_name), 'w') as _file:
                 writer = csv.DictWriter(
@@ -41,7 +41,7 @@ def get_city_data(
                 writer.writerows(data)
             downloaded_paths.append(str(file_name))
 
-    return str(path), downloaded_paths
+    return str(path.absolute()), downloaded_paths
 
 
 if __name__ == '__main__':
@@ -52,14 +52,14 @@ if __name__ == '__main__':
     assert pathlib.Path(dir_path).is_dir()
     assert str(expected_path) == dir_path
 
-    expected_path = 'weather_data/523920_2017_03'
+    expected_path = _path / 'weather_data/523920_2017_03'
     dir_path, file_paths = get_city_data(523920, 2017, 3, path='weather_data')
     assert len(file_paths) == 31
     assert pathlib.Path(dir_path).is_dir()
-    assert expected_path == dir_path
+    assert str(expected_path) == dir_path
 
-    expected_path = 'weather_data/523920_2012_12'
+    expected_path = _path / 'weather_data/523920_2012_12'
     dir_path, file_paths = get_city_data(523920, 2012, 12, path='weather_data')
     assert len(file_paths) == 0
     assert pathlib.Path(dir_path).is_dir()
-    assert expected_path == dir_path
+    assert str(expected_path) == dir_path

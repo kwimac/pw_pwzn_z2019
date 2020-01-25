@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 
-<title>Lecture_11 slides</title>
+<title>Lecture_12 slides</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13202,33 +13202,39 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Python-w-zastosowaniach-naukowych">Python w zastosowaniach naukowych<a class="anchor-link" href="#Python-w-zastosowaniach-naukowych">&#182;</a></h1><h2 id="Wyk&#322;ad-11">Wyk&#322;ad 11<a class="anchor-link" href="#Wyk&#322;ad-11">&#182;</a></h2><h3 id="mgr-in&#380;.-Maciej-Kwiatkowski">mgr in&#380;. Maciej Kwiatkowski<a class="anchor-link" href="#mgr-in&#380;.-Maciej-Kwiatkowski">&#182;</a></h3>
+<h1 id="Python-w-zastosowaniach-naukowych">Python w zastosowaniach naukowych<a class="anchor-link" href="#Python-w-zastosowaniach-naukowych">&#182;</a></h1><h2 id="Wyk&#322;ad-12">Wyk&#322;ad 12<a class="anchor-link" href="#Wyk&#322;ad-12">&#182;</a></h2><h3 id="mgr-in&#380;.-Maciej-Kwiatkowski">mgr in&#380;. Maciej Kwiatkowski<a class="anchor-link" href="#mgr-in&#380;.-Maciej-Kwiatkowski">&#182;</a></h3>
 </div>
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="B&#322;&#281;dy-w-kodzie">B&#322;&#281;dy w kodzie<a class="anchor-link" href="#B&#322;&#281;dy-w-kodzie">&#182;</a></h1>
+<h1 id="Inne-przydatne">Inne przydatne<a class="anchor-link" href="#Inne-przydatne">&#182;</a></h1>
 </div>
 </div>
-</div></section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Błędy</strong> (ang. <em>bugs</em>) w kodzie <strong>to nieprawidłowe działanie kodu wynikające z błędu człowieka</strong> na jednym z etapów tworzenia oprogramowania, najczęściej tworzenia kodu żródłowego, lecz również na etapie projektowania funkcjonalności</p>
-
+<h2 id="Type-hints">Type hints<a class="anchor-link" href="#Type-hints">&#182;</a></h2>
 </div>
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Błędy można podzielić na trzy główne typy:</p>
+<p><strong>Sugestie typu</strong> (ang. <em>type hints</em>) to nowalijka wprowadzona w Pythonie 3.5 pozwalająca na określenie typu parametru, wartości zwracanej a nawet zmiennej. Informacja ta <strong>nie wymusza jednak typu zmiennej</strong>, więc program nie zmienia swojego działania. To po co je stosować?</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><strong>błąd składniowy</strong> (<code>SyntaxError</code>) polegający na stworzeniu kodu, który jest niekompilowalny (wszelkiego rodzaju literówki, błędy wcięć lub braku znaków specjalnych). W Pythonie błąd wykrywany jeszcze przed właściwym uruchomieniem programu, a więc łatwy w usunięciu.</li>
-<li><strong>błąd semantyczny</strong> (znaczeniowy) podnoszący inny (niż <code>SyntaxError</code>) wyjątek w programie, wynikający z polecenia poprawnyego na poziomie składni, ale prowadzącego do błędnego/niemożliwego do zrealizowania polecenia (np. odwołania się do zmiennej przed jej zdefiniowaniem). Błąd trudniejszy do wykrycia, ponieważ często pojawiający się dopiero w trakcie uruchomienia programu.</li>
-<li><strong>błąd logiczny</strong> czyli błąd wynikający z niewłaściwego działania warstwy logicznej kodu, nie samego programu (np. wyjście poza warunki graniczne logiki). Błędy tego typu również <em>mogą</em> podnosić wyjątki, ale wyjątki te częściej będą wskazywały na skutek, nie przyczynę błędu.</li>
+<li>jest szybszym do napisania i bardziej elastycznym formatem dokumentacji funkcji,</li>
+<li>jest obsługiwany przez część IDE (statyczna analiza kodu może podkreślić niepoprawne użycie),</li>
+<li>ułatwia pracę przy niemutowalnych typch danych (<code>dataclases</code>, pakiety danych).</li>
 </ul>
 
 </div>
@@ -13237,173 +13243,118 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Metody radzenia sobie z błędami logicznymi:</p>
-<ul>
-<li>sprawdzanie stanu przestrzeni nazw (tzw. "printowanie" lub <a href="https://docs.python.org/3.7/howto/logging.html">logowanie</a>),</li>
-<li>statyczna analiza kodu (m.in. metoda żółtej kaczuszki), </li>
-<li>dynamiczna analiza kodu (<em>debugowanie</em>).</li>
-</ul>
-
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Debugowanie">Debugowanie<a class="anchor-link" href="#Debugowanie">&#182;</a></h2>
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Debugowanie</strong> to proces <em>redukowania</em> liczby błędów w programie polegający na kontrolowanym wykonianiu programu pod nadzorem <em>debuggera</em>.</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Proces debugowania można podzielić na następujące etapy:</p>
-<ol>
-<li>Reprodukcja błędu.</li>
-<li>Wyizolowanie źródła błędu.</li>
-<li>Identyfikacja przyczyny awarii.</li>
-<li>Usunięcie defektu.</li>
-<li>Weryfikacja powodzenia naprawy.</li>
-</ol>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Ogólnie po procesie debugowania liczba błędów w kodzie powinna być <em>nie większa</em> niż przed procesem debugowania. Dodatkowo powinno unikać się zastępowania jednego błędu innym :)</p>
+<p><a href="https://docs.python.org/3/library/typing.html">Link</a> do dokumentacji.</p>
 
 </div>
 </div>
 </div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Debugger">Debugger<a class="anchor-link" href="#Debugger">&#182;</a></h3>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Debugger</strong> to program służący do analizy działania innych programów. Funckjonalności dostarczane przez to narzędzie:</p>
-<ul>
-<li>stawianie pułapek (<em>breakpoints</em>) pozwalających na zatrzymanie działania programu w pewnym momencie działania kodu,</li>
-<li>uruchamianie krok po kroku (w przód, choć niektóre programy pozwalają na uruchomienie wstecz),</li>
-<li>zmiana stanu programu (nadpisanie wartości w przestrzeni nazw).</li>
-</ul>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Python posiada swój wbudowany debugger - moduł <code>pdb</code>.</p>
-<p>Od wersji 3.7 funckjonuje również komenda <code>breakpoint()</code>, która uruchamia debugger <code>pdb</code>.</p>
-
-</div>
-</div>
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Do prezentacji działania debuggera zostanie użyty następujący kod:</p>
-
-</div>
-</div>
-</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>mkdir -p ex_debugger<span class="p">;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">defaultdict</span>
+<span class="c1"># Poniższa biblioteka zawiera klasy przydatne </span>
+<span class="c1"># do definiowania typehintów</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span>
+
+
+<span class="k">class</span> <span class="nc">CharCounter</span><span class="p">():</span>
+    <span class="c1"># definicja typu</span>
+    <span class="n">CounterTypes</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="s1">&#39;CharCounter&#39;</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]</span>
+    <span class="c1"># w celu dookreślenia kluczy słownika należy podać je w nawisach kwadratowych</span>
+    <span class="c1"># [&lt;typy_kluczy&gt;, &lt;typy_wartości&gt;]</span>
+    
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span> 
+            <span class="n">default_value</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="c1"># proste typy opisuje się nazwą klasy</span>
+            <span class="c1"># Typ Opcjonal jest jednoznaczny z Union[&lt;typ&gt;, None]</span>
+            <span class="c1"># użycie go pozwala jednak ocenić paramtery opcjonalne, </span>
+            <span class="c1"># które mogą być puste i nie mają domyślnej wartości</span>
+            <span class="n">based_on</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">CounterTypes</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_default_value</span> <span class="o">=</span> <span class="n">default_value</span>
+        <span class="c1"># typ można określić także atrybutowi, a nawet zmiennej</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_counts</span><span class="p">:</span> <span class="n">default_dict</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">default_value</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">based_on</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">based_on</span><span class="p">)</span>
+    
+    <span class="c1"># typ wartości zwracanej podawany jest po strzałce -&gt;</span>
+    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_counts</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+    
+    <span class="c1"># Jeżeli chcilelibyśmy zrobić listę różnych typów, </span>
+    <span class="c1"># typy należałoby umieścić w klasie Union</span>
+    <span class="k">def</span> <span class="nf">keys</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_counts</span><span class="p">)</span>
+        
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="n">f</span><span class="s1">&#39;</span><span class="si">{key}</span><span class="s1">: </span><span class="si">{self[key]}</span><span class="s1">&#39;</span>
+            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+        <span class="p">)</span>
+       
+    <span class="c1"># Jeżeli funkcja nic nie zwraca musimy podać None </span>
+    <span class="c1"># jako wartość zwracaną (z wyjątkiem __init__)</span>
+    <span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">char_</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_counts</span><span class="p">[</span><span class="n">char_</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+   
+    <span class="c1"># Używanie type hints nie wyklucza możliwości dodania docstringów.</span>
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">CounterTypes</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Updates counter based on other counter.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">other</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_counts</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">+=</span> <span class="n">other</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+    
+    <span class="c1"># Jeżeli metoda klasy ma zwracać inną instancje tej klasy</span>
+    <span class="c1"># typ należy podać jako string</span>
+    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;CharCounter&#39;</span><span class="p">:</span>
+        <span class="n">new_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">()</span>
+        <span class="n">new_</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">new_</span>
+    
+    <span class="k">def</span> <span class="nf">__add__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">CounterTypes</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;CharCounter&#39;</span><span class="p">:</span>
+        <span class="n">new_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">new_</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">new_</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-</div></div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> ./ex_debugger/example.py
-<span class="kn">import</span> <span class="nn">util</span>
-
-<span class="n">filename</span> <span class="o">=</span> <span class="vm">__file__</span>
-<span class="kn">import</span> <span class="nn">pdb</span><span class="p">;</span> <span class="n">pdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>  <span class="c1"># Ustawienie kursora debuggera</span>
-<span class="n">filename_path</span> <span class="o">=</span> <span class="n">util</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;path = </span><span class="si">{filename_path}</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c_count</span> <span class="o">=</span> <span class="n">CharCounter</span><span class="p">()</span>
+<span class="n">c_count</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;AAbbbbccbb&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;c_count:&#39;</span><span class="p">,</span> <span class="n">c_count</span><span class="p">)</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Overwriting ./ex_debugger/example.py
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div><div class="fragment">
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> ./ex_debugger/example_2.py
-<span class="kn">import</span> <span class="nn">util</span>
-
-<span class="n">filename</span> <span class="o">=</span> <span class="vm">__file__</span>
-<span class="n">filename_path</span> <span class="o">=</span> <span class="n">util</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;path = </span><span class="si">{filename_path}</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c_count_2</span> <span class="o">=</span> <span class="n">c_count</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">c_count_2</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;AAAddc&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;c_count:&#39;</span><span class="p">,</span> <span class="n">c_count</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;c_count_2:&#39;</span><span class="p">,</span> <span class="n">c_count_2</span><span class="p">)</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Overwriting ./ex_debugger/example_2.py
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -13413,320 +13364,71 @@ a.anchor-link {
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> ./ex_debugger/util.py
-<span class="kn">import</span> <span class="nn">os</span>
-
-<span class="k">def</span> <span class="nf">get_path</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return file&#39;s path or empty string if no path.&quot;&quot;&quot;</span>
-    <span class="n">head</span><span class="p">,</span> <span class="n">tail</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">head</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c_count_3</span> <span class="o">=</span> <span class="n">CharCounter</span><span class="p">(</span><span class="n">based_on</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;c_count_3:&#39;</span><span class="p">,</span> <span class="n">c_count_3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span> <span class="o">*</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">c_count_4</span> <span class="o">=</span> <span class="n">c_count_3</span> <span class="o">+</span> <span class="n">c_count_2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;c_count_2:&#39;</span><span class="p">,</span> <span class="n">c_count_2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;c_count_3:&#39;</span><span class="p">,</span> <span class="n">c_count_3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;c_count_4:&#39;</span><span class="p">,</span> <span class="n">c_count_4</span><span class="p">)</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Overwriting ./ex_debugger/util.py
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Niektóre komendy debuggera:</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Komendy pomocnicze:</p>
-<table>
-<thead><tr>
-<th>Komenda</th>
-<th>Opis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>q</code></td>
-<td>Wyłącz debugger.</td>
-</tr>
-<tr>
-<td><code>h</code></td>
-<td>Wypisz wszystkie komendy.</td>
-</tr>
-<tr>
-<td><code>h &lt;command&gt;</code></td>
-<td>Pomoc dla wybranej komendy.</td>
-</tr>
-<tr>
-<td><code>h pdb</code></td>
-<td>Pełna pomoc.</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> ./ex_debugger/example.py  # Uruchomienie pliku 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">CharCounter</span><span class="p">)</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&gt; /home/tutor/Documents/pw_labs/lab_11/ex_debugger/example.py(5)&lt;module&gt;()
--&gt; filename_path = util.get_path(filename)
-(Pdb) q
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">BdbQuit</span>                                   Traceback (most recent call last)
-<span class="ansi-green-fg">~/Documents/pw_labs/lab_11/ex_debugger/example.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> filename <span class="ansi-blue-fg">=</span> __file__
-<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-green-fg">import</span> pdb<span class="ansi-blue-fg">;</span> pdb<span class="ansi-blue-fg">.</span>set_trace<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># Ustawienie kursora debuggera</span>
-<span class="ansi-green-fg">----&gt; 5</span><span class="ansi-red-fg"> </span>filename_path <span class="ansi-blue-fg">=</span> util<span class="ansi-blue-fg">.</span>get_path<span class="ansi-blue-fg">(</span>filename<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      6</span> print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#39;path = {filename_path}&#39;</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">~/Documents/pw_labs/lab_11/ex_debugger/example.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> filename <span class="ansi-blue-fg">=</span> __file__
-<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-green-fg">import</span> pdb<span class="ansi-blue-fg">;</span> pdb<span class="ansi-blue-fg">.</span>set_trace<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># Ustawienie kursora debuggera</span>
-<span class="ansi-green-fg">----&gt; 5</span><span class="ansi-red-fg"> </span>filename_path <span class="ansi-blue-fg">=</span> util<span class="ansi-blue-fg">.</span>get_path<span class="ansi-blue-fg">(</span>filename<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      6</span> print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#39;path = {filename_path}&#39;</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/usr/local/lib/python3.7/bdb.py</span> in <span class="ansi-cyan-fg">trace_dispatch</span><span class="ansi-blue-fg">(self, frame, event, arg)</span>
-<span class="ansi-green-intense-fg ansi-bold">     86</span>             <span class="ansi-green-fg">return</span> <span class="ansi-red-fg"># None</span>
-<span class="ansi-green-intense-fg ansi-bold">     87</span>         <span class="ansi-green-fg">if</span> event <span class="ansi-blue-fg">==</span> <span class="ansi-blue-fg">&#39;line&#39;</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">---&gt; 88</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>dispatch_line<span class="ansi-blue-fg">(</span>frame<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     89</span>         <span class="ansi-green-fg">if</span> event <span class="ansi-blue-fg">==</span> <span class="ansi-blue-fg">&#39;call&#39;</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">     90</span>             <span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>dispatch_call<span class="ansi-blue-fg">(</span>frame<span class="ansi-blue-fg">,</span> arg<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/usr/local/lib/python3.7/bdb.py</span> in <span class="ansi-cyan-fg">dispatch_line</span><span class="ansi-blue-fg">(self, frame)</span>
-<span class="ansi-green-intense-fg ansi-bold">    111</span>         <span class="ansi-green-fg">if</span> self<span class="ansi-blue-fg">.</span>stop_here<span class="ansi-blue-fg">(</span>frame<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">or</span> self<span class="ansi-blue-fg">.</span>break_here<span class="ansi-blue-fg">(</span>frame<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    112</span>             self<span class="ansi-blue-fg">.</span>user_line<span class="ansi-blue-fg">(</span>frame<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">--&gt; 113</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">if</span> self<span class="ansi-blue-fg">.</span>quitting<span class="ansi-blue-fg">:</span> <span class="ansi-green-fg">raise</span> BdbQuit
-<span class="ansi-green-intense-fg ansi-bold">    114</span>         <span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>trace_dispatch
-<span class="ansi-green-intense-fg ansi-bold">    115</span> 
-
-<span class="ansi-red-fg">BdbQuit</span>: </pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>W powyższej komórce widzimy następujące linijki:</p>
-<ul>
-<li>Ścieżka do obecnie otworzonego w debuggerze pliku, numer lini z położeniem wskaźnika debuggera, oraz obecna ramka/kontekst.</li>
-<li>Poprzedzona strzałka linijka, na której umieszczony jest wskaźnik debuggera.</li>
-<li>Prompt wprowadzenia komendy (z nazwą używanego debuggera w nawiasie).</li>
-</ul>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Komenda <code>q</code> (<code>quit</code>, <code>exit</code>) zgłasza wyjątek przerywający działanie debuggera. Dalej pokaże jak można uniknąć tego tracebacku.</p>
-
-</div>
-</div>
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Komendy wypisania:</p>
-<table>
-<thead><tr>
-<th>Komenda</th>
-<th>Opis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>p</code></td>
-<td>Wypisz wartość wyrażenia.</td>
-</tr>
-<tr>
-<td><code>pp</code></td>
-<td>Wypisz wartość wyrażenia korzystając z <code>pprint</code>.</td>
-</tr>
-<tr>
-<td><code>l</code></td>
-<td>Wyświetla kod obecnej ramki. Jeżeli nie jest podany argument wyświetla 11 linijek wokół kursora debuggera.</td>
-</tr>
-<tr>
-<td><code>ll</code></td>
-<td>Wyświetl kod obecnej ramki/funkcji.</td>
-</tr>
-<tr>
-<td>Wciśniećie klawisza <code>&lt;Enter&gt;</code></td>
-<td>Ponownie wykonuje ostatnią funkcję.</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Uruchomienie kodu w trybue debuggowania.</span>
-<span class="c1"># Zmianie uległ debugger (ipdb, patrz prompt) </span>
-<span class="c1"># jednak zaimportowanie debuggera w kodzie uruchomiło już pdb.</span>
-<span class="o">%</span><span class="k">run</span> -d ./ex_debugger/example.py
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">CharCounter</span><span class="o">.</span><span class="n">update</span><span class="p">)</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Breakpoint 1 at /home/tutor/Documents/pw_labs/lab_11/ex_debugger/example.py:1
-NOTE: Enter &#39;c&#39; at the ipdb&gt;  prompt to continue execution.
-&gt; <span class="ansi-green-fg">/home/tutor/Documents/pw_labs/lab_11/ex_debugger/example.py</span>(1)<span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-red-intense-fg ansi-bold">1</span><span class="ansi-green-fg">---&gt; 1 </span><span class="ansi-green-fg">import</span> util
-<span class="ansi-green-fg">      2 </span>
-<span class="ansi-green-fg">      3 </span>filename <span class="ansi-blue-fg">=</span> __file__
-<span class="ansi-green-fg">      4 </span><span class="ansi-green-fg">import</span> pdb<span class="ansi-blue-fg">;</span> pdb<span class="ansi-blue-fg">.</span>set_trace<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># Ustawienie kursora debuggera</span>
-<span class="ansi-green-fg">      5 </span>filename_path <span class="ansi-blue-fg">=</span> util<span class="ansi-blue-fg">.</span>get_path<span class="ansi-blue-fg">(</span>filename<span class="ansi-blue-fg">)</span>
-
-ipdb&gt; c
-&gt; /home/tutor/Documents/pw_labs/lab_11/ex_debugger/example.py(5)&lt;module&gt;()
--&gt; filename_path = util.get_path(filename)
-(Pdb) l
-  1  	import util
-  2  	
-  3  	filename = __file__
-  4  	import pdb; pdb.set_trace()  # Ustawienie kursora debuggera
-  5  -&gt;	filename_path = util.get_path(filename)
-  6  	print(f&#39;path = {filename_path}&#39;)
-[EOF]
-(Pdb) p filename
-&#39;/home/tutor/Documents/pw_labs/lab_11/ex_debugger/example.py&#39;
-(Pdb) a=1
-(Pdb) p a
-*** NameError: name &#39;a&#39; is not defined
-(Pdb) q
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section><section>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Komendy przesuwania kursora:</p>
-<table>
-<thead><tr>
-<th>Komenda</th>
-<th>Opis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>n</code></td>
-<td>Przejdź do następnej linii w tej funkcji (<em>step over</em>).</td>
-</tr>
-<tr>
-<td><code>s</code></td>
-<td>Przejdź do następnej wykonywanej linii (<em>step into</em>).</td>
-</tr>
-<tr>
-<td><code>c</code></td>
-<td>Kontynuuj wykonanie do następnej pułapki lub końca.</td>
-</tr>
-<tr>
-<td><code>unt</code></td>
-<td>Kontynuuj wykonanie do momentu przejścia do lini z <strong>wyższym</strong> numerem niż obecnie.</td>
-</tr>
-<tr>
-<td><code>unt &lt;numer&gt;</code></td>
-<td>Kontynuuj do momentu przejścia do lini <code>&lt;numer&gt;</code>.</td>
-</tr>
-<tr>
-<td><code>b</code></td>
-<td>Wyświetl wszystkie ustawione pułapki.</td>
-</tr>
-<tr>
-<td><code>b &lt;numer&gt;</code></td>
-<td>Ustaw pułapkę w <code>numer</code> lini obecnego pliku.</td>
-</tr>
-</tbody>
-</table>
-
+<h2 id="Generatory">Generatory<a class="anchor-link" href="#Generatory">&#182;</a></h2>
 </div>
 </div>
 </div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Generator</strong> to funckja imitująca działanie iteratora tzn. zwracająca tylko pojedynczą wartość zgodnie ze zdefiniowaną regułą, a nie przechowującą wsztkie wartośći w pamięci. Dzięki temu możliwe jest przyspieszenie obliczeń poprzez nie "zaśmiecanie" RAMu.</p>
+<p>Najprostszą definicję generatora możemy uzyskać za pomocą <em>generator comprehension</em>, czyli "jednolinjkowej" pętli ograniczonej nawiasami okrągłymi.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Przykład uruchomienia pliku z dodaną pułapką bez modyfikacji kodu</span>
-<span class="o">%</span><span class="k">run</span> -d -b ex_debugger/example_2.py:4  ex_debugger/example_2.py
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">1e4</span><span class="p">)</span>
+<span class="n">sum_1</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">ii</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<span class="n">sum_2</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">ii</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;is equal&#39;</span><span class="p">,</span> <span class="n">sum_1</span> <span class="o">==</span> <span class="n">sum_2</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13743,68 +13445,7 @@ ipdb&gt; c
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Breakpoint 1 at /home/tutor/Documents/pw_labs/lab_11/ex_debugger/example_2.py:4
-NOTE: Enter &#39;c&#39; at the ipdb&gt;  prompt to continue execution.
-&gt; <span class="ansi-green-fg">/home/tutor/Documents/pw_labs/lab_11/ex_debugger/example_2.py</span>(1)<span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1 </span><span class="ansi-green-fg">import</span> util
-<span class="ansi-green-fg">      2 </span>
-<span class="ansi-green-fg">      3 </span>filename <span class="ansi-blue-fg">=</span> __file__
-<span class="ansi-red-intense-fg ansi-bold">1</span><span class="ansi-green-fg">     4 </span>filename_path <span class="ansi-blue-fg">=</span> util<span class="ansi-blue-fg">.</span>get_path<span class="ansi-blue-fg">(</span>filename<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">      5 </span>print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#39;path = {filename_path}&#39;</span><span class="ansi-blue-fg">)</span>
-
-ipdb&gt; c
-&gt; <span class="ansi-green-fg">/home/tutor/Documents/pw_labs/lab_11/ex_debugger/example_2.py</span>(4)<span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">      1 </span><span class="ansi-green-fg">import</span> util
-<span class="ansi-green-fg">      2 </span>
-<span class="ansi-green-fg">      3 </span>filename <span class="ansi-blue-fg">=</span> __file__
-<span class="ansi-red-intense-fg ansi-bold">1</span><span class="ansi-green-fg">---&gt; 4 </span>filename_path <span class="ansi-blue-fg">=</span> util<span class="ansi-blue-fg">.</span>get_path<span class="ansi-blue-fg">(</span>filename<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">      5 </span>print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#39;path = {filename_path}&#39;</span><span class="ansi-blue-fg">)</span>
-
-ipdb&gt; b
-Num Type         Disp Enb   Where
-1   breakpoint   keep yes   at /home/tutor/Documents/pw_labs/lab_11/ex_debugger/example_2.py:4
-	breakpoint already hit 1 time
-ipdb&gt; b 5
-Breakpoint 2 at /home/tutor/Documents/pw_labs/lab_11/ex_debugger/example_2.py:5
-ipdb&gt; b
-Num Type         Disp Enb   Where
-1   breakpoint   keep yes   at /home/tutor/Documents/pw_labs/lab_11/ex_debugger/example_2.py:4
-	breakpoint already hit 1 time
-2   breakpoint   keep yes   at /home/tutor/Documents/pw_labs/lab_11/ex_debugger/example_2.py:5
-ipdb&gt; s
---Call--
-&gt; <span class="ansi-green-fg">/home/tutor/Documents/pw_labs/lab_11/ex_debugger/util.py</span>(3)<span class="ansi-cyan-fg">get_path</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">      1 </span><span class="ansi-green-fg">import</span> os
-<span class="ansi-green-fg">      2 </span>
-<span class="ansi-green-fg">----&gt; 3 </span><span class="ansi-green-fg">def</span> get_path<span class="ansi-blue-fg">(</span>filename<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">      4 </span><span class="ansi-red-fg">    </span><span class="ansi-blue-fg">&#34;&#34;&#34;Return file&#39;s path or empty string if no path.&#34;&#34;&#34;</span>
-<span class="ansi-green-fg">      5 </span><span class="ansi-red-fg">    </span>head<span class="ansi-blue-fg">,</span> tail <span class="ansi-blue-fg">=</span> os<span class="ansi-blue-fg">.</span>path<span class="ansi-blue-fg">.</span>split<span class="ansi-blue-fg">(</span>filename<span class="ansi-blue-fg">)</span>
-
-ipdb&gt; n
-&gt; <span class="ansi-green-fg">/home/tutor/Documents/pw_labs/lab_11/ex_debugger/util.py</span>(5)<span class="ansi-cyan-fg">get_path</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">      2 </span>
-<span class="ansi-green-fg">      3 </span><span class="ansi-green-fg">def</span> get_path<span class="ansi-blue-fg">(</span>filename<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">      4 </span><span class="ansi-red-fg">    </span><span class="ansi-blue-fg">&#34;&#34;&#34;Return file&#39;s path or empty string if no path.&#34;&#34;&#34;</span>
-<span class="ansi-green-fg">----&gt; 5 </span><span class="ansi-red-fg">    </span>head<span class="ansi-blue-fg">,</span> tail <span class="ansi-blue-fg">=</span> os<span class="ansi-blue-fg">.</span>path<span class="ansi-blue-fg">.</span>split<span class="ansi-blue-fg">(</span>filename<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">      6 </span><span class="ansi-red-fg">    </span><span class="ansi-green-fg">return</span> head
-
-ipdb&gt; n
-&gt; <span class="ansi-green-fg">/home/tutor/Documents/pw_labs/lab_11/ex_debugger/util.py</span>(6)<span class="ansi-cyan-fg">get_path</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">      2 </span>
-<span class="ansi-green-fg">      3 </span><span class="ansi-green-fg">def</span> get_path<span class="ansi-blue-fg">(</span>filename<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">      4 </span><span class="ansi-red-fg">    </span><span class="ansi-blue-fg">&#34;&#34;&#34;Return file&#39;s path or empty string if no path.&#34;&#34;&#34;</span>
-<span class="ansi-green-fg">      5 </span><span class="ansi-red-fg">    </span>head<span class="ansi-blue-fg">,</span> tail <span class="ansi-blue-fg">=</span> os<span class="ansi-blue-fg">.</span>path<span class="ansi-blue-fg">.</span>split<span class="ansi-blue-fg">(</span>filename<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 6 </span><span class="ansi-red-fg">    </span><span class="ansi-green-fg">return</span> head
-
-ipdb&gt; c
-&gt; <span class="ansi-green-fg">/home/tutor/Documents/pw_labs/lab_11/ex_debugger/example_2.py</span>(5)<span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">      1 </span><span class="ansi-green-fg">import</span> util
-<span class="ansi-green-fg">      2 </span>
-<span class="ansi-green-fg">      3 </span>filename <span class="ansi-blue-fg">=</span> __file__
-<span class="ansi-red-intense-fg ansi-bold">1</span><span class="ansi-green-fg">     4 </span>filename_path <span class="ansi-blue-fg">=</span> util<span class="ansi-blue-fg">.</span>get_path<span class="ansi-blue-fg">(</span>filename<span class="ansi-blue-fg">)</span>
-<span class="ansi-red-intense-fg ansi-bold">2</span><span class="ansi-green-fg">---&gt; 5 </span>print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#39;path = {filename_path}&#39;</span><span class="ansi-blue-fg">)</span>
-
-ipdb&gt; q
+<pre>is equal True
 </pre>
 </div>
 </div>
@@ -13812,42 +13453,17 @@ ipdb&gt; q
 </div>
 </div>
 
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Komendy zmiany ramki (kontekstu):</p>
-<table>
-<thead><tr>
-<th>Komenda</th>
-<th>Opis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>w</code></td>
-<td>Wypisuje wszystkie przestrzenie nazw od obecnej. Strzałka definuje obecne położenie kursora.</td>
-</tr>
-<tr>
-<td><code>u</code></td>
-<td>Przejdź kontekst wyżej - do kodu wywołującego obecną przestrzeń nazw.</td>
-</tr>
-<tr>
-<td><code>d</code></td>
-<td>Przejdź kontekst niżej.</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div><div class="fragment">
+</div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> -d -b ex_debugger/example_2.py:4  ex_debugger/example_2.py
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="n">n</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;n = &#39;</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="o">%</span><span class="k">timeit</span> sum(ii**2 for ii in range(n))
+    <span class="o">%</span><span class="k">timeit</span> sum([ii**2 for ii in range(n)])
 </pre></div>
 
     </div>
@@ -13864,49 +13480,15 @@ ipdb&gt; q
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Breakpoint 1 at /home/tutor/Documents/pw_labs/lab_11/ex_debugger/example_2.py:4
-NOTE: Enter &#39;c&#39; at the ipdb&gt;  prompt to continue execution.
-&gt; <span class="ansi-green-fg">/home/tutor/Documents/pw_labs/lab_11/ex_debugger/example_2.py</span>(1)<span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1 </span><span class="ansi-green-fg">import</span> util
-<span class="ansi-green-fg">      2 </span>
-<span class="ansi-green-fg">      3 </span>filename <span class="ansi-blue-fg">=</span> __file__
-<span class="ansi-red-intense-fg ansi-bold">1</span><span class="ansi-green-fg">     4 </span>filename_path <span class="ansi-blue-fg">=</span> util<span class="ansi-blue-fg">.</span>get_path<span class="ansi-blue-fg">(</span>filename<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">      5 </span>print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#39;path = {filename_path}&#39;</span><span class="ansi-blue-fg">)</span>
-
-ipdb&gt; c
-&gt; <span class="ansi-green-fg">/home/tutor/Documents/pw_labs/lab_11/ex_debugger/example_2.py</span>(4)<span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">      1 </span><span class="ansi-green-fg">import</span> util
-<span class="ansi-green-fg">      2 </span>
-<span class="ansi-green-fg">      3 </span>filename <span class="ansi-blue-fg">=</span> __file__
-<span class="ansi-red-intense-fg ansi-bold">1</span><span class="ansi-green-fg">---&gt; 4 </span>filename_path <span class="ansi-blue-fg">=</span> util<span class="ansi-blue-fg">.</span>get_path<span class="ansi-blue-fg">(</span>filename<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">      5 </span>print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#39;path = {filename_path}&#39;</span><span class="ansi-blue-fg">)</span>
-
-ipdb&gt; s
---Call--
-&gt; <span class="ansi-green-fg">/home/tutor/Documents/pw_labs/lab_11/ex_debugger/util.py</span>(3)<span class="ansi-cyan-fg">get_path</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">      1 </span><span class="ansi-green-fg">import</span> os
-<span class="ansi-green-fg">      2 </span>
-<span class="ansi-green-fg">----&gt; 3 </span><span class="ansi-green-fg">def</span> get_path<span class="ansi-blue-fg">(</span>filename<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">      4 </span><span class="ansi-red-fg">    </span><span class="ansi-blue-fg">&#34;&#34;&#34;Return file&#39;s path or empty string if no path.&#34;&#34;&#34;</span>
-<span class="ansi-green-fg">      5 </span><span class="ansi-red-fg">    </span>head<span class="ansi-blue-fg">,</span> tail <span class="ansi-blue-fg">=</span> os<span class="ansi-blue-fg">.</span>path<span class="ansi-blue-fg">.</span>split<span class="ansi-blue-fg">(</span>filename<span class="ansi-blue-fg">)</span>
-
-ipdb&gt; u
-&gt; <span class="ansi-green-fg">/home/tutor/Documents/pw_labs/lab_11/ex_debugger/example_2.py</span>(4)<span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">      1 </span><span class="ansi-green-fg">import</span> util
-<span class="ansi-green-fg">      2 </span>
-<span class="ansi-green-fg">      3 </span>filename <span class="ansi-blue-fg">=</span> __file__
-<span class="ansi-red-intense-fg ansi-bold">1</span><span class="ansi-green-fg">---&gt; 4 </span>filename_path <span class="ansi-blue-fg">=</span> util<span class="ansi-blue-fg">.</span>get_path<span class="ansi-blue-fg">(</span>filename<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">      5 </span>print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#39;path = {filename_path}&#39;</span><span class="ansi-blue-fg">)</span>
-
-ipdb&gt; d
-&gt; <span class="ansi-green-fg">/home/tutor/Documents/pw_labs/lab_11/ex_debugger/util.py</span>(3)<span class="ansi-cyan-fg">get_path</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">      1 </span><span class="ansi-green-fg">import</span> os
-<span class="ansi-green-fg">      2 </span>
-<span class="ansi-green-fg">----&gt; 3 </span><span class="ansi-green-fg">def</span> get_path<span class="ansi-blue-fg">(</span>filename<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">      4 </span><span class="ansi-red-fg">    </span><span class="ansi-blue-fg">&#34;&#34;&#34;Return file&#39;s path or empty string if no path.&#34;&#34;&#34;</span>
-<span class="ansi-green-fg">      5 </span><span class="ansi-red-fg">    </span>head<span class="ansi-blue-fg">,</span> tail <span class="ansi-blue-fg">=</span> os<span class="ansi-blue-fg">.</span>path<span class="ansi-blue-fg">.</span>split<span class="ansi-blue-fg">(</span>filename<span class="ansi-blue-fg">)</span>
-
-ipdb&gt; q
+<pre>n =  100000
+33.3 ms ± 1.13 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+33.6 ms ± 1.41 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+n =  1000000
+335 ms ± 3.92 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+349 ms ± 9.08 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+n =  10000000
+3.33 s ± 57.1 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+3.51 s ± 164 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -13914,136 +13496,28 @@ ipdb&gt; q
 </div>
 </div>
 
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Zaprezentowanie-debuggera-w-Pycharmie">Zaprezentowanie debuggera w Pycharmie<a class="anchor-link" href="#Zaprezentowanie-debuggera-w-Pycharmie">&#182;</a></h3>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Różnice m.in.:</p>
-<ul>
-<li>więcej informacji z założenia,</li>
-<li>łatwiejsze przechodzenie między kontekstami,</li>
-<li>pułapki przechowywane między uruchomieniami,</li>
-<li>mutowanie przestrzeni nazw.</li>
-</ul>
-
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Testowanie-oprogramowania">Testowanie oprogramowania<a class="anchor-link" href="#Testowanie-oprogramowania">&#182;</a></h2>
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p><strong>Testowanie</strong> to wykonywanie oprogramowania z intencją znalezienia błędu.</p>
-</blockquote>
-<p>* Glenford Myers "Sztuka testowania oprogramowania"</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p><strong>Testowanie oprogramowania</strong> – proces związany z wytwarzaniem oprogramowania. Jest to jeden z procesów zapewnienia jakości oprogramowania. Testowanie ma na celu weryfikację oraz walidację oprogramowania. Weryfikacja oprogramowania pozwala skontrolować, czy wytwarzane oprogramowanie jest zgodne ze specyfikacją. Walidacja sprawdza, czy oprogramowanie jest zgodne z oczekiwaniami użytkownika. Testowanie oprogramowania może być wdrożone w dowolnym momencie wytwarzania oprogramowania (w zależności od stosowanej metody).</p>
-</blockquote>
-<p>* <a href="https://pl.wikipedia.org/wiki/Testowanie_oprogramowania">Wikipedia</a> (06.01.2020)</p>
-
-</div>
-</div>
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Test to funckja wykonująca fragment kodu, która musi zawierać trzy fragmenty (ostatecznie powinny sprowadzić się do trzech linijek kodu, a nawet trzech zwrotów):</p>
-<ul>
-<li>ustawienie warunków początkowych ("jak mam", <em>given</em>),</li>
-<li>wywołanie testowanej funkcjonalności np. wywołanie funckji, zapytanie do API, uruchomienie skryptu, ("robię", <em>when</em>)</li>
-<li>sprawdzenie czy po wywołaniu funkcjonalności środowisko jest w oczekiwanym stanie ("dostaję", <em>then</em>).</li>
-</ul>
+<p>W celu zdefiniowania bardziej złożonej reguły generatora należy zdefiniować go jako funkcję. Definicja generatora różni się od definicji standardowej funkcji poprzez zastąpienie wyrażenia <code>return</code> wyrażeniem <code>yield</code> (<em>ustąp</em>). Wyrażenie to pozwala na <strong>powrócenie do wcześniejszego kontekstu funkcji zamiast tworzenia nowego</strong>.</p>
 
 </div>
 </div>
 </div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Sprawdzenie może składać się z:</p>
-<ul>
-<li>asercji (sprawdzenia równości) wartości zmiennych lub stanu obiektu z oczekiwanymi,</li>
-<li>przechwycenia podniesienia wyjątku.</li>
-</ul>
-<p>Sprawdzenie wartości nie musi dotyczyć zmiennej wartości, ale np. istnienia wywołania funkcji lub zmiany wartości w bazie danych.</p>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>W związku z powyższym test może zakończyć się na jeden z dwóch sposobów:</p>
-<ul>
-<li>nie zwrócić żadnej wartości (test przeszedł),</li>
-<li>podnieść wyjątek (test nie przeszedł).</li>
-</ul>
-
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Assert">Assert<a class="anchor-link" href="#Assert">&#182;</a></h3>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>W celu wykonania sprawdzenia istnieją funkcje specjalne frameworku lub wyrażenie <code>assert</code>.</p>
-<p>Wyrażenia <code>assert</code> można używać również w kodzie nie będącym testem do debugowania (np. w celu sprawdzenia typu zmiennej na wejściu do funkcji). Sprawdzanie tych wyrażeń (bez ich wykonywania) można wyłączyć (np. uruchamiając kod "produkcyjnie").</p>
-
-</div>
-</div>
-</div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>python -Oc <span class="s2">&quot;assert 1/0;print(&#39;Test passed&#39;)&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">firstn</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">num</span>
+        <span class="n">num</span> <span class="o">+=</span> <span class="mi">1</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Test passed
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -14053,7 +13527,25 @@ ipdb&gt; q
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>python -c <span class="s2">&quot;assert 1/0;print(&#39;Test passed&#39;)&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">first_3_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;first value of generator: &#39;</span><span class="p">,</span> <span class="n">first_3_numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;iterating over generator:&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="n">first_3_numbers</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="n">first_3_numbers</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span> <span class="o">*</span> <span class="mi">15</span><span class="p">)</span>
+
+<span class="n">first_3_numbers</span> <span class="o">=</span> <span class="n">firstn</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;first value of generator: &#39;</span><span class="p">,</span> <span class="nb">next</span><span class="p">(</span><span class="n">first_3_numbers</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;iterating over generator:&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="n">first_3_numbers</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="n">first_3_numbers</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14070,9 +13562,21 @@ ipdb&gt; q
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Traceback (most recent call last):
-  File &#34;&lt;string&gt;&#34;, line 1, in &lt;module&gt;
-ZeroDivisionError: division by zero
+<pre>first value of generator:  0
+iterating over generator:
+0
+1
+2
+---
+0
+1
+2
+---------------
+first value of generator:  0
+iterating over generator:
+1
+2
+---
 </pre>
 </div>
 </div>
@@ -14080,51 +13584,39 @@ ZeroDivisionError: division by zero
 </div>
 </div>
 
-</div></div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>python -c <span class="s2">&quot;assert False;print(&#39;Test passed&#39;)&quot;</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Traceback (most recent call last):
-  File &#34;&lt;string&gt;&#34;, line 1, in &lt;module&gt;
-AssertionError
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section></section><section><section>
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="pytest"><code>pytest</code><a class="anchor-link" href="#pytest">&#182;</a></h3>
+<p>Możliwe jest stworzenie nieskończonego generatora (opartego o nieskończoną pętlę), należy jednak uważać, żeby nie wykonywać na nim operacji typu sumowania.</p>
+
 </div>
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>pytest</code> jest jednym z modułów do uruchamiania testów. Jego główną zaletą (w przeciwieństwie do wbudowanego modułu <code>unittest</code>) jest możliwość pisania szybkich i prostych testów ponieważ nie wymaga dodakowego kodu uruchomieniowego (np. opakowywania testu w klasę). Przykładowy test wygląda następująco:</p>
+<p>Samo wyrażenie <code>yield</code> można jeszcze wykorzystać w innym celu niż tworzenie kolejnych elementów zgodnie z regułą. Ponieważ pozwala ono na powrót do wcześniejszego kontekstu możliwe jest zdefiniwanie funckji, która wykonuje pewne operacje, jednorazowo "oswobadza kontekst", a później wraca i wykonuje pewne dalsze operacje.</p>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Context-manager-i-wyra&#380;enie-with">Context manager i wyra&#380;enie <code>with</code><a class="anchor-link" href="#Context-manager-i-wyra&#380;enie-with">&#182;</a></h2>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Opisany na poprzednim slajdzie schemat:</p>
+<blockquote><p>operacje wejścia - działania w ramach zdefiniowanego kontekstu - operacje wyjścia</p>
+</blockquote>
+<p>nazywa się <strong>kontekstem wykonania (<em>runtime context</em>)</strong> - zakresem zmiennych/stanów obiektów dostępnym tylko w czasie jego wykonania (np. otwarcie pliku). 
+W celu uzyskania takiego kontekstu korzysta się z wyrażenia <a href="https://docs.python.org/3/library/stdtypes.html#typecontextmanager"><code>with</code></a> uruchomionego na pewnym obiekcie - 
+<a href="https://docs.python.org/3/library/stdtypes.html#typecontextmanager"><strong>menadżerze kontekstu (<em>context manager</em>)</strong>. </a></p>
 
 </div>
 </div>
@@ -14132,7 +13624,11 @@ AssertionError
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Instalacja: <code>pip install -U pytest</code></p>
+<p>Menadżer kontekstu definiuje dwie metody:</p>
+<ul>
+<li>wejścia: <code>__enter__</code>,</li>
+<li>wyjścia: <code>__exit__</code>.</li>
+</ul>
 
 </div>
 </div>
@@ -14140,20 +13636,93 @@ AssertionError
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Przykładowy test wygląda następująco:</p>
+<p>Metoda wejścia może, ale nie musi zwracać jakiejść wartości. Jeżeli zwraca, możemy przypisać ją do zmiennej za pomocą wyrażenia <code>as</code>. Metoda jest bezparametryczna - parametry podawane przy definicji wyrażenia <code>with</code> przekazywane są <em>konstruktora</em> menadżera nie do metody wejścia.</p>
 
 </div>
 </div>
 </div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Metoda wyjścia jako parametry przyjmuje tylko trzy parametry: typ wyjątku, wartość wyjątku i <em>traceback</em>. W przypadku wykonania bloku kodu bez wyjątku te parametry ustawiane są na <code>None</code>. <strong>Metoda wyjścia nie powinna sama podnosić ponownie wyjątku</strong> - o tym czy wyjątek powinen być obsłużony decyduje wartość zwracana <code>True</code> <strong>wycisza wyjątek</strong>, <code>False</code> - <strong>podnosi go</strong>.</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Wiele menadżerów można uruchomić jednocześnie, podając ich wywołania po przecinku.</p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">class</span> <span class="nc">ChangeDirectory</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_path</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">new_path</span> <span class="o">=</span> <span class="n">new_path</span>
+        <span class="c1"># zmienne nie muszą być podane tylko jako parametr</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">old_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">new_path</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_val</span><span class="p">,</span> <span class="n">exc_tb</span><span class="p">):</span>
+        <span class="c1"># metoda nic nie zwraca, więc błąd będzie ponownie podniesiony</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">old_path</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>mkdir -p ex_tests<span class="p">;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>mkdir -p ex_context_manager
+<span class="o">!</span>tree
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre><span class="ansi-blue-intense-fg ansi-bold">.</span>
+├── <span class="ansi-blue-intense-fg ansi-bold">ex_context_manager</span>
+├── ex_params.py
+├── __init__.py
+├── Lecture_12.ipynb
+├── Lecture_12.Rmd
+├── <span class="ansi-blue-intense-fg ansi-bold">__pycache__</span>
+│   └── ex_params.cpython-37.pyc
+└── <span class="ansi-blue-intense-fg ansi-bold">tasks</span>
+    ├── __init__.py
+    └── tasks.md
+
+3 directories, 7 files
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -14163,13 +13732,12 @@ AssertionError
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> ex_tests/test_sample.py
-<span class="k">def</span> <span class="nf">inc</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
-
-
-<span class="k">def</span> <span class="nf">test_answer</span><span class="p">():</span>
-    <span class="k">assert</span> <span class="n">inc</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Utwórzmy plik w nowo stworzonym folderze (nie w folderze laboratorium)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
+<span class="k">with</span> <span class="n">ChangeDirectory</span><span class="p">(</span><span class="s1">&#39;ex_context_manager/&#39;</span><span class="p">),</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">_file</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
+    <span class="n">_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Class context manager.</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
 </pre></div>
 
     </div>
@@ -14186,7 +13754,9 @@ AssertionError
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Overwriting ex_tests/test_sample.py
+<pre>/home/tutor/Documents/pw_labs/lab_12
+/home/tutor/Documents/pw_labs/lab_12/ex_context_manager
+/home/tutor/Documents/pw_labs/lab_12
 </pre>
 </div>
 </div>
@@ -14200,9 +13770,8 @@ AssertionError
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># flaga &#39;-k&#39; pozwala na podania wzorca nazwy, </span>
-<span class="c1"># który muszą spełniać nazwy uruchomianych testów</span>
-<span class="o">!</span>pytest -k sample.py
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>tree
+<span class="o">!</span>cat ex_context_manager/file.txt
 </pre></div>
 
     </div>
@@ -14219,23 +13788,21 @@ AssertionError
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span class="ansi-bold">============================= test session starts ==============================</span>
-platform linux -- Python 3.7.4, pytest-5.2.1, py-1.8.0, pluggy-0.13.0
-rootdir: /home/tutor/Documents/pw_labs/lab_11
-collected 15 items / 14 deselected / 1 selected                                
+<pre><span class="ansi-blue-intense-fg ansi-bold">.</span>
+├── <span class="ansi-blue-intense-fg ansi-bold">ex_context_manager</span>
+│   └── file.txt
+├── ex_params.py
+├── __init__.py
+├── Lecture_12.ipynb
+├── Lecture_12.Rmd
+├── <span class="ansi-blue-intense-fg ansi-bold">__pycache__</span>
+│   └── ex_params.cpython-37.pyc
+└── <span class="ansi-blue-intense-fg ansi-bold">tasks</span>
+    ├── __init__.py
+    └── tasks.md
 
-ex_tests/test_sample.py <span class="ansi-red-fg">F</span><span class="ansi-cyan-fg">                                                [100%]</span>
-
-=================================== FAILURES ===================================
-<span class="ansi-red-intense-fg ansi-bold">_________________________________ test_answer __________________________________</span>
-
-<span class="ansi-bold">    def test_answer():</span>
-<span class="ansi-bold">&gt;       assert inc(3) == 5</span>
-<span class="ansi-red-intense-fg ansi-bold">E       assert 4 == 5</span>
-<span class="ansi-red-intense-fg ansi-bold">E        +  where 4 = inc(3)</span>
-
-<span class="ansi-red-intense-fg ansi-bold">ex_tests/test_sample.py</span>:6: AssertionError
-<span class="ansi-red-intense-fg ansi-bold">======================= 1 failed, 14 deselected in 0.08s =======================</span>
+3 directories, 8 files
+Class context manager.
 </pre>
 </div>
 </div>
@@ -14244,170 +13811,59 @@ ex_tests/test_sample.py <span class="ansi-red-fg">F</span><span class="ansi-cyan
 </div>
 
 </div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Kontekst menadżer można zdefiniować również jako funkcję. Wówczas należy skorzystać z wyrażenia <code>yield</code> i dekoratora <code>contextlib.contextmanager</code>.</p>
+
+</div>
+</div>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># analogiczne uruchomienie, ale z jawnym użyciem interpretera</span>
-<span class="o">!</span>python -m pytest ./ex_tests/test_sample.py
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">contextlib</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+
+<span class="nd">@contextlib</span><span class="o">.</span><span class="n">contextmanager</span>
+<span class="k">def</span> <span class="nf">cd</span><span class="p">(</span><span class="n">new_path</span><span class="p">):</span>
+    <span class="n">old_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="n">new_path</span><span class="p">))</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">yield</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">old_path</span><span class="p">)</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre><span class="ansi-bold">============================= test session starts ==============================</span>
-platform linux -- Python 3.7.4, pytest-5.2.1, py-1.8.0, pluggy-0.13.0
-rootdir: /home/tutor/Documents/pw_labs/lab_11
-collected 1 item                                                               
-
-ex_tests/test_sample.py <span class="ansi-red-fg">F</span><span class="ansi-cyan-fg">                                                [100%]</span>
-
-=================================== FAILURES ===================================
-<span class="ansi-red-intense-fg ansi-bold">_________________________________ test_answer __________________________________</span>
-
-<span class="ansi-bold">    def test_answer():</span>
-<span class="ansi-bold">&gt;       assert inc(3) == 5</span>
-<span class="ansi-red-intense-fg ansi-bold">E       assert 4 == 5</span>
-<span class="ansi-red-intense-fg ansi-bold">E        +  where 4 = inc(3)</span>
-
-<span class="ansi-red-intense-fg ansi-bold">ex_tests/test_sample.py</span>:6: AssertionError
-<span class="ansi-red-intense-fg ansi-bold">============================== 1 failed in 0.02s ===============================</span>
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Uruchomienie <code>pytest</code> samo wykryło testy do przeprowadzenia, w dosyć opisowy sposób wylistowało uruchomione testy i powód ich niepowodzeń. Do pozostałych przydatnych cech należy:</p>
-<ul>
-<li>możliwość uruchomienia testów napisanych w formacie innych modułów (<code>unittest</code> i <code>nose</code>),</li>
-<li>"łatwe" i modularne tworzenie <code>fixture</code> (współdzielonego kodu),</li>
-<li>możlwiość paramteryzacji i labelowania (<code>mark</code>) testów,</li>
-<li>duże community (więc łatwiej znaleźć rozwiązanie błędu, który ja też mam),</li>
-<li><strong>i co najważniejsze</strong>: jest opensource i wciąż rozwijany,</li>
-</ul>
-
-</div>
-</div>
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Wykrywanie-test&#243;w">Wykrywanie test&#243;w<a class="anchor-link" href="#Wykrywanie-test&#243;w">&#182;</a></h4>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Jeżeli nie jest zdefiniowany żaden argument przy uruchamianiu testów sprawdza najpierw zmienną <code>testpaths</code> (z ustawień modułu <code>pytest</code>, jeżeli jest zdefiniowana) lub ścieżkę uruchomienia.</li>
-<li>Ścieżka przeszukiwana jest w głąb, z pominięciem reguł zdefiniowanych w <code>norecursedirs</code>.</li>
-<li>Testy importowane są z plików pasujących wzorców <code>test_*.py</code> lub <code>*_test.py</code>, <a href="https://docs.pytest.org/en/latest/goodpractices.html#tests-as-part-of-application-code">trzeba jednak uważać przy definiowaniu importów w testach</a>.</li>
-<li>Testami będą:<ul>
-<li>funkcje z prefixem <code>test</code> w nazwie,</li>
-<li>metody klasy <code>Test*</code>, z prefixem <code>test</code> w nazwie.</li>
-</ul>
-</li>
-</ul>
-<p>Definiowanie własnych reguł opisane jest <a href="https://docs.pytest.org/en/latest/example/pythoncollection.html">tutaj</a>.</p>
-
-</div>
-</div>
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Przechwytywanie-wyj&#261;tk&#243;w">Przechwytywanie wyj&#261;tk&#243;w<a class="anchor-link" href="#Przechwytywanie-wyj&#261;tk&#243;w">&#182;</a></h4>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Spodziewając się, że fragment kodu może powodować błędne działanie (zwłaszcza ten operujący na danych od użytkownika) możliwe jest przechwycenie i obsłużenie potencjalnego wyjątku. Pisząc testy należy skupićsię na sprawdzeniu czy i jaki wyjątek jest podnoszony. Tego typu testy pozwolą na sprawdzenie czy wyjątki nie są podnoszone w niespodziewanych momentach warunkach.</p>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Test mozna zrealizować przez strukturę <code>try-catch</code>, jednak <code>pytest</code> dostarcza prostszą składnię z domyślnym komunikatem, dla testów które nie przeszły. Podobnie jak <code>try-catch</code> składnia ta jest wrażliwa na schemat dziedziczenia wyjątków.</p>
-
-</div>
-</div>
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
-
-<span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ZeroDivisionError</span><span class="p">)</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
-    <span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Podniesiony wyjątek:&#39;</span><span class="p">,</span> <span class="n">exc</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">cd</span><span class="p">(</span><span class="s1">&#39;ex_context_manager/&#39;</span><span class="p">),</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">_file</span><span class="p">:</span>
+    <span class="n">_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Function context manager.</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Podniesiony wyjątek: &lt;ExceptionInfo ZeroDivisionError tblen=1&gt;
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
+</div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> ex_tests/naive_fraction.py
-<span class="k">class</span> <span class="nc">FractionException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;Ułamek nie może mieć zera w mianowniku!&#39;</span>
-
-<span class="k">class</span> <span class="nc">Fraction</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nominator</span><span class="p">,</span> <span class="n">denominator</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">nominator</span> <span class="o">=</span> <span class="n">nominator</span>
-        <span class="k">if</span> <span class="n">denominator</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">FractionException</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">denominator</span> <span class="o">=</span> <span class="n">denominator</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>tree
+<span class="o">!</span>cat ex_context_manager/file.txt
 </pre></div>
 
     </div>
@@ -14424,7 +13880,22 @@ ex_tests/test_sample.py <span class="ansi-red-fg">F</span><span class="ansi-cyan
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Overwriting ex_tests/naive_fraction.py
+<pre><span class="ansi-blue-intense-fg ansi-bold">.</span>
+├── <span class="ansi-blue-intense-fg ansi-bold">ex_context_manager</span>
+│   └── file.txt
+├── ex_params.py
+├── __init__.py
+├── Lecture_12.ipynb
+├── Lecture_12.Rmd
+├── <span class="ansi-blue-intense-fg ansi-bold">__pycache__</span>
+│   └── ex_params.cpython-37.pyc
+└── <span class="ansi-blue-intense-fg ansi-bold">tasks</span>
+    ├── __init__.py
+    └── tasks.md
+
+3 directories, 8 files
+Class context manager.
+Function context manager.
 </pre>
 </div>
 </div>
@@ -14432,77 +13903,75 @@ ex_tests/test_sample.py <span class="ansi-red-fg">F</span><span class="ansi-cyan
 </div>
 </div>
 
-</div></div><div class="fragment">
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Dekoratory">Dekoratory<a class="anchor-link" href="#Dekoratory">&#182;</a></h2>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Menadżer kontekstu pozwala na wykonanie pewnych operacji przed i po bloku kodu, który otaczał.</p>
+<p>W wywołaniu menadżera ważny jest kontekst wywołania tzn. w danym miejscu chcę osiągnąć odpowiedni stan (np. móc pisać/czytać z pliku). <strong>Dekorator</strong> kładzie nacisk na inny aspekt - na dodanie <strong>tej samej funkcjonalności do różnych funkcji bez zmiany ich definicji</strong>. W efekcie nie dostajemy bloku kodu wykonanego w innym kontekście, ale nową funkcję wykonującą się zawsze razem z dodatkowym kodem.</p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Najprostsza definicja dekoratora wygląda następująco:</p>
+
+</div>
+</div>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> ex_tests/test_naive_fraction.py
-<span class="kn">import</span> <span class="nn">pytest</span>
-
-<span class="kn">from</span> <span class="nn">naive_fraction</span> <span class="k">import</span> <span class="p">(</span>
-    <span class="n">Fraction</span><span class="p">,</span>
-    <span class="n">FractionException</span><span class="p">,</span>
-<span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">test_fraction_creation_success</span><span class="p">():</span>
-    <span class="n">frac</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-    <span class="k">assert</span> <span class="n">frac</span><span class="o">.</span><span class="n">nominator</span> <span class="o">==</span> <span class="mi">1</span>
-    <span class="k">assert</span> <span class="n">frac</span><span class="o">.</span><span class="n">denominator</span> <span class="o">==</span> <span class="mi">2</span>
-
-
-<span class="k">def</span> <span class="nf">test_fraction_creation_success__mising_param</span><span class="p">():</span>
-    <span class="n">frac</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-    <span class="k">assert</span> <span class="n">frac</span><span class="o">.</span><span class="n">nominator</span> <span class="o">==</span> <span class="mi">5</span>
-    <span class="k">assert</span> <span class="n">frac</span><span class="o">.</span><span class="n">denominator</span> <span class="o">==</span> <span class="mi">1</span>
- 
-<span class="c1"># Jeżeli chcemy sprawdzić tylko czy wyjątek jest podnoszony</span>
-<span class="k">def</span> <span class="nf">test_fraction_creation_failure</span><span class="p">():</span>
-    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="n">FractionException</span><span class="p">):</span>
-        <span class="n">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-    
-<span class="c1"># Test jest zbyt szeroki, wyjątek jest wyciszony</span>
-<span class="k">def</span> <span class="nf">test_fraction_creation_failure__too_broad</span><span class="p">():</span>
-    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
-        <span class="n">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span> 
-    
-<span class="c1"># Test nie przejdzie z powodu podniesionego błędu różnego od oczekiwanego</span>
-<span class="k">def</span> <span class="nf">test_fraction_creation_failure__too_broad</span><span class="p">():</span>
-    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="n">FractionException</span><span class="p">):</span>
-        <span class="n">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Faktyczny dekorator, czyli funkcja przyjmująca za parametr *innną funckję*</span>
+<span class="k">def</span> <span class="nf">pointless_decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="c1"># Nowa funkcja, której definicja rozszerza definicję funkcji dekorowanej.</span>
+    <span class="c1"># W ten sposób możemy udekorować każdą funkcję - nie zmieniamy jej nagłówka.</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>  
+        <span class="c1"># Kod dekoratora wykonywany przed wykonaniem dekorowanej funkcji</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Before execution&#39;</span><span class="p">)</span> 
+        <span class="c1"># Przyjęte argumenty są przekazywane dalej</span>
+        <span class="c1"># Wartość zwracana również powinna zostać przechwycona</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  
+        <span class="c1"># Kod znajdujący się tutaj może korzystać </span>
+        <span class="c1"># z wartości zwracanych przez dekorowaną funkcję.</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;After execution&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span>  <span class="c1"># Tu zwracamy wartość obliczną przez funkcję</span>
+    <span class="k">return</span> <span class="n">wrapper</span> <span class="c1"># Tu zwracana jest nowa definicja funkcji </span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Overwriting ex_tests/test_naive_fraction.py
-</pre>
-</div>
-</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Dekorowanie funkcji to w rzeczywistości utworzenie <strong>nowego obiektu (definicji nowej funkcji)</strong> polegające na wywołaniu dekoratora (funkcji-fabryki) <strong>na definicji</strong> (nie wywołaniu) dekorowanej funkcji.</p>
 
 </div>
 </div>
-
-</div></div><div class="fragment">
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pytest -k fraction.py
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">decorated_sum</span> <span class="o">=</span> <span class="n">pointless_decorator</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Normal function: &#39;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span> <span class="o">*</span> <span class="mi">15</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Decorated function: &#39;</span><span class="p">,</span> <span class="n">decorated_sum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]))</span>
 </pre></div>
 
     </div>
@@ -14519,23 +13988,11 @@ ex_tests/test_sample.py <span class="ansi-red-fg">F</span><span class="ansi-cyan
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span class="ansi-bold">============================= test session starts ==============================</span>
-platform linux -- Python 3.7.4, pytest-5.2.1, py-1.8.0, pluggy-0.13.0
-rootdir: /home/tutor/Documents/pw_labs/lab_11
-collected 15 items / 11 deselected / 4 selected                                
-
-ex_tests/test_naive_fraction.py <span class="ansi-green-fg">.</span><span class="ansi-green-fg">.</span><span class="ansi-green-fg">.</span><span class="ansi-red-fg">F</span><span class="ansi-cyan-fg">                                     [100%]</span>
-
-=================================== FAILURES ===================================
-<span class="ansi-red-intense-fg ansi-bold">__________________ test_fraction_creation_failure__too_broad ___________________</span>
-
-<span class="ansi-bold">    def test_fraction_creation_failure__too_broad():</span>
-<span class="ansi-bold">        with pytest.raises(FractionException):</span>
-<span class="ansi-bold">&gt;           Fraction(1, 3/0)</span>
-<span class="ansi-red-intense-fg ansi-bold">E           ZeroDivisionError: division by zero</span>
-
-<span class="ansi-red-intense-fg ansi-bold">ex_tests/test_naive_fraction.py</span>:33: ZeroDivisionError
-<span class="ansi-red-intense-fg ansi-bold">================== 1 failed, 3 passed, 11 deselected in 0.08s ==================</span>
+<pre>Normal function:  6
+---------------
+Before execution
+After execution
+Decorated function:  6
 </pre>
 </div>
 </div>
@@ -14543,64 +14000,21 @@ ex_tests/test_naive_fraction.py <span class="ansi-green-fg">.</span><span class=
 </div>
 </div>
 
-</div></div></section></section><section><section>
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Powtarzalne-fragmenty-test&#243;w">Powtarzalne fragmenty test&#243;w<a class="anchor-link" href="#Powtarzalne-fragmenty-test&#243;w">&#182;</a></h4>
+<p>Proszę zwrócić jednak uwagę, że są to dwie różne funkcję, a to obudowywanie przykrywa wcześniejszą definicję.</p>
+
 </div>
 </div>
 </div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>W trakcie pisania testów część czynności będzie powtarzalna (np. konfigurowanie połączeń do zewnętrznych zależności, tworzenie folderu tymczasowego etc.). <code>pytest</code> pozwala na zrealizowanie tej powtarzalności na dwa sposoby:</p>
-<ul>
-<li>pre i post funkcje (<em>xunit-style setup</em>),</li>
-<li>tworzenie współdzielonego kodu (<code>fixture</code>, <em>pytest-style setup</em>).</li>
-</ul>
-<p>Używanie obu styli jednocześnie jest możliwe, jednak ze względu na podobieństwo zalecam używanie tylko jednego z nich.</p>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Ważnym aspektem używania powtarzalnego kodu jest zakres/częstotliwość uruchamiania funkcji. Wyróżnia się następujące zakresy:</p>
-<ul>
-<li>funkcja (per każdy test),</li>
-<li>klasa (per każde zgrupowanie testów),</li>
-<li>moduł (per plik),</li>
-<li>sesja (per uruchomienie testów).</li>
-</ul>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Poprawne określenie zakresu może korzystnie wpłynąć na skrócenie czasu tworzenia kodu (szybciej wykonujące się testy są częściej odpalane i łatwiej wykrywa się błędy).</p>
-<p>Odpowiednio szeroki zakres może pozwolić na wykonanie kosztownej operacji tylko raz (np. połączenie do bazy danych), ale trzeba uważać by zakres nie był zbyt szeroki, bo może wpłynąć na atomowość (niezależność od liczby i kolejnośći wykonań) testów tzn. Połączenie do bazy można wykonać tylko raz, ale jeżeli nasze testy zmieniają stan bazy, to stan bazy powinien być ustawiany przed każdym testem.</p>
-
-</div>
-</div>
-</div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> ex_tests/util.py
-<span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">_list</span><span class="o">=</span><span class="p">[]):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    &gt;&gt;&gt; multiply(4, 3)</span>
-<span class="sd">    12</span>
-<span class="sd">    &gt;&gt;&gt; multiply(&#39;a&#39;, 3)</span>
-<span class="sd">    &#39;aaa&#39;</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14617,99 +14031,15 @@ ex_tests/test_naive_fraction.py <span class="ansi-green-fg">.</span><span class=
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Overwriting ex_tests/util.py
-</pre>
-</div>
-</div>
+<pre>Help on built-in function sum in module builtins:
 
-</div>
-</div>
+sum(iterable, start=0, /)
+    Return the sum of a &#39;start&#39; value (default: 0) plus an iterable of numbers
+    
+    When the iterable is empty, return the start value.
+    This function is intended specifically for use with numeric values and may
+    reject non-numeric types.
 
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> ex_tests/test_xunit.py
-<span class="kn">from</span> <span class="nn">util</span> <span class="k">import</span> <span class="n">multiply</span>
-
-
-<span class="k">def</span> <span class="nf">setup_module</span><span class="p">(</span><span class="n">module</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;setup_module      module:</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">module</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">teardown_module</span><span class="p">(</span><span class="n">module</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;teardown_module   module:</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">module</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">setup_function</span><span class="p">(</span><span class="n">function</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;setup_function    function:</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">function</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">teardown_function</span><span class="p">(</span><span class="n">function</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;teardown_function function:</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">function</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">test_numbers_3_4</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span>
-        <span class="s1">&#39;test_numbers_3_4  &lt;============================ actual test code&#39;</span>
-    <span class="p">)</span>
-    <span class="k">assert</span> <span class="n">multiply</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="o">==</span> <span class="mi">12</span>
-
-
-<span class="k">def</span> <span class="nf">test_strings_a_3</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;test_strings_a_3  &lt;============================ actual test code&#39;</span><span class="p">)</span>
-    <span class="k">assert</span> <span class="n">multiply</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;aaa&#39;</span>
-
-
-<span class="k">class</span> <span class="nc">TestUM</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;setup             class:TestStuff&quot;</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">teardown</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;teardown          class:TestStuff&quot;</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">setup_class</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;setup_class       class:</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">teardown_class</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;teardown_class    class:</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">setup_method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;setup_method      method:</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">method</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">teardown_method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;teardown_method   method:</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">method</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">test_numbers_5_6</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span>
-            <span class="s1">&#39;test_numbers_5_6  &lt;============================ actual test code&#39;</span>
-        <span class="p">)</span>
-        <span class="k">assert</span> <span class="n">multiply</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="o">==</span> <span class="mi">30</span>
-
-    <span class="k">def</span> <span class="nf">test_strings_b_2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span>
-            <span class="s1">&#39;test_strings_b_2  &lt;============================ actual test code&#39;</span>
-        <span class="p">)</span>
-        <span class="k">assert</span> <span class="n">multiply</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;bb&#39;</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Overwriting ex_tests/test_xunit.py
 </pre>
 </div>
 </div>
@@ -14720,10 +14050,10 @@ ex_tests/test_naive_fraction.py <span class="ansi-green-fg">.</span><span class=
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pytest -s ex_tests/test_xunit.py  # opcja -s zapewnia, że printy nie będą wyciszane
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">decorated_sum</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14740,34 +14070,12 @@ ex_tests/test_naive_fraction.py <span class="ansi-green-fg">.</span><span class=
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span class="ansi-bold">============================= test session starts ==============================</span>
-platform linux -- Python 3.7.4, pytest-5.2.1, py-1.8.0, pluggy-0.13.0
-rootdir: /home/tutor/Documents/pw_labs/lab_11
-collected 4 items                                                              
+<pre>Help on function wrapper in module __main__:
 
-ex_tests/test_xunit.py setup_module      module:test_xunit
-setup_function    function:test_numbers_3_4
-test_numbers_3_4  &lt;============================ actual test code
-<span class="ansi-green-fg">.</span>teardown_function function:test_numbers_3_4
-setup_function    function:test_strings_a_3
-test_strings_a_3  &lt;============================ actual test code
-<span class="ansi-green-fg">.</span>teardown_function function:test_strings_a_3
-setup_class       class:TestUM
-setup_method      method:test_numbers_5_6
-setup             class:TestStuff
-test_numbers_5_6  &lt;============================ actual test code
-<span class="ansi-green-fg">.</span>teardown          class:TestStuff
-teardown_method   method:test_numbers_5_6
-setup_method      method:test_strings_b_2
-setup             class:TestStuff
-test_strings_b_2  &lt;============================ actual test code
-<span class="ansi-green-fg">.</span>teardown          class:TestStuff
-teardown_method   method:test_strings_b_2
-teardown_class    class:TestUM
-teardown_module   module:test_xunit
+wrapper(*args, **kwargs)
+    # Nowa funkcja, której definicja rozszerza definicję funkcji dekorowanej.
+    # W ten sposób możemy udekorować każdą funkcję - nie zmieniamy jej nagłówka.
 
-
-<span class="ansi-green-intense-fg ansi-bold">============================== 4 passed in 0.02s ===============================</span>
 </pre>
 </div>
 </div>
@@ -14775,48 +14083,47 @@ teardown_module   module:test_xunit
 </div>
 </div>
 
-</div></div></section></section><section><section>
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Fixturę tworzy się za pomocą dekoratora <code>@pytest.fixture</code> przy definicji funkcji. Fixturę można wywołać w teście na dwa sposoby:</p>
-<ul>
-<li>przez dodanie do testu parametru o takiej samej nazwie jak nazwa fixtury - parametr przyjmuje wartość zwracaną przez fixturę,</li>
-<li>jeżeli fixtura nie zwraca żadnej wartości (a np. ustawia tylko połączenie) można ją wywołać za pomocą dekoratora <code>@pytest.mark.use_fixture(&lt;nazwa_fixtury&gt;)</code>.</li>
-</ul>
+<p>W celu tylko udekorowania (z zachowaniem nagłówka, docstringu itd.) bez widocznej modyfikacji należy skorzystać z funkcji <code>functools.wraps</code>. Wywołanie <code>functools.wraps</code> dotyczy nowo tworzonej funkcji, więc <em>dekorujemy</em> nową funkcję (tę zwracaną przez dekorator). W celu wygodnego udekorowania można skorzystać ze składni:</p>
+<p><code>@&lt;nazwa_dekoratora&gt;(&lt;parametry_dekoratora&gt;)</code>.</p>
 
 </div>
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">wraps</span>
+
+<span class="k">def</span> <span class="nf">pointless_ninja_decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>  
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Before execution&#39;</span><span class="p">)</span> 
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;After execution&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> ex_tests/test_fixture.py
-<span class="kn">import</span> <span class="nn">pytest</span>
-
-<span class="kn">from</span> <span class="nn">util</span> <span class="k">import</span> <span class="n">multiply</span>
-
-<span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
-<span class="k">def</span> <span class="nf">param_2</span><span class="p">():</span>
-    <span class="n">value</span> <span class="o">=</span> <span class="mi">4</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">value</span>
-
-<span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s1">&#39;module&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">set_connection</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> &gt;&gt; Connection set &lt;&lt;&#39;</span><span class="p">)</span>
-
-
-<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">usefixtures</span><span class="p">(</span><span class="s1">&#39;set_connection&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">test_numbers_3_fixture</span><span class="p">(</span><span class="n">param_2</span><span class="p">):</span>
-    <span class="k">assert</span> <span class="n">multiply</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">param_2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">12</span>
-
-
-<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">usefixtures</span><span class="p">(</span><span class="s1">&#39;set_connection&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">test_numbers_3_4</span><span class="p">(</span><span class="n">param_2</span><span class="p">):</span>
-    <span class="k">assert</span> <span class="n">multiply</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">param_2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">12</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">decorated_sum</span> <span class="o">=</span> <span class="n">pointless_ninja_decorator</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Normal function: &#39;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span> <span class="o">*</span> <span class="mi">15</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Decorated function: &#39;</span><span class="p">,</span> <span class="n">decorated_sum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]))</span>
 </pre></div>
 
     </div>
@@ -14833,7 +14140,11 @@ teardown_module   module:test_xunit
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Overwriting ex_tests/test_fixture.py
+<pre>Normal function:  6
+---------------
+Before execution
+After execution
+Decorated function:  6
 </pre>
 </div>
 </div>
@@ -14847,7 +14158,7 @@ teardown_module   module:test_xunit
 <div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pytest -s ex_tests/test_fixture.py 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">decorated_sum</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14864,18 +14175,15 @@ teardown_module   module:test_xunit
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span class="ansi-bold">============================= test session starts ==============================</span>
-platform linux -- Python 3.7.4, pytest-5.2.1, py-1.8.0, pluggy-0.13.0
-rootdir: /home/tutor/Documents/pw_labs/lab_11
-collected 2 items                                                              
+<pre>Help on function sum in module builtins:
 
-ex_tests/test_fixture.py 
- &gt;&gt; Connection set &lt;&lt;
-4
-<span class="ansi-green-fg">.</span>4
-<span class="ansi-green-fg">.</span>
+sum(iterable, start=0, /)
+    Return the sum of a &#39;start&#39; value (default: 0) plus an iterable of numbers
+    
+    When the iterable is empty, return the start value.
+    This function is intended specifically for use with numeric values and may
+    reject non-numeric types.
 
-<span class="ansi-green-intense-fg ansi-bold">============================== 2 passed in 0.02s ===============================</span>
 </pre>
 </div>
 </div>
@@ -14883,26 +14191,19 @@ ex_tests/test_fixture.py
 </div>
 </div>
 
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Fixtury mogą być wywoływane automatycznie, współdzielone między plikami, a nawet parametryzowalne (nawet przez inne fixtury). Zainteresowanych zachęcam do <a href="https://docs.pytest.org/en/latest/fixture.html#fixtures">lektury</a>.</p>
-
-</div>
-</div>
 </div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Parametryzowanie-test&#243;w">Parametryzowanie test&#243;w<a class="anchor-link" href="#Parametryzowanie-test&#243;w">&#182;</a></h4>
+<h2 id="Parametry-uruchomienia">Parametry uruchomienia<a class="anchor-link" href="#Parametry-uruchomienia">&#182;</a></h2>
 </div>
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Parametryzowanie testów polega na (w przeciwieństwie do fixtury) na przesyłaniu różnych wartości tego samego parametru do testu. Innymi słowy jest to przydatne jeżeli fragment <em>when</em> testu jest stały a różnią się tylko <em>given</em> i odpowiedni dla niego <em>then</em>.</p>
+<p>Każdy program może zostać uruchomiony z parametrami pozycyjnymi i opcjonalnymi.</p>
+<p>Paramtery od opcji (parametrów opcjonalnych) różnią się tym, że parametry mogą być dowolnymi ciągami znaków na których operuje program, a opcje są dobrze określonymi flagami lub parami flaga - wartości zmieniającymi działanie programu.</p>
 
 </div>
 </div>
@@ -14912,26 +14213,13 @@ ex_tests/test_fixture.py
 <div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> ex_tests/test_parametrize.py
-<span class="kn">import</span> <span class="nn">pytest</span>
-
-<span class="kn">from</span> <span class="nn">util</span> <span class="k">import</span> <span class="n">multiply</span>
-
-<span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
-<span class="k">def</span> <span class="nf">param_2</span><span class="p">():</span>
-    <span class="k">return</span> <span class="mi">4</span>
-
-<span class="c1"># Poniższy dekorator dodaje dwie wersje testu</span>
-<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
-    <span class="s1">&#39;param_1, expected&#39;</span><span class="p">,</span>  <span class="c1"># lista parametrów, może być podana jako tupla stringów</span>
-    <span class="p">[</span>
-        <span class="c1"># podanie przez obiekt `param` pozwala na nazwanie zbioru parametrów</span>
-        <span class="n">pytest</span><span class="o">.</span><span class="n">param</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;Numbers&#39;</span><span class="p">),</span>  
-        <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;aaaa&#39;</span><span class="p">],</span> <span class="c1"># ale można podać go też jako iterablę</span>
-    <span class="p">],</span>
-<span class="p">)</span>
-<span class="k">def</span> <span class="nf">test_numbers_3_parametrize</span><span class="p">(</span><span class="n">param_1</span><span class="p">,</span> <span class="n">param_2</span><span class="p">,</span> <span class="n">expected</span><span class="p">):</span>
-    <span class="k">assert</span> <span class="n">multiply</span><span class="p">(</span><span class="n">param_1</span><span class="p">,</span> <span class="n">param_2</span><span class="p">)</span> <span class="o">==</span> <span class="n">expected</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>mkdir -p ex_params # program tworzący folder uruchomiony z jednym parametrem - nazwą folderu
+<span class="o">!</span>touch example.txt ex_params/example.txt ex_params/example_2.txt
+<span class="o">!</span>ls -l  # program listujący zawartość folderu z opcją -l - wyświetl jako listę
+<span class="o">!</span><span class="nb">echo</span> 
+<span class="o">!</span>rm example.txt # program usuwający plik <span class="o">(</span>podany jako pierwszy parametr<span class="o">)</span>
+<span class="o">!</span>rm -r ex_params/ # program usuwający całą ścieżkę <span class="o">(</span>dzięki opcji -r - rekurencyjnie<span class="o">)</span>
+<span class="o">!</span>ls . -l  # tu parametr pozycyjny - ścieżka <span class="s1">&#39;.&#39;</span> jest wywołany przed opcją
 </pre></div>
 
     </div>
@@ -14948,7 +14236,25 @@ ex_tests/test_fixture.py
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Overwriting ex_tests/test_parametrize.py
+<pre>total 72
+-rw-r--r-- 1 tutor tutor     0 sty 23 22:48 example.txt
+drwxr-xr-x 2 tutor tutor  4096 sty 23 22:48 ex_context_manager
+drwxr-xr-x 2 tutor tutor  4096 sty 23 22:48 ex_params
+-rw-r--r-- 1 tutor tutor    59 sty 23 21:49 ex_params.py
+-rw-rw-r-- 1 tutor tutor     0 sty 23 21:56 __init__.py
+-rw-r--r-- 1 tutor tutor 29050 sty 23 22:47 Lecture_12.ipynb
+-rw-rw-r-- 1 tutor tutor 19736 sty 23 22:47 Lecture_12.Rmd
+drwxr-xr-x 2 tutor tutor  4096 sty 23 21:24 __pycache__
+drwxrwxr-x 2 tutor tutor  4096 sty 23 22:13 tasks
+
+total 68
+drwxr-xr-x 2 tutor tutor  4096 sty 23 22:48 ex_context_manager
+-rw-r--r-- 1 tutor tutor    59 sty 23 21:49 ex_params.py
+-rw-rw-r-- 1 tutor tutor     0 sty 23 21:56 __init__.py
+-rw-r--r-- 1 tutor tutor 29050 sty 23 22:47 Lecture_12.ipynb
+-rw-rw-r-- 1 tutor tutor 19736 sty 23 22:47 Lecture_12.Rmd
+drwxr-xr-x 2 tutor tutor  4096 sty 23 21:24 __pycache__
+drwxrwxr-x 2 tutor tutor  4096 sty 23 22:13 tasks
 </pre>
 </div>
 </div>
@@ -14956,14 +14262,25 @@ ex_tests/test_fixture.py
 </div>
 </div>
 
-</div></div><div class="fragment">
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Program napisany w Pythonie może odwołać się do paramatrów uruchomienia poprzez <code>sys.argv</code>. Lista ta zawiera wszystkie parametry przekazane do programu podczas jego uruchomienia. Lista zawsze zawiera przynajmniej jeden element - ścieżkę uruchomienia pliku (umieszczoną na indeksie 0).</p>
+
+</div>
+</div>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># parametr -v lub --verbose dokładniej opisuje wykonywane testy </span>
-<span class="o">!</span>pytest -v ex_tests/test_parametrize.py
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> ex_params.py
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14980,16 +14297,7 @@ ex_tests/test_fixture.py
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span class="ansi-bold">============================= test session starts ==============================</span>
-platform linux -- Python 3.7.4, pytest-5.2.1, py-1.8.0, pluggy-0.13.0 -- /home/tutor/.virtualenvs/pw_labs/bin/python3.7
-cachedir: .pytest_cache
-rootdir: /home/tutor/Documents/pw_labs/lab_11
-collected 2 items                                                              
-
-ex_tests/test_parametrize.py::test_numbers_3_parametrize[Numbers] <span class="ansi-green-fg">PASSED</span><span class="ansi-cyan-fg"> [ 50%]</span>
-ex_tests/test_parametrize.py::test_numbers_3_parametrize[a-aaaa] <span class="ansi-green-fg">PASSED</span><span class="ansi-cyan-fg">  [100%]</span>
-
-<span class="ansi-green-intense-fg ansi-bold">============================== 2 passed in 0.02s ===============================</span>
+<pre>Overwriting ex_params.py
 </pre>
 </div>
 </div>
@@ -14997,65 +14305,13 @@ ex_tests/test_parametrize.py::test_numbers_3_parametrize[a-aaaa] <span class="an
 </div>
 </div>
 
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Podmienianie-zale&#380;no&#347;ci">Podmienianie zale&#380;no&#347;ci<a class="anchor-link" href="#Podmienianie-zale&#380;no&#347;ci">&#182;</a></h3>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Może się zdarzyć, że potrzebne będzie przetestowanie kodu, który korzysta z funkcji, której nie chcielibyśmy wykonywać w trakcie testu np. zapytania do zewnętrznego API, albo wolno się wykonującej. Efekt taki można uzyskać dzięki technice <em>monkey patchingu</em> polegającej na zastępieniu obiektu funkcji innym, imitującym zachowanie owej funckji.</p>
-
-</div>
-</div>
 </div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>W pythonie takie zachowanie można uzyskać dzięki modułowi <code>unittest.mock</code> zawierającemu obiekty:</p>
-<ul>
-<li><code>Mock</code></li>
-<li><code>MagicMock</code></li>
-</ul>
-<p>oraz metody:</p>
-<ul>
-<li><code>patch</code></li>
-<li><code>patch_object</code>.</li>
-</ul>
-
-</div>
-</div>
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Klasa <code>Mock</code> (<em>atrapa</em>) definiuje obiekt, który nie posiada określonego interfejsu, ale potrafi w locie wygenerować ten atrybut (jako nowy obiekt mocku). Mocki można również wywoływać (są <code>executable</code>) lub mogą podnosić wyjątki. Nie wszystkie atrybuty mocka muszą być zdefiniowane przy tworzeniu obiektu, można je dodać później.</p>
-
-</div>
-</div>
-</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">unittest.mock</span> <span class="k">import</span> <span class="n">Mock</span>
-
-<span class="n">my_mock</span> <span class="o">=</span> <span class="n">Mock</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">my_mock</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;my mock has &quot;a&quot;: {hasattr(my_mock, &quot;a&quot;)}, my_mock.b has &quot;b&quot;: {hasattr(my_mock, &quot;a&quot;)}&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;my mock.a = </span><span class="si">{my_mock.a}</span><span class="s1">, my_mock.b = </span><span class="si">{my_mock.b}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;my_mock called:&#39;</span><span class="p">,</span> <span class="n">my_mock</span><span class="p">())</span>
-<span class="n">my_mock</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;my_mock called:&#39;</span><span class="p">,</span> <span class="n">my_mock</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;my_mock called:&#39;</span><span class="p">,</span> <span class="n">my_mock</span><span class="p">())</span>
-      
-      
-<span class="mi">1</span> <span class="ow">in</span> <span class="n">my_mock</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>python ex_params.py
 </pre></div>
 
     </div>
@@ -15072,96 +14328,24 @@ ex_tests/test_parametrize.py::test_numbers_3_parametrize[a-aaaa] <span class="an
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;Mock id=&#39;140493167951824&#39;&gt;
-my mock has &#34;a&#34;: True, my_mock.b has &#34;b&#34;: True
-my mock.a = 1, my_mock.b = &lt;Mock name=&#39;mock.b&#39; id=&#39;140493186771088&#39;&gt;
-my_mock called: &lt;Mock name=&#39;mock()&#39; id=&#39;140493167536336&#39;&gt;
-my_mock called: 4
-my_mock called: 4
+<pre>[&#39;ex_params.py&#39;]
 </pre>
 </div>
 </div>
 
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-27-a2e42b852fe4&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">     11</span> 
-<span class="ansi-green-intense-fg ansi-bold">     12</span> 
-<span class="ansi-green-fg">---&gt; 13</span><span class="ansi-red-fg"> </span><span class="ansi-cyan-fg">1</span> <span class="ansi-green-fg">in</span> my_mock
-
-<span class="ansi-red-fg">TypeError</span>: argument of type &#39;Mock&#39; is not iterable</pre>
 </div>
 </div>
 
-</div>
-</div>
-
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Klasa <code>MagicMock</code> rozszerza funckjonalność <code>Mock</code> o dodanie metod magicznych (np. długości czy dostępu do elementów).</p>
-
-</div>
-</div>
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">unittest.mock</span> <span class="k">import</span> <span class="n">MagicMock</span>
-
-<span class="n">my_mock</span> <span class="o">=</span> <span class="n">MagicMock</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">my_mock</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;my mock has &quot;a&quot;: {hasattr(my_mock, &quot;a&quot;)}, my_mock.b has &quot;b&quot;: {hasattr(my_mock, &quot;a&quot;)}&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;my mock.a = </span><span class="si">{my_mock.a}</span><span class="s1">, my_mock.b = </span><span class="si">{my_mock.b}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;my_mock called:&#39;</span><span class="p">,</span> <span class="n">my_mock</span><span class="p">())</span>
-<span class="mi">1</span> <span class="ow">in</span> <span class="n">my_mock</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>mkdir -p ex_params
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;MagicMock id=&#39;140493167494160&#39;&gt;
-my mock has &#34;a&#34;: True, my_mock.b has &#34;b&#34;: True
-my mock.a = 1, my_mock.b = &lt;MagicMock name=&#39;mock.b&#39; id=&#39;140493173230672&#39;&gt;
-my_mock called: &lt;MagicMock name=&#39;mock()&#39; id=&#39;140493167467600&#39;&gt;
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[28]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>False</pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -15171,80 +14355,11 @@ my_mock called: &lt;MagicMock name=&#39;mock()&#39; id=&#39;140493167467600&#39;
 <div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Mock posiada jeszcze wiele przydatnych atrybutów:</span>
-<span class="nb">dir</span><span class="p">(</span><span class="n">my_mock</span><span class="p">)</span>
-</pre></div>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> ex_params/ex_params.py
+<span class="kn">import</span> <span class="nn">sys</span>
 
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[29]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[&#39;__contains__&#39;,
- &#39;__str__&#39;,
- &#39;a&#39;,
- &#39;assert_any_call&#39;,
- &#39;assert_called&#39;,
- &#39;assert_called_once&#39;,
- &#39;assert_called_once_with&#39;,
- &#39;assert_called_with&#39;,
- &#39;assert_has_calls&#39;,
- &#39;assert_not_called&#39;,
- &#39;attach_mock&#39;,
- &#39;b&#39;,
- &#39;call_args&#39;,
- &#39;call_args_list&#39;,
- &#39;call_count&#39;,
- &#39;called&#39;,
- &#39;configure_mock&#39;,
- &#39;method_calls&#39;,
- &#39;mock_add_spec&#39;,
- &#39;mock_calls&#39;,
- &#39;reset_mock&#39;,
- &#39;return_value&#39;,
- &#39;side_effect&#39;]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><code>Mock</code> wywołany może zwracać kilka wartości lub podnosić wyjątek przez parametr <code>side_effect</code>.</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">unittest.mock</span> <span class="k">import</span> <span class="n">Mock</span>
-
-<span class="n">my_mock</span> <span class="o">=</span> <span class="n">Mock</span><span class="p">(</span><span class="n">side_effect</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;lalala&#39;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;my_mock called:&#39;</span><span class="p">,</span> <span class="n">my_mock</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;my_mock called:&#39;</span><span class="p">,</span> <span class="n">my_mock</span><span class="p">({</span><span class="mi">4</span><span class="p">:</span><span class="mi">5</span><span class="p">}))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;my_mock called with:&#39;</span><span class="p">,</span> <span class="n">my_mock</span><span class="o">.</span><span class="n">call_args_list</span><span class="p">)</span>
-
-<span class="n">my_mock</span><span class="o">.</span><span class="n">side_effect</span> <span class="o">=</span> <span class="ne">ZeroDivisionError</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;my_mock called:&#39;</span><span class="p">,</span> <span class="n">my_mock</span><span class="p">())</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -15261,85 +14376,7 @@ my_mock called: &lt;MagicMock name=&#39;mock()&#39; id=&#39;140493167467600&#39;
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>my_mock called: 4
-my_mock called: lalala
-my_mock called with: [call(&#39;1&#39;), call({4: 5})]
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ZeroDivisionError</span>                         Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-30-e9f8cba2c83d&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      8</span> 
-<span class="ansi-green-intense-fg ansi-bold">      9</span> my_mock<span class="ansi-blue-fg">.</span>side_effect <span class="ansi-blue-fg">=</span> ZeroDivisionError
-<span class="ansi-green-fg">---&gt; 10</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;my_mock called:&#39;</span><span class="ansi-blue-fg">,</span> my_mock<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/usr/local/lib/python3.7/unittest/mock.py</span> in <span class="ansi-cyan-fg">__call__</span><span class="ansi-blue-fg">(_mock_self, *args, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    963</span>         <span class="ansi-red-fg"># in the signature</span>
-<span class="ansi-green-intense-fg ansi-bold">    964</span>         _mock_self<span class="ansi-blue-fg">.</span>_mock_check_sig<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">--&gt; 965</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> _mock_self<span class="ansi-blue-fg">.</span>_mock_call<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    966</span> 
-<span class="ansi-green-intense-fg ansi-bold">    967</span> 
-
-<span class="ansi-green-fg">/usr/local/lib/python3.7/unittest/mock.py</span> in <span class="ansi-cyan-fg">_mock_call</span><span class="ansi-blue-fg">(_mock_self, *args, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1023</span>         <span class="ansi-green-fg">if</span> effect <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">not</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">   1024</span>             <span class="ansi-green-fg">if</span> _is_exception<span class="ansi-blue-fg">(</span>effect<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">-&gt; 1025</span><span class="ansi-red-fg">                 </span><span class="ansi-green-fg">raise</span> effect
-<span class="ansi-green-intense-fg ansi-bold">   1026</span>             <span class="ansi-green-fg">elif</span> <span class="ansi-green-fg">not</span> _callable<span class="ansi-blue-fg">(</span>effect<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">   1027</span>                 result <span class="ansi-blue-fg">=</span> next<span class="ansi-blue-fg">(</span>effect<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">ZeroDivisionError</span>: </pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>W celu wykorzystania mocka można posłużyć się funkcją <code>patch</code>. Funkcja ta użyta jako dekorator lub menadżer kontekstu zastępuje określoną funckcję podanym mockiem w odpowiednim kontekście (dekorowanej funkcji lub bloku kodu).</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>cat ex_debugger/util.py
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>import os
-
-def get_path(filename):
-    &#34;&#34;&#34;Return file&#39;s path or empty string if no path.&#34;&#34;&#34;
-    head, tail = os.path.split(filename)
-    return head
+<pre>Writing ex_params/ex_params.py
 </pre>
 </div>
 </div>
@@ -15350,21 +14387,11 @@ def get_path(filename):
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">unittest.mock</span> <span class="k">import</span> <span class="n">patch</span>
-
-<span class="kn">from</span> <span class="nn">ex_debugger.util</span> <span class="k">import</span> <span class="n">get_path</span>
-
-<span class="k">with</span> <span class="n">patch</span><span class="p">(</span><span class="s1">&#39;os.path.split&#39;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">])</span> <span class="k">as</span> <span class="n">mock_fun</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">get_path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mock called:&#39;</span><span class="p">,</span> <span class="n">mock_fun</span><span class="o">.</span><span class="n">call_count</span><span class="p">)</span>
-    
-
-<span class="nb">print</span><span class="p">(</span><span class="n">get_path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mock called:&#39;</span><span class="p">,</span> <span class="n">mock_fun</span><span class="o">.</span><span class="n">call_count</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>python ex_params/ex_params.py
+<span class="o">!</span>python ex_params/ex_params.py <span class="m">1</span> aaa <span class="o">{</span><span class="m">1</span>:2<span class="o">}</span>
 </pre></div>
 
     </div>
@@ -15381,10 +14408,48 @@ def get_path(filename):
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>dog
-mock called: 1
-/home/tutor/Documents/pw_labs
-mock called: 1
+<pre>[&#39;ex_params/ex_params.py&#39;]
+[&#39;ex_params/ex_params.py&#39;, &#39;1&#39;, &#39;aaa&#39;, &#39;{1:2}&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Należy jednak pamiętać, że sam interpreter jest programem, więc można go uruchomić z opcjami wpływającymi na jego wykonanie, ale nie przekazywanymi do uruchamianego programu.</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># opcja -m oznacza uruchom jako moduł - nazwa modułu to nazwa pliku bez rozszerzenia.</span>
+<span class="o">!</span>python -m ex_params  
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;/home/tutor/Documents/pw_labs/lab_12/ex_params.py&#39;]
 </pre>
 </div>
 </div>
@@ -15393,16 +14458,54 @@ mock called: 1
 </div>
 
 </div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="argparse"><code>argparse</code><a class="anchor-link" href="#argparse">&#182;</a></h3>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Moduł <code>argparse</code> dostarcza klasę <code>ArgumentParser</code> pozwalającą na dodanie interfejsu konsolowego programu. Interfejs ten realizowany jest przed dodawanie kolejnych argumentów, przez metodę <code>add_argument</code>, w której możemy okreść np. czy parametr jest pozycyjny czy opcjonalny, czy przyjmuje jedną lub wiele wartości, zdefiniować wartość domyślną itd.</p>
+<p>Dużym plusem parsera jest możliwość łatwego go przetestowania - wystarczy funkcję parsowania wywołać z listą stringów do sparsowania!</p>
+
+</div>
+</div>
+</div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> ex_tests/time_util.py
-<span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">datetime</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>mkdir -p ex_argparser
+<span class="o">!</span>touch __init__.py
+</pre></div>
 
-<span class="k">def</span> <span class="nf">tell_me_yesterday</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Yesterday was: {datetime.now().strftime(&quot;%Y-%m-</span><span class="si">%d</span><span class="s1">&quot;)}&#39;</span><span class="p">)</span>
+    </div>
+</div>
+</div>
+
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> ex_argparser/parser.py
+<span class="kn">import</span> <span class="nn">argparse</span>
+
+<span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;Process some integers.&#39;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;integers&#39;</span><span class="p">,</span> <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span>
+                   <span class="n">help</span><span class="o">=</span><span class="s1">&#39;an integer for the accumulator&#39;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--sum&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;accumulate&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_const&#39;</span><span class="p">,</span>
+                   <span class="n">const</span><span class="o">=</span><span class="nb">sum</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="nb">max</span><span class="p">,</span>
+                   <span class="n">help</span><span class="o">=</span><span class="s1">&#39;sum the integers (default: find the max)&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">accumulate</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">integers</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -15419,7 +14522,7 @@ mock called: 1
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Overwriting ex_tests/time_util.py
+<pre>Writing ex_argparser/parser.py
 </pre>
 </div>
 </div>
@@ -15427,29 +14530,13 @@ mock called: 1
 </div>
 </div>
 
-</div><div class="fragment">
+</div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> ex_tests/test_time_util.py
-<span class="kn">from</span> <span class="nn">unittest.mock</span> <span class="k">import</span> <span class="n">patch</span>
-<span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">datetime</span>
-
-<span class="kn">import</span> <span class="nn">pytest</span>
-
-<span class="kn">from</span> <span class="nn">time_util</span> <span class="k">import</span> <span class="n">tell_me_yesterday</span>
-
-
-<span class="c1"># Mockowanie w ten sposób nie da efektów, bo funkcja jest już zdefiniowana</span>
-<span class="nd">@patch</span><span class="p">(</span><span class="s1">&#39;datetime.datetime&#39;</span><span class="p">)</span>
-<span class="c1"># @patch(&#39;time_util.datetime&#39;)</span>
-<span class="k">def</span> <span class="nf">test_numbers_3_parametrize</span><span class="p">(</span><span class="n">datetime_mock</span><span class="p">,</span> <span class="n">capsys</span><span class="p">):</span>
-    <span class="n">datetime_mock</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="n">tell_me_yesterday</span><span class="p">()</span>
-    <span class="c1"># metoda przechwytuje to co zostało wypisane na standardowe wyjście</span>
-    <span class="k">assert</span> <span class="n">capsys</span><span class="o">.</span><span class="n">readouterr</span><span class="p">()</span><span class="o">.</span><span class="n">out</span> <span class="o">==</span> <span class="s1">&#39;Yesterday was: 2019-01-01</span><span class="se">\n</span><span class="s1">&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>python ex_argparser/parser.py -h
 </pre></div>
 
     </div>
@@ -15466,7 +14553,49 @@ mock called: 1
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Overwriting ex_tests/test_time_util.py
+<pre>usage: parser.py [-h] [--sum] N [N ...]
+
+Process some integers.
+
+positional arguments:
+  N           an integer for the accumulator
+
+optional arguments:
+  -h, --help  show this help message and exit
+  --sum       sum the integers (default: find the max)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>python ex_argparser/parser.py <span class="m">1</span> <span class="m">4</span> <span class="m">2</span> <span class="m">3</span>
+<span class="o">!</span>python ex_argparser/parser.py <span class="m">1</span> <span class="m">4</span> <span class="m">2</span> <span class="m">3</span> --sum
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>4
+10
 </pre>
 </div>
 </div>
@@ -15480,7 +14609,11 @@ mock called: 1
 <div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pytest ex_tests/test_time_util.py 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">ex_argparser.parser</span> <span class="k">import</span> <span class="n">parser</span>
+
+<span class="n">parsed_args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="s1">&#39;1 2 15 --su&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">parsed_args</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">vars</span><span class="p">(</span><span class="n">parsed_args</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -15497,34 +14630,8 @@ mock called: 1
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span class="ansi-bold">============================= test session starts ==============================</span>
-platform linux -- Python 3.7.4, pytest-5.2.1, py-1.8.0, pluggy-0.13.0
-rootdir: /home/tutor/Documents/pw_labs/lab_11
-collected 1 item                                                               
-
-ex_tests/test_time_util.py <span class="ansi-red-fg">F</span><span class="ansi-cyan-fg">                                             [100%]</span>
-
-=================================== FAILURES ===================================
-<span class="ansi-red-intense-fg ansi-bold">__________________________ test_numbers_3_parametrize __________________________</span>
-
-datetime_mock = &lt;MagicMock name=&#39;datetime&#39; id=&#39;140113052728912&#39;&gt;
-capsys = &lt;_pytest.capture.CaptureFixture object at 0x7f6e9cbc79d0&gt;
-
-<span class="ansi-bold">    @patch(&#39;datetime.datetime&#39;)</span>
-<span class="ansi-bold">    # @patch(&#39;time_util.datetime&#39;)</span>
-<span class="ansi-bold">    def test_numbers_3_parametrize(datetime_mock, capsys):</span>
-<span class="ansi-bold">        datetime_mock.now.return_value = datetime(2019, 1, 1)</span>
-<span class="ansi-bold">        tell_me_yesterday()</span>
-<span class="ansi-bold">        # metoda przechwytuje to co zostało wypisane na standardowe wyjście</span>
-<span class="ansi-bold">&gt;       assert capsys.readouterr().out == &#39;Yesterday was: 2019-01-01\n&#39;</span>
-<span class="ansi-red-intense-fg ansi-bold">E       AssertionError: assert &#39;Yesterday was: 2020-01-11\n&#39; == &#39;Yesterday was: 2019-01-01\n&#39;</span>
-<span class="ansi-red-intense-fg ansi-bold">E         - Yesterday was: 2020-01-11</span>
-<span class="ansi-red-intense-fg ansi-bold">E         ?                  ^^    ^</span>
-<span class="ansi-red-intense-fg ansi-bold">E         + Yesterday was: 2019-01-01</span>
-<span class="ansi-red-intense-fg ansi-bold">E         ?                  ^^    ^</span>
-
-<span class="ansi-red-intense-fg ansi-bold">ex_tests/test_time_util.py</span>:16: AssertionError
-<span class="ansi-red-intense-fg ansi-bold">============================== 1 failed in 0.05s ===============================</span>
+<pre>&lt;class &#39;argparse.Namespace&#39;&gt;
+{&#39;integers&#39;: [1, 2, 15], &#39;accumulate&#39;: &lt;built-in function sum&gt;}
 </pre>
 </div>
 </div>
@@ -15532,75 +14639,6 @@ capsys = &lt;_pytest.capture.CaptureFixture object at 0x7f6e9cbc79d0&gt;
 </div>
 </div>
 
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Typy-test&#243;w">Typy test&#243;w<a class="anchor-link" href="#Typy-test&#243;w">&#182;</a></h3>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Istnieje wiele klasyfikacji testów np.:</p>
-<ul>
-<li>zależnie od zakresu: <ul>
-<li>jednostkowe(<em>unit</em>), </li>
-<li>funckjonalne (<em>functional</em>) </li>
-<li>sytemu (<em>system</em>), </li>
-</ul>
-</li>
-<li>wiedzy testującego - <em>black/white box</em> (bez analizy/z analizą kodu) </li>
-<li>celu wykonania: <ul>
-<li>testy regresji (czy coś działającego się nie zespuło),</li>
-<li><em>smoke testy</em> (czy kod się w ogóle uruchamia)...</li>
-</ul>
-</li>
-</ul>
-<p>Problemem tego typu klasyfikacji jest ich niejasność lub niska użyteczność definicji.</p>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Bardzo dobre definicje testów podał Robert Martin na swoim <a href="https://blog.cleancoder.com/uncle-bob/2017/05/05/TestDefinitions.html">blogu</a>:</p>
-<ul>
-<li>Unit Test: A test written by a programmer for the purpose of ensuring that the production code does what the programmer expects it to do. (For the moment we will ignore the notion that unit tests also aid the design, etc.)<ul>
-<li>Micro-test: A term coined by Mike Hill (@GeePawHill). A unit test written at a very small scope. The purpose is to test a single function, or small grouping of functions.</li>
-<li>Functional Test: A unit test written at a larger scope, with appropriate mocks for slow components.</li>
-</ul>
-</li>
-<li>Acceptance Test: A test written by the business for the purpose of ensuring that the production code does what the business expects it to do. The authors of these tests are business people, or technical people who represent the business. i.e. Business Analysts, and QA (Quality Assurance - dział jakości, dopisek mój).</li>
-<li>Integration Test: A test written by architects and/or technical leads for the purpose of ensuring that a sub-assembly of system components operates correctly. These are <em>plumbing</em> tests. They are not business rule tests. Their purpose is to confirm that the sub-assembly has been integrated and configured correctly.</li>
-<li>System Test: An integration test written for the purpose of ensuring that the <em>internals</em> of the whole integrated system operate as planned. These are <em>plumbing</em> tests. They are <em>not</em> business rule tests. Their purpose is to confirm that the system has been integrated and configured correctly.</li>
-</ul>
-
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Testy-jako-dokumentacja">Testy jako dokumentacja<a class="anchor-link" href="#Testy-jako-dokumentacja">&#182;</a></h3>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Dobrze napisany test może służyć jako dokumentacja do kodu, czasami lepsza niż docstring czy zewnętrzne dokumenty. Efekt ten można uzyskać gdy:</p>
-<ul>
-<li>nazwy testów i zmiennych sugerują co jest testowane,</li>
-<li>testy pokazują faktyczne użycie funckji (nie ma testów wtórnych lub testujących implementację),</li>
-<li>są testy dla przypadków skrajnych (<em>corner case</em>), nietypowych, ale możliwych itd.,</li>
-<li><strong>SĄ</strong>.</li>
-</ul>
-
-</div>
-</div>
 </div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -15613,15 +14651,15 @@ capsys = &lt;_pytest.capture.CaptureFixture object at 0x7f6e9cbc79d0&gt;
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><a href="https://realpython.com/python-debugging-pdb/">Tutorial <code>pdb</code> z Real Python</a> - z niego zaczerpnięte zostały przykładowe pliki debuggera. Ogólnie polecam portal <a href="https://realpython.com">Real Python</a>, posiada sprawdzalne, różnorodne artykuły o Pythonie.</li>
-<li><a href="https://blog.cleancoder.com/">Clean Code blog</a> - ciekawe artykuły propagatora zasad wydajnego programowania Roberta "uncle Bob" Martina. Część wykładu inspirowana była tymi artykułami:<ul>
-<li><a href="https://blog.cleancoder.com/uncle-bob/2013/09/23/Test-first.html"><em>Test First</em></a></li>
-<li><a href="https://blog.cleancoder.com/uncle-bob/2017/05/05/TestDefinitions.html"><em>First-Class Tests</em></a></li>
-<li><a href="https://blog.cleancoder.com/uncle-bob/2014/04/30/When-tdd-does-not-work.html"><em>When TDD doesn't work</em></a></li>
-<li><a href="https://blog.cleancoder.com/uncle-bob/2016/11/10/TDD-Doesnt-work.html"><em>TDD Doesn't Work</em></a></li>
+<li><a href="https://wiki.python.org/moin/Generators">Trochę stary ale ciekawy artykuł o generatorach</a>.</li>
+<li>Kontekst menadżer:<ul>
+<li><a href="https://docs.python.org/3/library/stdtypes.html#typecontextmanager">O with</a>.</li>
+<li><a href="https://docs.python.org/3/library/stdtypes.html#typecontextmanager">O menadżerze</a></li>
 </ul>
 </li>
-<li><a href="https://docs.pytest.org/en/latest/">Oficjalna strona modułu <code>pytest</code></a>.</li>
+<li><a href="http://simeonfranklin.com/blog/2012/jul/1/python-decorators-in-12-steps/">Jeszcze starszy, ale równie ciekawy artykuł o dekoratorach (i w sumie o funckjach i kontekstach)</a>.</li>
+<li><a href="https://docs.python.org/3.7/library/functools.html#functools.update_wrapper">Dokumentacja wrappera</a>.</li>
+<li><a href="https://docs.python.org/3.3/library/argparse.html">Tutorial argparsera</a></li>
 </ul>
 
 </div>
