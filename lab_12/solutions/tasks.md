@@ -7,7 +7,7 @@ Przy podaniu złej wartości parametru funckja ma podnosić `RuntimeError`
 
 Podpowiedź: Funkcja może zawierać więcej niż jedno `yield`.
 ## 2. (2 pkt.):
-Napisz dekorator logujący (printujący) (z datą logu w formacie `YYYY-mm-ddTHH:MM:SS`):
+Napisz dekorator logujący (z datą logu w formacie `YYYY-mm-ddTHH:MM:SS`):
 * nazwę udekorowanej funkcji
 * liczbę parametrów pozycyjnych
 * nazwy parametrów opcjonalnych (lub `-` jeżeli nie było żadnych)
