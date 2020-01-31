@@ -5,6 +5,15 @@ oraz pamięć (memory, atrybut klasy) z interfejsem: dodaj do pamięci , wyczyś
 Atrybut memory ma być nienadpisywalny.
 Część 2 (1 pkt): jeżeli drugi argument działania nie jest podany (None)
 użyj wartość z pamięci kalkulatora. Obsłuż przypadki skrajne.
+ma to chodzic tak ze pamiec dzialanie wartosc
+np memory 4
+dzialanie /
+wartosc 2
+=2
+
+
+zdefiniowac sobie slownik operatorow
+memory ma nie byc edytowalne w prosty sposob ( patrz slajdy )
 """
 
 
@@ -16,7 +25,7 @@ class Calculator:
         # wynik zapisany w tym atrybucie
         self._short_memory = None
 
-    def run(self, operator, arg1, arg2):
+    def run(self, operator, arg1, arg2 = None):
         """
         Returns result of given operation.
 
@@ -29,22 +38,38 @@ class Calculator:
         :return: result of operation
         :rtype: float
         """
-        raise NotImplementedError
+        if arg2 is None:
+            arg2 = self.result
+
+
+        if(operator == "+"):
+            self._short_memory = arg1 + arg2
+            return(arg1+arg2)
+        elif(operator == "/" and arg2!=0):
+            self._short_memory=(arg1/arg2)
+            return (arg1/arg2)
+        else:
+            raise NotImplementedError
+
+    @property
+    def result(self):
+        return self._short_memory
+
 
     def memorize(self):
         """Saves last operation result to memory."""
-        raise NotImplementedError
+        self.memory = self.result
 
     def clean_memory(self):
         """Cleans memorized value"""
-        raise NotImplementedError
+        self.memory = None
 
     def in_memory(self):
         """Prints memorized value."""
         print(f"Zapamiętana wartość: {self.memory}")
 
 
-if __name__ == '__main__':
+if __name__ == '__main__': # ten blok nie wywola sie przy imporcie, tylko jezeli sourcujemy ten plik mozna w ten sposob dodac przykladowe wykonanie funkcji
     calc = Calculator()
     b = calc.run('+', 1, 2)
     calc.memorize()

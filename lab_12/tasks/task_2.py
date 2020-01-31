@@ -1,10 +1,28 @@
 from datetime import datetime
 from functools import wraps
-from time import time
+import time
 
 
 def log_run(fun):
-    pass
+
+
+
+    def wrapper(*args, **kwargs):
+        print(datetime.now().strftime("%Y-%m-%dT%H:%M:%S"))
+        print(f'{len(args)} positional parameters')
+        for k, v in kwargs.items():
+            print(f'optional parameters: {k}')
+        if not kwargs:
+            print("optional parameters: -")
+        start = time.perf_counter()
+        to_return = fun(args[0])
+        stop = time.perf_counter()
+        print(f'returned: {to_return} ({(stop-start):.2e}s)')
+
+        return to_return
+
+    return wrapper
+
 
 
 @log_run

@@ -1,5 +1,16 @@
 def generate_fibonacci(n=100):
-    pass
+    if n > 100 or n < 0:
+        print("Please provide number between 1 and 100")
+        raise RuntimeError
+    fib_1 = 0
+    fib_2 = 1
+    for _ in range(n):
+        yield fib_1
+        fib_1, fib_2 = fib_2, fib_1 + fib_2
+
+
+
+
 
 
 if __name__ == '__main__':
@@ -14,3 +25,4 @@ if __name__ == '__main__':
         generate_fibonacci(0)
     except Exception as exc:
         assert isinstance(exc, RuntimeError)
+

@@ -1,0 +1,1 @@
+# mozemy zmieniac parametry wejsciowe funkcji (zmienic np self na cls)

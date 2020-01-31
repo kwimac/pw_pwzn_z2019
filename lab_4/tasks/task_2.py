@@ -7,33 +7,34 @@ Wszystkie operacje sprawdzają wymiar.
 Część 2 (1 pkt): Klasa ma statyczną metodę wylicznia wektora z dwóch punktów
 oraz metodę fabryki korzystającą z metody statycznej tworzącej nowy wektor
 z dwóch punktów.
-Wszystkie metody sprawdzają wymiar.
+Wszystkie metody sprawdzają wymiar. czyli zrobic na trzy wymiary dzialania, a jak nie to niech wywala error
 """
 
 
 class Vector:
+
     dim = None  # Wymiar vectora
-
-    @property
-    def len(self):
-        raise NotImplemented
-
     def __init__(self, *args):
-        raise NotImplemented
+        self.coords = tuple(args)
+        self.dim = len(self.coords)
+
 
     @staticmethod
     def calculate_vector(beg, end):
         """
         Calculate vector from given points
 
-        :param beg: Begging point
+        :param beg: Begging point xd
         :type beg: list, tuple
         :param end: End point
         :type end: list, tuple
         :return: Calculated vector
         :rtype: tuple
         """
-        raise NotImplemented
+        start = Vector(*beg)
+        ending = Vector(*end)
+        outcome = ending-start
+        return outcome.coords
 
     @classmethod
     def from_points(cls, beg, end):
@@ -48,7 +49,55 @@ class Vector:
         :return: New vector
         :rtype: tuple
         """
-        raise NotImplemented
+        start = Vector(*beg)
+        ending = Vector(*end)
+        outcome = ending - start
+        return outcome
+
+
+    def __add__(self, other):
+        tmp = []
+        if (self.dim == other.dim):
+            for i in range(self.dim):
+                tmp.append(self.coords[i]+other.coords[i])
+        else:
+            raise NotImplementedError
+        return (Vector(*tmp))
+
+    def __eq__(self, other):
+        return (self.coords==other.coords)
+
+    def __sub__(self, other):
+        tmp = []
+        if (self.dim == other.dim):
+            for i in range(self.dim):
+                tmp.append(self.coords[i] - other.coords[i])
+        else:
+            raise NotImplementedError
+        return (Vector(*tmp))
+
+    def __mul__(self, other):
+        if type(other) is int:
+            tmp = []
+            for i in range(self.dim):
+                tmp.append(self.coords[i] * other)
+            return (Vector(*tmp))
+        elif type(other) is Vector:
+            tmp = []
+            for i in range(self.dim):
+                tmp.append(self.coords[i] * other.coords[i])
+            return sum(tmp)
+
+    def __len__(self):
+        tmp = 0.
+        for i in self.coords:
+            tmp=(tmp+(i**2))
+        return (int(tmp**0.5))
+
+
+
+
+
 
 
 if __name__ == '__main__':
@@ -58,8 +107,6 @@ if __name__ == '__main__':
     assert v1 - v2 == Vector(0,0,0)
     assert v1 * 2 == Vector(2,4,6)
     assert v1 * v2 == 14
-    assert len(Vector(3,4)) == 2
-    assert Vector(3,4).dim == 2
-    assert Vector(3,4).len == 5.
+    assert len(Vector(3,4)) == 5
     assert Vector.calculate_vector([0, 0, 0], [1,2,3]) == (1,2,3)
     assert Vector.from_points([0, 0, 0], [1,2,3]) == Vector(1,2,3)

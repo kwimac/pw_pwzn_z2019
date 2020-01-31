@@ -1,4 +1,10 @@
 def unique(values):
+
+    stack = []
+    for i in values:
+        if (not i in stack):
+            stack.append(i)
+    return (stack)
     """
     Funkcja zwraca listę unikatowych wartości.
     Utrudnienie: Funkcja zwraca unikatowe wartości w kolejności wystąpienia.

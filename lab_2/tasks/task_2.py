@@ -1,4 +1,18 @@
 def stack_operation(stack_commands):
+
+
+    stack = []
+    maxima = []
+    for i in stack_commands:
+        if (i[0]=='push'):
+            stack.append(i[1])
+        elif (i[0] == 'pop' and len(stack)>0):
+            stack.pop()
+        elif (i[0] == "show_max"):
+            maxima.append(max(stack))
+    return(stack)
+
+
     """
     Funkcja przyjmuję listę jedno i dwu elementowych krotek - operacji na stosie.
     Pierwszy element krotki to operacja, drugi wartość (opcjonalnie). Operacje:

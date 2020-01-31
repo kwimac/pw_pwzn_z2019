@@ -1,6 +1,8 @@
 # Project specific
 .idea/*
 *.ipynb
+*.csv
+weather_data/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
