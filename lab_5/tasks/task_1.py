@@ -8,22 +8,27 @@ jak i operację z argumentem domyślnym) - EmptyMemory
 - dzielenie przez zero jest przekształcane w CalculatorError
 """
 from operator import add, mul, sub, truediv
+import numbers
 
 
 class CalculatorError(Exception):
-    pass
+    def __init__(self, error_information=None):
+        print(f'Wystąpił błąd : {error_information}')
 
 
-class WrongOperation(Exception):
-    pass
+class WrongOperation(CalculatorError):
+    def __init__(self):
+        super().__init__('Nie jest dostępna taka operacja!')
 
 
-class NotNumberArgument(Exception):
-    pass
+class NotNumberArgument(CalculatorError):
+    def __init__(self):
+        super().__init__('Błędny argument - podany argument nie jest liczbą!')
 
 
-class EmptyMemory(Exception):
-    pass
+class EmptyMemory(CalculatorError):
+    def __init__(self):
+        super().__init__('Pusta pamięć!')
 
 
 class Calculator:
@@ -51,11 +56,25 @@ class Calculator:
         :return: result of operation
         :rtype: float
         """
-        if operator in self.operations:
-            arg2 = arg2 or self.memory
-            if arg2:
-                self._short_memory = self.operations[operator](arg1, arg2)
-                return self._short_memory
+        if operator not in self.operations:
+            raise WrongOperation
+        if arg2 is None:
+            arg2 = self.memory
+        if arg2 is None:
+            raise EmptyMemory
+        if not isinstance(arg2, numbers.Number):
+            raise NotNumberArgument
+        if not isinstance(arg1, numbers.Number):
+            raise NotNumberArgument
+        try:
+            self._short_memory = self.operations[operator](arg1, arg2)
+        except ZeroDivisionError as exc:
+            raise CalculatorError('Dzielenie przez 0!') from exc
+        else:
+            return self._short_memory
+
+        # except (WrongOperation, EmptyMemory, NotNumberArgument):
+        #     return None
 
     @property
     def memory(self):
@@ -71,6 +90,8 @@ class Calculator:
 
     def in_memory(self):
         """Prints memorized value."""
+        if not self.memory:
+            raise EmptyMemory
         print(f"Zapamiętana wartość: {self.memory}")
 
 

@@ -1,21 +1,25 @@
 def counting_sort(values, _max, _min=0):
-    """
-    Function returns sorted list.
+    tab_pom = []
+    print("Tworzenie tablicy pomocniczej")
+    for i in range(_min, _max):
+        tab_pom.append(0)
 
-    Sortowanie przez zliczanie to metoda polegajaca na sortowaniu wąskiego zakresu wartości
-    (około 1000 kolejnych elementów) poprzez zliczenie wystąpeiń elementów w podanej liście
-    i wypisania ich w kolejności.
+    print("Zliczanie poszczegolnych elementow")
+    for i in values:
+        print("Zliczono element: " + str(i))
+        tab_pom[i] = tab_pom[i] + 1
 
-    :param values: List of values to sort.
-    :type values: List[int]
-    :param _max: Maximum value in list.
-    :type _max: int
-    :param _min: Maximum value in list.
-    :type _min: int
-    :return:
-    """
-    pass
+    print("Ukladanie posortowanej tablicy")
+    k = 0  # index tablicy
+    for a in range(_min, _max):
+        for c in range(0, tab_pom[a]):
+            values[k] = a
+            k = k + 1
 
+    print(f'max:{max(values)}')
+    print(f'min:{min(values)}')
+    print(f'check if sorted:{values}')
+    return values
 
 if __name__ == '__main__':
     assert counting_sort(

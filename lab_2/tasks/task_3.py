@@ -1,14 +1,9 @@
 def unique(values):
-    """
-    Funkcja zwraca listę unikatowych wartości.
-    Utrudnienie: Funkcja zwraca unikatowe wartości w kolejności wystąpienia.
-
-    :param values: List of values to check.
-    :type values: list
-    :return: Unique values in order of appear.
-    :rtype: list
-    """
-    pass
+    tab_dict = {}
+    for value in values:
+        tab_dict[value] = 1
+    print(tab_dict)
+    return [*tab_dict]
 
 
 if __name__ == "__main__":

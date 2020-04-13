@@ -9,17 +9,63 @@ oraz metodę fabryki korzystającą z metody statycznej tworzącej nowy wektor
 z dwóch punktów.
 Wszystkie metody sprawdzają wymiar.
 """
+import math
+
+
+def check_dim(dim1, dim2):
+    try:
+        if dim1 is not dim2:
+            raise ValueError
+        else:
+            return True
+    except ValueError:
+        print("Niezgodność wymiarów wektorów")
 
 
 class Vector:
     dim = None  # Wymiar vectora
+    def __init__(self, *args):
+        self.vector = tuple(args)
+        self.__dim = len(self.vector)
 
     @property
-    def len(self):
-        raise NotImplemented
+    def dim(self):
+        return self.__dim
 
-    def __init__(self, *args):
-        raise NotImplemented
+    def __add__(self, arg1):
+        output_vector = []
+        if check_dim(self.dim, arg1.dim):
+            for i in range(0, self.dim):
+                output_vector.append(self.vector[i] + arg1.vector[i])
+        return Vector(*output_vector)
+
+    def __sub__(self, arg1):
+        output_vector = []
+        if check_dim(self.dim, arg1.dim):
+            for i in range(0, self.dim):
+                output_vector.append(self.vector[i] - arg1.vector[i])
+        return Vector(*output_vector)
+
+    def __mul__(self, arg1):
+        if isinstance(arg1, int) or isinstance(arg1, float):
+            output_vector = [element * arg1 for element in self.vector]
+            return Vector(*output_vector)
+        else:
+            multiplication = 0.0
+            if check_dim(self.dim, arg1.dim):
+                for i in range(0, self.dim):
+                    multiplication += self.vector[i] * arg1.vector[i]
+            return multiplication
+
+    def __eq__(self, arg2):
+        return self.dim == arg2.dim and self.vector == arg2.vector
+
+    def __len__(self):
+        output_len = 0.0
+        for element in self.vector:
+            output_len += element ** 2
+
+        return int(math.sqrt(output_len))
 
     @staticmethod
     def calculate_vector(beg, end):
@@ -33,7 +79,11 @@ class Vector:
         :return: Calculated vector
         :rtype: tuple
         """
-        raise NotImplemented
+        output_vector = []
+        if check_dim(len(beg), len(end)):
+            for i in range(0, len(beg)):
+                output_vector.append(end[i] - beg[i])
+        return tuple(output_vector)
 
     @classmethod
     def from_points(cls, beg, end):
@@ -48,7 +98,8 @@ class Vector:
         :return: New vector
         :rtype: tuple
         """
-        raise NotImplemented
+        vector = cls.calculate_vector(beg, end)
+        return Vector(*vector)
 
 
 if __name__ == '__main__':
