@@ -23,8 +23,18 @@ def calculate_neighbours(board):
     :type board: np.ndarray
     :param periodic
     """
-    pass
+    neigh_num = np.zeros(board.shape, int)
 
+    neigh_num[:-1, :] += board[1:, :] # na dole
+    neigh_num[1:, :] += board[:-1, :] # na gorze
+    neigh_num[:, :-1] += board[:, 1:] # na prawo
+    neigh_num[:, 1:] += board[:, :-1] # na lewo
+    neigh_num[:-1, :-1] += board[1:, 1:] # skos dol prawo
+    neigh_num[1:, :-1] += board[:-1, 1:] # skos gora prawo
+    neigh_num[:-1, 1:] += board[1:, :-1] # skos dol lewo
+    neigh_num[1:, 1:] += board[:-1, :-1] # skos gora lewo
+
+    return neigh_num
 
 def iterate(board):
     """
@@ -44,8 +54,15 @@ def iterate(board):
     :return: next board state
     :rtype: np.ndarray
     """
-    pass
 
+    plansza = calculate_neighbours(board)
+
+    new_board = np.zeros(board.shape, bool)
+
+    new_board[board == False] = plansza[board == False] == 3
+    new_board[board] = np.logical_or(plansza[board] == 2, plansza[board] == 3)
+
+    return new_board
 
 if __name__ == '__main__':
     _board = np.array([

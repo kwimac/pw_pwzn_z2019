@@ -1,0 +1,5 @@
+id,mass,genus,name,gender
+0d8b5f8d-ec0a-4aba-a63e-fd29a24d244e,2.555088733653382 kg,Wolf,Koralgol,female
+677f47cc-de88-45bc-8272-67fc7a8f7280,9.610834210779512 g,Wolf,Królik,male
+6e2ca89e-5538-4cbd-94e1-b96438230294,4.516724054274125 mg,Woodpecker,Królik,female
+a79652ec-1438-4c9a-be1d-4814b4cd054c,1.90742611798013 Mg,Woodpecker,Tygrysek,male

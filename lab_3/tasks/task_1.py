@@ -12,8 +12,11 @@ def parse_input(input):
     :return: list of parsed list of integers
     :rtype: list
     """
-    pass
 
+    mod_input = input.strip()
+    splitted_list = mod_input.split('\n')
+    final_list = list(map(lambda x: list(map(int, x.split())), splitted_list))
+    return(final_list)
 
 if __name__ == '__main__':
     _input = """
@@ -25,8 +28,8 @@ if __name__ == '__main__':
 1 6
 2 5
 3 2
-    
-    
+
+
     """
     assert parse_input(_input) == [
         [1, 5], [1, 6, 7], [3, 2], [1, 10], [1, 10], [1, 6], [2, 5], [3, 2]

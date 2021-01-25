@@ -7,8 +7,9 @@ Część 2 (1 pkt): jeżeli drugi argument działania nie jest podany (None)
 użyj wartość z pamięci kalkulatora. Obsłuż przypadki skrajne.
 """
 
-
 class Calculator:
+
+
     def __init__(self):
         self.memory = None
         # Podpowiedz: użyj atrybutu do przechowywania wyniku
@@ -16,7 +17,8 @@ class Calculator:
         # wynik zapisany w tym atrybucie
         self._short_memory = None
 
-    def run(self, operator, arg1, arg2):
+
+    def run(self, operator, arg1, arg2 = None):
         """
         Returns result of given operation.
 
@@ -29,20 +31,36 @@ class Calculator:
         :return: result of operation
         :rtype: float
         """
-        raise NotImplementedError
+        import operator as oper
+
+        if arg2 == None:
+            if self.memory == None:
+               print ('Brak wartosci w pamieci !')
+               return
+            else:
+                arg2 = self.memory
+
+        dzialanie = {}
+        dzialanie['+'] = oper.add(arg1, arg2)
+        dzialanie['-'] = oper.sub(arg1, arg2)
+        dzialanie['*'] = oper.mul(arg1, arg2)
+        dzialanie['/'] = oper.truediv(arg1, arg2)
+
+        if operator in dzialanie.keys():
+            self.wynik = dzialanie[operator]
+            return self.wynik
 
     def memorize(self):
         """Saves last operation result to memory."""
-        raise NotImplementedError
+        self.memory = self.wynik
 
     def clean_memory(self):
         """Cleans memorized value"""
-        raise NotImplementedError
+        self.memory = None
 
     def in_memory(self):
         """Prints memorized value."""
-        print(f"Zapamiętana wartość: {self.memory}")
-
+        print(f"Zapamietana wartosc: {self.memory}")
 
 if __name__ == '__main__':
     calc = Calculator()

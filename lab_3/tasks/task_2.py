@@ -16,7 +16,28 @@ def check_frequency(input):
     :return: list of integers with results of operation 3
     :rtype: list
     """
-    pass
+    from task_1 import parse_input
+    import collections
+
+    parsed_input = parse_input(_input)
+
+    numbers = []
+    output = []
+    for i in parsed_input:
+        if i[0] == 1:
+            numbers.append(i[1])
+        elif i[0] == 2:
+            if i[1] in numbers:
+                numbers.remove(i[1])
+        elif i[0] == 3:
+            c = collections.Counter(numbers)
+            if i[1] in c.values():
+                n = collections.Counter(c.values())
+                output.append(n[i[1]])
+            else:
+                output.append(0)
+
+    return(output)
 
 
 _input = """
@@ -32,5 +53,10 @@ _input = """
 
 
 """
+# Nie wiem czy dobrze, zrozumiałam polecenie, ale pamiętam, że na zajęciach mówił Pan,
+# że funkcja ma pokazywać ile jest x-ów o liczbie zliczeń podanej dla operacji nr 3.
+# W tym przypadku dla drugiej z operacji nr 3 funkcja wyrzuca ile x-ów występuje 2 razy.
+# Mamy 2 razy liczbę 6 i 2 razy liczbę 10, dlatego poprawną odpowiedzią powinno być chyba [0, 2].
+
 if __name__ == '__main__':
-    assert check_frequency(_input) == [0, 1]
+    assert check_frequency(_input) == [0, 2]

@@ -11,7 +11,22 @@ API_URL = 'https://www.metaweather.com/api/'
 def concat_data(
         path: Union[str, pathlib.Path],
 ):
-    pass
+    if not isinstance(path, pathlib.Path):
+        path = pathlib.Path(path)
+
+    all_data = pd.DataFrame()
+
+    for file in path.iterdir():
+        data = pd.read_csv(file)
+        data = data[pd.to_datetime(data.applicable_date).dt.date == pd.to_datetime(data.created).dt.date]
+        all_data = pd.concat([all_data, data])
+
+    final_data = pd.DataFrame(all_data,
+                              columns=['created', 'min_temp', 'the_temp', 'max_temp', 'air_pressure', 'humidity', 'visibility', 'wind_direction_compass', 'wind_direction', 'wind_speed'])
+    final_data = final_data.rename(columns={'the_temp': 'temp'})
+    final_data['created'] = pd.to_datetime(final_data['created']).dt.strftime("%Y-%m-%dT%H:%M")
+    final_data.sort_values(['created'], inplace=True)
+    final_data.to_csv(f'{path}.csv', index=False)
 
 
 if __name__ == '__main__':

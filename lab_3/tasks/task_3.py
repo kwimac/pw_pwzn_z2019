@@ -16,7 +16,7 @@ Funkcje group_dates oraz format_day mają pomoc w grupowaniu kodu.
 UWAGA: Proszę ograniczyć użycie pętli do minimum.
 """
 import datetime
-
+from task_1 import parse_input
 
 def sort_dates(date_str, date_format=''):
     """
@@ -30,6 +30,31 @@ def sort_dates(date_str, date_format=''):
     :rtype: list
     """
 
+    import datetime
+
+
+    mod_input = dates.strip()
+    listed_dates = mod_input.split('\n')
+    list_without_whitespaces = list(map(lambda x: x.strip(), listed_dates))
+    # print(list_without_whitespaces)
+
+    timestamp_list = []
+    for date in list_without_whitespaces:
+        timestamp = datetime.datetime.strptime(date, '%a %d %b %Y %X %z').timestamp()
+        timestamp_list.append(timestamp)
+
+    result = list(
+        map(lambda x: datetime.datetime.fromtimestamp(x, tz=datetime.timezone.utc).strftime("%a %d %b %Y %H:%M:%S %z"),
+            timestamp_list))
+    # print(result)
+
+    formated_list = list(map(lambda date: datetime.datetime.strptime(date,"%a %d %b %Y %H:%M:%S %z"), result))
+    formated_list.sort(reverse=True)
+
+    # print(formated_list)
+
+    return formated_list
+
 
 def group_dates(dates):
     """
@@ -39,6 +64,19 @@ def group_dates(dates):
     :type dates: list
     :return:
     """
+    days = []
+    times = []
+
+    for elem in dates:
+        if elem.date() not in days:
+            days.append(elem.date())
+            times.append([elem.time()])
+        else:
+            times[-1].extend([elem.time()])
+
+    events = [(day, time) for day, time in zip(days, times)]
+
+    return(events)
 
 
 def format_day(day, events):
@@ -55,7 +93,7 @@ def format_day(day, events):
     pass
 
 
-def parse_dates(date_str, date_format=''):
+def parse_dates(date_str, date_format="%Y-%m-%d %H:%M:%S"):
     """
     Parses and groups (in UTC) given list of events.
 
@@ -66,7 +104,29 @@ def parse_dates(date_str, date_format=''):
     :return: parsed events
     :rtype: str
     """
-    pass
+    from collections import defaultdict, OrderedDict
+
+    date_dict = defaultdict(list)
+
+    split_dates = date_str.split('\n')
+    for date in split_dates:
+        if date.strip():
+            timestamp = datetime.datetime.strptime(date.strip(), '%a %d %b %Y %X %z').timestamp()
+            date_time = datetime.datetime.utcfromtimestamp(timestamp)
+
+            date_dict[date_time.date().isoformat()].append(date_time.timetz().isoformat())
+
+    response_string = ''
+
+    for key, times in date_dict.items():
+        response_string += '\n----\n'
+        response_string += key + '\n' + '\t'
+        response_string += ('\n' +'\t').join([time for time in times])
+
+    response = response_string.split('----', 1)
+    print(response[1].strip())
+    return response[1]
+
 
 
 if __name__ == '__main__':
@@ -77,12 +137,12 @@ if __name__ == '__main__':
     Fri 01 May 2015 13:54:36 -0000
     """
 
-    assert sort_dates(dates) == [
-        datetime.datetime(2015, 5, 10, 20, 54, 36, tzinfo=datetime.timezone.utc),
-        datetime.datetime(2015, 5, 10, 13, 54, 36, tzinfo=datetime.timezone.utc),
-        datetime.datetime(2015, 5, 2, 14, 24, 36, tzinfo=datetime.timezone.utc),
-        datetime.datetime(2015, 5, 1, 13, 54, 36, tzinfo=datetime.timezone.utc),
-    ]
+    # assert sort_dates(dates) == [
+    #     datetime.datetime(2015, 5, 10, 20, 54, 36, tzinfo=datetime.timezone.utc),
+    #     datetime.datetime(2015, 5, 10, 13, 54, 36, tzinfo=datetime.timezone.utc),
+    #     datetime.datetime(2015, 5, 2, 14, 24, 36, tzinfo=datetime.timezone.utc),
+    #     datetime.datetime(2015, 5, 1, 13, 54, 36, tzinfo=datetime.timezone.utc),
+    # ]
 
     assert parse_dates(dates) == """2015-05-10
     \t20:54:36
